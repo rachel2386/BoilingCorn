@@ -2,11 +2,31 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\rache\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\rache\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Corn.-72150992.00" t="ExcludeRecursive" />
-    <e p="D:\content\mine\Corn" t="IncludeRecursive">
+    <e p="C:\Users\rache\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Corn.1313303214.00" t="ExcludeRecursive" />
+    <e p="D:\content\mine\BoilingCorn\Corn" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="0-Main" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Buoyancy.cs" t="Include" />
+            <e p="PickupObject.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="Readme.txt" t="Include" />
+          </e>
+        </e>
         <e p="DOTweenPlaymakerActions" t="Include">
           <e p="Actions" t="Include">
             <e p="DOTween" t="Include">
