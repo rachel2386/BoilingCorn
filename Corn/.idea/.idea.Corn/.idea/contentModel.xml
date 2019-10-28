@@ -10,6 +10,7 @@
         <e p="0-Main" t="Include">
           <e p="Scripts" t="Include">
             <e p="Buoyancy.cs" t="Include" />
+            <e p="KnobControl.cs" t="Include" />
             <e p="PickupObject.cs" t="Include" />
           </e>
         </e>

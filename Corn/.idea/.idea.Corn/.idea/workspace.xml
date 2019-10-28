@@ -4,52 +4,16 @@
     <list default="true" id="84142a48-3e73-488e-b128-eb944eba23d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Models/corn-1-correct/source/corn 1_1/defaultMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Models/corn-1-correct/source/corn 1_1/defaultMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Models/Ear_Of_Corn_Yellow_V2_L3.123c6f570945-b502-40d0-93df-9cbeb120e6a1/Materials/Ear_Of_Corn_Ear_C1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Models/Ear_Of_Corn_Yellow_V2_L3.123c6f570945-b502-40d0-93df-9cbeb120e6a1/Materials/Ear_Of_Corn_Ear_C1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Models/Materials/kitchenfbx-_0136_Ch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Models/Materials/kitchenfbx-_0136_Ch.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-0_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-1_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-2_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-3_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-4_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-5_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/SampleScene/Lightmap-6_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/[Steel Brushed Stainless].mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/[Steel Brushed Stainless].mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayMaker/Editor/Resources/EditorStartupPrefs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayMaker/Editor/Resources/EditorStartupPrefs.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/Color_007.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/Color_007.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/Color_J01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Textures/PotTextures/Color_J01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/Buoyancy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
+            <state relative-caret-position="1152">
               <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
               <folding>
                 <marker date="1571721297092" expanded="false" signature="6:78" ph="..." />
@@ -84,22 +48,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="430">
+              <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
               <folding>
-                <marker date="1571721386703" expanded="false" signature="6:78" ph="..." />
-                <marker date="1571721386703" expanded="true" signature="121:2224" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="363:413" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="471:2222" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="507:1332" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="558:1322" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="762:1290" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="838:1268" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="967:1242" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="1362:2216" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="1410:1933" ph="{...}" />
-                <marker date="1571721386703" expanded="true" signature="1587:1723" ph="/* var ObjectPosOnScreen = myCam.WorldToScreenPoint(objectHoding.transform.position); ... */" />
-                <marker date="1571721386703" expanded="true" signature="1977:2206" ph="{...}" />
+                <marker date="1571945450154" expanded="false" signature="6:78" ph="..." />
+                <marker date="1571945450154" expanded="true" signature="121:2397" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="363:413" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="471:2395" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="507:1332" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="558:1322" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="762:1290" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="838:1268" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="967:1242" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="1362:2389" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="1410:2054" ph="{...}" />
+                <marker date="1571945450154" expanded="true" signature="1640:1776" ph="/* var ObjectPosOnScreen = myCam.WorldToScreenPoint(objectHoding.transform.position); ... */" />
+                <marker date="1571945450154" expanded="true" signature="2098:2379" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/KnobControl.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+              <folding>
+                <marker date="1571941855488" expanded="false" signature="6:107" ph="..." />
+                <marker date="1571941855488" expanded="true" signature="149:769" ph="{...}" />
+                <marker date="1571941855488" expanded="true" signature="319:362" ph="{...}" />
+                <marker date="1571941855488" expanded="true" signature="420:530" ph="{...}" />
+                <marker date="1571941855488" expanded="true" signature="557:646" ph="{...}" />
+                <marker date="1571941855488" expanded="true" signature="678:767" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -113,6 +94,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/DOTweenPlaymakerActions/Actions/DOTween/DOTweenTransformBlendableRotateBy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/KnobControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LuxWater/Scripts/LuxWater_Projector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/Buoyancy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -121,13 +103,14 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/0-Main/Scripts/$Buoyancy.cs" />
         <option value="$PROJECT_DIR$/Assets/0-Main/Scripts/Buoyancy.cs" />
+        <option value="$PROJECT_DIR$/Assets/0-Main/Scripts/KnobControl.cs" />
         <option value="$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-173" />
-    <option name="y" value="167" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-175" />
+    <option name="y" value="165" />
     <option name="width" value="1940" />
     <option name="height" value="980" />
   </component>
@@ -137,15 +120,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,11 +178,14 @@
       <workItem from="1571629641725" duration="648000" />
       <workItem from="1571630501347" duration="53000" />
       <workItem from="1571711507618" duration="9845000" />
+      <workItem from="1571774714284" duration="853000" />
+      <workItem from="1571890813875" duration="1395000" />
+      <workItem from="1571941487209" duration="1576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11145000" />
+    <option name="totallyTimeSpent" value="14969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -211,10 +197,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-138" y="134" width="1552" height="784" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2600536" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -276,13 +262,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/$Buoyancy.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/$Buoyancy.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/LuxWater/Scripts/LuxWater_Projector.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -302,7 +282,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/Buoyancy.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
+        <state relative-caret-position="1152">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding>
             <marker date="1571721297092" expanded="false" signature="6:78" ph="..." />
@@ -320,24 +300,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/KnobControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <marker date="1571941855488" expanded="false" signature="6:107" ph="..." />
+            <marker date="1571941855488" expanded="true" signature="149:769" ph="{...}" />
+            <marker date="1571941855488" expanded="true" signature="319:362" ph="{...}" />
+            <marker date="1571941855488" expanded="true" signature="420:530" ph="{...}" />
+            <marker date="1571941855488" expanded="true" signature="557:646" ph="{...}" />
+            <marker date="1571941855488" expanded="true" signature="678:767" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/PickupObject.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="430">
+          <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
           <folding>
-            <marker date="1571721386703" expanded="false" signature="6:78" ph="..." />
-            <marker date="1571721386703" expanded="true" signature="121:2224" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="363:413" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="471:2222" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="507:1332" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="558:1322" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="762:1290" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="838:1268" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="967:1242" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="1362:2216" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="1410:1933" ph="{...}" />
-            <marker date="1571721386703" expanded="true" signature="1587:1723" ph="/* var ObjectPosOnScreen = myCam.WorldToScreenPoint(objectHoding.transform.position); ... */" />
-            <marker date="1571721386703" expanded="true" signature="1977:2206" ph="{...}" />
+            <marker date="1571945450154" expanded="false" signature="6:78" ph="..." />
+            <marker date="1571945450154" expanded="true" signature="121:2397" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="363:413" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="471:2395" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="507:1332" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="558:1322" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="762:1290" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="838:1268" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="967:1242" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="1362:2389" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="1410:2054" ph="{...}" />
+            <marker date="1571945450154" expanded="true" signature="1640:1776" ph="/* var ObjectPosOnScreen = myCam.WorldToScreenPoint(objectHoding.transform.position); ... */" />
+            <marker date="1571945450154" expanded="true" signature="2098:2379" ph="{...}" />
           </folding>
         </state>
       </provider>

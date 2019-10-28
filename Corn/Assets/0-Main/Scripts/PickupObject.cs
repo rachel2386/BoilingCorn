@@ -50,12 +50,13 @@ public class PickupObject : MonoBehaviour
             {
                 objectRB.useGravity = false;
                 objectRB.isKinematic = true;
+                //objectRB.detectCollisions = false;
                 Vector3 mousePos = Input.mousePosition;
                 //var ObjectPosOnScreen = myCam.WorldToScreenPoint(objectHoding.transform.position);
 //                ObjectPosOnScreen.z = mousePos.y;
 
                 mousePos.z = Mathf.Abs(myCam.transform.position.z - ZReference.position.z);
-                objectHoding.transform.position = myCam.ScreenToWorldPoint(mousePos);
+                objectHoding.transform.position = Vector3.Lerp(objectHoding.transform.position, myCam.ScreenToWorldPoint(mousePos), 10 * Time.deltaTime);
                 
             }
 
@@ -63,6 +64,7 @@ public class PickupObject : MonoBehaviour
             {
                 objectRB.useGravity = true;
                 objectRB.isKinematic = false;
+                //objectRB.detectCollisions = true;
                 IsholdingObject = false;
                 objectHoding = null;
                 objectRB = null;
