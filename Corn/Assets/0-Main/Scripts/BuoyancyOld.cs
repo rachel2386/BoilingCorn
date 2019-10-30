@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buoyancy : MonoBehaviour
+public class BuoyancyOld : MonoBehaviour
 {
     // Start is called before the first frame update
     private Collider myCol;
-    [HideInInspector]public float surfaceLevel;
-    public bool PotIsBoiling = false;
+    public float surfaceLevel;
     private List<Rigidbody> cookedFoodInWater = new List<Rigidbody>();
     private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
     
@@ -27,9 +26,10 @@ public class Buoyancy : MonoBehaviour
                 Vector3 surfaceAngle = rb.transform.eulerAngles;
                 rb.transform.right = Vector3.Slerp(rb.transform.right,transform.up,Time.deltaTime);   
                 // surfaceAngle.z = Mathf.LerpAngle(surfaceAngle.y, transform.up.y, Time.deltaTime);
-           
+                
             }
-
+           
+        
     }
 
     void FixedUpdate()
@@ -41,7 +41,7 @@ public class Buoyancy : MonoBehaviour
             if(!rb.useGravity)
                 rb.useGravity = true;
 
-            rb.drag = 5;
+            rb.drag = 3;
 
         }    
         
@@ -72,15 +72,22 @@ public class Buoyancy : MonoBehaviour
     {
        print("enter");
         Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (other.GetComponent<FoodCookState>().foodState == 0)
-        {
-            rawFoodInWater.Add(rb);
-            StartCoroutine(CookingTime(rb, 10));
-        }
-        else
-        {
+        //
+//        if (other.GetComponent<FoodCookState>().foodState == 0)
+//        {
+//            rawFoodInWater.Add(rb);
+//            StartCoroutine(CookingTime(rb, 10));
+//        }
+//        else
+//        {
           cookedFoodInWater.Add(rb);  
-        }
+//        }
+
+       
+        //cookedFoodInWater.Add(rb);
+        //rb.useGravity = false;
+
+        //rb.useGravity = false;
 
     }
 
@@ -103,29 +110,21 @@ public class Buoyancy : MonoBehaviour
 
    private IEnumerator CookingTime(Rigidbody foodToCook, int secToCook)
    {
-       while (!PotIsBoiling)
-       {
-           yield return null;
-       }
-       
        while (rawFoodInWater.Contains(foodToCook))
+       {
+           if (!rawFoodInWater.Contains(foodToCook))
            {
-               if (!rawFoodInWater.Contains(foodToCook))
-               {
-                   print("food not cooking");
-                   yield break;
-               }
-               else
-               {
-                   yield return new WaitForSeconds(secToCook);
-                   cookedFoodInWater.Add(foodToCook);
-                   rawFoodInWater.Remove(foodToCook);
-                   foodToCook.GetComponent<FoodCookState>().foodState = 1;
-               }
+               print("food not cooking");
+               yield break;
            }
-       
-
-       
+           else
+           {
+               yield return new WaitForSeconds(secToCook);
+               cookedFoodInWater.Add(foodToCook);
+               rawFoodInWater.Remove(foodToCook);
+               foodToCook.GetComponent<FoodCookState>().foodState = 1;
+           }
+       }
        
    }
 }

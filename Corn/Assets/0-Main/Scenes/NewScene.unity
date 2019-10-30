@@ -587,7 +587,7 @@ Transform:
   m_Children:
   - {fileID: 1428238979}
   m_Father: {fileID: 1811733086}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &96098052
 Rigidbody:
@@ -6107,7 +6107,7 @@ Transform:
   m_Children:
   - {fileID: 869407962}
   m_Father: {fileID: 551764041}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &314034338
 ParticleSystemRenderer:
@@ -18534,6 +18534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceLevel: 0
+  PotIsBoiling: 0
 --- !u!1 &426106601
 GameObject:
   m_ObjectHideFlags: 0
@@ -21462,7 +21463,7 @@ Transform:
   - {fileID: 1465224731}
   - {fileID: 1652169049}
   m_Father: {fileID: 1811733086}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.000001}
 --- !u!82 &445257690
 AudioSource:
@@ -21894,7 +21895,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 6375251376813407553, guid: 1642202b9fe48f24796fcba321eda403, type: 3}
 --- !u!1001 &540242594
@@ -22029,7 +22030,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1616092700}
-  - {fileID: 452460375}
   - {fileID: 1200737663}
   - {fileID: 906148856}
   - {fileID: 314034337}
@@ -22065,7 +22065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556123355}
   m_LocalRotation: {x: 0.70710665, y: -0, z: -0.000000029802319, w: 0.707107}
-  m_LocalPosition: {x: 8.22, y: 1.28, z: 2.56}
+  m_LocalPosition: {x: 8.22, y: 5.27, z: 2.56}
   m_LocalScale: {x: 6.9100094, y: 6.910013, z: 6.9100094}
   m_Children: []
   m_Father: {fileID: 521241509}
@@ -22081,9 +22081,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 0.5185516, b: 0, a: 1}
-  m_Intensity: 11
-  m_Range: 12.219536
+  m_Color: {r: 1, g: 0.6995341, b: 0.45882356, a: 1}
+  m_Intensity: 6.3
+  m_Range: 18.477898
   m_SpotAngle: 49.970123
   m_InnerSpotAngle: 15
   m_CookieSize: 10
@@ -22091,9 +22091,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.895
-    m_Bias: 0.27
-    m_NormalBias: 0.34
+    m_Strength: 0.805
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 1.99
     m_CullingMatrixOverride:
       e00: 1
@@ -22254,7 +22254,7 @@ Transform:
   - {fileID: 1649982458}
   - {fileID: 798886332}
   m_Father: {fileID: 1811733086}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -71.75101, z: 0}
 --- !u!1 &657317804
 GameObject:
@@ -22390,6 +22390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &662392009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1252549496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &686718557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22624,6 +22630,12 @@ Transform:
   m_Father: {fileID: 724387270}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &697403268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1150341109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22746,7 +22758,7 @@ Transform:
   m_Children:
   - {fileID: 324017743}
   m_Father: {fileID: 551764041}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &708336584
 ParticleSystemRenderer:
@@ -27587,8 +27599,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747467764}
-  m_LocalRotation: {x: 0.27154702, y: -0.6663982, z: 0.2851231, w: 0.63315123}
-  m_LocalPosition: {x: -1.9255903, y: -0.24255109, z: -5.0825796}
+  m_LocalRotation: {x: -0.3458335, y: -0.4430375, z: 0.19166972, w: -0.8045991}
+  m_LocalPosition: {x: 5.1533585, y: 0.5311742, z: 2.5141008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 11644584}
@@ -28130,6 +28142,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodState: 0
+--- !u!1001 &777684378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1947793393}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_Name
+      value: enokiLow
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000037252897
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000002533197
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -26.782099
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -20.17308
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: -73.58277
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c520fa254d10aa4f8825458ef8654df, type: 3}
+--- !u!4 &777684379 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0c520fa254d10aa4f8825458ef8654df,
+    type: 3}
+  m_PrefabInstance: {fileID: 777684378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &791491344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -678479638993492055, guid: af8eea4b7c0bdb943be34369d043969e,
@@ -28180,7 +28292,7 @@ Transform:
   m_Children:
   - {fileID: 1815877882}
   m_Father: {fileID: 551764041}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &796255123
 ParticleSystemRenderer:
@@ -36420,7 +36532,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101
-        actionIsOpen: 0001000000
+        actionIsOpen: 0000000000
         actionStartIndex: 0000000005000000220000003f00000059000000
         actionHashCodes: 81294e0411a91304c2401101a7411b03ca51e900
         unityObjectParams: []
@@ -37966,14 +38078,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.MousePickEvent
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.SetFsmBool
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 000000
-        actionStartIndex: 00000000090000000f000000
-        actionHashCodes: 1c615902ca51e90068fece05
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 00000000
+        actionStartIndex: 00000000090000000f00000014000000
+        actionHashCodes: 1c615902ca51e90068fece055ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -37997,7 +38111,139 @@ MonoBehaviour:
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
-        fsmPropertyParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 416896826}
+          TargetTypeName: Buoyancy
+          PropertyName: PotIsBoiling
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 1
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
         - useVariable: 0
@@ -38084,14 +38330,14 @@ MonoBehaviour:
         - turnOff
         - 
         - 
-        byteData: 01000000
+        byteData: 0100000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000f000000170000001700000017000000170000000c000000110000000100000018000000120000000c0000002700000001000000010000001400000012000000120000001100000001000000
+        paramDataType: 140000000f000000170000001700000017000000170000000c000000110000000100000018000000120000000c00000027000000010000000100000014000000120000001200000011000000010000002400000001000000
         paramName:
         - GameObject
         - rayDistance
@@ -38113,8 +38359,10 @@ MonoBehaviour:
         - variableName
         - setValue
         - everyFrame
-        paramDataPos: 0000000000000000000000000100000002000000030000000000000000000000000000000000000000000000010000000000000001000000020000000100000001000000020000000100000003000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000010000000000000000000000000000000000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 00000000000000000000000001000000020000000300000000000000000000000000000000000000000000000100000000000000010000000200000001000000010000000200000001000000030000000000000004000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000000000001000000
     - name: TurnOffFlame
       description: 
       colorIndex: 0
@@ -38143,16 +38391,18 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010100
-        actionIsOpen: 0000000000
-        actionStartIndex: 000000000100000002000000080000000e000000
-        actionHashCodes: 8d4bb5038d4bb503ca51e900ca51e9005ac85204
+        - 
+        actionEnabled: 010101010001
+        actionIsOpen: 000000000000
+        actionStartIndex: 000000000100000002000000080000000e00000010000000
+        actionHashCodes: 8d4bb5038d4bb503ca51e900ca51e9005ac852045ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -38187,6 +38437,138 @@ MonoBehaviour:
             value: {fileID: 1604852516}
           TargetTypeName: UnityEngine.GameObject
           PropertyName: active
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 416896826}
+          TargetTypeName: Buoyancy
+          PropertyName: PotIsBoiling
           BoolParameter:
             useVariable: 0
             name: 
@@ -38398,14 +38780,14 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000000000
+        byteData: 000000000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001400000018000000120000000c00000027000000010000000100000018000000120000000c0000002700000001000000010000002400000001000000
+        paramDataType: 140000001400000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000010000000100000024000000010000002400000001000000
         paramName:
         - gameObject
         - gameObject
@@ -38423,8 +38805,10 @@ MonoBehaviour:
         - manualUI
         - targetProperty
         - everyFrame
-        paramDataPos: 00000000010000000000000000000000000000000000000000000000010000000100000001000000010000000100000002000000030000000000000004000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000010000000000000000000000000000000000000001000000010000000000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 000000000100000000000000000000000000000000000000000000000100000001000000010000000100000001000000020000000300000000000000040000000100000005000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000010000000000000001000000
     - name: Fail
       description: 
       colorIndex: 0
@@ -43731,7 +44115,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 551764041}
+    m_TransformParent: {fileID: 1811733086}
     m_Modifications:
     - target: {fileID: -927199367670048503, guid: af8eea4b7c0bdb943be34369d043969e,
         type: 3}
@@ -44058,6 +44442,91 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8344596922546892290, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.2500014
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.2184887
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.450005
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710653
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071071
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.572423
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.5724
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.572423
+      objectReference: {fileID: 0}
+    - target: {fileID: -678479638993492055, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -678479638993492055, guid: af8eea4b7c0bdb943be34369d043969e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fridge
+      objectReference: {fileID: 0}
     - target: {fileID: -8967910302736687414, guid: af8eea4b7c0bdb943be34369d043969e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44208,76 +44677,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.2500005
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.2184887
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.450003
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710653
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071071
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.5724125
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.5724
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.5724125
-      objectReference: {fileID: 0}
     - target: {fileID: -4128443560506976508, guid: af8eea4b7c0bdb943be34369d043969e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44362,16 +44761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: -678479638993492055, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: -678479638993492055, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: -617998947705994708, guid: af8eea4b7c0bdb943be34369d043969e,
         type: 3}
@@ -44647,11 +45036,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 8344596922546892290, guid: af8eea4b7c0bdb943be34369d043969e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 8582036427413200625, guid: af8eea4b7c0bdb943be34369d043969e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44711,7 +45095,7 @@ Transform:
   - {fileID: 2111886878}
   - {fileID: 776646183}
   m_Father: {fileID: 1811733086}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869407961
 GameObject:
@@ -49388,7 +49772,7 @@ Transform:
   m_LocalScale: {x: 0.30671006, y: 0.30671, z: 0.30671006}
   m_Children: []
   m_Father: {fileID: 551764041}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &940065377 stripped
 Transform:
@@ -49749,7 +50133,7 @@ MonoBehaviour:
           name: left
           isSystemEvent: 0
           isGlobal: 0
-        toState: Plate
+        toState: Fridge
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -50463,7 +50847,7 @@ MonoBehaviour:
           name: right
           isSystemEvent: 0
           isGlobal: 0
-        toState: Plate
+        toState: Stovetop
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -50848,7 +51232,7 @@ MonoBehaviour:
         x: 377.08594
         y: 330.21094
         width: 100
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -50877,9 +51261,18 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: up
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Plate
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.GetKeyDown
@@ -50888,10 +51281,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 00000000
-        actionStartIndex: 0000000006000000090000000c000000
-        actionHashCodes: ca51e900ff77a904ff77a904ff77a904
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0000010000
+        actionStartIndex: 0000000006000000090000000c0000000f000000
+        actionHashCodes: ca51e900ff77a904ff77a904ff77a904ff77a904
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -50964,6 +51358,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -50971,15 +51371,16 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - down
+        - up
         - left
         - right
-        byteData: 0000120100001401000013010000
+        byteData: 000012010000110100001401000013010000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c000000270000000100000001000000070000001700000011000000070000001700000011000000070000001700000011000000
+        paramDataType: 18000000120000000c000000270000000100000001000000070000001700000011000000070000001700000011000000070000001700000011000000070000001700000011000000
         paramName:
         - behaviour
         - methodName
@@ -50996,8 +51397,11 @@ MonoBehaviour:
         - key
         - sendEvent
         - storeResult
-        paramDataPos: 0000000000000000000000000000000000000000010000000200000000000000000000000600000001000000010000000a0000000200000002000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000040000000000000000000000040000000000000000000000040000000000000000000000
+        - key
+        - sendEvent
+        - storeResult
+        paramDataPos: 0000000000000000000000000000000000000000010000000200000000000000000000000600000001000000010000000a00000002000000020000000e0000000300000003000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000040000000000000000000000040000000000000000000000040000000000000000000000040000000000000000000000
     - name: State 1
       description: 
       colorIndex: 0
@@ -51012,8 +51416,8 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: right
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: TableTop
         linkStyle: 0
@@ -51022,14 +51426,12 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CallMethod
-        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: ca51e90048c01101
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -51081,13 +51483,7 @@ MonoBehaviour:
             objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1.5
+        fsmFloatParams: []
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -51095,15 +51491,14 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - right
-        byteData: 000000
+        stringParams: []
+        byteData: 0000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c0000002700000001000000010000000f0000001700000001000000
+        paramDataType: 18000000120000000c000000270000000100000001000000
         paramName:
         - behaviour
         - methodName
@@ -51111,11 +51506,8 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000000000002000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000
     - name: State 2
       description: 
       colorIndex: 0
@@ -51130,8 +51522,8 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: left
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
         toState: Sink
         linkStyle: 0
@@ -51140,14 +51532,12 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CallMethod
-        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: ca51e90048c01101
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -51199,13 +51589,7 @@ MonoBehaviour:
             objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1.5
+        fsmFloatParams: []
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -51213,15 +51597,14 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - left
-        byteData: 000000
+        stringParams: []
+        byteData: 0000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c0000002700000001000000010000000f0000001700000001000000
+        paramDataType: 18000000120000000c000000270000000100000001000000
         paramName:
         - behaviour
         - methodName
@@ -51229,53 +51612,40 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000000000002000000
-        paramByteDataSize: 000000000000000000000000000000000100000001000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000
     - name: Plate
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 213.67188
-        y: 216.96875
+        x: 373.26562
+        y: 436.3047
         width: 100
-        height: 48
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: left
+          name: down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Fridge
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: right
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Stovetop
+        toState: TableTop
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetKeyDown
-        - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.CallMethod
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 000101
-        actionStartIndex: 000000000300000006000000
-        actionHashCodes: ff77a904ff77a904ca51e900
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: ff77a904ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -51336,31 +51706,21 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - right
-        - left
-        byteData: 13010000140100000000
+        - down
+        byteData: 120100000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 07000000170000001100000007000000170000001100000018000000120000000c000000270000000100000001000000
+        paramDataType: 07000000170000001100000018000000120000000c000000270000000100000001000000
         paramName:
-        - key
-        - sendEvent
-        - storeResult
         - key
         - sendEvent
         - storeResult
@@ -51370,8 +51730,8 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        paramDataPos: 000000000000000000000000040000000100000001000000000000000000000000000000000000000800000009000000
-        paramByteDataSize: 040000000000000000000000040000000000000000000000000000000000000000000000000000000100000001000000
+        paramDataPos: 000000000000000000000000000000000000000000000000000000000400000005000000
+        paramByteDataSize: 040000000000000000000000000000000000000000000000000000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -66052,6 +66412,105 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &1150341109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1947793393}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_Name
+      value: enokiMesh (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0028
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.227
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.109
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.037997175
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.96932626
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.039044406
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.23966298
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.3880005
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 152.37401
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.164
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16192152
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10665764
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16109475
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c95054ce4ca3e2f43b1308eabdf744e1, type: 3}
 --- !u!1001 &1200737662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66287,7 +66746,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 563e8588a5fc2444ead4b438e863d0fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 563e8588a5fc2444ead4b438e863d0fd,
         type: 3}
@@ -67039,6 +67498,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212528651}
   m_Mesh: {fileID: 7297562821208680786, guid: 563e8588a5fc2444ead4b438e863d0fd, type: 3}
+--- !u!1001 &1252549496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1947793393}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_Name
+      value: enokiMesh (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0028
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.095
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.063
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1651403
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.95591104
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0071879923
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.24271616
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.3880005
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 152.37401
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 18.277
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16192152
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10665764
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16109475
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c95054ce4ca3e2f43b1308eabdf744e1, type: 3}
 --- !u!1 &1308718016
 GameObject:
   m_ObjectHideFlags: 0
@@ -67975,6 +68533,105 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodState: 0
+--- !u!1001 &1532574550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1947793393}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_Name
+      value: enokiMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: -8637107993676698986, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0028
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.175
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.317
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0393981
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.60018855
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.048869245
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7973916
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -6.978
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -286.171
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.769
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16192152
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10665764
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16109475
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c95054ce4ca3e2f43b1308eabdf744e1, type: 3}
 --- !u!1 &1547858118
 GameObject:
   m_ObjectHideFlags: 0
@@ -72923,7 +73580,7 @@ Transform:
   m_Children:
   - {fileID: 7520878462023464535}
   m_Father: {fileID: 551764041}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1616092699
 PrefabInstance:
@@ -75765,6 +76422,51 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 140.32
       objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.21024217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.67512834
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6751282
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.21024203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9907767
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.6559143
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.97201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000012480454
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917659414521528178, guid: ff7d1a7629f2a124d8e6676c6400a221,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -214.594
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7d1a7629f2a124d8e6676c6400a221, type: 3}
 --- !u!4 &1616092700 stripped
@@ -76190,7 +76892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652065326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.794, y: 0.463, z: -0.393}
+  m_LocalPosition: {x: 0.794, y: 0.653, z: -0.393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1899833758}
@@ -79347,7 +80049,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1811733086}
     m_Modifications:
     - target: {fileID: -927199367670048503, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
@@ -79362,37 +80064,37 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.54
+      value: 6.64
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.31
+      value: -1.446
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.030445
+      value: 2.54
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
@@ -79417,7 +80119,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2735
+      value: 1.2735002
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
@@ -79427,7 +80129,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2735
+      value: 1.2735002
       objectReference: {fileID: 0}
     - target: {fileID: 2082587447772964993, guid: 1642202b9fe48f24796fcba321eda403,
         type: 3}
@@ -79443,6 +80145,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082587447772964993, guid: 1642202b9fe48f24796fcba321eda403,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.043
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1642202b9fe48f24796fcba321eda403, type: 3}
@@ -79473,8 +80180,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797604051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.277, y: 0.056, z: 0.218}
+  m_LocalScale: {x: 0.61884, y: 0.61884, z: 0.61884}
   m_Children: []
   m_Father: {fileID: 1066803081}
   m_RootOrder: 0
@@ -79565,6 +80272,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 452460375}
+  - {fileID: 1899833758}
   - {fileID: 96098051}
   - {fileID: 566262702}
   - {fileID: 445257689}
@@ -84202,7 +84911,7 @@ Transform:
   m_Children:
   - {fileID: 1137441083}
   m_Father: {fileID: 551764041}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1884791615
 ParticleSystemRenderer:
@@ -89071,7 +89780,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899833757}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 312ffd480875133438a73c750ecdd90b, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -89276,6 +89985,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1947793392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1947793393}
+  - component: {fileID: 1947793395}
+  - component: {fileID: 1947793396}
+  - component: {fileID: 1947793394}
+  m_Layer: 0
+  m_Name: Enoki
+  m_TagString: FoodItem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1947793393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947793392}
+  m_LocalRotation: {x: -0.7072667, y: -0, z: -0, w: 0.70694685}
+  m_LocalPosition: {x: 6.4819, y: 0.90933, z: -9.4708}
+  m_LocalScale: {x: 0.8594645, y: 1.2305739, z: 0.83936}
+  m_Children:
+  - {fileID: 777684379}
+  - {fileID: 2039687434}
+  - {fileID: 662392009}
+  - {fileID: 697403268}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+--- !u!136 &1947793394
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947793392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13557236
+  m_Height: 0.7320614
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &1947793395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947793392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodState: 0
+--- !u!54 &1947793396
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947793392}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2004864887
 GameObject:
   m_ObjectHideFlags: 0
@@ -94275,6 +95064,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2c133ff2c8705648a5c0c7de8d99872, type: 3}
+--- !u!4 &2039687434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c95054ce4ca3e2f43b1308eabdf744e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532574550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2076862875
 PrefabInstance:
   m_ObjectHideFlags: 0

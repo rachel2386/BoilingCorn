@@ -18140,7 +18140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 416896821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5db6e7ffa0465f4fbbdbf048e3fc5f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b39c4874dd826141ad666b38fd32ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceLevel: 0
@@ -26549,9 +26549,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753482887}
-  - component: {fileID: 753482888}
   - component: {fileID: 753482889}
   - component: {fileID: 753482890}
+  - component: {fileID: 753482888}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26582,7 +26582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 753482886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be10a518bcedb8c47b936ed6d5e11148, type: 3}
+  m_Script: {fileID: 11500000, guid: bab613e890442684999e24badb442aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ZReference: {fileID: 416896822}
@@ -63998,6 +63998,7 @@ GameObject:
   - component: {fileID: 1528062355}
   - component: {fileID: 1528062354}
   - component: {fileID: 1528062356}
+  - component: {fileID: 1528062357}
   m_Layer: 0
   m_Name: Corn
   m_TagString: Pickupable
@@ -64677,6 +64678,19 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 0
+--- !u!114 &1528062357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528062352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodState: 1
 --- !u!1 &1604852516
 GameObject:
   m_ObjectHideFlags: 0
