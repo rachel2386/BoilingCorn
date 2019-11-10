@@ -4,9 +4,17 @@
     <e p="C:\Users\rache\.Rider2018.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\rache\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Corn.1313303214.00" t="ExcludeRecursive" />
     <e p="D:\content\mine\BoilingCorn\Corn" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="0-Hotpot" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CornPanelBehavior.cs" t="Include" />
+            <e p="CornPanelManager.cs" t="Include" />
+          </e>
+        </e>
         <e p="0-Main" t="Include">
           <e p="Scripts" t="Include">
             <e p="Buoyancy.cs" t="Include" />
@@ -17,6 +25,7 @@
             <e p="PickupObjectWPhysics.cs" t="Include" />
           </e>
         </e>
+        <e p="CornPanelController.cs" t="Include" />
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -1435,6 +1444,39 @@
             <e p="Readme.txt" t="Include" />
           </e>
           <e p="UpdateHelper.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="DynamicPanels" t="Include">
+            <e p="Editor" t="Include">
+              <e p="DynamicPanelsCanvasEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="Anchoring" t="Include">
+                <e p="AnchorZoneBase.cs" t="Include" />
+                <e p="CanvasAnchorZone.cs" t="Include" />
+                <e p="PanelAnchorZone.cs" t="Include" />
+                <e p="PanelHeaderAnchorZone.cs" t="Include" />
+              </e>
+              <e p="DynamicPanelsCanvas.cs" t="Include" />
+              <e p="Grouping" t="Include">
+                <e p="IPanelGroupElement.cs" t="Include" />
+                <e p="PanelGroup.cs" t="Include" />
+                <e p="UnanchoredPanelGroup.cs" t="Include" />
+              </e>
+              <e p="Helpers" t="Include">
+                <e p="PanelCursorHandler.cs" t="Include" />
+                <e p="PanelHeader.cs" t="Include" />
+                <e p="PanelNotificationCenter.cs" t="Include" />
+                <e p="PanelResizeHelper.cs" t="Include" />
+                <e p="PanelSerialization.cs" t="Include" />
+                <e p="PanelTab.cs" t="Include" />
+                <e p="PanelUtils.cs" t="Include" />
+              </e>
+              <e p="Panel.cs" t="Include" />
+              <e p="PanelManager.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
