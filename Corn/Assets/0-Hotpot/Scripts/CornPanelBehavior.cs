@@ -8,37 +8,120 @@ using UnityEngine.UI;
 
 public class CornPanelBehavior : MonoBehaviour, IPointerUpHandler,IPointerDownHandler
 {
+    private Camera myCam;
+    
     private bool mouseDown = false;
     private float dragSpeed = 25f;
     private RectTransform m_canvas;
-    private CanvasScaler _canvasScaler;
     private RectTransform m_rectTrans;
-    private Button closeWindowButton;
+
+    private Button ControlButton;
+    private RectTransform closeWindowButton;
+    private RectTransform maxWinButton;
+    private List<RectTransform> panelButtons = new List<RectTransform>();
+
+    private int timesEnabled = 0;
     
-    private Camera myCam;
+    //different view modes
+    private bool panelFullWinEnabled;
+    public bool PanelFullWinEnabled
+    {
+        get => panelFullWinEnabled;
+        set => panelFullWinEnabled = value;
+    }
+    
+    Vector2 fullWinAnchorMin = new Vector2(0,0);
+    Vector2 fullWinAnchorMax = new Vector2(1,1);
+    Vector2 fullWinPivotPos = new Vector2(1f,1f);
+    private Vector2 InitWinAnchorMin;
+    private Vector2 InitWinAnchorMax;
+    private Vector2 InitPivotPos;
+    private Vector2 InitRectSize;
+    private Vector2 InitRectPos = Vector2.zero;
+    
+    
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         m_rectTrans = GetComponent<RectTransform>();
-        myCam = Camera.main;
-        m_canvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();//GameObject.Find("bg").GetComponent<RectTransform>();//
-        closeWindowButton = GetComponentInChildren<Button>();
-        PositionCloseButton();
-        
+        ControlButton = GameObject.Find(gameObject.name + "Button").GetComponent<Button>();
+        ControlButton.onClick.AddListener(OpenWindow);
+        ControlButton.onClick.AddListener(BringClickedPanelForward);
+        print(ControlButton.name);
+        //InitPanelInfo();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        
+        myCam = Camera.main;
+        m_canvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+        InitPanelButtons();
+        
+
+    }
+
+    private void OnEnable()
+    {
+        BringClickedPanelForward();
+        
+        if (timesEnabled == 1)
+        {
+           print("first time");
+            InitPanelInfo();
+           
+        }
+        timesEnabled++;
+        
+
+       
+    }
+
+    void InitPanelInfo()
+    {
+       
+        //m_rectTrans.position = Input.mousePosition;
+        InitRectPos = m_rectTrans.anchoredPosition;
+        InitWinAnchorMin = m_rectTrans.anchorMin;
+        InitWinAnchorMax = m_rectTrans.anchorMax;
+        InitPivotPos = Vector2.one;
+        InitRectSize = m_rectTrans.sizeDelta;
+
+    }
+
+    void InitPanelButtons()
+    {
+        closeWindowButton =transform.Find("Close").GetComponent<RectTransform>();
+        maxWinButton = transform.Find("Maximize").GetComponent<RectTransform>();
+        var buttonsInChildren = GetComponentsInChildren<Button>();
+        
+        if(buttonsInChildren.Length < 0) return;
+        foreach (var button in buttonsInChildren)
+        {
+            panelButtons.Add(button.GetComponent<RectTransform>());
+        }
+       
+        PositionButtons();
+        maxWinButton.gameObject.GetComponent<Button>().onClick.AddListener(ToggleMaximizeView);
+        closeWindowButton.gameObject.GetComponent<Button>().onClick.AddListener(CloseWindow);
+        
+       
+       
+       
+       
+    }
+
+    
     void Update()
     {
         if (mouseDown)
         {
-          
+          if(!PanelFullWinEnabled)
              OnPanelDragged();
         }
-        
-        if(Input.GetKey("e"))
-            MaximizeView();
+   
     }
+    
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -76,8 +159,7 @@ public class CornPanelBehavior : MonoBehaviour, IPointerUpHandler,IPointerDownHa
            
            Vector2 panelPos = m_rectTrans.anchoredPosition;
 
-           
-           
+         
            panelPos.x += Input.GetAxis("Mouse X") * dragSpeed; 
            panelPos.y += Input.GetAxis("Mouse Y") * dragSpeed; 
            
@@ -100,30 +182,68 @@ public class CornPanelBehavior : MonoBehaviour, IPointerUpHandler,IPointerDownHa
         CornPanelManager.DraggedPanel = null;
     }
 
-    void ResizePanel()
+    
+
+    private void ToggleMaximizeView()
     {
-        Vector2 la = m_rectTrans.rect.max;
-        la.x++;
-       // m_rectTrans.SetSizeWithCurrentAnchors(); = 
+       
+        if (!panelFullWinEnabled)
+        {
+            panelFullWinEnabled = true;
+            InitRectPos = m_rectTrans.anchoredPosition;
+            m_rectTrans.anchoredPosition = Vector2.zero;
+            m_rectTrans.anchorMin = fullWinAnchorMin;
+            m_rectTrans.anchorMax = fullWinAnchorMax;
+            
+            //m_rectTrans.pivot = fullWinPivotPos;
+            m_rectTrans.sizeDelta = Vector2.one;
+            
+        }
+        else
+        {
+            panelFullWinEnabled = false;
+            m_rectTrans.anchorMin = InitWinAnchorMin;
+            m_rectTrans.anchorMax = InitWinAnchorMax;
+            m_rectTrans.pivot = InitPivotPos;
+            m_rectTrans.sizeDelta = InitRectSize;
+            m_rectTrans.anchoredPosition = InitRectPos;
+
+
+        }
+
+
+        PositionButtons();
+        
+
     }
 
-    void MaximizeView()
+    void CloseWindow()
     {
-        Vector2 screenDimensions;
-        screenDimensions.x = m_canvas.rect.width;
-        screenDimensions.y = m_canvas.rect.height;
-        m_rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, myCam.scaledPixelWidth);
-        m_rectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, myCam.scaledPixelHeight);
-        PositionCloseButton();
-
+      
+        gameObject.SetActive(false);
+       
     }
+    void OpenWindow()
+         {
+           
+             gameObject.SetActive(true);
+            
+         }
 
-    void PositionCloseButton()
+    void PositionButtons()
     {
-        RectTransform ButtonTransform = closeWindowButton.GetComponent<RectTransform>();
         Vector2 buttonPos;
-        buttonPos.x = m_rectTrans.rect.xMax - (ButtonTransform.rect.xMax * 2);
-        buttonPos.y = m_rectTrans.rect.yMax - (ButtonTransform.rect.yMax * 2);
-        ButtonTransform.anchoredPosition = buttonPos;
+        int distanceFromEdge = 2;
+        
+        if(panelButtons.Count > 0)
+        for (int i = 0; i < panelButtons.Count; i++)
+        {
+            buttonPos.x = m_rectTrans.rect.xMax - (panelButtons[i].rect.xMax * distanceFromEdge);
+            buttonPos.y = m_rectTrans.rect.yMax - (panelButtons[i].rect.yMax * 2);
+            panelButtons[i].anchoredPosition = buttonPos;
+            distanceFromEdge += 2;
+        }
+        
+       
     }
 }

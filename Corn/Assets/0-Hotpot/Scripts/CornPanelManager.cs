@@ -12,6 +12,7 @@ public class CornPanelManager : MonoBehaviour
     private bool followingMouse = false;
     public static RectTransform DraggedPanel;
     public static bool DraggingPanel = false;
+    public bool EnableMouseFollow = false;
     private List<RectTransform> myPanels = new List<RectTransform>();
 
     void Start()
@@ -23,7 +24,11 @@ public class CornPanelManager : MonoBehaviour
         foreach (var p in panels)
         {
             myPanels.Add(p.GetComponent<RectTransform>());
-            p.AddComponent<CornPanelBehavior>();
+            
+            var panelBehaviorScript = p.AddComponent<CornPanelBehavior>();
+            panelBehaviorScript.PanelFullWinEnabled = !EnableMouseFollow;
+            
+            if(!p.gameObject.name.Contains("Home"))
             p.gameObject.SetActive(false);
         }
     }
