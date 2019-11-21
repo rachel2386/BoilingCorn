@@ -91,7 +91,7 @@ Material:
     - _Glossiness: 1
     - _Help: 0
     - _HorizonOcclusion: 0
-    - _InvFade: 0.18
+    - _InvFade: 0.27
     - _InvFadeParameter: 0.56
     - _LuxWater_ReflectionTexMip: 10
     - _MaxDirLightDepth: 64
@@ -116,7 +116,7 @@ Material:
     - _TranslucencyIntensity: 4
     - _UVSpaceMappingEnabled: 1
     - _UnderwaterFoamParallax: 0.06
-    - _UnderwaterScatteringIntensity: 1.45
+    - _UnderwaterScatteringIntensity: 1.57
     - _UsesWaterVolume: 0
     - _WaterIOR: 1.298
     - _WaterSurfaceYPos: 0
@@ -149,8 +149,8 @@ Material:
     - _GSteepness: {r: 1, g: 1, b: 1, a: 1}
     - _GerstnerSecondaryWaves: {r: 0, g: 4.3, b: 0.3, a: 1.65}
     - _GerstnerVertexIntensity: {r: 0.3, g: 0.3, b: 0.3, a: 0}
-    - _SpecColor: {r: 0.13999993, g: 0.13999993, b: 0.13999993, a: 1}
+    - _SpecColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
     - _Speed: {r: 1.23, g: -1.49, b: 0.6, a: 0}
-    - _TranslucencyColor: {r: 0.25142637, g: 0.41699994, b: 0.41699994, a: 1}
+    - _TranslucencyColor: {r: 0.25142634, g: 0.4169999, b: 0.4169999, a: 1}
     - _UnderWaterReflCol: {r: 1, g: 1, b: 1, a: 0}
     - _UpperColor: {r: 0, g: 0, b: 0, a: 1}
