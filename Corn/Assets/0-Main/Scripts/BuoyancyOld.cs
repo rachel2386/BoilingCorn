@@ -122,7 +122,7 @@ public class BuoyancyOld : MonoBehaviour
                yield return new WaitForSeconds(secToCook);
                cookedFoodInWater.Add(foodToCook);
                rawFoodInWater.Remove(foodToCook);
-               foodToCook.GetComponent<FoodCookState>().foodState = 1;
+               foodToCook.GetComponent<FoodItemProperties>().foodState = 1;
            }
        }
        
