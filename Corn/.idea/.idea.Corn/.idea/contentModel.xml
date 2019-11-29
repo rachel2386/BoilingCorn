@@ -257,6 +257,7 @@
             </e>
           </e>
         </e>
+        <e p="Leaning.cs" t="Include" />
         <e p="LuxWater" t="Include">
           <e p="Changelog.txt" t="Include" />
           <e p="Demos" t="Include">
