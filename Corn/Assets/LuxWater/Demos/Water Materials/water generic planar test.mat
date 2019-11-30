@@ -10,7 +10,7 @@ Material:
   m_Name: water generic planar test
   m_Shader: {fileID: 4800000, guid: ab6f7521bd72644388f2fc1112e74e7b, type: 3}
   m_ShaderKeywords: EFFECT_BUMP GEOM_TYPE_BRANCH GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
-    GEOM_TYPE_LEAF GEOM_TYPE_MESH
+    GEOM_TYPE_LEAF GEOM_TYPE_MESH USINGWATERVOLUME
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -43,10 +43,10 @@ Material:
     - _AbsorbtionHeight: 0
     - _AbsorbtionStrength: 1
     - _AbsorptionColorStrength: 1
-    - _AbsorptionDepth: 0.222
-    - _AbsorptionHeight: 4.56
+    - _AbsorptionDepth: 0.188
+    - _AbsorptionHeight: 3.75
     - _AbsorptionMaxHeight: 1
-    - _AbsorptionStrength: 0.5
+    - _AbsorptionStrength: 0.29
     - _BaseUVScale: 0.1
     - _BumpParallax: 0.3
     - _CausticMode: 1
@@ -91,7 +91,11 @@ Material:
     - _Glossiness: 1
     - _Help: 0
     - _HorizonOcclusion: 0
+<<<<<<< HEAD
     - _InvFade: 0.27
+=======
+    - _InvFade: 0.46
+>>>>>>> origin/master
     - _InvFadeParameter: 0.56
     - _LuxWater_ReflectionTexMip: 10
     - _MaxDirLightDepth: 64
@@ -104,7 +108,7 @@ Material:
     - _PlaneReflectionBumpClamp: 0.05
     - _PlaneReflectionBumpScale: 0.4
     - _PlaneReflectionIntensityScale: 1
-    - _ReflectionBumpScale: 0.293
+    - _ReflectionBumpScale: 0.58
     - _ReflectionGeoScale: 0.5
     - _ReflectionGlossiness: 1
     - _ReflectionSmoothing: 1
@@ -112,14 +116,20 @@ Material:
     - _Refraction: 305
     - _ScatterOcclusion: 0.132
     - _ScatteringNormalInfluence: 0.128
-    - _ScatteringPower: 4.1
+    - _ScatteringPower: 3.7
     - _TranslucencyIntensity: 4
     - _UVSpaceMappingEnabled: 1
     - _UnderwaterFoamParallax: 0.06
     - _UnderwaterScatteringIntensity: 1.57
+<<<<<<< HEAD
     - _UsesWaterVolume: 0
     - _WaterIOR: 1.298
     - _WaterSurfaceYPos: 0
+=======
+    - _UsesWaterVolume: 1
+    - _WaterIOR: 1.307
+    - _WaterSurfaceYPos: 8.42
+>>>>>>> origin/master
     - _WorldSpaceMappingEnabled: 1
     - _ZTest: 4
     - _ZWrite: 1
