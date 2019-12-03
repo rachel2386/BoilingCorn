@@ -63,7 +63,7 @@ public class CornPickupObject : MonoBehaviour
 
         else
         {
-            MoveObjectToCenter(objectRB);
+            //MoveObjectToCenter(objectRB);
             
             if (Input.GetMouseButtonUp(0))
             {
