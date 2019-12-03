@@ -12,6 +12,7 @@ public class FoodItemProperties : ItemProperties
 
     public bool InWater = false;
     private Rigidbody myRB;
+    private ItemProperties itemScript;
 
     private void Awake()
     {
@@ -21,9 +22,14 @@ public class FoodItemProperties : ItemProperties
         myRB = GetComponent<Rigidbody>();
     }
 
+    void Start()
+    {
+        itemScript = GetComponent<ItemProperties>();
+    }
+
     private void FixedUpdate()
     {
-        if (HeldByPlayer)
+        if (itemScript.HeldByPlayer)
         {
             myRB.drag = 4;
             myRB.angularDrag = 4;

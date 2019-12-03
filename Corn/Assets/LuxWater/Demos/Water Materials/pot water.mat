@@ -67,12 +67,12 @@ Material:
     - _FinalFogDensity: 0
     - _FoamCaps: 0.5
     - _FoamEnabled: 1
-    - _FoamNormalMaskScale: 6.2
+    - _FoamNormalMaskScale: 9.2
     - _FoamNormalScale: -1
     - _FoamParallax: 0.0446
     - _FoamScale: 3.4
-    - _FoamSmoothness: 0.136
-    - _FoamSoftIntersectionFactor: 0.82
+    - _FoamSmoothness: 0.201
+    - _FoamSoftIntersectionFactor: 0.1
     - _FoamSpeed: -6
     - _FoamTiling: 4
     - _FoamTranslucencyIntensity: 4
@@ -88,10 +88,10 @@ Material:
     - _GerstnerNormalIntensity: 0.15
     - _GerstnerPlanarNormalIntensity: 1
     - _GerstnerVertexIntensity: 0.2
-    - _Glossiness: 1
+    - _Glossiness: 0
     - _Help: 0
     - _HorizonOcclusion: 0
-    - _InvFade: 1.42
+    - _InvFade: 1.35
     - _InvFadeParameter: 0.56
     - _LuxWater_ReflectionTexMip: 10
     - _MaxDirLightDepth: 64
@@ -127,17 +127,17 @@ Material:
     - _BumpParams: {r: 0.88, g: 0.5, b: 4.1, a: 0.2}
     - _BumpRotation: {r: 0, g: 0, b: 3.33, a: 173.21}
     - _BumpScale: {r: -0.9, g: 0.5, b: -0.3, a: 0}
-    - _BumpSpeed: {r: 2, g: -1.77, b: 6, a: 0.5}
+    - _BumpSpeed: {r: 2, g: -1.77, b: 6, a: 0.05}
     - _BumpSpeedXXX: {r: 1.7, g: 1, b: 0, a: 0}
-    - _BumpTiling: {r: 0.3, g: 0.57, b: 1, a: 0.1}
-    - _Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 0}
+    - _BumpTiling: {r: 0.3, g: 0.57, b: 1, a: 0.2}
+    - _Color: {r: 0.509434, g: 0.09056605, b: 0, a: 0}
     - _DeepFoamColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     - _DepthAtten: {r: 0, g: 0.3, b: 1, a: 0}
     - _FarBumpSampleParams: {r: 0.25, g: 0.01, b: 0, a: 0}
     - _FinalBumpRotation: {r: 2155.8538, g: 3.7999985, b: 118.79876, a: 118.79876}
-    - _FinalBumpSpeed01: {r: -0.9929862, g: -0.11823034, b: 0.87879276, a: 0.10463385}
-    - _FinalBumpSpeed23: {r: -2.9945316, g: -0.18105464, b: 0, a: 0}
-    - _FoamColor: {r: 0.7169812, g: 0.043412738, b: 0, a: 1}
+    - _FinalBumpSpeed01: {r: -0.09929862, g: -0.011823035, b: 0.08787928, a: 0.010463386}
+    - _FinalBumpSpeed23: {r: -0.29945317, g: -0.018105464, b: 0, a: 0}
+    - _FoamColor: {r: 0.6415094, g: 0.046374172, b: 0, a: 1}
     - _GAmplitude: {r: 0.2, g: -0.1, b: 0.12, a: 0.13}
     - _GDirectionAB: {r: 1, g: 0, b: 0.99026805, a: -0.13917312}
     - _GDirectionCD: {r: 0.8480481, g: -0.5299193, b: 1, a: 0}
@@ -149,8 +149,8 @@ Material:
     - _GSteepness: {r: 1, g: 1, b: 1, a: 1}
     - _GerstnerSecondaryWaves: {r: 0, g: 4.3, b: 0.3, a: 1.65}
     - _GerstnerVertexIntensity: {r: 0.3, g: 0.3, b: 0.3, a: 0}
-    - _SpecColor: {r: 1, g: 0.4720202, b: 0, a: 1}
+    - _SpecColor: {r: 1, g: 0.73910797, b: 0, a: 1}
     - _Speed: {r: 1.23, g: -1.49, b: 0.6, a: 0}
-    - _TranslucencyColor: {r: 0.25142634, g: 0.4169999, b: 0.4169999, a: 1}
+    - _TranslucencyColor: {r: 0, g: 0.08739487, b: 0.26415092, a: 1}
     - _UnderWaterReflCol: {r: 1, g: 1, b: 1, a: 0}
     - _UpperColor: {r: 0, g: 0, b: 0, a: 1}

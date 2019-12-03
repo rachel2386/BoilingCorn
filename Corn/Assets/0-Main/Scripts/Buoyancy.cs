@@ -22,13 +22,13 @@ public class Buoyancy : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        foreach (var rb in cookedFoodInWater)
-        {
-            if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
-            Vector3 surfaceAngle = rb.transform.eulerAngles;
-            rb.transform.right = Vector3.Slerp(rb.transform.right, transform.up, Time.deltaTime);
-            // surfaceAngle.z = Mathf.LerpAngle(surfaceAngle.y, transform.up.y, Time.deltaTime);
-        }
+//        foreach (var rb in cookedFoodInWater)
+//        {
+//            if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
+//            Vector3 surfaceAngle = rb.transform.eulerAngles;
+//            rb.transform.right = Vector3.Slerp(rb.transform.right, transform.up, Time.deltaTime);
+//            // surfaceAngle.z = Mathf.LerpAngle(surfaceAngle.y, transform.up.y, Time.deltaTime);
+//        }
  if(Input.GetKeyDown("i"))
  {
      print("rawFood" + rawFoodInWater.Count + "cookedFood" + cookedFoodInWater.Count);

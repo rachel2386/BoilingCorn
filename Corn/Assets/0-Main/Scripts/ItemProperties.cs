@@ -5,6 +5,6 @@ using UnityEngine;
 public class ItemProperties : MonoBehaviour
 {
   [HideInInspector]  public bool HeldByPlayer = false;
-    
-    
+
+ 
 }

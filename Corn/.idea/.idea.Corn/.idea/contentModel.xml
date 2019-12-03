@@ -349,6 +349,92 @@
             </e>
           </e>
         </e>
+        <e p="NVIDIA" t="Include">
+          <e p="Flex" t="Include">
+            <e p="Actors" t="Include">
+              <e p="FlexActor.cs" t="Include" />
+              <e p="FlexArrayActor.cs" t="Include" />
+              <e p="FlexClothActor.cs" t="Include" />
+              <e p="FlexSoftActor.cs" t="Include" />
+              <e p="FlexSolidActor.cs" t="Include" />
+              <e p="FlexSourceActor.cs" t="Include" />
+            </e>
+            <e p="Assets" t="Include">
+              <e p="FlexArrayAsset.cs" t="Include" />
+              <e p="FlexAsset.cs" t="Include" />
+              <e p="FlexClothAsset.cs" t="Include" />
+              <e p="FlexContainer.cs" t="Include" />
+              <e p="FlexSoftAsset.cs" t="Include" />
+              <e p="FlexSolidAsset.cs" t="Include" />
+              <e p="FlexSourceAsset.cs" t="Include" />
+            </e>
+            <e p="Auxiliary" t="Include">
+              <e p="_auxFlexDetectShapes.cs" t="Include" />
+              <e p="_auxFlexDrawFluid.cs" t="Include" />
+              <e p="_auxFlexDrawParticles.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Editors" t="Include">
+                <e p="FlexActorEditor.cs" t="Include" />
+                <e p="FlexArrayActorEditor.cs" t="Include" />
+                <e p="FlexArrayAssetEditor.cs" t="Include" />
+                <e p="FlexAssetEditor.cs" t="Include" />
+                <e p="FlexClothActorEditor.cs" t="Include" />
+                <e p="FlexClothAssetEditor.cs" t="Include" />
+                <e p="FlexClothDeformationEditor.cs" t="Include" />
+                <e p="FlexContainerEditor.cs" t="Include" />
+                <e p="FlexEditor.cs" t="Include" />
+                <e p="FlexFluidMaterialEditor.cs" t="Include" />
+                <e p="FlexFluidRendererEditor.cs" t="Include" />
+                <e p="FlexSoftActorEditor.cs" t="Include" />
+                <e p="FlexSoftAssetEditor.cs" t="Include" />
+                <e p="FlexSoftSkinningEditor.cs" t="Include" />
+                <e p="FlexSolidActorEditor.cs" t="Include" />
+                <e p="FlexSolidAssetEditor.cs" t="Include" />
+                <e p="FlexSourceActorEditor.cs" t="Include" />
+                <e p="FlexSourceAssetEditor.cs" t="Include" />
+              </e>
+              <e p="Tests" t="Include">
+                <e p="FlexActorTests.cs" t="Include" />
+                <e p="FlexAssetTests.cs" t="Include" />
+                <e p="FlexExtTests.cs" t="Include" />
+                <e p="FlexTests.cs" t="Include" />
+                <e p="FlexUtilsTests.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Helpers" t="Include">
+              <e p="FlexBuffer.cs" t="Include" />
+              <e p="FlexClothDeformation.cs" t="Include" />
+              <e p="FlexFluidRenderer.cs" t="Include" />
+              <e p="FlexParticleController.cs" t="Include" />
+              <e p="FlexScene.cs" t="Include" />
+              <e p="FlexSoftSkinning.cs" t="Include" />
+            </e>
+            <e p="Native" t="Include">
+              <e p="Flex.cs" t="Include" />
+              <e p="FlexExt.cs" t="Include" />
+              <e p="FlexUtils.cs" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="DebugPoints.shader" t="Include" />
+                <e p="FlexDrawFluid.cginc" t="Include" />
+                <e p="FlexDrawFluid.shader" t="Include" />
+                <e p="FlexDrawFluid2.shader" t="Include" />
+                <e p="FlexDrawParticles.shader" t="Include" />
+                <e p="FlexFluidShader.shader" t="Include" />
+                <e p="FlexPrepareFluid.shader" t="Include" />
+                <e p="FluidComposite.shader" t="Include" />
+                <e p="FluidDepth.shader" t="Include" />
+                <e p="FluidDepthBlur.shader" t="Include" />
+                <e p="FluidThickness.shader" t="Include" />
+                <e p="SourcePreview.shader" t="Include" />
+                <e p="SurfaceShader.shader" t="Include" />
+                <e p="SurfaceTest.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="PlayMaker" t="Include">
           <e p="Actions" t="Include">
             <e p="ActionHelpers.cs" t="Include" />
