@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84142a48-3e73-488e-b128-eb944eba23d4" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/PrototypeWCamMovement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/PrototypeWCamMovement.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0-Main/Scenes/PrototypeWMouseLook.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0-Main/Scenes/PrototypeWMouseLook.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LuxWater/Demos/Water Materials/water generic planar test.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LuxWater/Demos/Water Materials/water generic planar test.mat" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corn/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0-Hotpot/Scene/Prototype1.unity" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0-Hotpot/Scene/Prototype1.unity.meta" beforeDir="false" />
->>>>>>> origin/master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,14 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/CornPickupObject.cs">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="271">
-=======
             <state relative-caret-position="1040">
->>>>>>> origin/master
               <caret line="171" column="78" selection-start-line="171" selection-start-column="78" selection-end-line="171" selection-end-column="78" />
               <folding>
                 <marker date="1574299204199" expanded="false" signature="6:111" ph="..." />
@@ -230,15 +220,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-<<<<<<< HEAD
-    <option name="x" value="-4" />
-    <option name="width" value="1938" />
-    <option name="height" value="1038" />
-=======
     <option name="x" value="-5" />
     <option name="width" value="1939" />
     <option name="height" value="1039" />
->>>>>>> origin/master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -317,19 +301,12 @@
       <workItem from="1574056804003" duration="301000" />
       <workItem from="1574130946878" duration="4423000" />
       <workItem from="1574264170802" duration="26295000" />
-<<<<<<< HEAD
-=======
       <workItem from="1574876038518" duration="3634000" />
->>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="113615000" />
-=======
     <option name="totallyTimeSpent" value="117249000" />
->>>>>>> origin/master
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,11 +318,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-    <frame x="-3" y="0" width="1550" height="830" extended-state="0" />
-=======
     <frame x="-4" y="0" width="1551" height="831" extended-state="0" />
->>>>>>> origin/master
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31254193" />
@@ -842,8 +815,6 @@
     <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/FirstPersonCharacterGuidelines.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-<<<<<<< HEAD
-=======
     <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/CornPickupObject.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
@@ -872,7 +843,6 @@
         </state>
       </provider>
     </entry>
->>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/FoodItemProperties.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -948,32 +918,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/Assets/0-Main/Scripts/CornPickupObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="171" column="78" selection-start-line="171" selection-start-column="78" selection-end-line="171" selection-end-column="78" />
-          <folding>
-            <marker date="1574299204199" expanded="true" signature="6:111" ph="..." />
-            <marker date="1574299204199" expanded="true" signature="158:6136" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="555:709" ph="{...}" />
-            <marker date="1574299204199" expanded="false" signature="778:3808" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="823:1625" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="876:1615" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="1080:1583" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="1156:1561" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="1283:1504" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="1639:3802" ph="{...}" />
-            <marker date="1574299204199" expanded="false" signature="1747:3790" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="1808:3776" ph="/* RaycastHit hitInfo = new RaycastHit(); ... */" />
-            <marker date="1574299204199" expanded="false" signature="3853:4432" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="4483:5205" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="4559:4769" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="5258:5577" ph="{...}" />
-            <marker date="1574299204199" expanded="false" signature="5627:6133" ph="{...}" />
-            <marker date="1574299204199" expanded="true" signature="5642:5696" ph="/* KeepObjectToCenterOfScreen ... */" />
-            <marker date="1574299204199" expanded="true" signature="5817:6109" ph="/* Vector3 mousePos = Input.mousePosition; ... */" />
-=======
     <entry file="file://$PROJECT_DIR$/Assets/Leaning.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -987,7 +931,6 @@
             <marker date="1574879077439" expanded="true" signature="1030:1192" ph="{...}" />
             <marker date="1574879077439" expanded="true" signature="1215:1352" ph="{...}" />
             <marker date="1574879077439" expanded="true" signature="1268:1342" ph="{...}" />
->>>>>>> origin/master
           </folding>
         </state>
       </provider>
