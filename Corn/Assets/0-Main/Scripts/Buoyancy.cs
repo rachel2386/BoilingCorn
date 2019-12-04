@@ -68,7 +68,7 @@ public class Buoyancy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("enter");
+       
      
         if (!other.CompareTag("FoodItem")) return;
         Rigidbody rb = other.GetComponent<Rigidbody>();
@@ -89,7 +89,7 @@ public class Buoyancy : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        print("exit");
+       
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rawFoodInWater.Contains(rb))
             rawFoodInWater.Remove(rb);
