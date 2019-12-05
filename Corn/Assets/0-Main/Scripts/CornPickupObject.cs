@@ -35,7 +35,7 @@ public class CornPickupObject : MonoBehaviour
         
         if (!IsholdingObject)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 
                 RaycastHit hitInfo = new RaycastHit();

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 868cb466d8af2e848a66f91d6c9f5581
+=======
+guid: 1a5acda066e0bf444a3de9b31ba1fd42
+>>>>>>> origin/Rachel_CameraMovement
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -60,8 +64,13 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
+<<<<<<< HEAD
     normalSmoothAngle: 0
     normalImportMode: 1
+=======
+    normalSmoothAngle: 60
+    normalImportMode: 0
+>>>>>>> origin/Rachel_CameraMovement
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

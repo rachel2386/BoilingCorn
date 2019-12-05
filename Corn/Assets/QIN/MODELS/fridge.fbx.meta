@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 81ad0436baef98244b6301931d7231f0
+=======
+guid: dd3336d4234e3fd4ca833ff6c0c16c89
+>>>>>>> origin/Rachel_CameraMovement
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []

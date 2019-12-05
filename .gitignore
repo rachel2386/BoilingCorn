@@ -36,3 +36,6 @@ sysinfo.txt
 *.unitypackage
 ref/
 Corn/Assets/Standard Assets/
+*.rar
+Corn/Assets/NVIDIA/
+Corn/Assets/0-Main/Models/Meat/13_Meat.skp

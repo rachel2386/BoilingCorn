@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dcacd6158b5de38429ae63925a927796
+=======
+guid: 122be9a422dd99d4ab8963f1e00fe7cf
+>>>>>>> origin/Rachel_CameraMovement
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
