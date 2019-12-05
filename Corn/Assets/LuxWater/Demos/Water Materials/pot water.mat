@@ -149,7 +149,7 @@ Material:
     - _GSteepness: {r: 1, g: 1, b: 1, a: 1}
     - _GerstnerSecondaryWaves: {r: 0, g: 4.3, b: 0.3, a: 1.65}
     - _GerstnerVertexIntensity: {r: 0.3, g: 0.3, b: 0.3, a: 0}
-    - _SpecColor: {r: 1, g: 0.73910797, b: 0, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Speed: {r: 1.23, g: -1.49, b: 0.6, a: 0}
     - _TranslucencyColor: {r: 0, g: 0.08739487, b: 0.26415092, a: 1}
     - _UnderWaterReflCol: {r: 1, g: 1, b: 1, a: 0}

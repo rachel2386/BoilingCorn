@@ -99,23 +99,18 @@ public class FoodItemProperties : ItemProperties
     void ChangeFoodState()
     {
         foodCooked = true;
-        if(rawFood.Count > 0)
-        foreach (var child in rawFood)
-        {
-            child.SetActive(false);
-        }
-
-
+        
         if (foodAssetToLoad != null)
         {
+            if(rawFood.Count > 0)
+                foreach (var child in rawFood)
+                {
+                    child.SetActive(false);
+                }
             var cookedFood = Instantiate(foodAssetToLoad);
             cookedFood.transform.position = gameObject.transform.position;
         }
 
-        else
-        {
-            print("cannot find object");
-        }
        
     }
 }
