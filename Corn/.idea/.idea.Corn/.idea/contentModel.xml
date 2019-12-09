@@ -19,8 +19,8 @@
           <e p="Scripts" t="Include">
             <e p="Buoyancy.cs" t="Include" />
             <e p="BuoyancyOld.cs" t="Include" />
+            <e p="CornFoodInteractions.cs" t="Include" />
             <e p="CornItemManager.cs" t="Include" />
-            <e p="CornPickupObject.cs" t="Include" />
             <e p="FoodItemProperties.cs" t="Include" />
             <e p="ItemProperties.cs" t="Include" />
             <e p="KnobControl.cs" t="Include" />
