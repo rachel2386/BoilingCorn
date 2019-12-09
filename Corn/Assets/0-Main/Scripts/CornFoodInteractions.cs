@@ -11,6 +11,7 @@ public class CornFoodInteractions : MonoBehaviour
     [HideInInspector] public bool IsholdingObject = false;
 
     private GameObject objectHolding;
+    private Transform foodParent;
     
     private Rigidbody objectRB;
     public Transform objectHolder;
@@ -33,6 +34,7 @@ public class CornFoodInteractions : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         objectHolder = myCam.transform.Find("ObjectHolder");
         bowl = GameObject.Find("Bowl").transform;
+        foodParent = GameObject.Find("Food").transform;
         bowlFSM = bowl.GetComponent<PlayMakerFSM>();
         playerAS = GetComponent<AudioSource>();
     }
@@ -140,13 +142,15 @@ public class CornFoodInteractions : MonoBehaviour
             objectHolding.transform.parent = holder.transform;
             Tween rbMove = objectRB.transform.DOLocalMove(Vector3.zero, 0.5f, false);
             rbMove.SetEase(Ease.OutExpo);
+            Tween rbRotate = objectRB.transform.DOLocalRotate(Vector3.zero, 0.5f);
+            rbRotate.SetEase(Ease.OutExpo);
             objectRB.isKinematic = true;
             objectRB.useGravity = false;
         }
         else
         {
             objectRB.isKinematic = false;
-            objectHolding.transform.parent = null;
+            objectHolding.transform.parent = foodParent;
             objectRB.useGravity = true;
         }
 

@@ -9,13 +9,15 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="0-Hotpot" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="CornPanelBehavior.cs" t="Include" />
-            <e p="CornPanelManager.cs" t="Include" />
-          </e>
-        </e>
         <e p="0-Main" t="Include">
+          <e p="Scenes" t="Include">
+            <e p="PanelPrototype" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CornPanelBehavior.cs" t="Include" />
+                <e p="CornPanelManager.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="Buoyancy.cs" t="Include" />
             <e p="BuoyancyOld.cs" t="Include" />

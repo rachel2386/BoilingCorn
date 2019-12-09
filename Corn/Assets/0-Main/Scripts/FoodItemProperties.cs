@@ -104,7 +104,9 @@ public class FoodItemProperties : ItemProperties
         {
             var cookedFood = Instantiate(foodAssetToLoad);
             cookedFood.transform.position = gameObject.transform.position;
+            cookedFood.transform.parent = gameObject.transform.parent;
             cookedFood.transform.localScale = gameObject.transform.localScale;
+            
             
            gameObject.SetActive(false);
 //            if(rawFood.Count > 0)
