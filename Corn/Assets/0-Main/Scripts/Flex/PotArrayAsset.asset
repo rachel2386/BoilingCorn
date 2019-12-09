@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62d596213e856d740b0dd29fd6442abe, type: 3}
-  m_Name: New FlexArrayAsset
+  m_Name: PotArrayAsset
   m_EditorClassIdentifier: 
   m_particles: []
   m_maxParticles: 1000
