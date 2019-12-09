@@ -10,10 +10,18 @@ public class FoodItemProperties : ItemProperties
     private int raw = 0;
 
     private int cooked = 1;
+    [SerializeField] float percentCooked = 0;
+    [SerializeField] float SecondsToCook = 10;
+
+    public float PercentCooked
+    {
+        get => percentCooked;
+        set => percentCooked = value;
+    }
 
     public bool InWater = false;
 
-    
+
     private Rigidbody myRB;
     private ItemProperties itemScript;
 
@@ -32,7 +40,7 @@ public class FoodItemProperties : ItemProperties
     void Start()
     {
         itemScript = GetComponent<ItemProperties>();
-        if (!gameObject.name.Contains("Clone") && !transform.parent.name.Contains("Clone") ) 
+        if (!gameObject.name.Contains("Clone") && !transform.parent.name.Contains("Clone"))
             InitFood();
     }
 
@@ -42,23 +50,28 @@ public class FoodItemProperties : ItemProperties
         {
             rawFood.Add(transform.GetChild(i).gameObject);
         }
+
         string path = "Assets/0-Main/Resources/Prefabs/Food/" + gameObject.name + "-C.prefab";
         foodAssetToLoad = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-       
     }
 
     private void Update()
     {
-        if(transform.parent != null)
-            if(transform.parent.name.Contains("Clone") ||  gameObject.name.Contains("Clone"))  return;
-       
-        if (foodCooked) return;
-        if (foodState == cooked)
+        if (transform.parent.name.Contains("Clone") || gameObject.name.Contains("Clone"))
         {
-            ChangeFoodState();
+            if (!foodCooked)
+                FoodReady();
         }
+        else
+        {
+            if (foodState == raw && InWater && Buoyancy.PotIsBoiling && PercentCooked < SecondsToCook)
+                PercentCooked += Time.deltaTime;
 
-
+            if (!foodCooked && PercentCooked >= SecondsToCook)
+            {
+                FoodReady();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -71,7 +84,7 @@ public class FoodItemProperties : ItemProperties
         {
             if (InWater)
             {
-               if (foodState == cooked)
+                if (foodState == cooked)
                 {
                     ChangePhysicsProperties(10, 10, false);
                 }
@@ -94,29 +107,28 @@ public class FoodItemProperties : ItemProperties
         myRB.useGravity = useGravity;
     }
 
-   
 
-    void ChangeFoodState()
+    void FoodReady()
     {
         foodCooked = true;
-        
+        foodState = 1;
+
+        if (!Buoyancy.cookedFoodInWater.Contains(myRB))
+            Buoyancy.cookedFoodInWater.Add(myRB);
+
         if (foodAssetToLoad != null)
         {
             var cookedFood = Instantiate(foodAssetToLoad);
             cookedFood.transform.position = gameObject.transform.position;
             cookedFood.transform.parent = gameObject.transform.parent;
             cookedFood.transform.localScale = gameObject.transform.localScale;
-            
-            
-           gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
 //            if(rawFood.Count > 0)
 //                foreach (var child in rawFood)
 //                {
 //                    child.SetActive(false);
 //                }
-            
         }
-
-       
     }
 }
