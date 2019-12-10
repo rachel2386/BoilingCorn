@@ -21,6 +21,7 @@ public class CornFoodInteractions : MonoBehaviour
 //    public Transform FridgeObjectHolder;
     private Transform bowl;
     private PlayMakerFSM bowlFSM;
+    Vector3 bowlRotateOffset = Vector3.zero;
     
     
     
@@ -142,8 +143,10 @@ public class CornFoodInteractions : MonoBehaviour
             objectHolding.transform.parent = holder.transform;
             Tween rbMove = objectRB.transform.DOLocalMove(Vector3.zero, 0.5f, false);
             rbMove.SetEase(Ease.OutExpo);
-            Tween rbRotate = objectRB.transform.DOLocalRotate(Vector3.zero, 0.5f);
+           
+            Tween rbRotate = objectRB.transform.DOLocalRotate(bowlRotateOffset, 0.5f);
             rbRotate.SetEase(Ease.OutExpo);
+            bowlRotateOffset += Vector3.up * 15;
             objectRB.isKinematic = true;
             objectRB.useGravity = false;
         }
@@ -156,6 +159,7 @@ public class CornFoodInteractions : MonoBehaviour
 
         objectRB.drag = 0;
         objectRB.angularDrag = 0;
+        //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = null;
         objectHolder.GetComponent<SpringJoint>().connectedBody = null;
         objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
         objectHolding = null;
@@ -168,6 +172,7 @@ public class CornFoodInteractions : MonoBehaviour
         objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = true;
         objectRB = objectHolding.GetComponent<Rigidbody>();
         objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
+        //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
     }
 
     void MoveObjectToCenter(Rigidbody rbHolding)

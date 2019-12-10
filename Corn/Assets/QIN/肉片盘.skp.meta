@@ -66,7 +66,7 @@ SketchUpImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
+    importCameras: 0
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
@@ -123,5 +123,5 @@ SketchUpImporter:
   selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
   assetHash:
     serializedVersion: 2
-    Hash: b0097ae6303d0749bc86b7b4dea7e036
+    Hash: 2ce2d0abaed154fb6af1e9d15c744c8f
   fileUnit: 0

@@ -20,6 +20,7 @@
           </e>
           <e p="Scripts" t="Include">
             <e p="Buoyancy.cs" t="Include" />
+            <e p="BuoyancyBackUp.cs" t="Include" />
             <e p="BuoyancyOld.cs" t="Include" />
             <e p="CornFoodInteractions.cs" t="Include" />
             <e p="CornItemManager.cs" t="Include" />
