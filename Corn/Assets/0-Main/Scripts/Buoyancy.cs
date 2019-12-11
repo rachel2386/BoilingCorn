@@ -56,11 +56,7 @@ public class Buoyancy : MonoBehaviour
             cookedFoodInWater.Add(rb);
 
         }
-        else
-        {
-            // rawFoodInWater.Add(rb);
-            //   StartCoroutine(CookingTime(rb, 10));
-        }
+       
             
             
         

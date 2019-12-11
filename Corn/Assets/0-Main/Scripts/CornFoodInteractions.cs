@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using DG.Tweening.Core;
 using UnityEngine;
 
 public class CornFoodInteractions : MonoBehaviour
@@ -32,11 +33,10 @@ public class CornFoodInteractions : MonoBehaviour
     void Start()
     {
         myCam = Camera.main;
-        Cursor.lockState = CursorLockMode.Locked;
         objectHolder = myCam.transform.Find("ObjectHolder");
-        bowl = GameObject.Find("Bowl").transform;
+        bowl = GameObject.Find("BowlPivot").transform;
         foodParent = GameObject.Find("Food").transform;
-        bowlFSM = bowl.GetComponent<PlayMakerFSM>();
+        bowlFSM = bowl.parent.GetComponent<PlayMakerFSM>();
         playerAS = GetComponent<AudioSource>();
     }
 
@@ -55,6 +55,7 @@ public class CornFoodInteractions : MonoBehaviour
                 && hitInfo.collider.CompareTag("FoodItem"))
             {
                 var foodState = hitInfo.collider.GetComponent<FoodItemProperties>().foodState;
+                
                 if (foodState == 0) //if raw, pickup
                 {
                     
@@ -67,10 +68,12 @@ public class CornFoodInteractions : MonoBehaviour
                     PlaceObject(bowl);
                     hitInfo.collider.GetComponent<FoodItemProperties>().foodState = 2;
                     bowlFSM.Fsm.Variables.BoolVariables[0].Value = true; //new food in, trigger fsm animation
+                    StartCoroutine(InsertFrame());
+                    
                 }
                 else //if in bowl, eaten
                 {
-                   EatFood(hitInfo.collider.gameObject);
+                  EatFood(hitInfo.collider.gameObject);
                 }
             }
         }
@@ -140,30 +143,36 @@ public class CornFoodInteractions : MonoBehaviour
         IsholdingObject = false;
         if (holder != null)
         {
-            objectHolding.transform.parent = holder.transform;
+            objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
+            holder.RotateAround(holder.parent.position, Vector3.up, 30);
+            objectHolding.transform.parent = holder;
             Tween rbMove = objectRB.transform.DOLocalMove(Vector3.zero, 0.5f, false);
             rbMove.SetEase(Ease.OutExpo);
-           
-            Tween rbRotate = objectRB.transform.DOLocalRotate(bowlRotateOffset, 0.5f);
+            rbMove.OnComplete(() => { RotatePlatePivot(holder); });
+            
+            Tween rbRotate = objectRB.transform.DOLocalRotate(Vector3.zero, 0.5f);
             rbRotate.SetEase(Ease.OutExpo);
-            bowlRotateOffset += Vector3.up * 15;
+
             objectRB.isKinematic = true;
             objectRB.useGravity = false;
         }
         else
         {
-            objectRB.isKinematic = false;
+           
             objectHolding.transform.parent = foodParent;
-            objectRB.useGravity = true;
+            objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
+            objectHolding = null;
+            objectRB = null;
         }
 
-        objectRB.drag = 0;
-        objectRB.angularDrag = 0;
+        
+       
+       
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = null;
         objectHolder.GetComponent<SpringJoint>().connectedBody = null;
-        objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
-        objectHolding = null;
-        objectRB = null;
+       
+        
+       
     }
 
     void InitPickup(RaycastHit objectClicked)
@@ -175,19 +184,19 @@ public class CornFoodInteractions : MonoBehaviour
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
     }
 
-    void MoveObjectToCenter(Rigidbody rbHolding)
+    void RotatePlatePivot(Transform pivot)
     {
-//KeepObjectToCenterOfScreen
 
-//reset rotation
-        Tween rbRotate = objectRB.transform.DOLocalRotate(Vector3.zero, 0.5f);
-        rbRotate.SetEase(Ease.OutExpo);
+       objectHolding.transform.parent = pivot.parent;
+       //objectRB.velocity = Vector3.zero; 
+        
+        objectHolding = null;
+        objectRB = null;
+        
+    }
 
-//        Vector3 mousePos = Input.mousePosition;
-//        mousePos.z = myCam.WorldToScreenPoint(pickupOffset).z;
-//        Vector3 worldMousePos = myCam.ScreenToWorldPoint(mousePos);
-//
-//        Vector3 MoveDir = objectHolder.position - rbHolding.position;
-//        float forceMag = 0.3f;
+    IEnumerator InsertFrame()
+    {
+        yield return null;
     }
 }
