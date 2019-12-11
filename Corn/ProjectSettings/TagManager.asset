@@ -4,14 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Shootable
   - Knob
   - Water
   - Pickupable
   - FoodItem
-  - Plate
-  - Fridge
   - View
+  - Interactable
   layers:
   - Default
   - TransparentFX
