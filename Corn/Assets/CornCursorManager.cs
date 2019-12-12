@@ -32,11 +32,11 @@ public class CornCursorManager : MonoBehaviour
         if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo) ||
             hitInfo.collider == null || Input.GetMouseButton(0)) return;
         
-        if (hitInfo.collider.CompareTag("FoodItem"))
+        if (hitInfo.collider.CompareTag("FoodItem") && GameManager.gameState == 1)
         {
             ImgSlot.sprite = foodCursor;
         }
-        else if(hitInfo.collider.CompareTag("Interactable"))
+        else if(hitInfo.collider.CompareTag("Interactable") || hitInfo.collider.CompareTag("Pickupable"))
         {
             ImgSlot.sprite = interactableCursor;
         }
@@ -45,18 +45,7 @@ public class CornCursorManager : MonoBehaviour
             ImgSlot.sprite = defaultCursor;
         }
 
-//        switch (tag)
-//            {
-//                case "FoodItem":
-//                    ImgSlot.sprite = foodCursor;
-//                    break;
-//                case "Interactable":
-//                    ImgSlot.sprite = interactableCursor;
-//                    break;
-//                default:
-//                    ImgSlot.sprite = defaultCursor;
-//                    break;
-//            }
+
 
 
     }

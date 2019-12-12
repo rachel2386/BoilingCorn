@@ -10,6 +10,8 @@ TagManager:
   - FoodItem
   - View
   - Interactable
+  - Fridge
+  - Container
   layers:
   - Default
   - TransparentFX
