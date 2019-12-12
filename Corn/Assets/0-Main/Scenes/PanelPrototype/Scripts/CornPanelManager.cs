@@ -9,7 +9,7 @@ public class CornPanelManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private Camera myCam;
-    private bool followingMouse = false;
+    //private bool followingMouse = false;
     public static RectTransform DraggedPanel;
     public static bool DraggingPanel = false;
     public bool EnableMouseFollow = false;

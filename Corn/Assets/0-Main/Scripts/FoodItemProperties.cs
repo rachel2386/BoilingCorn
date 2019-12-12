@@ -82,21 +82,30 @@ public class FoodItemProperties : ItemProperties
         }
         else
         {
-            if (InWater)
+            if (foodState == 3)
             {
-                if (foodState == cooked)
-                {
-                    ChangePhysicsProperties(10, 10, false);
-                }
-                else
-                {
-                    ChangePhysicsProperties(5, 5, true);
-                }
+                myRB.isKinematic = true;
             }
             else
             {
-                ChangePhysicsProperties(1, 1, true);
+                if (InWater)
+                {
+                    if (foodState == cooked)
+                    {
+                        ChangePhysicsProperties(10, 10, false);
+                    }
+                    else
+                    {
+                        ChangePhysicsProperties(5, 5, true);
+                    }
+                }
+                else
+                {
+                    ChangePhysicsProperties(1, 1, true);
+                }
             }
+
+           
         }
     }
 
@@ -124,11 +133,16 @@ public class FoodItemProperties : ItemProperties
             cookedFood.transform.localScale = gameObject.transform.localScale;
 
             gameObject.SetActive(false);
-//            if(rawFood.Count > 0)
-//                foreach (var child in rawFood)
-//                {
-//                    child.SetActive(false);
-//                }
+            CornItemManager.ListOfFood.Add(cookedFood);
+            
+            var foodInchildren = cookedFood.GetComponentsInChildren<FoodItemProperties>();
+            if (foodInchildren.Length <= 0) return;
+            foreach (var f in foodInchildren)
+            {
+                CornItemManager.ListOfFood.Add(f.gameObject);
+            }
+
+
         }
     }
 }
