@@ -92,11 +92,13 @@ public class GameManager : MonoBehaviour
         }
 
         textAnimFSM.FsmVariables.StringVariables[0].Value =
-            "You ate " + CornItemManager.FoodEaten.Count + " food today.\n" +
-            "You saved " + CornItemManager.FoodToSave.Count + " food for tomorrow.\n" +
-            "You dumped away " + CornItemManager.WastedFood.Count + " food.\n" +
-            "\n" +
-            "It was a great day. ";
+            "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
+            "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
+            "You dumped away " + CornItemManager.WastedFood.Count + ".\n" +
+            "...\n" +
+            "..\n" +
+            "                                              \n" +
+            "It's been a great day! ";
         
         
 //        print("Wasted Food" + CornItemManager.WastedFood.Count);
