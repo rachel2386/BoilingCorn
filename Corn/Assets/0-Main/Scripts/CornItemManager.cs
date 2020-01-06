@@ -6,6 +6,7 @@ public class CornItemManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static List<GameObject> ListOfFood = new List<GameObject>();
+    public FoodPropertyManager foodManager;
     List<GameObject> ListOfItems = new List<GameObject>();
 
     public static List<GameObject> Containers = new List<GameObject>();
@@ -16,15 +17,15 @@ public class CornItemManager : MonoBehaviour
 
     void Awake()
     {
-        foreach (var child in GameObject.Find("Interactables").GetComponentsInChildren<Transform>())
-        {
-            if (child.gameObject.layer == LayerMask.NameToLayer("Pickupable"))
-            {
-                ListOfItems.Add(child.gameObject);
-                if (!child.GetComponent<ItemProperties>())
-                    child.gameObject.AddComponent<ItemProperties>();
-            }
-        }
+//        foreach (var child in GameObject.Find("Interactables").GetComponentsInChildren<Transform>())
+//        {
+//            if (child.gameObject.layer == LayerMask.NameToLayer("Pickupable"))
+//            {
+//                ListOfItems.Add(child.gameObject);
+//                if (!child.GetComponent<ItemProperties>())
+//                    child.gameObject.AddComponent<ItemProperties>();
+//            }
+//        }
 
         ListOfFood.AddRange(GameObject.FindGameObjectsWithTag("FoodItem"));
         foreach (var food in ListOfFood)

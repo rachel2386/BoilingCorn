@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class FoodItemProperties : ItemProperties
 {
+    public string FoodName;
     public int foodState = 0;
 
     private int raw = 0;
 
     private int cooked = 1;
     [SerializeField] float percentCooked = 0;
-    [SerializeField] float SecondsToCook = 10;
+    private float SecondsToCook;
+   private FoodPropertyManager _foodManager;
 
     public float PercentCooked
     {
@@ -23,7 +25,6 @@ public class FoodItemProperties : ItemProperties
 
 
     private Rigidbody myRB;
-    private ItemProperties itemScript;
 
     private List<GameObject> rawFood = new List<GameObject>();
     private GameObject foodAssetToLoad;
@@ -39,8 +40,11 @@ public class FoodItemProperties : ItemProperties
 
     void Start()
     {
-        itemScript = GetComponent<ItemProperties>();
-        if (!gameObject.name.Contains("Clone") && !transform.parent.name.Contains("Clone"))
+
+        _foodManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
+        
+        //if (!gameObject.name.Contains("Clone") && !transform.parent.name.Contains("Clone"))
+            if(foodState == 0)
             InitFood();
     }
 
@@ -51,8 +55,24 @@ public class FoodItemProperties : ItemProperties
             rawFood.Add(transform.GetChild(i).gameObject);
         }
 
-        string path = "Assets/0-Main/Resources/Prefabs/Food/" + gameObject.name + "-C.prefab";
-        foodAssetToLoad = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+        var foodProfile = _foodManager.GetPropertyFromName(FoodName);
+
+        if (foodProfile != null)
+        {
+            
+            SecondsToCook = foodProfile.SecondsToCook;
+            foodAssetToLoad = foodProfile.CookedPrefab;
+            print("foodProfile found");
+        }
+        else
+        {
+            string path = "Prefabs/Food/" + gameObject.name + "-C";
+            foodAssetToLoad = Resources.Load<GameObject>(path);
+            SecondsToCook = 10;
+        }
+        
+        
+        
     }
 
     private void Update()
@@ -76,7 +96,7 @@ public class FoodItemProperties : ItemProperties
 
     private void FixedUpdate()
     {
-        if (itemScript.HeldByPlayer)
+        if (HeldByPlayer)
         {
             ChangePhysicsProperties(4, 4, false);
         }

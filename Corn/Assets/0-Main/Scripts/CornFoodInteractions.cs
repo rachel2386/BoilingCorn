@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using DG.Tweening.Core;
+using HutongGames.PlayMaker;
 using UnityEngine;
 
 public class CornFoodInteractions : MonoBehaviour
@@ -22,6 +23,9 @@ public class CornFoodInteractions : MonoBehaviour
 
     private AudioSource playerAS;
     [Header("Eating Sounds")] public AudioClip eatSound;
+    
+    //temp
+    public PlayMakerFSM textAnimFSM;
 
     void Start()
     {
@@ -65,7 +69,7 @@ public class CornFoodInteractions : MonoBehaviour
                             bowlFSM.Fsm.Variables.BoolVariables[0].Value = true; //new food in, trigger fsm animation
                             StartCoroutine(InsertFrame());
                         }
-                        else if(foodState == 2)//if in bowl, eaten
+                        else if(foodState == 2  && clicked)//if in bowl, eaten
                         {
                             EatFood(hitInfo.collider.gameObject);
                         }
@@ -125,7 +129,7 @@ public class CornFoodInteractions : MonoBehaviour
         if (holder != null)
         {
             //place in bowl
-            objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
+            objectHolding.gameObject.GetComponent<FoodItemProperties>().HeldByPlayer = false;
             holder.RotateAround(holder.parent.position, Vector3.up, 30);
             objectHolding.transform.parent = holder;
             Tween rbMove = objectRB.transform.DOLocalMove(Vector3.zero, 0.5f, false);
@@ -143,7 +147,7 @@ public class CornFoodInteractions : MonoBehaviour
             if (objectHolding.CompareTag("FoodItem"))
             {
                 objectHolding.transform.parent = foodParent;
-                objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
+                objectHolding.gameObject.GetComponent<FoodItemProperties>().HeldByPlayer = false;
                
             }
             
@@ -160,7 +164,7 @@ public class CornFoodInteractions : MonoBehaviour
     void InitPickup(RaycastHit objectClicked)
     {
         objectHolding = objectClicked.collider.gameObject;
-        objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = true;
+        objectHolding.gameObject.GetComponent<FoodItemProperties>().HeldByPlayer = true;
         objectRB = objectHolding.GetComponent<Rigidbody>();
         objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
@@ -177,6 +181,9 @@ public class CornFoodInteractions : MonoBehaviour
 
     void ContainerPickUp(RaycastHit hitInfo)
     {
+
+        
+            
         objectHolding = hitInfo.collider.gameObject;
 
         var ContainerTransform = hitInfo.collider.transform;
@@ -189,7 +196,12 @@ public class CornFoodInteractions : MonoBehaviour
 
     void ContainerDropOff(Transform fridgeHolder)
     {
-            IsholdingObject = false;
+        //update text
+        var firstPlatePickup = textAnimFSM.FsmVariables.FindFsmBool("firstPlateIn");
+        if (!firstPlatePickup.Value)
+            firstPlatePickup.Value = true;
+        
+           IsholdingObject = false;
            objectHolding.transform.parent = fridgeHolder;
            Tween moveToFridge = objectHolding.transform.DOLocalMove(Vector3.zero, 1f);
            moveToFridge.SetEase(Ease.OutSine);
@@ -201,9 +213,11 @@ public class CornFoodInteractions : MonoBehaviour
 
     }
 
-
+    private bool clicked = false;
     IEnumerator InsertFrame()
     {
+        clicked = false;
         yield return null;
+        clicked = true;
     }
 }
