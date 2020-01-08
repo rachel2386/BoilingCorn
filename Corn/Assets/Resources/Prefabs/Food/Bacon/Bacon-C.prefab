@@ -205,10 +205,9 @@ GameObject:
   - component: {fileID: 5264383901664284397}
   - component: {fileID: 7539025933493003695}
   - component: {fileID: 1637432232418102252}
-  - component: {fileID: 3577395586655268113}
-  m_Layer: 12
-  m_Name: Meat-C
-  m_TagString: FoodItem
+  m_Layer: 0
+  m_Name: Bacon-C
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,22 +276,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.8092666, y: 1.9312589, z: 4.441394}
   m_Center: {x: 0.40601796, y: 0.5520321, z: 0.86557084}
---- !u!114 &3577395586655268113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287892453948281220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeldByPlayer: 0
-  foodState: 1
-  InWater: 0
-  foodCooked: 0
 --- !u!1 &2285760660121656315
 GameObject:
   m_ObjectHideFlags: 0

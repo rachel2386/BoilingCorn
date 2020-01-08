@@ -13,7 +13,7 @@ public class FoodItemProperties : ItemProperties
     private int cooked = 1;
     [SerializeField] float percentCooked = 0;
     private float SecondsToCook;
-   private FoodPropertyManager _foodManager;
+   private FoodProfileManager _foodManager;
 
     public float PercentCooked
     {

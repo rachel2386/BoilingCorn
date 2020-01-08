@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f9ed62edbc2446ae0487e9809b561, type: 3}
+  m_Name: FoodProperty
+  m_EditorClassIdentifier: 
+  FoodProperties:
+  - Name: Tofu
+    RawPrefab: {fileID: 8525044665174382290, guid: e5bf8e0fbef20d24dafa08cf7ac57a7c,
+      type: 3}
+    CookedPrefab: {fileID: 927738745551344198, guid: d7667b1988e3e8848afadbc25ad26ffd,
+      type: 3}
+    SecondsToCook: 8
+  - Name: Bacon
+    RawPrefab: {fileID: 2241189595050394420, guid: 31bd5b4ac67af3e44a0c384d6237fa5c,
+      type: 3}
+    CookedPrefab: {fileID: 1287892453948281220, guid: a7162f622f2e0aa449cc2d88ae3ef51f,
+      type: 3}
+    SecondsToCook: 3
+  - Name: Cabbage
+    RawPrefab: {fileID: 3483687136923060105, guid: 29089da0acd711a47bba7cab3c6580d9,
+      type: 3}
+    CookedPrefab: {fileID: 3483687136923060105, guid: e0e707984fd2a2d4f8ec1ca707378bca,
+      type: 3}
+    SecondsToCook: 3
+  - Name: Potato
+    RawPrefab: {fileID: 4387531018577756436, guid: 2aa835d696000d041be1d068796639c4,
+      type: 3}
+    CookedPrefab: {fileID: 1226008866637246393, guid: c4570043790187c458e75be3511822fa,
+      type: 3}
+    SecondsToCook: 15
+  - Name: Meat Ball
+    RawPrefab: {fileID: 162904281517551683, guid: 0a3a75f31225f4043bfda1e218e94d7e,
+      type: 3}
+    CookedPrefab: {fileID: 4784600842151477854, guid: 5f838440f626b8c43a693a8ae9a52eb6,
+      type: 3}
+    SecondsToCook: 10
+  - Name: Cucumber
+    RawPrefab: {fileID: 3534095570992104969, guid: 60c10bfa53f43d24da2d75a8e0ccfa59,
+      type: 3}
+    CookedPrefab: {fileID: 7700288548590653366, guid: 530ae5ea09b7f0b44b48ffb5bd997f2a,
+      type: 3}
+    SecondsToCook: 5

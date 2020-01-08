@@ -6,7 +6,7 @@ public class CornItemManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static List<GameObject> ListOfFood = new List<GameObject>();
-    public FoodPropertyManager foodManager;
+    public FoodProfileManager foodManager;
     List<GameObject> ListOfItems = new List<GameObject>();
 
     public static List<GameObject> Containers = new List<GameObject>();
@@ -27,12 +27,12 @@ public class CornItemManager : MonoBehaviour
 //            }
 //        }
 
-        ListOfFood.AddRange(GameObject.FindGameObjectsWithTag("FoodItem"));
-        foreach (var food in ListOfFood)
-        {
-            if (!food.GetComponent<FoodItemProperties>())
-                food.AddComponent<FoodItemProperties>();
-        }
+//        ListOfFood.AddRange(GameObject.FindGameObjectsWithTag("FoodItem"));
+//        foreach (var food in ListOfFood)
+//        {
+//            if (!food.GetComponent<FoodItemProperties>())
+//                food.AddComponent<FoodItemProperties>();
+//        }
 
         Containers.AddRange(GameObject.FindGameObjectsWithTag("Container"));
 

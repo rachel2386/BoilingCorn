@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         textAnimFSM = GetComponent<PlayMakerFSM>();
         gameFSM = new FSM<GameManager>(this);
         
-        gameFSM.TransitionTo<StateTwo>();//default state
+        gameFSM.TransitionTo<defaultState>();//default state
 
 
     }
@@ -38,9 +38,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
 
-        if (Input.GetKeyUp(KeyCode.Return) || 
-            CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
-            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
+        if (Input.GetKeyUp(KeyCode.Return))
+//            || CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
+//            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
         {
             ChangeGameState();
             
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private class StateTwo : baseState
+    private class defaultState : baseState
     {
         public override void Update()
         {
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private class StateThree : baseState
+    private class State2 : baseState
     {
         
     }

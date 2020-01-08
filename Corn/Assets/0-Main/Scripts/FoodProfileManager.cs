@@ -4,7 +4,7 @@ using Unity.QuickSearch;
 using UnityEngine;
 
 [CreateAssetMenu(order = 1, fileName = "FoodProperty")]
-public class FoodPropertyManager :ScriptableObject
+public class FoodProfileManager :ScriptableObject
 {
     public List<FoodProperty> FoodProperties;
 
@@ -21,4 +21,6 @@ public class FoodProperty
     public GameObject RawPrefab;
     public GameObject CookedPrefab;
     public float SecondsToCook;
+   
+    
 }
