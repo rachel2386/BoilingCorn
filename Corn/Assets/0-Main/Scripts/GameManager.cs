@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private CornItemManager _cornItemManager;
 
    private PlayMakerFSM textAnimFSM;
+   private FSM<GameManager> gameFSM;
     
 
     private void Awake()
@@ -23,18 +24,23 @@ public class GameManager : MonoBehaviour
         
         _cornItemManager = GetComponent<CornItemManager>();
         textAnimFSM = GetComponent<PlayMakerFSM>();
+        gameFSM = new FSM<GameManager>(this);
+        
+        gameFSM.TransitionTo<defaultState>();//default state
 
 
     }
 
     void Update()
     {
+        gameFSM.Update();
+        
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
 
-        if (Input.GetKeyUp(KeyCode.Return) || 
-            CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
-            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
+        if (Input.GetKeyUp(KeyCode.Return))
+//            || CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
+//            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
         {
             ChangeGameState();
             
@@ -44,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void ChangeGameState()
     {
+       
         if (gameState == mainState)
         {
             gameState = wrapUpState;
@@ -104,6 +111,28 @@ public class GameManager : MonoBehaviour
 //        print("Wasted Food" + CornItemManager.WastedFood.Count);
 //        print("Eaten Food" + CornItemManager.FoodEaten.Count);
 //        print("Saved Food" + CornItemManager.FoodToSave.Count);
+    }
+    
+    private abstract class baseState : FSM<GameManager>.State
+    {
+        public override void OnEnter()
+        {
+            base.OnEnter();
+        }
+    }
+
+    private class defaultState : baseState
+    {
+        public override void Update()
+        {
+            base.Update();
+            
+        }
+    }
+    
+    private class State2 : baseState
+    {
+        
     }
 
 }
