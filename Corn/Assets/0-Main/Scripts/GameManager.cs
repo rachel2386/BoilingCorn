@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        gameFSM.Update();
+       // gameFSM.Update();
         
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();

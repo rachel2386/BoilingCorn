@@ -557,8 +557,7 @@ GameObject:
   - component: {fileID: 1348554267233635251}
   - component: {fileID: 2660606134890183135}
   - component: {fileID: 3410011}
-  - component: {fileID: 1348324043338170733}
-  - component: {fileID: 2611381079830928494}
+  - component: {fileID: 8610211051690643901}
   m_Layer: 12
   m_Name: enokiMesh
   m_TagString: FoodItem
@@ -612,7 +611,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1348324043338170733
+--- !u!114 &8610211051690643901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -621,28 +620,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2660606134890183072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
+  m_Script: {fileID: 11500000, guid: ce62627286f6ad242904943ee3bd0546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HeldByPlayer: 0
+  FoodName: 
   foodState: 1
-  percentCooked: 0
-  SecondsToCook: 10
+  timeCooked: 0
   InWater: 0
   foodCooked: 0
---- !u!114 &2611381079830928494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2660606134890183072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6912a2f74da23be4fa1eca99814705c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeldByPlayer: 0
 --- !u!1 &2786018892982634729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1711,7 @@ Transform:
   m_GameObject: {fileID: 6326909008048792626}
   m_LocalRotation: {x: -0.49976435, y: -0.49999124, z: -0.5002356, w: 0.50000864}
   m_LocalPosition: {x: 4.1547294, y: 1.1741599, z: -1.9405855}
-  m_LocalScale: {x: 0.14864786, y: 0.21283273, z: 0.1451707}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1348554267901988770}
   - {fileID: 1348554267233635251}
@@ -1901,8 +1887,7 @@ GameObject:
   - component: {fileID: 4261529961658520604}
   - component: {fileID: 8235267972369488315}
   - component: {fileID: 1102395171576708240}
-  - component: {fileID: 7348861147866880642}
-  - component: {fileID: 4796915439730552339}
+  - component: {fileID: 80267144813360551}
   m_Layer: 12
   m_Name: enokiMesh (1)
   m_TagString: FoodItem
@@ -1956,7 +1941,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7348861147866880642
+--- !u!114 &80267144813360551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1965,28 +1950,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6910823129524121427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
+  m_Script: {fileID: 11500000, guid: ce62627286f6ad242904943ee3bd0546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HeldByPlayer: 0
+  FoodName: 
   foodState: 1
-  percentCooked: 0
-  SecondsToCook: 10
+  timeCooked: 0
   InWater: 0
   foodCooked: 0
---- !u!114 &4796915439730552339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6910823129524121427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6912a2f74da23be4fa1eca99814705c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeldByPlayer: 0
 --- !u!1 &7273720621106705931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,8 +2204,7 @@ GameObject:
   - component: {fileID: 8949612380373913841}
   - component: {fileID: 1902198747249974869}
   - component: {fileID: 5303913966429667324}
-  - component: {fileID: 407776826913187211}
-  - component: {fileID: 40048805335006687}
+  - component: {fileID: 640737128581242351}
   m_Layer: 12
   m_Name: enokiMesh (2)
   m_TagString: FoodItem
@@ -2287,7 +2258,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &407776826913187211
+--- !u!114 &640737128581242351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2296,28 +2267,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8688418626559173771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5feaf949791d4abf4c7c43cd15394, type: 3}
+  m_Script: {fileID: 11500000, guid: ce62627286f6ad242904943ee3bd0546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HeldByPlayer: 0
+  FoodName: 
   foodState: 1
-  percentCooked: 0
-  SecondsToCook: 10
+  timeCooked: 0
   InWater: 0
   foodCooked: 0
---- !u!114 &40048805335006687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8688418626559173771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6912a2f74da23be4fa1eca99814705c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeldByPlayer: 0
 --- !u!1 &8730606849219412621
 GameObject:
   m_ObjectHideFlags: 0
