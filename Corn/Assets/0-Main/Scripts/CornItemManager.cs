@@ -34,6 +34,9 @@ public class CornItemManager : MonoBehaviour
 //                food.AddComponent<FoodItemProperties>();
 //        }
 
+        
+        
+
         Containers.AddRange(GameObject.FindGameObjectsWithTag("Container"));
 
         foreach (var c in Containers)

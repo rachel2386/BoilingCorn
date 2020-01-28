@@ -49,3 +49,15 @@ MonoBehaviour:
     CookedPrefab: {fileID: 7700288548590653366, guid: 530ae5ea09b7f0b44b48ffb5bd997f2a,
       type: 3}
     SecondsToCook: 5
+  - Name: Enoki
+    RawPrefab: {fileID: 5597725415963264176, guid: 67890985f9553ae4f99419d152be4d87,
+      type: 3}
+    CookedPrefab: {fileID: 6326909008048792626, guid: d7a16070dc749e1469e3e93be21b62cf,
+      type: 3}
+    SecondsToCook: 5
+  - Name: Cucumber
+    RawPrefab: {fileID: 3534095570992104969, guid: 60c10bfa53f43d24da2d75a8e0ccfa59,
+      type: 3}
+    CookedPrefab: {fileID: 7700288548590653366, guid: 530ae5ea09b7f0b44b48ffb5bd997f2a,
+      type: 3}
+    SecondsToCook: 5

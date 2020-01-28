@@ -10,7 +10,7 @@ public class NewCornFoodInteractions : MonoBehaviour
 {
     // Start is called before the first frame update
     private Camera myCam;
-    [HideInInspector] public bool IsholdingObject = false;
+    public static bool IsholdingObject = false;
 
     private GameObject objectHolding;
     private Transform foodParent;

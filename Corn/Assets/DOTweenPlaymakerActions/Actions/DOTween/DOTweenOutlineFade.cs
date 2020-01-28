@@ -15,7 +15,7 @@ namespace HutongGames.PlayMaker.Actions
     public class DOTweenOutlineFade : FsmStateAction
     {
         [RequiredField]
-        [CheckForComponent(typeof(Outline))]
+        [CheckForComponent(typeof(QuickOutline))]
         public FsmOwnerDefault gameObject;
 
         [RequiredField]
