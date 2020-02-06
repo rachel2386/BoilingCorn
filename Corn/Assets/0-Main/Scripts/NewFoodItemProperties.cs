@@ -5,24 +5,24 @@ using UnityEngine;
 
 public class NewFoodItemProperties : ItemProperties
 {
-    private FoodProfileManager _foodManager;
+    private FoodProfileManager _itemManager;
     private FoodProperty myFoodProfile;
     public string FoodName;
     private bool hasFoodProfile = false;
     public int foodState = 0;
     private int raw = 0;
     private int cooked = 1;
-    private float SecondsToCook;
     private GameObject foodToRender;
-
-    [SerializeField] float timeCooked = 0;
-
-    public float TimeCooked
+    private float SecondsToCook;
+   [SerializeField] private float timeCooked = 0;
+   
+   private float TimeCooked
     {
         get => timeCooked;
         set => timeCooked = value;
     }
 
+    public float PercentageCooked = 0;
     public bool InWater = false;
     private NewBuoyancy _buoyancyScript;
     private Rigidbody foodRB;
@@ -40,10 +40,10 @@ public class NewFoodItemProperties : ItemProperties
 
     public override void Start()
     {
-        _foodManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
-        _buoyancyScript = GameObject.FindObjectOfType<NewBuoyancy>();
+        _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
+        _buoyancyScript = FindObjectOfType<NewBuoyancy>();
 
-        myFoodProfile = _foodManager.GetPropertyFromName(FoodName);
+        myFoodProfile = _itemManager.GetPropertyFromName(FoodName);
 
         if (myFoodProfile != null)
         {
@@ -70,24 +70,22 @@ public class NewFoodItemProperties : ItemProperties
 
     void InitFoodWithProfile()
     {
-        if (GetComponent<MeshRenderer>())
-            GetComponent<MeshRenderer>().enabled = false;
-
-        if (transform.childCount > 0)
-            foreach (Transform t in transform)
-            {
-                t.gameObject.SetActive(false);
-            }
+//        if (GetComponent<MeshRenderer>())
+//            GetComponent<MeshRenderer>().enabled = false;
+//
+//        if (transform.childCount > 0)
+//            foreach (Transform t in transform)
+//            {
+//                t.gameObject.SetActive(false);
+//            }
 
 
         SecondsToCook = myFoodProfile.SecondsToCook;
 
-        
+        //foodToRender = myFoodProfile.RawPrefab;
 
-        foodToRender = myFoodProfile.RawPrefab;
-
-        GameObject foodmesh = Instantiate(foodToRender, transform, false);
-        foodmesh.transform.localPosition = Vector3.zero;
+       // GameObject foodmesh = Instantiate(foodToRender, transform, false);
+        //foodmesh.transform.localPosition = Vector3.zero;
 
        // InitOutlineWithProfile();
     }
@@ -97,18 +95,17 @@ public class NewFoodItemProperties : ItemProperties
         // if (transform.parent.name.Contains("Clone") || gameObject.name.Contains("Clone"))
         if (TimeCooked >= SecondsToCook)
         {
+            PercentageCooked = 1;
             if (!foodCooked)
                 FoodReady();
         }
         else
         {
+            
             if (foodState == raw && InWater && _buoyancyScript.PotIsBoiling && TimeCooked < SecondsToCook)
                 TimeCooked += Time.deltaTime;
-
-            if (!foodCooked && TimeCooked >= SecondsToCook)
-            {
-                FoodReady();
-            }
+            PercentageCooked = TimeCooked / SecondsToCook;
+           
         }
     }
 
@@ -157,12 +154,13 @@ public class NewFoodItemProperties : ItemProperties
         if (!NewBuoyancy.cookedFoodInWater.Contains(foodRB))
             NewBuoyancy.cookedFoodInWater.Add(foodRB);
 
-        if(!hasFoodProfile) return;
+        return;
+        
         var foodRot = foodToRender.transform.localRotation;
         var foodPos = foodToRender.transform.localPosition;
         var foodScale = foodToRender.transform.localScale;
 
-        foodToRender = myFoodProfile.CookedPrefab;
+       // foodToRender = myFoodProfile.CookedPrefab;
 
         if (foodToRender == null)
         {

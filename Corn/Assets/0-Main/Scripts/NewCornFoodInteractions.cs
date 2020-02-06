@@ -66,13 +66,19 @@ public class NewCornFoodInteractions : MonoBehaviour
                             InitPickup(hitInfo);
                             PlaceObject(bowl);
                             hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState = 2;
-                            bowlFSM.Fsm.Variables.BoolVariables[0].Value = true; //new food in, trigger fsm animation
+                            //bowlFSM.Fsm.Variables.BoolVariables[0].Value = true; //new food in, trigger fsm animation
                             StartCoroutine(InsertFrame());
                         }
                         else if(foodState == 2  && clicked)//if in bowl, eaten
                         {
                             EatFood(hitInfo.collider.gameObject);
                         }
+                    }
+                    else if (hitInfo.collider.CompareTag("Pickupable"))
+                    {
+                       print("pickup plate");
+                        IsholdingObject = true;
+                        InitPickupPlate(hitInfo);
                     }
                 }
                 else if (GameManager.gameState == 2)
@@ -146,9 +152,15 @@ public class NewCornFoodInteractions : MonoBehaviour
         {
             if (objectHolding.CompareTag("FoodItem"))
             {
+                
+                objectHolding.gameObject.GetComponent<NewFoodItemProperties>().OnDropOff();
                 objectHolding.transform.parent = foodParent;
-                objectHolding.gameObject.GetComponent<NewFoodItemProperties>().HeldByPlayer = false;
-               
+
+            }
+            else if (objectHolding.CompareTag("Pickupable"))
+            {
+                objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
+                objectHolding.transform.parent = null;
             }
             
             objectHolding = null;
@@ -164,10 +176,16 @@ public class NewCornFoodInteractions : MonoBehaviour
     void InitPickup(RaycastHit objectClicked)
     {
         objectHolding = objectClicked.collider.gameObject;
-        objectHolding.gameObject.GetComponent<NewFoodItemProperties>().HeldByPlayer = true;
-        objectRB = objectHolding.GetComponent<Rigidbody>();
+        objectRB =objectHolding.gameObject.GetComponent<NewFoodItemProperties>().OnPickUp();
         objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
+    }
+
+    void InitPickupPlate(RaycastHit objectClicked)
+    {
+        objectHolding = objectClicked.collider.gameObject;
+        objectRB =objectHolding.gameObject.GetComponent<ItemProperties>().OnPickUp();
+        objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
     }
 
     void RotatePlatePivot(Transform pivot)
