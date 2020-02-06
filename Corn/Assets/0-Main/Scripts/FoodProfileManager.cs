@@ -18,8 +18,8 @@ public class FoodProfileManager :ScriptableObject
 public class FoodProperty
 {
     public string Name;
-    public GameObject RawPrefab;
-    public GameObject CookedPrefab;
+    public GameObject FoodPrefab;
+    //public GameObject CookedPrefab;
     public float SecondsToCook;
    
     
