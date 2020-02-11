@@ -61,7 +61,7 @@ public class FoodItemProperties : ItemProperties
         {
             
             SecondsToCook = foodProfile.SecondsToCook;
-            foodAssetToLoad = foodProfile.CookedPrefab;
+           // foodAssetToLoad = foodProfile.CookedPrefab;
             print("foodProfile found");
         }
         else

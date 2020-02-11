@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3080038403610650713
+--- !u!1 &983659898156369775
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8083658257438805732}
-  - component: {fileID: 1937121336068644468}
-  - component: {fileID: 840557736763214864}
-  - component: {fileID: 3080038403610650695}
-  - component: {fileID: 3080038403610650712}
-  - component: {fileID: 3080038403610650694}
-  m_Layer: 12
+  - component: {fileID: 8054754138484286772}
+  - component: {fileID: 3576782229873570328}
+  - component: {fileID: 7245323078500075603}
+  m_Layer: 0
   m_Name: MeatBall
-  m_TagString: FoodItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8083658257438805732
+--- !u!4 &8054754138484286772
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080038403610650713}
+  m_GameObject: {fileID: 983659898156369775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.017737165, y: 0.0069999844, z: 0.007974885}
-  m_LocalScale: {x: 0.02664063, y: 0.02664063, z: 0.02664063}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8083658257438805732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1937121336068644468
+--- !u!33 &3576782229873570328
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080038403610650713}
+  m_GameObject: {fileID: 983659898156369775}
   m_Mesh: {fileID: -8104635712453014807, guid: 04202d24dfb47d148bdbc0fd6df5cf4e, type: 3}
---- !u!23 &840557736763214864
+--- !u!23 &7245323078500075603
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080038403610650713}
+  m_GameObject: {fileID: 983659898156369775}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,20 +78,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3080038403610650695
-CapsuleCollider:
+--- !u!1 &3080038403610650713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8083658257438805732}
+  - component: {fileID: 3080038403610650712}
+  - component: {fileID: 3080038403610650694}
+  - component: {fileID: 8838810168664805546}
+  m_Layer: 12
+  m_Name: MeatBall
+  m_TagString: FoodItem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8083658257438805732
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3080038403610650713}
-  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.6016399
-  m_Height: 3.20297
-  m_Direction: 1
-  m_Center: {x: 0.027153907, y: -0.027072666, z: 0.027160345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.017737165, y: 0.0069999844, z: 0.007974885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8054754138484286772}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3080038403610650712
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,5 +144,19 @@ MonoBehaviour:
   FoodName: Meat Ball
   foodState: 0
   timeCooked: 0
+  PercentageCooked: 0
   InWater: 0
   foodCooked: 0
+--- !u!135 &8838810168664805546
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080038403610650713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.035116196
+  m_Center: {x: 0.0017137378, y: 0, z: 0}

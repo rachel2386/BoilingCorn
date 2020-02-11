@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ItemProperties : MonoBehaviour
 {
     [HideInInspector] public bool HeldByPlayer = false;
@@ -10,7 +11,20 @@ public class ItemProperties : MonoBehaviour
     public virtual void Start()
     {
         print("running base start");
-        InitOutline();
+        //InitOutline();
+    }
+
+    public virtual Rigidbody OnPickUp()
+    {
+        HeldByPlayer = true;
+        Rigidbody myRb = GetComponent<Rigidbody>();
+        return myRb;
+    }
+
+    public virtual void OnDropOff()
+    {
+        HeldByPlayer = false;
+       
     }
 
     protected QuickOutline InitOutline()

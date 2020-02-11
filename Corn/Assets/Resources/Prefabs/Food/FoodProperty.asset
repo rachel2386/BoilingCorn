@@ -14,50 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodProperties:
   - Name: Tofu
-    RawPrefab: {fileID: 8525044665174382290, guid: e5bf8e0fbef20d24dafa08cf7ac57a7c,
+    FoodPrefab: {fileID: 3875526750303876154, guid: dbb2995ce4ee3f44ba60e402fc5e2bdf,
       type: 3}
-    CookedPrefab: {fileID: 927738745551344198, guid: d7667b1988e3e8848afadbc25ad26ffd,
-      type: 3}
-    SecondsToCook: 8
+    SecondsToCook: 15
   - Name: Bacon
-    RawPrefab: {fileID: 2241189595050394420, guid: 31bd5b4ac67af3e44a0c384d6237fa5c,
+    FoodPrefab: {fileID: 2253894009422587700, guid: 8213c0bab14147240a4143c5993909bc,
       type: 3}
-    CookedPrefab: {fileID: 1287892453948281220, guid: a7162f622f2e0aa449cc2d88ae3ef51f,
-      type: 3}
-    SecondsToCook: 3
+    SecondsToCook: 20
   - Name: Cabbage
-    RawPrefab: {fileID: 3483687136923060105, guid: 29089da0acd711a47bba7cab3c6580d9,
+    FoodPrefab: {fileID: 7426065286091113701, guid: d1492a6f3c6d3d943bf7411e2748ee6f,
       type: 3}
-    CookedPrefab: {fileID: 3483687136923060105, guid: e0e707984fd2a2d4f8ec1ca707378bca,
-      type: 3}
-    SecondsToCook: 3
+    SecondsToCook: 20
   - Name: Potato
-    RawPrefab: {fileID: 4387531018577756436, guid: 2aa835d696000d041be1d068796639c4,
-      type: 3}
-    CookedPrefab: {fileID: 1226008866637246393, guid: c4570043790187c458e75be3511822fa,
+    FoodPrefab: {fileID: 6020403601250107298, guid: a77cf0aec98968442bb3462fd30c6459,
       type: 3}
     SecondsToCook: 15
   - Name: Meat Ball
-    RawPrefab: {fileID: 162904281517551683, guid: 0a3a75f31225f4043bfda1e218e94d7e,
-      type: 3}
-    CookedPrefab: {fileID: 4784600842151477854, guid: 5f838440f626b8c43a693a8ae9a52eb6,
+    FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
     SecondsToCook: 10
   - Name: Cucumber
-    RawPrefab: {fileID: 3534095570992104969, guid: 60c10bfa53f43d24da2d75a8e0ccfa59,
+    FoodPrefab: {fileID: 4849718136821012570, guid: 2c6d1022247d86f40b274c500efc5d1d,
       type: 3}
-    CookedPrefab: {fileID: 7700288548590653366, guid: 530ae5ea09b7f0b44b48ffb5bd997f2a,
-      type: 3}
-    SecondsToCook: 5
+    SecondsToCook: 15
   - Name: Enoki
-    RawPrefab: {fileID: 5597725415963264176, guid: 67890985f9553ae4f99419d152be4d87,
+    FoodPrefab: {fileID: 1202585198662213377, guid: 479063211455f6045aa56ea7d0b5a580,
       type: 3}
-    CookedPrefab: {fileID: 6326909008048792626, guid: d7a16070dc749e1469e3e93be21b62cf,
-      type: 3}
-    SecondsToCook: 5
-  - Name: Cucumber
-    RawPrefab: {fileID: 3534095570992104969, guid: 60c10bfa53f43d24da2d75a8e0ccfa59,
-      type: 3}
-    CookedPrefab: {fileID: 7700288548590653366, guid: 530ae5ea09b7f0b44b48ffb5bd997f2a,
-      type: 3}
-    SecondsToCook: 5
+    SecondsToCook: 15

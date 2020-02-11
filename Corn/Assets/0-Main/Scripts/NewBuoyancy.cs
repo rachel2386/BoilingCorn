@@ -45,11 +45,11 @@ public class NewBuoyancy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
-     
-        if (!other.CompareTag("FoodItem")) return;
+        if (GameManager.gameState != 1 || !other.CompareTag("FoodItem")) return;
         Rigidbody rb = other.GetComponent<Rigidbody>();
         var foodProp = other.GetComponent<NewFoodItemProperties>();
         foodProp.InWater = true;
+        
         if (foodProp.foodState == 1)
         {
             if(!cookedFoodInWater.Contains(rb))
