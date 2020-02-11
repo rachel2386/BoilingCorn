@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Toggle = UnityEngine.UI;
@@ -98,8 +97,7 @@ public class GameManager : MonoBehaviour
         void EnterCookingState()
         {
            
-           
-            TransitionTo<CookingState>();
+           TransitionTo<CookingState>();
         }
 
 
@@ -112,6 +110,9 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 1;
             Cursor.lockState = CursorLockMode.Locked;
+
+            Context.StartCoroutine(RemoveWalls());
+
         }
 
         public override void Update()
@@ -124,6 +125,17 @@ public class GameManager : MonoBehaviour
             {
                 Context.gameFSM.TransitionTo<CleanUpState>();
             }
+        }
+        
+        IEnumerator RemoveWalls()
+        {
+            yield return new WaitForSeconds(2);
+            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
+            {
+                wall.gameObject.SetActive(false);
+            }
+
+            yield return null;
         }
     }
 
