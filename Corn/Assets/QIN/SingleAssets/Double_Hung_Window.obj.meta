@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: 6d8f6e6d6669f5e46ac15d9aa79fe783
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_ApronMat
+    second: {fileID: 2100000, guid: dd3b82d04ca60a7498d9629b964e28eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Exterior_trim_01_Trim__horizontal_Mat
+    second: {fileID: 2100000, guid: ebdd5d407d1acba4c94bb5a4323110bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Exterior_trim_01_Trim_vertival_01Mat
+    second: {fileID: 2100000, guid: 2e6967c03a5934a4db42162c396dc74e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Exterior_trim_01_Trim_vertival_02Mat
+    second: {fileID: 2100000, guid: 05961a1930d32cb4188da2a72dd2ed22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Interior_Trim_01_Trim__horizontal_1Mat
+    second: {fileID: 2100000, guid: 9789b5d395563f24ebf583a77bb09b09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Interior_Trim_01_Trim__vertival_02Mat
+    second: {fileID: 2100000, guid: 1cac2ede04f93de4baaab92d474118ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Interior_Trim_01_Trim_vertival_011Mat
+    second: {fileID: 2100000, guid: 98e2c396bef165b40ad6721eab64b979, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_01Mat
+    second: {fileID: 2100000, guid: e07f44c6e5a307147b6718771c2ecf81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Fillet1_Fillet__vertical_01Mat
+    second: {fileID: 2100000, guid: 7dd865fcd8167dc439d79204814775e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Fillet1_Fillet__vertical_02Mat
+    second: {fileID: 2100000, guid: 3cc4675aa35bf3644935a304398da425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Fillet1_Fillet_horizontal_01Mat
+    second: {fileID: 2100000, guid: 92a829a370f66fd49892a94bea31a1a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Fillet1_Fillet_horizontal_02Mat
+    second: {fileID: 2100000, guid: 52cd6e05688db024bb8db5287ac3c4ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Glass1Mat
+    second: {fileID: 2100000, guid: 0bd977c98af8ed24b98fcff1a9e46a51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Grill_clips_01Mat
+    second: {fileID: 2100000, guid: 67899dbae42b4cf4a9d7e9e2a18f66ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Grill_clips_02Mat
+    second: {fileID: 2100000, guid: 4c01ab3af20740645b7797d4c155385d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Grill_clips_03Mat
+    second: {fileID: 2100000, guid: 49e783b0ce986df4a94ecbcdf0e06f93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Leaf_Leaf__horizontal_01Mat
+    second: {fileID: 2100000, guid: 483b9e72591300b4db0089ba2141559e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Leaf_Leaf__horizontal_02Mat
+    second: {fileID: 2100000, guid: fc113d59cd993894ea732ea3ebba91f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Leaf_Leaf__vertical_011Mat
+    second: {fileID: 2100000, guid: cad060e923bd3004faa3c40855a1f69f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_02_Leaf_Leaf__vertical_021Mat
+    second: {fileID: 2100000, guid: 504ba785cabedfa4380621423f74f998, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Fillet_Fillet__vertical_011Mat
+    second: {fileID: 2100000, guid: c7fd3e02d36505945af86a874d1f1888, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Fillet_Fillet__vertical_021Mat
+    second: {fileID: 2100000, guid: 62799253fb6aeb94db75cb3f4f3f01ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Fillet_Fillet_horizontal_011Mat
+    second: {fileID: 2100000, guid: 099d1a08794072347badfe96019faa65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Fillet_Fillet_horizontal_021Mat
+    second: {fileID: 2100000, guid: 1c424fd7f3a19914c836fff13e544a12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_GlassMat
+    second: {fileID: 2100000, guid: 1fbf15c45d3a87c42a406b13b1a9abe0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Leaf1_Leaf__horizontal_011Mat
+    second: {fileID: 2100000, guid: 26a0e44f406da8f4eb88bf32d749a8be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Leaf1_Leaf__horizontal_021Mat
+    second: {fileID: 2100000, guid: 48eccfa91ba23fb45a2bef6845d1b94b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Leaf1_Leaf__vertical_01Mat
+    second: {fileID: 2100000, guid: 45f1c11cc54a91f499ae4d502b4461cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Objekt_03_Leaf1_Leaf__vertical_02Mat
+    second: {fileID: 2100000, guid: 122e77b8008fcea4bb1b2c2d016c1b09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Handle1Mat
+    second: {fileID: 2100000, guid: f0ae6ebfa7314074bb73e8b3c5a9776b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Object_011Mat
+    second: {fileID: 2100000, guid: 9413930a4da25dc46a09ca893714b4b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Object_021Mat
+    second: {fileID: 2100000, guid: c5a0499131094e840bde38fbb50fdbc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Object_031Mat
+    second: {fileID: 2100000, guid: d267f2fdffddbb44a91fc040d5156157, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Rivet_011Mat
+    second: {fileID: 2100000, guid: 7cfe9227a58aba043a2d4f49648a4fe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___01_Rivet_021Mat
+    second: {fileID: 2100000, guid: 46aae38d704664f4a9709d113d76f0a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_HandleMat
+    second: {fileID: 2100000, guid: f4d2c9f8c963aa64cbecf4860b86be57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_Object_01Mat
+    second: {fileID: 2100000, guid: 1396b6aba9410534693c64a4803cc137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_Object_02Mat
+    second: {fileID: 2100000, guid: 04a9440b50c8c0249b26c48e93067e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_Object_03Mat
+    second: {fileID: 2100000, guid: 0a00fb51d50ee6940999b9cefa835e1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_Rivet_01Mat
+    second: {fileID: 2100000, guid: f8b681d2064a57d46aa2511314d350b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Sash_lock___02_Rivet_02Mat
+    second: {fileID: 2100000, guid: baa25edbc92bfbd4e845bf62787a9e82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Stool_capMat
+    second: {fileID: 2100000, guid: 2d69221795d97c346995c2a553d29686, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
