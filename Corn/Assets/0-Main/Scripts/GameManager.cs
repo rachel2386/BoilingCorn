@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 using Toggle = UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -63,7 +64,9 @@ public class GameManager : MonoBehaviour
         {
            base.OnEnter();
            gameState = 0;
+           FindObjectOfType<CornMouseLook>().lockCursor = false;
            Cursor.lockState = CursorLockMode.None;
+           
 
            OrderMenu = GameObject.Find("OrderMenu");
            Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
@@ -109,7 +112,7 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 1;
-            Cursor.lockState = CursorLockMode.Locked;
+            FindObjectOfType<CornMouseLook>().lockCursor = true;
 
             Context.StartCoroutine(RemoveWalls());
 
