@@ -12,6 +12,7 @@ TagManager:
   - Interactable
   - Fridge
   - Container
+  - Walls
   layers:
   - Default
   - TransparentFX

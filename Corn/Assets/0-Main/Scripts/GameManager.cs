@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 using Toggle = UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -64,7 +64,9 @@ public class GameManager : MonoBehaviour
         {
            base.OnEnter();
            gameState = 0;
+           FindObjectOfType<CornMouseLook>().lockCursor = false;
            Cursor.lockState = CursorLockMode.None;
+           
 
            OrderMenu = GameObject.Find("OrderMenu");
            Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
@@ -98,8 +100,7 @@ public class GameManager : MonoBehaviour
         void EnterCookingState()
         {
            
-           
-            TransitionTo<CookingState>();
+           TransitionTo<CookingState>();
         }
 
 
@@ -111,7 +112,10 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 1;
-            Cursor.lockState = CursorLockMode.Locked;
+            FindObjectOfType<CornMouseLook>().lockCursor = true;
+
+            Context.StartCoroutine(RemoveWalls());
+
         }
 
         public override void Update()
@@ -124,6 +128,17 @@ public class GameManager : MonoBehaviour
             {
                 Context.gameFSM.TransitionTo<CleanUpState>();
             }
+        }
+        
+        IEnumerator RemoveWalls()
+        {
+            yield return new WaitForSeconds(2);
+            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
+            {
+                wall.gameObject.SetActive(false);
+            }
+
+            yield return null;
         }
     }
 
