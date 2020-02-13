@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CornCursorManager : MonoBehaviour
+public class CornUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
      private Image ImgSlot;
@@ -16,7 +16,6 @@ public class CornCursorManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
-        Cursor.lockState = CursorLockMode.Locked;
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
 //        defaultCursor = transform.Find("DefaultCursor").GetComponent<Image>().mainTexture;
 //        foodCursor = transform.Find("FoodCursor").GetComponent<Image>();
