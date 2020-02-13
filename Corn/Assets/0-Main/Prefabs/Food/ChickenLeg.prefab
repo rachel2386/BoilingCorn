@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5236369240581045884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9146823815568526447}
+  - component: {fileID: 5417069626536681677}
+  - component: {fileID: 2017186574676252798}
+  - component: {fileID: 3219845575344520621}
+  m_Layer: 12
+  m_Name: ChickenLeg
+  m_TagString: FoodItem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9146823815568526447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236369240581045884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0044, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5941535839836828569}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5417069626536681677
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236369240581045884}
+  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.052115552
+  m_Height: 0.23897876
+  m_Direction: 2
+  m_Center: {x: 0.0016899109, y: -0.014123805, z: -0.0031296238}
+--- !u!54 &2017186574676252798
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236369240581045884}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3219845575344520621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236369240581045884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce62627286f6ad242904943ee3bd0546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeldByPlayer: 0
+  FoodName: 
+  foodState: 0
+  timeCooked: 0
+  PercentageCooked: 0
+  InWater: 0
+  foodCooked: 0
+--- !u!1001 &1661308826472700035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9146823815568526447}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_Name
+      value: ChickenLeg_single
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.06198072
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.014254719
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00088531023
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9979752
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 7.1050005
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 1.649
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.20400001
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4100e9ae0065d4588bc47549368f8ecb, type: 3}
+--- !u!4 &5941535839836828569 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4100e9ae0065d4588bc47549368f8ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1661308826472700035}
+  m_PrefabAsset: {fileID: 0}
