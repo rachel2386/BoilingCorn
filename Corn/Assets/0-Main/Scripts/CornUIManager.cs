@@ -11,6 +11,13 @@ public class CornUIManager : MonoBehaviour
     public Sprite foodCursor;
     public Sprite defaultCursor;
     public Sprite interactableCursor;
+
+    public Image InteractInstruction;
+    public Image EatButtonInstruction;
+    public Image LeanInstruction;
+    public Image EndGameInstruction;
+    
+    
     private Camera MyCam; 
 
     void Start()
@@ -28,6 +35,8 @@ public class CornUIManager : MonoBehaviour
     {
         RaycastHit hitInfo = new RaycastHit();
 
+        
+        
         if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo) ||
             hitInfo.collider == null || Input.GetMouseButton(0)) return;
         
@@ -49,5 +58,10 @@ public class CornUIManager : MonoBehaviour
 
     }
 
-  
+    void UpdateUI()
+    {
+        //if(GameManager.gameState == 1)
+            
+    }
+
 }

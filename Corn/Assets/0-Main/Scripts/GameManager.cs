@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
 
+    public bool WithOrderSystem = true;
+
 
     private void Awake()
     {
@@ -28,7 +30,11 @@ public class GameManager : MonoBehaviour
 
 
         gameFSM = new FSM<GameManager>(this);
+        
+        if(WithOrderSystem)
         gameFSM.TransitionTo<OrderState>();//default state
+        else
+        gameFSM.TransitionTo<CookingState>();
     }
 
     void Update()
@@ -66,13 +72,16 @@ public class GameManager : MonoBehaviour
            gameState = 0;
            FindObjectOfType<CornMouseLook>().lockCursor = false;
            Cursor.lockState = CursorLockMode.None;
-           
 
+
+           
            OrderMenu = GameObject.Find("OrderMenu");
            Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
            _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
            confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
            confirmButton.onClick.AddListener(EnterCookingState);
+
+
 
         }
 
