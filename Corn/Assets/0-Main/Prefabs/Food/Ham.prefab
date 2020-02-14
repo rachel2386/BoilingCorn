@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeldByPlayer: 0
-  FoodName: 
+  FoodName: Ham
   foodState: 0
   timeCooked: 0
   PercentageCooked: 0
