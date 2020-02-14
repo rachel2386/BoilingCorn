@@ -8,28 +8,33 @@ public class FoodSpawner : MonoBehaviour
     public string FoodName;
     public int FoodMultiplier;
     public FoodProfileManager _foodProfileManager;
+
+    public bool SpawnOnAwake = false;
    
-    public void Initiate()
+    void Awake()
+    {
+        if (SpawnOnAwake)
+            StartCoroutine(Initiate()); //Initiate();
+    }
+    public IEnumerator Initiate()
     {
         
-        if(_foodProfileManager.GetPropertyFromName(FoodName) == null) return;
-        if (_foodProfileManager.GetPropertyFromName(FoodName).FoodPrefab == null)
+        if(_foodProfileManager.GetPropertyFromName(FoodName) == null  || _foodProfileManager.GetPropertyFromName(FoodName).FoodPrefab == null)
         {
             print("can not spawn food. No " + FoodName + " found in profile. Add profile or food prefab.");
-           //yield return null;
+           yield return null;
         }
-        else
-        {
+        
             var foodToInstatiate = _foodProfileManager.GetPropertyFromName(FoodName).FoodPrefab;
 
             for (int i = 0; i < FoodMultiplier * 10; i++)
             {
                 InstantiateFood(foodToInstatiate);
-               // yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);
             }
-        }
+       
 
-
+       
     }
 
     // Update is called once per frame

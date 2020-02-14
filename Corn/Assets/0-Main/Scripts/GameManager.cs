@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
 
 
         gameFSM = new FSM<GameManager>(this);
-        
-        if(WithOrderSystem)
-        gameFSM.TransitionTo<OrderState>();//default state
+
+        if (WithOrderSystem)
+            gameFSM.TransitionTo<OrderState>(); //default state
         else
-        gameFSM.TransitionTo<CookingState>();
+            gameFSM.TransitionTo<CookingState>();
     }
 
     void Update()
@@ -45,14 +45,12 @@ public class GameManager : MonoBehaviour
             Application.Quit();
 
         if (Input.GetKeyDown("i"))
-        print("gamestate = " + gameState + "  current state = " + gameFSM.CurrentState);
+            print("gamestate = " + gameState + "  current state = " + gameFSM.CurrentState);
     }
-    
-    
+
 
     private abstract class GameState : FSM<GameManager>.State
     {
-       
         public override void OnEnter()
         {
             base.OnEnter();
@@ -65,54 +63,57 @@ public class GameManager : MonoBehaviour
         private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
         private Button confirmButton;
+        private GameObject warningText;
         
+       int NumberOfFoodSelected = 0;
+
         public override void OnEnter()
         {
-           base.OnEnter();
-           gameState = 0;
-           FindObjectOfType<CornMouseLook>().lockCursor = false;
-           Cursor.lockState = CursorLockMode.None;
+            base.OnEnter();
+            gameState = 0;
+            FindObjectOfType<CornMouseLook>().lockCursor = false;
+            Cursor.lockState = CursorLockMode.None;
 
 
-           
-           OrderMenu = GameObject.Find("OrderMenu");
-           Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
-           _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
-           confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
-           confirmButton.onClick.AddListener(EnterCookingState);
-
-
-
+            OrderMenu = GameObject.Find("OrderMenu");
+           //Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
+            _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
+            warningText = GameObject.Find("WarningText");
+            warningText.SetActive(false);
+            confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
+            confirmButton.onClick.AddListener(EnterCookingState);
         }
 
         public override void OnExit()
         {
             base.OnExit();
-            
-            
-            foreach (var toggle in Toggles.ToList())
-            {
-                if (!toggle.isOn)
-                    Toggles.Remove(toggle);
-            }
-            
+
+            OrderMenu.SetActive(false);
             for (int i = 0; i < Toggles.Count; i++)
             {
                 _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
-                _foodSpawners[i].Initiate();
+                _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
             }
-            
-            OrderMenu.SetActive(false);
-            
+
+
+           
         }
 
         void EnterCookingState()
         {
-           
-           TransitionTo<CookingState>();
+            
+            Toggles.Clear();
+            foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
+            {
+                if (toggle.isOn)
+                    Toggles.Add(toggle);
+            }
+
+            if (Toggles.Count != 6)
+                warningText.SetActive(true);
+            else
+                TransitionTo<CookingState>();
         }
-
-
     }
 
     private class CookingState : GameState
@@ -123,8 +124,7 @@ public class GameManager : MonoBehaviour
             gameState = 1;
             FindObjectOfType<CornMouseLook>().lockCursor = true;
 
-            Context.StartCoroutine(RemoveWalls());
-
+           // Context.StartCoroutine(RemoveWalls());
         }
 
         public override void Update()
@@ -138,17 +138,17 @@ public class GameManager : MonoBehaviour
                 Context.gameFSM.TransitionTo<CleanUpState>();
             }
         }
-        
-        IEnumerator RemoveWalls()
-        {
-            yield return new WaitForSeconds(2);
-            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
-            {
-                wall.gameObject.SetActive(false);
-            }
 
-            yield return null;
-        }
+//        IEnumerator RemoveWalls()
+//        {
+//            yield return new WaitForSeconds(2);
+//            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
+//            {
+//                wall.gameObject.SetActive(false);
+//            }
+//
+//            yield return null;
+//        }
     }
 
     private class CleanUpState : GameState
@@ -158,7 +158,6 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 2;
             InitCleanUpState();
-            
         }
 
         public override void Update()
@@ -189,7 +188,6 @@ public class GameManager : MonoBehaviour
                 var cParent = c.transform.parent;
                 cParent.tag = "Pickupable";
             }
-
         }
     }
 
@@ -230,5 +228,3 @@ public class GameManager : MonoBehaviour
         }
     }
 }
-
-

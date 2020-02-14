@@ -28,16 +28,32 @@ MonoBehaviour:
   - Name: Potato
     FoodPrefab: {fileID: 6020403601250107298, guid: a77cf0aec98968442bb3462fd30c6459,
       type: 3}
-    SecondsToCook: 15
+    SecondsToCook: 45
   - Name: Meat Ball
     FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
-    SecondsToCook: 10
+    SecondsToCook: 30
   - Name: Cucumber
     FoodPrefab: {fileID: 4849718136821012570, guid: 2c6d1022247d86f40b274c500efc5d1d,
       type: 3}
     SecondsToCook: 15
   - Name: Enoki
     FoodPrefab: {fileID: 1202585198662213377, guid: 479063211455f6045aa56ea7d0b5a580,
+      type: 3}
+    SecondsToCook: 15
+  - Name: Chicken Leg
+    FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
+      type: 3}
+    SecondsToCook: 60
+  - Name: Sausage
+    FoodPrefab: {fileID: 3075815392439823262, guid: 2a31b59a1187a39438828cfaa2ce5fcb,
+      type: 3}
+    SecondsToCook: 20
+  - Name: Ham
+    FoodPrefab: {fileID: 768190436287223866, guid: 3072691fad7528b448f752b5a4d15016,
+      type: 3}
+    SecondsToCook: 20
+  - Name: Carrot
+    FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
       type: 3}
     SecondsToCook: 15
