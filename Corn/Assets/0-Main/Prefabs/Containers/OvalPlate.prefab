@@ -38,12 +38,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6923754937767827364}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.016356945, y: -0.07605851, z: -0.7660775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6923754938269605713}
   - {fileID: 2696717882963626503}
+  - {fileID: 4411674763067429633}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,8 +59,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4165351, y: 0.043251418, z: 0.2161454}
-  m_Center: {x: -0.0025849193, y: 0.007891398, z: -0.0012759566}
+  m_Size: {x: 0.4165351, y: 0.043251418, z: 0.25482965}
+  m_Center: {x: -0.0025849193, y: 0.007891398, z: 0.0012469292}
 --- !u!1 &6923754938269605714
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,8 +103,88 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2013197, y: 0.12484546, z: 0.09840691}
-  m_Center: {x: -0.00023174286, y: 0.0007315725, z: 0.0007965788}
+  m_Size: {x: 0.38946056, y: 0.24010876, z: 0.09840691}
+  m_Center: {x: -0.0048491955, y: -0.0017740875, z: 0.0007965788}
+--- !u!1001 &2141592318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6923754937767827363}
+    m_Modifications:
+    - target: {fileID: 4411674763694868984, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_Name
+      value: FoodSpawner (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06500006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.039000034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411674763694868990, guid: 09f5d72d04673ce4f929fb56509c1986,
+        type: 3}
+      propertyPath: FoodName
+      value: Sausage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09f5d72d04673ce4f929fb56509c1986, type: 3}
+--- !u!4 &4411674763067429633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4411674763694868991, guid: 09f5d72d04673ce4f929fb56509c1986,
+    type: 3}
+  m_PrefabInstance: {fileID: 2141592318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6923754938965434653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,16 +196,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ovalPlateFBX
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8d280c050cc178a4b80493f8d95e52f4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8d280c050cc178a4b80493f8d95e52f4,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8d280c050cc178a4b80493f8d95e52f4,
         type: 3}
