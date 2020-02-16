@@ -17,12 +17,21 @@ public class FridgeHolderBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (hasChild && gameObject.CompareTag("Respawn"))
+       if(GameManager.gameState != 2) return;
+        if (hasChild)
         {
-            gameObject.tag = "Untagged";
-            holderList.Remove(gameObject);
+            mr.enabled = false;
             
-
+            if (gameObject.CompareTag("Respawn"))
+            {
+                gameObject.tag = "Untagged";
+                holderList.Remove(gameObject);
+            }
+            
+        }
+        else
+        {
+            mr.enabled = true;
         }
 
        
@@ -30,14 +39,14 @@ public class FridgeHolderBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnMouseEnter()
-    {
-       if(GameManager.gameState == 2 && !hasChild)
-        mr.enabled = true;
-    }
-
-    private void OnMouseExit()
-    {
-        mr.enabled = false;
-    }
+//    private void OnMouseEnter()
+//    {
+//       if(GameManager.gameState == 2 && !hasChild)
+//        mr.enabled = true;
+//    }
+//
+//    private void OnMouseExit()
+//    {
+//        mr.enabled = false;
+//    }
 }

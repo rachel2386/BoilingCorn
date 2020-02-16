@@ -42,6 +42,7 @@ public class FoodSpawner : MonoBehaviour
     void InstantiateFood(GameObject foodToInstatiate)
     {
         GameObject newFood = Instantiate(foodToInstatiate, transform.position, Quaternion.identity);
+        CornItemManager.ListOfFood.Add(newFood);
     }
 
     private void OnDrawGizmos()

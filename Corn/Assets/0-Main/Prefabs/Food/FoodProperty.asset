@@ -44,7 +44,7 @@ MonoBehaviour:
   - Name: Chicken Leg
     FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
       type: 3}
-    SecondsToCook: 60
+    SecondsToCook: 40
   - Name: Sausage
     FoodPrefab: {fileID: 3075815392439823262, guid: 2a31b59a1187a39438828cfaa2ce5fcb,
       type: 3}

@@ -164,7 +164,8 @@ public class GameManager : MonoBehaviour
         {
             base.Update();
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || GameObject.FindGameObjectsWithTag("Respawn").Length == 0 ||
+                CornItemManager.FoodEaten.Count > CornItemManager.ListOfFood.Count) 
             {
                 Context.gameFSM.TransitionTo<EndState>();
             }
