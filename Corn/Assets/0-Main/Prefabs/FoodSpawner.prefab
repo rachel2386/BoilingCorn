@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodName: 
-  FoodMultiplier: 1
+  FoodMultiplier: 2
   _foodProfileManager: {fileID: 11400000, guid: a9dc4aa962870f84084182c8af6c3452,
     type: 2}
+  SpawnOnAwake: 0
