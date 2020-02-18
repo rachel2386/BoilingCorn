@@ -3,7 +3,22 @@ guid: a9a8833b8a2f31340aae3eacab8a4ade
 SketchUpImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CLC2-DECO-6-BOUTEIL
+    second: {fileID: 2100000, guid: 68feea3ef948fd74d97e5a218dd0a815, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 3c67bc6081c72c54db9a030e4e174fa2, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 6-BOUTEIL
+    second: {fileID: 2800000, guid: 8ba57c963805f2e43a94b292a29d4380, type: 3}
   materials:
     importMaterials: 1
     materialName: 2

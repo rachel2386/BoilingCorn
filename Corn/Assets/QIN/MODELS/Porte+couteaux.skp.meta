@@ -3,7 +3,42 @@ guid: 3b548af99393f0946bcdcf204d2fdd68
 SketchUpImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_007]'
+    second: {fileID: 2100000, guid: 089036e724d3cc04dae84089b2833ac7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_008]'
+    second: {fileID: 2100000, guid: c18eddcd89c6aa049a09d78f0248748f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Metal_Corrogated_Shiny]'
+    second: {fileID: 2100000, guid: 7d70d1ed54d37fa42ad19ddad5f0c85f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood_ Floor]'
+    second: {fileID: 2100000, guid: 6bc8615c5e72418448e49286c6d9cc8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 8d3e0fa31729ef647b142bd008bb9995, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Corrogated_Shiny_tint0xEAEAEAFF
+    second: {fileID: 2800000, guid: 9cea1bdd40bf3d846a17aa4046692b7b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_Floor
+    second: {fileID: 2800000, guid: 581e2be002528134fb60e3ed33a1d1ca, type: 3}
   materials:
     importMaterials: 1
     materialName: 2
