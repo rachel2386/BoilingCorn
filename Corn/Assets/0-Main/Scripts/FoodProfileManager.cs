@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.QuickSearch;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(order = 1, fileName = "FoodProperty")]

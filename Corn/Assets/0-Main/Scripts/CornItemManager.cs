@@ -26,7 +26,7 @@ public class CornItemManager : MonoBehaviour
 //                    child.gameObject.AddComponent<ItemProperties>();
 //            }
 //        }
-
+        
      
         Containers.AddRange(GameObject.FindGameObjectsWithTag("Container"));
 
