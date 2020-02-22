@@ -70,29 +70,18 @@ public class NewFoodItemProperties : ItemProperties
 
     void InitFoodWithProfile()
     {
-//        if (GetComponent<MeshRenderer>())
-//            GetComponent<MeshRenderer>().enabled = false;
-//
-//        if (transform.childCount > 0)
-//            foreach (Transform t in transform)
-//            {
-//                t.gameObject.SetActive(false);
-//            }
 
 
+        
         SecondsToCook = myFoodProfile.SecondsToCook;
 
-        //foodToRender = myFoodProfile.RawPrefab;
-
-       // GameObject foodmesh = Instantiate(foodToRender, transform, false);
-        //foodmesh.transform.localPosition = Vector3.zero;
 
        // InitOutlineWithProfile();
     }
 
     private void Update()
     {
-        // if (transform.parent.name.Contains("Clone") || gameObject.name.Contains("Clone"))
+       
         if (TimeCooked >= SecondsToCook)
         {
             PercentageCooked = 1;
@@ -119,7 +108,7 @@ public class NewFoodItemProperties : ItemProperties
         {
             if (foodState == 3)
             {
-                foodRB.isKinematic = true;
+                //foodRB.isKinematic = true;
             }
             else
             {

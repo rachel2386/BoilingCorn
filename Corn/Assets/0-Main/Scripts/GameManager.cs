@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
-
+    private GameObject OrderMenu;
+    
     public bool WithOrderSystem = true;
 
 
@@ -30,11 +31,21 @@ public class GameManager : MonoBehaviour
 
 
         gameFSM = new FSM<GameManager>(this);
+        
+        OrderMenu = GameObject.Find("OrderMenu");
+            
+        if (!WithOrderSystem)
+        {
+            OrderMenu.SetActive(false);
+            foreach (var child in FindObjectsOfType<FoodSpawner>())
+            {
+                child.StartCoroutine(child.Initiate());
+            }
 
-        if (WithOrderSystem)
-            gameFSM.TransitionTo<OrderState>(); //default state
-        else
             gameFSM.TransitionTo<CookingState>();
+        }
+        else
+            gameFSM.TransitionTo<OrderState>(); //default state
     }
 
     void Update()
@@ -59,49 +70,50 @@ public class GameManager : MonoBehaviour
 
     private class OrderState : GameState
     {
-        private GameObject OrderMenu;
+        
         private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
         private Button confirmButton;
         private GameObject warningText;
-        
-       int NumberOfFoodSelected = 0;
+
+        int NumberOfFoodSelected = 0;
 
         public override void OnEnter()
         {
             base.OnEnter();
-            gameState = 0;
-            FindObjectOfType<CornMouseLook>().lockCursor = false;
-            Cursor.lockState = CursorLockMode.None;
+            
+           
+                gameState = 0;
 
 
-            OrderMenu = GameObject.Find("OrderMenu");
-           //Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
-            _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
-            warningText = GameObject.Find("WarningText");
-            warningText.SetActive(false);
-            confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
-            confirmButton.onClick.AddListener(EnterCookingState);
+                FindObjectOfType<CornMouseLook>().lockCursor = false;
+                Cursor.lockState = CursorLockMode.None;
+
+
+                Context.OrderMenu.SetActive(true);
+                //Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
+                _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
+                warningText = GameObject.Find("WarningText");
+                warningText.SetActive(false);
+                confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
+                confirmButton.onClick.AddListener(EnterCookingState);
+            
         }
 
         public override void OnExit()
         {
             base.OnExit();
 
-            OrderMenu.SetActive(false);
+            Context.OrderMenu.SetActive(false);
             for (int i = 0; i < Toggles.Count; i++)
             {
                 _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
                 _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
             }
-
-
-           
         }
 
         void EnterCookingState()
         {
-            
             Toggles.Clear();
             foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
             {
@@ -124,7 +136,7 @@ public class GameManager : MonoBehaviour
             gameState = 1;
             FindObjectOfType<CornMouseLook>().lockCursor = true;
 
-           // Context.StartCoroutine(RemoveWalls());
+            // Context.StartCoroutine(RemoveWalls());
         }
 
         public override void Update()
@@ -132,8 +144,7 @@ public class GameManager : MonoBehaviour
             base.Update();
 
             if (Input.GetKeyUp(KeyCode.Return))
-//            || CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
-//            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
+
             {
                 Context.gameFSM.TransitionTo<CleanUpState>();
             }
@@ -165,7 +176,7 @@ public class GameManager : MonoBehaviour
             base.Update();
 
             if (Input.GetKeyDown(KeyCode.Return) || GameObject.FindGameObjectsWithTag("Respawn").Length == 0 ||
-                CornItemManager.FoodEaten.Count > CornItemManager.ListOfFood.Count) 
+                CornItemManager.FoodEaten.Count > CornItemManager.ListOfFood.Count)
             {
                 Context.gameFSM.TransitionTo<EndState>();
             }
