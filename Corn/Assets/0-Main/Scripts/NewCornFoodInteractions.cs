@@ -5,6 +5,10 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using HutongGames.PlayMaker;
 using UnityEngine;
+//update 2/22/20: 
+//when food state is 0, can only left click 
+//when food state is 1, can still left click to pick up and right click to eat 
+
 
 public class NewCornFoodInteractions : MonoBehaviour
 {
@@ -50,7 +54,7 @@ public class NewCornFoodInteractions : MonoBehaviour
                 && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
                 && hitInfo.collider != null)
 
-                if (GameManager.gameState == 1)
+                if (GameManager.gameState == 1) // in cooking state 
                 {
                     if (hitInfo.collider.CompareTag("FoodItem"))
                     {
@@ -74,12 +78,12 @@ public class NewCornFoodInteractions : MonoBehaviour
                             EatFood(hitInfo.collider.gameObject);
                         }
                     }
-                    else if (hitInfo.collider.CompareTag("Pickupable"))
-                    {
-                       print("pickup plate");
-                        IsholdingObject = true;
-                        InitPickupPlate(hitInfo);
-                    }
+//                    else if (hitInfo.collider.CompareTag("Pickupable"))
+//                    {
+//                       print("pickup plate");
+//                        IsholdingObject = true;
+//                        InitPickupPlate(hitInfo);
+//                    }
                 }
                 else if (GameManager.gameState == 2)
                 {
@@ -91,9 +95,14 @@ public class NewCornFoodInteractions : MonoBehaviour
                     }
                 }
 
+            if (GameManager.gameState == 1 && Input.GetMouseButtonDown(1)
+                                           && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                                           && hitInfo.collider.CompareTag("FoodItem") && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodCooked)
+            {
+                EatFood(hitInfo.collider.gameObject);
+            }
 
-               
-               
+
         }
         else
         {
@@ -181,12 +190,7 @@ public class NewCornFoodInteractions : MonoBehaviour
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
     }
 
-    void InitPickupPlate(RaycastHit objectClicked)
-    {
-        objectHolding = objectClicked.collider.gameObject;
-        objectRB =objectHolding.gameObject.GetComponent<ItemProperties>().OnPickUp();
-        objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
-    }
+    
 
     void RotatePlatePivot(Transform pivot)
     {
