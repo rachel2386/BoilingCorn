@@ -32,7 +32,7 @@ public class NewCornFoodInteractions : MonoBehaviour
     //temp
     public PlayMakerFSM textAnimFSM;
 
-    void Start()
+    public void Initiate()
     {
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
@@ -47,7 +47,8 @@ public class NewCornFoodInteractions : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!IsholdingObject)
+        if(GameManager.gameState < 1) return;
+        if ( !IsholdingObject)
         {
             RaycastHit hitInfo = new RaycastHit();
             if (GameManager.gameState == 1) // in cooking state 
@@ -78,7 +79,9 @@ public class NewCornFoodInteractions : MonoBehaviour
             }
             else if (GameManager.gameState == 2)// in cleanup state, food not pickupable
             {
-                if (hitInfo.collider.CompareTag("Pickupable"))
+                if (Input.GetMouseButtonDown(0)
+                    && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                    && hitInfo.collider.CompareTag("Pickupable"))
                 {
                     IsholdingObject = true;
                     ContainerPickUp(hitInfo);

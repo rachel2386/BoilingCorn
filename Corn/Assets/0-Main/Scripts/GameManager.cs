@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -13,30 +13,45 @@ public class GameManager : MonoBehaviour
     private int wrapUpState = 2;
     private int endState = 3;
     private CornItemManager _cornItemManager;
+    private NewCornFoodInteractions _FoodInteractionScript;
+    private CornMonologueManager _monologueManager;
 
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
     private GameObject OrderMenu;
-    
-    public bool WithOrderSystem = true;
+    public GameObject SceneToLoad;
+
+    private Image fadeImage;
+
+    //public bool WithOrderSystem = true;
+    public int Debug_StartWithState = -1;
 
 
     private void Awake()
     {
+        gameFSM = new FSM<GameManager>(this);
+
         if (!GetComponent<CornItemManager>())
             gameObject.AddComponent<CornItemManager>();
 
         _cornItemManager = GetComponent<CornItemManager>();
-        textAnimFSM = GetComponent<PlayMakerFSM>();
-
-
-        gameFSM = new FSM<GameManager>(this);
-        
+        _FoodInteractionScript = FindObjectOfType<NewCornFoodInteractions>();
+        _monologueManager = GetComponent<CornMonologueManager>();
         OrderMenu = GameObject.Find("OrderMenu");
-            
-        if (!WithOrderSystem)
+        OrderMenu.SetActive(false);
+
+        textAnimFSM = GetComponent<PlayMakerFSM>();
+        fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
+        fadeImage.gameObject.SetActive(false);
+
+
+        if (Debug_StartWithState == 0)
         {
-            OrderMenu.SetActive(false);
+            gameFSM.TransitionTo<OrderState>();
+        }
+        else if (Debug_StartWithState == 1)
+        {
+            SceneToLoad.SetActive(true);
             foreach (var child in FindObjectsOfType<FoodSpawner>())
             {
                 child.StartCoroutine(child.Initiate());
@@ -45,7 +60,10 @@ public class GameManager : MonoBehaviour
             gameFSM.TransitionTo<CookingState>();
         }
         else
-            gameFSM.TransitionTo<OrderState>(); //default state
+        {
+            SceneToLoad.SetActive(false);
+            gameFSM.TransitionTo<BeforeOrderState>(); //default state
+        }
     }
 
     void Update()
@@ -68,35 +86,121 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private class BeforeOrderState : GameState
+    {
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            gameState = -1;
+            //FindObjectOfType<CornMouseLook>().lockCursor = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Context.StartCoroutine(playMonologue());
+        }
+
+        public override void Update()
+        {
+            base.Update();
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+        }
+
+        private IEnumerator playMonologue()
+        {
+            yield return new WaitForSeconds(3);
+            Context._monologueManager.StartMonologue("phone call john");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(2);
+            Context._monologueManager.StartMonologue("phone call christine");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(3);
+            Context._monologueManager.StartMonologue("what to eat");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(2);
+            TransitionTo<OrderState>();
+        }
+    }
+
     private class OrderState : GameState
     {
-        
         private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
         private Button confirmButton;
         private GameObject warningText;
+
 
         int NumberOfFoodSelected = 0;
 
         public override void OnEnter()
         {
             base.OnEnter();
+
+
+            gameState = 0;
+
+
+           Context.OrderMenu.SetActive(true);
+            Context.SceneToLoad.SetActive(true); //load scene with food;
             
-           
-                gameState = 0;
+            FindObjectOfType<CornMouseLook>().lockCursor = false;
+            Cursor.lockState = CursorLockMode.None;
+            
+            _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
+            warningText = GameObject.Find("WarningText");
+            warningText.SetActive(false);
+            confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
+            confirmButton.onClick.AddListener(EnterCookingState);
+        }
 
+        void EnterCookingState()
+        {
+            Toggles.Clear();
 
-                FindObjectOfType<CornMouseLook>().lockCursor = false;
-                Cursor.lockState = CursorLockMode.None;
+            foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
+            {
+                if (toggle.isOn)
+                    Toggles.Add(toggle);
+            }
 
+            if (Toggles.Count != 6)
+                warningText.SetActive(true);
+            else
+                Context.StartCoroutine(LoadCookingState());
+        }
 
-                Context.OrderMenu.SetActive(true);
-                //Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
-                _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
-                warningText = GameObject.Find("WarningText");
-                warningText.SetActive(false);
-                confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
-                confirmButton.onClick.AddListener(EnterCookingState);
+        IEnumerator LoadCookingState()
+        {
+            Context.fadeImage.gameObject.SetActive(true);
+            Tween showImg = Context.fadeImage.DOFade(1, 1);
+            while (Context.fadeImage.color.a < 0.98f)
+            {
+                yield return null;
+             }
+            print("hahahah");
+            TransitionTo<CookingState>();
+            
+            yield return new WaitForSeconds(5);
+            Tween hideImg = Context.fadeImage.DOFade(0, 3);
+            while (Context.fadeImage.color.a > 0.1f)
+            {
+                yield return null;
+            }
+            Context.fadeImage.gameObject.SetActive(false);           
+            
             
         }
 
@@ -111,21 +215,6 @@ public class GameManager : MonoBehaviour
                 _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
             }
         }
-
-        void EnterCookingState()
-        {
-            Toggles.Clear();
-            foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
-            {
-                if (toggle.isOn)
-                    Toggles.Add(toggle);
-            }
-
-            if (Toggles.Count != 6)
-                warningText.SetActive(true);
-            else
-                TransitionTo<CookingState>();
-        }
     }
 
     private class CookingState : GameState
@@ -135,8 +224,9 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 1;
             FindObjectOfType<CornMouseLook>().lockCursor = true;
+            InitManagers();
 
-            // Context.StartCoroutine(RemoveWalls());
+            Context._monologueManager.StartMonologue("confirm");
         }
 
         public override void Update()
@@ -150,16 +240,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-//        IEnumerator RemoveWalls()
-//        {
-//            yield return new WaitForSeconds(2);
-//            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
-//            {
-//                wall.gameObject.SetActive(false);
-//            }
-//
-//            yield return null;
-//        }
+        void InitManagers()
+        {
+            Context._FoodInteractionScript.Initiate();
+            Context._cornItemManager.InitLists();
+        }
     }
 
     private class CleanUpState : GameState
@@ -169,6 +254,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 2;
             InitCleanUpState();
+            Context._monologueManager.StartMonologue("alone");
         }
 
         public override void Update()

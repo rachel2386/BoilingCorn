@@ -15,7 +15,7 @@ public class CornItemManager : MonoBehaviour
     public static List<GameObject> FoodEaten = new List<GameObject>();
     [HideInInspector] public List<GameObject> FridgeHolders = new List<GameObject>(); 
 
-    void Awake()
+    public void InitLists()
     {
 //        foreach (var child in GameObject.Find("Interactables").GetComponentsInChildren<Transform>())
 //        {

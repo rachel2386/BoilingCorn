@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77669f57256bf0d4e96c4b09645d361f, type: 3}
+  m_Name: ListOfMonologues
+  m_EditorClassIdentifier: 
+  MyMonologues:
+  - Name: phone call christine
+    MonologueText: "** New Message From Christine** \r\nC: \"Yo! Merry Christmas!\"\r\nMe:
+      \"Hey Christine! Merry Christmas.\"\r\nMe: \"How did you finals go? \"\r\nC:
+      \"It went ok. Got a B in Game Studies.\"\r\nMe: \"Same. I totally thought I'd
+      fail that class. \"\r\nMe: \"Anyways.. Got any plans tonight? Wanna grab dinner
+      together? I am thinking of that new Hot Pot place in Chinatown.\"\r\nC: \"Nah.
+      My parents actually came to visit. \"\r\nMe: \"No Way! I remember you saying
+      they couldn't make it cuz of work.\"\r\nC: \"Yah. I thought so too. Turns out
+      they were keeping it as a surprise, and just showed up at the airport today
+      lol. Imagine what they would do if I don't check my phone every, like, 10 seconds.\"\r\nMe:
+      \"Aww, thats so cute. Well, say Hello to them for me. We should hang out some
+      time.\"\r\nC: \"For sure! I know your parents would visit too if they don't
+      live like 1 million miles away in China.\"\r\nMe: \"I guess. Well I gotta go.
+      Needa get something to eat before I starve to death! talk to you later. \"\r\nC:
+      \"Make sure you treat yourself okay! I won't forgive you if you eat at that
+      dining hall again.\"\r\nMe: \"Ok mom lol. I might as well just order some take
+      out. I am not gonna go out by myself on a snow day like this. \"\r\nC: \"Yah!
+      Just do something fun so you can keep your mind off her for a bit ok?\"\r\nC:
+      \"Ugh my brother wouldn't stop yelling. I think dinner is ready. I will talk
+      to you later ok?\"\r\n** Christine is offline **\r\n"
+  - Name: confirm
+    MonologueText: 
+  - Name: phone call john
+    MonologueText: "**Dialing**\r\nMe: \"Hey John what are you up to tonight?\"\r\nJohn:
+      \"Hey there! Guess where I am right now!\"\r\nMe: \"Where? Flushing?\"\r\nJohn:
+      \"Cancun! All five of us! The beach here is amazing. Believe it or not, The
+      ocean Is actually blue, not black.\" \r\nMe: \"Wow. That sounds awesome. Have
+      fun!\"\r\nJohn: \"You bet! Alright I gotta go. Merry Christmas man!\"\r\n**Call
+      Ended**\r\nMe: ...\r\n"
+  - Name: what to eat
+    MonologueText: "..I guess I am eating alone tonight. \nWhat should I order?\n...\nWhat
+      is this? Food Delivery?"
+  - Name: 
+    MonologueText: 
+  - Name: 
+    MonologueText: 
+  - Name: 
+    MonologueText: 
+  - Name: 
+    MonologueText: 
+  - Name: 
+    MonologueText: 
+  - Name: 
+    MonologueText: 
