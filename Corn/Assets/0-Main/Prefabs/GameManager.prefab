@@ -115,7 +115,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Image
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -190,7 +190,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -247,7 +247,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Image
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -322,7 +322,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -379,7 +379,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -454,7 +454,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -511,7 +511,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -586,7 +586,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -643,7 +643,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -718,7 +718,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -749,7 +749,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -775,7 +775,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -850,7 +850,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -881,7 +881,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -890,7 +890,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -907,7 +907,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -982,7 +982,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -1013,7 +1013,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -1022,7 +1022,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -1039,7 +1039,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Text
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -1114,7 +1114,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -1145,7 +1145,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -1154,7 +1154,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -1224,8 +1224,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 72.75781
-        y: 253.67969
+        x: 284.96875
+        y: 167.78906
         width: 158.8
         height: 32
       isBreakpoint: 0
@@ -1710,8 +1710,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 99.90625
-        y: 302.79688
+        x: 312.1172
+        y: 216.90625
         width: 100
         height: 32
       isBreakpoint: 0
@@ -2044,8 +2044,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 98.796875
-        y: 350.89062
+        x: 311.0078
+        y: 265
         width: 114
         height: 32
       isBreakpoint: 0
@@ -2531,8 +2531,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 96.21875
-        y: 404.41406
+        x: 308.4297
+        y: 318.52344
         width: 135.6
         height: 32
       isBreakpoint: 0
@@ -2865,8 +2865,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 100.046875
-        y: 443.96094
+        x: 312.2578
+        y: 358.0703
         width: 100
         height: 32
       isBreakpoint: 0
@@ -3352,8 +3352,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 93.28125
-        y: 500.7578
+        x: 305.4922
+        y: 414.8672
         width: 135.6
         height: 32
       isBreakpoint: 0
@@ -3700,8 +3700,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 98.75
-        y: 557.4375
+        x: 310.96094
+        y: 471.54688
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4214,7 +4214,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 000001
+        actionIsOpen: 010001
         actionStartIndex: 000000001a00000034000000
         actionHashCodes: a7411b03a7411b03a4c8bf00
         unityObjectParams: []
@@ -4539,11 +4539,19 @@ MonoBehaviour:
         x: 113.66406
         y: 778.9453
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: done
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: end
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.DOTweenImageFade
@@ -5014,8 +5022,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 99.484375
-        y: 665.75
+        x: 311.6953
+        y: 579.8594
         width: 100
         height: 32
       isBreakpoint: 0
@@ -5500,8 +5508,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 94.015625
-        y: 609.0703
+        x: 306.22656
+        y: 523.1797
         width: 135.6
         height: 32
       isBreakpoint: 0
@@ -5848,8 +5856,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 275.5625
-        y: 287.03906
+        x: 487.77344
+        y: 201.14844
         width: 100
         height: 32
       isBreakpoint: 0
@@ -5921,8 +5929,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 275.92188
-        y: 454.35938
+        x: 488.1328
+        y: 368.46875
         width: 100
         height: 32
       isBreakpoint: 0
@@ -5994,8 +6002,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 279.92188
-        y: 364.35938
+        x: 492.1328
+        y: 278.46875
         width: 100
         height: 32
       isBreakpoint: 0
@@ -6067,8 +6075,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 286.39062
-        y: 588.4531
+        x: 498.60156
+        y: 502.5625
         width: 100
         height: 32
       isBreakpoint: 0
@@ -6140,8 +6148,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 296.33594
-        y: 686.1406
+        x: 469.8125
+        y: 610.53125
         width: 100
         height: 32
       isBreakpoint: 0
@@ -6225,7 +6233,7 @@ MonoBehaviour:
           name: turnOn
           isSystemEvent: 0
           isGlobal: 0
-        toState: gameState=1?
+        toState: WaitForPlayer 5
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -6287,8 +6295,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 80.734375
-        y: 198.91406
+        x: 288.8047
+        y: 100.75
         width: 127
         height: 32
       isBreakpoint: 0
@@ -6407,6 +6415,58 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000010000000000000000000000000000000100000000000000010000000200000001000000
         paramByteDataSize: 00000000000000000000000001000000000000000000000000000000000000000000000001000000
+    - name: end
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 121.57031
+        y: 852.25
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -6547,7 +6607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textAnimFSM: {fileID: 8828216038027497043}
-  WithOrderSystem: 0
+  SceneToLoad: {fileID: 0}
+  Debug_StartWithState: -1
 --- !u!114 &8828216038027497040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6563,3 +6624,4 @@ MonoBehaviour:
   myMonologueList: {fileID: 11400000, guid: f8d280a6cdc53ec40bdbd32adff69230, type: 2}
   _monologueTextbox: {fileID: 0}
   _TextPanel: {fileID: 0}
+  textAnimSpeed: 20

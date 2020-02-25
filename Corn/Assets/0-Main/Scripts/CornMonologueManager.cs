@@ -12,7 +12,7 @@ public class CornMonologueManager : MonoBehaviour
    private bool textIsPlaying = false;
    public bool TextIsPlaying => textIsPlaying;
 
-   private bool monologueIsComplete = false;
+   private bool monologueIsComplete = true;
 
    public bool MonologueIsComplete => monologueIsComplete;
 
@@ -31,6 +31,7 @@ public class CornMonologueManager : MonoBehaviour
     public void StartMonologue(string nameOfMonologue)
     {
 
+       //if(!MonologueIsComplete) return;
         _monologueTextbox.text = "";
         
         if (myMonologueList.GetMonologueFromName(nameOfMonologue) == null //list doesnot contain monologue of name 
@@ -54,7 +55,7 @@ public class CornMonologueManager : MonoBehaviour
        
        
         _TextPanel.SetActive(true);
-       Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, false, ScrambleMode.None);
+       Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, true);
 
        monologueIsComplete = false;
        MonologuePlaying();
@@ -76,7 +77,7 @@ public class CornMonologueManager : MonoBehaviour
 
         _monologueTextbox.text = ""; //clear text;
         string currentSentence = sentences.Dequeue();
-       Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, false, ScrambleMode.None);
+       Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, true);
        playMonologue.SetSpeedBased(true);
        
        MonologuePlaying();

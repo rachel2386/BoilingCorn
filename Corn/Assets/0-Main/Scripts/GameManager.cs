@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private FSM<GameManager> gameFSM;
     private GameObject OrderMenu;
     public GameObject SceneToLoad;
+    
 
     private Image fadeImage;
 
@@ -190,7 +191,6 @@ public class GameManager : MonoBehaviour
             {
                 yield return null;
              }
-            print("hahahah");
             TransitionTo<CookingState>();
             
             yield return new WaitForSeconds(5);
@@ -199,7 +199,8 @@ public class GameManager : MonoBehaviour
             {
                 yield return null;
             }
-            Context.fadeImage.gameObject.SetActive(false);           
+            Context.fadeImage.gameObject.SetActive(false);    
+            Context._monologueManager.StartMonologue("table setup");
             
             
         }
@@ -219,24 +220,24 @@ public class GameManager : MonoBehaviour
 
     private class CookingState : GameState
     {
+        private PlayMakerFSM knobFSM;
         public override void OnEnter()
         {
             base.OnEnter();
             gameState = 1;
             FindObjectOfType<CornMouseLook>().lockCursor = true;
             InitManagers();
-
-            Context._monologueManager.StartMonologue("confirm");
+               
+           
         }
 
         public override void Update()
         {
             base.Update();
 
-            if (Input.GetKeyUp(KeyCode.Return))
-
+            if (Context._FoodInteractionScript.playerIsFull && Context._monologueManager.MonologueIsComplete)
             {
-                Context.gameFSM.TransitionTo<CleanUpState>();
+                Context.StartCoroutine(LoadCleanUpState());
             }
         }
 
@@ -244,6 +245,31 @@ public class GameManager : MonoBehaviour
         {
             Context._FoodInteractionScript.Initiate();
             Context._cornItemManager.InitLists();
+            knobFSM = GameObject.Find("knob").GetComponent<PlayMakerFSM>();
+        }
+
+        
+
+        IEnumerator LoadCleanUpState()
+        {
+            knobFSM.SetState("OffActions"); //turn off knob
+            TransitionTo<CleanUpState>();
+            Context.fadeImage.gameObject.SetActive(true);
+            Tween showImg = Context.fadeImage.DOFade(1, 1);
+            while (Context.fadeImage.color.a < 0.98f)
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            Tween hideImg = Context.fadeImage.DOFade(0, 3);
+            while (Context.fadeImage.color.a > 0.1f)
+            {
+                yield return null;
+            }
+            Context.fadeImage.gameObject.SetActive(false);    
+            Context._monologueManager.StartMonologue("clean up");
+            
+            
         }
     }
 
@@ -254,7 +280,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 2;
             InitCleanUpState();
-            Context._monologueManager.StartMonologue("alone");
+            
         }
 
         public override void Update()
@@ -295,6 +321,36 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 3;
+            
+            Context._monologueManager.StartMonologue("end1");
+            Context.StartCoroutine(MonologueControl());
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            if (Context.textAnimFSM.ActiveStateName == "end2 monologue" && Context._monologueManager.MonologueIsComplete)
+            {
+              
+                Context.textAnimFSM.SetState("end");
+                Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
+                    "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
+                    "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
+                    "You dumped away " + CornItemManager.WastedFood.Count + ".\n" +
+            
+               "...\n"+
+                "It's been a great day! ";
+                
+                
+            }
+        }
+
+        IEnumerator MonologueControl()
+        {
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
             InitEndGameState();
         }
 
@@ -313,11 +369,14 @@ public class GameManager : MonoBehaviour
             Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
                 "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
                 "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
-                "You dumped away " + CornItemManager.WastedFood.Count + ".\n" +
-                "...\n" +
-                "..\n" +
-                "                                              \n" +
-                "It's been a great day! ";
+                "You dumped away " + CornItemManager.WastedFood.Count + ".\n";
+            
+           
+//                +
+//                "...\n" +
+//                "..\n" +
+//                "                                              \n" +
+//                "It's been a great day! ";
 
 
 //        print("Wasted Food" + CornItemManager.WastedFood.Count);

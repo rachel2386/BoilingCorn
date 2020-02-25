@@ -13,6 +13,10 @@ using UnityEngine;
 
 public class NewCornFoodInteractions : MonoBehaviour
 {
+    private CornMonologueManager _monologueManager;
+
+    public bool playerIsFull = false;
+
     // Start is called before the first frame update
     private Camera myCam;
     public static bool IsholdingObject = false;
@@ -34,11 +38,13 @@ public class NewCornFoodInteractions : MonoBehaviour
 
     public void Initiate()
     {
+        _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
+
         //bowl = GameObject.Find("BowlPivot").transform;
         foodParent = GameObject.Find("Food").transform;
-       // bowlFSM = bowl.parent.GetComponent<PlayMakerFSM>();
+        // bowlFSM = bowl.parent.GetComponent<PlayMakerFSM>();
         playerAS = GetComponent<AudioSource>();
     }
 
@@ -47,68 +53,65 @@ public class NewCornFoodInteractions : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(GameManager.gameState < 1) return;
-        if ( !IsholdingObject)
-        {
-            RaycastHit hitInfo = new RaycastHit();
-            if (GameManager.gameState == 1) // in cooking state 
+        if (GameManager.gameState < 1) return;
+        if (!_monologueManager.MonologueIsComplete) return;
+            if (!IsholdingObject)
             {
-                if (Input.GetMouseButtonDown(0)
-                    && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-                    && hitInfo.collider.CompareTag("FoodItem"))
+                RaycastHit hitInfo = new RaycastHit();
+                if (GameManager.gameState == 1) // in cooking state 
                 {
-
-                    var foodState = hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState;
-
-                    if (foodState < 2) //if food not eaten, pickupable
-                    {
-                        IsholdingObject = true;
-                        InitPickup(hitInfo);
-                        StartCoroutine(InsertFrame());
-                    }
-                }
-
-                if (Input.GetMouseButtonDown(1)
+                    if (Input.GetMouseButtonDown(0)
                         && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-                        && hitInfo.collider.CompareTag("FoodItem") 
+                        && hitInfo.collider.CompareTag("FoodItem"))
+                    {
+                        var foodState = hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState;
+
+                        if (foodState < 2) //if food not eaten, pickupable
+                        {
+                            IsholdingObject = true;
+                            InitPickup(hitInfo);
+                            StartCoroutine(InsertFrame());
+                        }
+                    }
+
+                    if (Input.GetMouseButtonDown(1)
+                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                        && hitInfo.collider.CompareTag("FoodItem")
                         && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
                     {
                         MoveFoodToMouth(hitInfo.collider.gameObject);
-                        
                     }
-            }
-            else if (GameManager.gameState == 2)// in cleanup state, food not pickupable
-            {
-                if (Input.GetMouseButtonDown(0)
-                    && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-                    && hitInfo.collider.CompareTag("Pickupable"))
+                }
+                else if (GameManager.gameState == 2) // in cleanup state, food not pickupable
                 {
-                    IsholdingObject = true;
-                    ContainerPickUp(hitInfo);
+                    if (Input.GetMouseButtonDown(0)
+                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                        && hitInfo.collider.CompareTag("Pickupable"))
+                    {
+                        IsholdingObject = true;
+                        ContainerPickUp(hitInfo);
+                    }
                 }
             }
-
-           
-        }
-        else
-        {
-            if (GameManager.gameState == 1)
+            else
             {
-                if (Input.GetMouseButtonUp(0))
+                if (GameManager.gameState == 1)
                 {
-                    PlaceObject();
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        PlaceObject();
+                    }
+                }
+                else if (GameManager.gameState == 2)
+                {
+                    RaycastHit hitInfo = new RaycastHit();
+                    if (Input.GetMouseButtonUp(0)
+                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                        && hitInfo.collider != null
+                        && hitInfo.collider.CompareTag("Respawn"))
+                        ContainerDropOff(hitInfo.collider.transform);
                 }
             }
-            else if (GameManager.gameState == 2)
-            {
-                RaycastHit hitInfo = new RaycastHit();
-                if (Input.GetMouseButtonUp(0)
-                    && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-                    && hitInfo.collider != null
-                    && hitInfo.collider.CompareTag("Respawn"))
-                    ContainerDropOff(hitInfo.collider.transform);
-            }
-        }
     }
 
     void MoveFoodToMouth(GameObject FoodToEat)
@@ -117,17 +120,43 @@ public class NewCornFoodInteractions : MonoBehaviour
         FoodToEat.transform.parent = mouth;
         Tween moveToMouth = FoodToEat.transform.DOLocalMove(Vector3.up * -0.12f, 3);
         moveToMouth.SetEase(Ease.InOutSine);
-        moveToMouth.OnComplete(()=>FoodEaten(FoodToEat));
-       
+        moveToMouth.OnComplete(() => FoodEaten(FoodToEat));
     }
 
     void FoodEaten(GameObject FoodToEat)
     {
         FoodToEat.GetComponent<NewFoodItemProperties>().foodState = 2;
         FoodToEat.SetActive(false);
-        if (!CornItemManager.FoodEaten.Contains(FoodToEat)) CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
+        if (!CornItemManager.FoodEaten.Contains(FoodToEat))
+            CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
 
         playerAS.PlayOneShot(eatSound);
+
+        var numOfFoodEaten = CornItemManager.FoodEaten.Count;
+        switch (numOfFoodEaten)
+        {
+            case 1:
+                _monologueManager.StartMonologue("eat first food");
+                break;
+            case 2:
+                _monologueManager.StartMonologue("eat second food");
+                break;
+            case 5:
+                _monologueManager.StartMonologue("eat fifth food");
+                break;
+           case 10:
+                _monologueManager.StartMonologue("eat tenth food");
+                break;
+            case 8:
+                _monologueManager.StartMonologue("noise from neighbors");
+                break;
+            case 15:
+                _monologueManager.StartMonologue("full");
+                playerIsFull = true;
+                break;
+            default:
+                break;
+        }
     }
 
     void PlaceObject(Transform holder = null)

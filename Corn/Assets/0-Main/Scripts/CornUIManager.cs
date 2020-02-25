@@ -24,6 +24,7 @@ public class CornUIManager : MonoBehaviour
     {
         MyCam = Camera.main;
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
+        EndGameInstruction.SetActive(false);
 //        defaultCursor = transform.Find("DefaultCursor").GetComponent<Image>().mainTexture;
 //        foodCursor = transform.Find("FoodCursor").GetComponent<Image>();
 //        interactableCursor = transform.Find("InteractableCursor").GetComponent<Image>();
@@ -63,8 +64,13 @@ public class CornUIManager : MonoBehaviour
             }
             else if (GameManager.gameState == 2)
             {
+                EndGameInstruction.SetActive(true);
                 if (hitInfo.collider.CompareTag("Pickupable"))
                     ImgSlot.sprite = interactableCursor;
+                else
+                {
+                    ImgSlot.sprite = defaultCursor;
+                }
             }
         }
         else
