@@ -57,3 +57,7 @@ MonoBehaviour:
     FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
       type: 3}
     SecondsToCook: 15
+  - Name: Pepper
+    FoodPrefab: {fileID: 2031690171402633858, guid: e0f6b8bca9542004b8080d07bd2b1b59,
+      type: 3}
+    SecondsToCook: 200

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -13,28 +13,58 @@ public class GameManager : MonoBehaviour
     private int wrapUpState = 2;
     private int endState = 3;
     private CornItemManager _cornItemManager;
+    private NewCornFoodInteractions _FoodInteractionScript;
+    private CornMonologueManager _monologueManager;
 
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
+    private GameObject OrderMenu;
+    public GameObject SceneToLoad;
+    
 
-    public bool WithOrderSystem = true;
+    private Image fadeImage;
+
+    //public bool WithOrderSystem = true;
+    public int Debug_StartWithState = -1;
 
 
     private void Awake()
     {
+        gameFSM = new FSM<GameManager>(this);
+
         if (!GetComponent<CornItemManager>())
             gameObject.AddComponent<CornItemManager>();
 
         _cornItemManager = GetComponent<CornItemManager>();
+        _FoodInteractionScript = FindObjectOfType<NewCornFoodInteractions>();
+        _monologueManager = GetComponent<CornMonologueManager>();
+        OrderMenu = GameObject.Find("OrderMenu");
+        OrderMenu.SetActive(false);
+
         textAnimFSM = GetComponent<PlayMakerFSM>();
+        fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
+        fadeImage.gameObject.SetActive(false);
 
 
-        gameFSM = new FSM<GameManager>(this);
+        if (Debug_StartWithState == 0)
+        {
+            gameFSM.TransitionTo<OrderState>();
+        }
+        else if (Debug_StartWithState == 1)
+        {
+            SceneToLoad.SetActive(true);
+            foreach (var child in FindObjectsOfType<FoodSpawner>())
+            {
+                child.StartCoroutine(child.Initiate());
+            }
 
-        if (WithOrderSystem)
-            gameFSM.TransitionTo<OrderState>(); //default state
-        else
             gameFSM.TransitionTo<CookingState>();
+        }
+        else
+        {
+            SceneToLoad.SetActive(false);
+            gameFSM.TransitionTo<BeforeOrderState>(); //default state
+        }
     }
 
     void Update()
@@ -57,26 +87,79 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private class BeforeOrderState : GameState
+    {
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            gameState = -1;
+            //FindObjectOfType<CornMouseLook>().lockCursor = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Context.StartCoroutine(playMonologue());
+        }
+
+        public override void Update()
+        {
+            base.Update();
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+        }
+
+        private IEnumerator playMonologue()
+        {
+            yield return new WaitForSeconds(3);
+            Context._monologueManager.StartMonologue("phone call john");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(2);
+            Context._monologueManager.StartMonologue("phone call christine");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(3);
+            Context._monologueManager.StartMonologue("what to eat");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(2);
+            TransitionTo<OrderState>();
+        }
+    }
+
     private class OrderState : GameState
     {
-        private GameObject OrderMenu;
         private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
         private Button confirmButton;
         private GameObject warningText;
-        
-       int NumberOfFoodSelected = 0;
+
+
+        int NumberOfFoodSelected = 0;
 
         public override void OnEnter()
         {
             base.OnEnter();
+
+
             gameState = 0;
+
+
+           Context.OrderMenu.SetActive(true);
+            Context.SceneToLoad.SetActive(true); //load scene with food;
+            
             FindObjectOfType<CornMouseLook>().lockCursor = false;
             Cursor.lockState = CursorLockMode.None;
-
-
-            OrderMenu = GameObject.Find("OrderMenu");
-           //Toggles.AddRange(FindObjectsOfType<Toggle.Toggle>());
+            
             _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
             warningText = GameObject.Find("WarningText");
             warningText.SetActive(false);
@@ -84,25 +167,10 @@ public class GameManager : MonoBehaviour
             confirmButton.onClick.AddListener(EnterCookingState);
         }
 
-        public override void OnExit()
-        {
-            base.OnExit();
-
-            OrderMenu.SetActive(false);
-            for (int i = 0; i < Toggles.Count; i++)
-            {
-                _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
-                _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
-            }
-
-
-           
-        }
-
         void EnterCookingState()
         {
-            
             Toggles.Clear();
+
             foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
             {
                 if (toggle.isOn)
@@ -112,43 +180,97 @@ public class GameManager : MonoBehaviour
             if (Toggles.Count != 6)
                 warningText.SetActive(true);
             else
-                TransitionTo<CookingState>();
+                Context.StartCoroutine(LoadCookingState());
+        }
+
+        IEnumerator LoadCookingState()
+        {
+            Context.fadeImage.gameObject.SetActive(true);
+            Tween showImg = Context.fadeImage.DOFade(1, 1);
+            while (Context.fadeImage.color.a < 0.98f)
+            {
+                yield return null;
+             }
+            TransitionTo<CookingState>();
+            
+            yield return new WaitForSeconds(5);
+            Tween hideImg = Context.fadeImage.DOFade(0, 3);
+            while (Context.fadeImage.color.a > 0.1f)
+            {
+                yield return null;
+            }
+            Context.fadeImage.gameObject.SetActive(false);    
+            Context._monologueManager.StartMonologue("table setup");
+            
+            
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+
+            Context.OrderMenu.SetActive(false);
+            for (int i = 0; i < Toggles.Count; i++)
+            {
+                _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
+                _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
+            }
         }
     }
 
     private class CookingState : GameState
     {
+        private PlayMakerFSM knobFSM;
         public override void OnEnter()
         {
             base.OnEnter();
             gameState = 1;
             FindObjectOfType<CornMouseLook>().lockCursor = true;
-
-           // Context.StartCoroutine(RemoveWalls());
+            InitManagers();
+               
+           
         }
 
         public override void Update()
         {
             base.Update();
 
-            if (Input.GetKeyUp(KeyCode.Return))
-//            || CornItemManager.FoodEaten.Count >= CornItemManager.ListOfFood.Count 
-//            || _cornItemManager.FridgeHolders.Count <= 0)  // if player eats all food or no fridge slots yet or player trigger, end game
+            if (Context._FoodInteractionScript.playerIsFull && Context._monologueManager.MonologueIsComplete)
             {
-                Context.gameFSM.TransitionTo<CleanUpState>();
+                Context.StartCoroutine(LoadCleanUpState());
             }
         }
 
-//        IEnumerator RemoveWalls()
-//        {
-//            yield return new WaitForSeconds(2);
-//            foreach (var wall in GameObject.FindGameObjectsWithTag("Walls"))
-//            {
-//                wall.gameObject.SetActive(false);
-//            }
-//
-//            yield return null;
-//        }
+        void InitManagers()
+        {
+            Context._FoodInteractionScript.Initiate();
+            Context._cornItemManager.InitLists();
+            knobFSM = GameObject.Find("knob").GetComponent<PlayMakerFSM>();
+        }
+
+        
+
+        IEnumerator LoadCleanUpState()
+        {
+            knobFSM.SetState("OffActions"); //turn off knob
+            TransitionTo<CleanUpState>();
+            Context.fadeImage.gameObject.SetActive(true);
+            Tween showImg = Context.fadeImage.DOFade(1, 1);
+            while (Context.fadeImage.color.a < 0.98f)
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            Tween hideImg = Context.fadeImage.DOFade(0, 3);
+            while (Context.fadeImage.color.a > 0.1f)
+            {
+                yield return null;
+            }
+            Context.fadeImage.gameObject.SetActive(false);    
+            Context._monologueManager.StartMonologue("clean up");
+            
+            
+        }
     }
 
     private class CleanUpState : GameState
@@ -158,6 +280,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 2;
             InitCleanUpState();
+            
         }
 
         public override void Update()
@@ -165,7 +288,7 @@ public class GameManager : MonoBehaviour
             base.Update();
 
             if (Input.GetKeyDown(KeyCode.Return) || GameObject.FindGameObjectsWithTag("Respawn").Length == 0 ||
-                CornItemManager.FoodEaten.Count > CornItemManager.ListOfFood.Count) 
+                CornItemManager.FoodEaten.Count > CornItemManager.ListOfFood.Count)
             {
                 Context.gameFSM.TransitionTo<EndState>();
             }
@@ -198,6 +321,36 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 3;
+            
+            Context._monologueManager.StartMonologue("end1");
+            Context.StartCoroutine(MonologueControl());
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            if (Context.textAnimFSM.ActiveStateName == "end2 monologue" && Context._monologueManager.MonologueIsComplete)
+            {
+              
+                Context.textAnimFSM.SetState("end");
+                Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
+                    "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
+                    "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
+                    "You dumped away " + CornItemManager.WastedFood.Count + ".\n" +
+            
+               "...\n"+
+                "It's been a great day! ";
+                
+                
+            }
+        }
+
+        IEnumerator MonologueControl()
+        {
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
             InitEndGameState();
         }
 
@@ -216,11 +369,14 @@ public class GameManager : MonoBehaviour
             Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
                 "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
                 "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
-                "You dumped away " + CornItemManager.WastedFood.Count + ".\n" +
-                "...\n" +
-                "..\n" +
-                "                                              \n" +
-                "It's been a great day! ";
+                "You dumped away " + CornItemManager.WastedFood.Count + ".\n";
+            
+           
+//                +
+//                "...\n" +
+//                "..\n" +
+//                "                                              \n" +
+//                "It's been a great day! ";
 
 
 //        print("Wasted Food" + CornItemManager.WastedFood.Count);
