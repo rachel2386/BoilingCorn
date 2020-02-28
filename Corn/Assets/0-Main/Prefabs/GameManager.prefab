@@ -6906,5 +6906,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMonologueList: {fileID: 11400000, guid: f8d280a6cdc53ec40bdbd32adff69230, type: 2}
   _monologueTextbox: {fileID: 0}
-  _TextPanel: {fileID: 0}
+  _TextPanel: {fileID: 2749928809833160806, guid: cfad6a348d881164fa44ce64b071c6f8,
+    type: 3}
   textAnimSpeed: 30
