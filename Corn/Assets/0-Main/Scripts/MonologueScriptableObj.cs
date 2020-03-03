@@ -18,5 +18,9 @@ public class Monologue
 {
     public string Name;
     [TextArea(3,100)]public string MonologueText;
-   
+    public bool WithVoiceOver = true;
+    public AudioClip VoiceOverClip;
+    public bool displayText = false;
+    
+
 }
