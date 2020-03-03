@@ -18,17 +18,9 @@ MonoBehaviour:
       \"Hey Christine! Merry Christmas.\"\r\nMe: \"How did you finals go? \"\r\nC:
       \"It went ok. Got a B in Game Studies.\"\r\nMe: \"Same. I totally thought I'd
       fail that class. \"\r\nMe: \"Anyways.. Got any plans tonight? Wanna grab dinner
-      together? I am thinking of that new Hot Pot place in Chinatown.\"\r\nC: \"Nah.
-      My parents actually came to visit. \"\r\nMe: \"No Way! I remember you saying
-      they couldn't make it cuz of work.\"\r\nC: \"Yah. I thought so too. Turns out
-      they were keeping it as a surprise, and just showed up at the airport today
-      lol.\"\r\nMe: \"Aww, thats so cute. Well, say Hello to them for me. We should
-      hang out some time.\"\r\nC: \"For sure! I know your parents would visit too
-      if they don't live like 1 million miles away in China.\"\r\nMe: \"I guess. Well
-      I gotta go. Needa get something to eat before I starve to death! talk to you
-      later. \"\r\nC: \"Yah! Just do something fun so you can keep your mind off <b>her</b>
-      for a bit ok?\"\r\nC: \"Ugh my brother wouldn't stop yelling. I think dinner
-      is ready. I will talk to you later ok?\"\r\n** Christine is offline **\r\n"
+      together? I am thinking of that new Hot Pot place....\"\r\nC: \"Ugh my brother
+      wouldn't stop yelling!! Ah sorry I gotta go! I will talk to you later ok?\"\r\n**
+      Christine is offline **\r\n"
   - Name: turn on fire
     MonologueText: "**Stomach Growling** \r\nAlright, I am ready! \r"
   - Name: phone call john

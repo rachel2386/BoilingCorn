@@ -108,7 +108,7 @@ public class NewFoodItemProperties : ItemProperties
         {
             if (foodState == 3)
             {
-                //foodRB.isKinematic = true;
+                foodRB.isKinematic = true;
             }
             else
             {

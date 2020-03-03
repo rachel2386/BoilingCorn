@@ -53,9 +53,7 @@ public class NewCornFoodInteractions : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameManager.gameState < 1) return;
-        if (!_monologueManager.MonologueIsComplete) return;
-            if (!IsholdingObject)
+        if (!IsholdingObject)
             {
                 RaycastHit hitInfo = new RaycastHit();
                 if (GameManager.gameState == 1) // in cooking state 
