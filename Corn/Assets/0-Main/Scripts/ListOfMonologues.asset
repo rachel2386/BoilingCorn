@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyMonologues:
   - Name: phone call christine
+    displayText: 0
     MonologueText: "** New Message From Christine** \r\nC: \"Yo! Merry Christmas!\"\r\nMe:
       \"Hey Christine! Merry Christmas.\"\r\nMe: \"How did you finals go? \"\r\nC:
       \"It went ok. Got a B in Game Studies.\"\r\nMe: \"Same. I totally thought I'd
@@ -21,105 +22,194 @@ MonoBehaviour:
       together? I am thinking of that new Hot Pot place....\"\r\nC: \"Ugh my brother
       wouldn't stop yelling!! Ah sorry I gotta go! I will talk to you later ok?\"\r\n**
       Christine is offline **\r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 9b2ea779405b58a489f01d10e760e9bb, type: 3}
   - Name: turn on fire
+    displayText: 0
     MonologueText: "**Stomach Growling** \r\nAlright, I am ready! \r"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: phone call john
+    displayText: 0
     MonologueText: "**Dialing**\r\nMe: \"Hey John what are you up to tonight?\"\r\nJohn:
       \"Hey there! Guess where I am right now!\"\r\nMe: \"Where? Flushing?\"\r\nJohn:
       \"Cancun! All five of us! The beach here is amazing. Believe it or not, The
       ocean Is actually blue, not black.\" \r\nMe: \"Wow. That sounds awesome. Have
       fun!\"\r\nJohn: \"You bet! Alright I gotta go. Merry Christmas man!\"\r\n**Call
       Ended**\r\nMe: ...\r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: e079ac3642b22f24a8c4f64da390e236, type: 3}
   - Name: what to eat
+    displayText: 0
     MonologueText: "..I guess I am eating alone tonight. \r\nWhat should I get? \r\nOh
       wait, I still got that pack of hotpot soup base. Yah why not.. \r\nNow let me
       just order some ingredients..\r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: ad877a544dab6724cb34d5513d1b893a, type: 3}
   - Name: table setup
+    displayText: 0
     MonologueText: "Phew! Preparing all these food is more tiring than I thought.
       \r\nShe usually does the plating when we had hot pot at home. I wonder how she
       did it so perfectly.. \r\nShe would totally scold me to death if she sees how
       messy this table is right now. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 45413307031b9ef45aec589a50b1ecf5, type: 3}
   - Name: wait for boil
+    displayText: 0
     MonologueText: 'Why is this taking so long to boil..! I should probably do something
       else to distract myself from staring at this thing. '
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
   - Name: boiling
+    displayText: 0
     MonologueText: "Wow. This spicy soup base looks really hot. I hope I can survive
       after all this.. \r\nLet's get some food cookin\u2019!\r"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 58f0560a69ca13546b005933768e7501, type: 3}
   - Name: cook first food
+    displayText: 0
     MonologueText: "WHY do I still have to wait! Let me cook some more. \r\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: eat first food
+    displayText: 0
     MonologueText: "**Coughing** Ouch this pepper is strong.. Why am I torturing myself
       like this..\r\n\u2026\r\nLet me just have one more. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 468d08be9a5bb0e46b8a50261a27ad2d, type: 3}
   - Name: eat second food
+    displayText: 0
     MonologueText: "**Salivating** \r\nThis tastes super fresh! This soup really brings
       out the flavor of the ingredients. \r\nThey are totally gonna regret not coming!
       Now I can have all of this to myself!\r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: fb57d702dea587e419b0b987de68bc61, type: 3}
   - Name: eat fifth food
+    displayText: 0
     MonologueText: "Surprisingly, I am actually enjoying the spiciness now. I could
       never have imagined one day I could eat something this spicy. \r\nIt was her
       who introduced me to spicy food, and she just couldn\u2019t live without it.
       \r\nI guess living with someone this long could really change you. \r\nI wonder
       what she's doing now..Probably still in bed. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 8b496f16948a6c14d842ac9d04576aae, type: 3}
   - Name: noise from neighbors
+    displayText: 0
     MonologueText: "**loud music and chatter from next door**\nUgh. Is Peter throwing
       a party again? Where did he find all these people? \r\nHow come some people
       are always so loud? \r\nHope they can end early tonight... Probably not gonna
       happen. \r\n\r\n**noise of fly buzzing ** \r\nNow there is a fly in here? Come
       on. \r\nBetter finish up before it lays eggs in my food. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 30b9df99812f2484cb832012c16a6048, type: 3}
   - Name: eat tenth food
+    displayText: 0
     MonologueText: "**Burp** This is surprisingly filling\u2026I am almost full. \r\nNope,
       I am not done yet! \r"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
   - Name: full
+    displayText: 0
     MonologueText: "Just one more.. \n...I can\u2019t!  I think my tummy\u2019s gonna
       explode..\r\nHow do they expect me to finish all this food by myself? \r\nHate
       to waste all this food.\nIf she were here, we would never stop eating!\r\n...I
       really miss her. Why is she so far away now? \r\n...Stop whining.. It is better
       for both of us this way. \n...\rTo be where we belong.\n...\nI should turn off
       the stove now. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
   - Name: clean up
-    MonologueText: "**noise of fly buzzing ** \r\nWhy is this damn fly still here?!
-      Let me clean this mess up.. \r\nOk.. what do I want to keep? \r\nHope I can
-      stuff everything into that fridge! \r\n"
+    displayText: 1
+    MonologueText: "\nOk.. what do I want to keep? \r\nHope I can stuff everything
+      into that fridge! \r\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: end1
+    displayText: 1
     MonologueText: "Pretty sure that is everything I want to keep for tomorrow. Gotta
       dump away the rest.. \r\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: end2
-    MonologueText: "**noise of fly buzzing ** \r\n\u2026\r\n\n** new message from
-      B ** \r\nGood Morning Baby! Merry Christmas! Did you use up the spicy soup base
-      I left for you? :) \r\n\n"
+    displayText: 1
+    MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
+      Did you use up the spicy soup base I left for you? :) \r\n\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: phone1
+    displayText: 1
     MonologueText: "6:00 p.m. No new notifications.\r"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: phone2
+    displayText: 1
     MonologueText: "Mail: \u201C**ACTION REQUIRED!** \r\nIt\u2019s not too late to
       unlock savings!...\u201D\r\n..."
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: phone3
+    displayText: 1
     MonologueText: "I shouldn\u2019t call her. It is way too early in the morning
       over there."
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: calendar1
+    displayText: 1
     MonologueText: "Today is December 24th. Christmas Eve. \r\n\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: calendar2
+    displayText: 1
     MonologueText: "She insisted that I should eat an apple today for good luck. \r\nSuperstitious
       as usual. \nI did it anyways, so she would stop nagging about it. \r\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: calendar3
+    displayText: 1
     MonologueText: "She had fried hot pot with her friends last night to celebrate.
       \nGlad she is making friends back there already.  \r"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: window1
+    displayText: 1
     MonologueText: "I love it when it snows...Except that I have to deal with the
       disgusting slush puddles the next day. \r\n\n"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: window2
+    displayText: 1
     MonologueText: "The streets are kind of quiet today. It is weird. \nAre all the
       tourists at the giant Christmas tree at Rockefeller again? Lame. \r\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: window3
+    displayText: 1
     MonologueText: "She insisted on going to Rockefeller last Christmas. \nGod it
       was a lot of people. \n I normally hate crowds. But when I am with her, they
       don\u2019t seem to be that annoying anymore. \nI guess I get the whole Christmas
       thing now. \r"
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: tap1
+    displayText: 1
     MonologueText: "Did I rinse all the ingredients before I cook 'em? \r\nNo. Of
       course not. \r\n"
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
+  - Name: eating alone
+    displayText: 1
+    MonologueText: 'Yay! It is dinner! Time for some delicious Hot Pot!I can''t wait!
+
+      Who do I want to have dinner with? '
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: 
+    displayText: 0
     MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}
   - Name: 
+    displayText: 0
     MonologueText: 
-  - Name: 
-    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 0}

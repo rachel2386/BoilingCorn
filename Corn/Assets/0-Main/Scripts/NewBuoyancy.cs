@@ -8,6 +8,7 @@ public class NewBuoyancy : MonoBehaviour
     private Collider myCol;
     [HideInInspector] public float surfaceLevel;
     public  bool PotIsBoiling = false;
+    public float waterBoilTimeInseconds = 60;
     public static List<Rigidbody> cookedFoodInWater = new List<Rigidbody>();
     //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
    

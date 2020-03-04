@@ -8,6 +8,11 @@ MonoImporter:
   - defaultCursor: {fileID: 21300000, guid: 3c5d8d6d2b392844ebe4db2c482b4ff6, type: 3}
   - interactableCursor: {fileID: 21300000, guid: 5f76cef41a47d4f4d96c85d83d9613dd,
       type: 3}
+  - lookCursor: {fileID: 21300000, guid: 4f16c2b99a3d6074b92ded010d73ab8b, type: 3}
+  - InteractInstruction: {instanceID: 0}
+  - EatButtonInstruction: {instanceID: 0}
+  - LeanInstruction: {instanceID: 0}
+  - EndGameInstruction: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

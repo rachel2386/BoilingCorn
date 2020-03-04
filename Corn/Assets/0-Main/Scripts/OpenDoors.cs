@@ -7,7 +7,8 @@ public class OpenDoors : MonoBehaviour
 {
     public float closeAngle = 0;
     public float openAngle = 90;
-
+    public float SpringForce = 2;
+    public float SpringDamper = 1;
     private bool doorIsOpen = false;
 
     private HingeJoint myHJ;
@@ -24,6 +25,8 @@ public class OpenDoors : MonoBehaviour
         myAS = GetComponent<AudioSource>();
         myHJ.useSpring = true;
         var springPos = myHJ.spring;
+        springPos.spring = SpringForce;
+        springPos.damper = SpringDamper;
         springPos.targetPosition = closeAngle;
         myHJ.spring = springPos;
     }

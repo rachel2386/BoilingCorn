@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CornMonologueManager : MonoBehaviour
 {
     public MonologueScriptableObj myMonologueList;
+    public AudioSource MonologueAudio;
     public Queue<string> sentences = new Queue<string>();
    private bool textIsPlaying = false;
    public bool TextIsPlaying => textIsPlaying;
@@ -15,6 +16,8 @@ public class CornMonologueManager : MonoBehaviour
    private bool monologueIsComplete = true;
 
    public bool MonologueIsComplete => monologueIsComplete;
+
+   private bool debug_ForceStop = false;
 
    public Text _monologueTextbox;
 
@@ -28,21 +31,44 @@ public class CornMonologueManager : MonoBehaviour
         _monologueTextbox.text = "";
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            print("Force End Dialogue");
+            debug_ForceStop = true;
+            if(MonologueAudio.isPlaying)
+                MonologueAudio.Stop();
+        }
+    }
+
     public void StartMonologue(string nameOfMonologue)
     {
 
        //if(!MonologueIsComplete) return;
         _monologueTextbox.text = "";
-        
-        if (myMonologueList.GetMonologueFromName(nameOfMonologue) == null //list doesnot contain monologue of name 
-            || myMonologueList.GetMonologueFromName(nameOfMonologue).MonologueText.Length == 0) // monologue is empty
+        var monologueToPlay = myMonologueList.GetMonologueFromName(nameOfMonologue);
+        if ( monologueToPlay== null //list doesnot contain monologue of name 
+             ) // monologue is empty
         {
             print("no monologue with name " + nameOfMonologue + " found");
             return; 
         }
-        
+
+        if (monologueToPlay.WithVoiceOver && monologueToPlay.VoiceOverClip != null)
+        {
+            StartVoiceOver(monologueToPlay);
+        }
+
+        if (monologueToPlay.displayText == false || monologueToPlay.MonologueText.Length == 0)
+        {
+            print("no text to show for " + monologueToPlay.Name);
+            return;
+        }
+
+        monologueIsComplete = false;
         char[]separators = new []{'\r', '\n'}; // separate strings by a new line
-        string[] monologueLines = myMonologueList.GetMonologueFromName(nameOfMonologue).MonologueText.Split(separators,StringSplitOptions.RemoveEmptyEntries);
+        string[] monologueLines = monologueToPlay.MonologueText.Split(separators,StringSplitOptions.RemoveEmptyEntries);
         
         sentences.Clear();
         
@@ -57,13 +83,38 @@ public class CornMonologueManager : MonoBehaviour
         _TextPanel.SetActive(true);
        Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, true);
 
-       monologueIsComplete = false;
+      
        MonologuePlaying();
           
        playMonologue.OnComplete(NoMonologuePlaying);
        playMonologue.SetSpeedBased(true);
 
 
+    }
+
+    void StartVoiceOver(Monologue monologueToPlay)
+    {
+        
+        if(MonologueAudio.isPlaying)
+            MonologueAudio.Stop();
+        MonologueAudio.PlayOneShot( monologueToPlay.VoiceOverClip);
+        monologueIsComplete = false;
+        StartCoroutine(MonologueAudioIsPlaying());
+        
+    }
+
+    IEnumerator MonologueAudioIsPlaying()
+    {
+        
+
+        while (MonologueAudio.isPlaying && !debug_ForceStop)
+        {
+            yield return true;
+
+        }
+        yield return false;
+        EndMonologue();
+        
     }
 
     public void DisplayNextSentence()
@@ -89,6 +140,7 @@ public class CornMonologueManager : MonoBehaviour
         Debug.Log("end of monologue");
         monologueIsComplete = true;
         _TextPanel.GetComponent<PlayMakerFSM>().SetState("EndOfDialogue");
+        debug_ForceStop = false;
     }
     
     void MonologuePlaying()                                                                                                                                                                                                            

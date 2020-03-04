@@ -11,6 +11,8 @@ public class CornUIManager : MonoBehaviour
     public Sprite foodCursor;
     public Sprite defaultCursor;
     public Sprite interactableCursor;
+    public Sprite lookCursor;
+    private CornMouseLook _mouseLookScript;
 
     public GameObject InteractInstruction;
     public GameObject EatButtonInstruction;
@@ -23,8 +25,12 @@ public class CornUIManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
+        _mouseLookScript = FindObjectOfType<CornMouseLook>();
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
+        ImgSlot.gameObject.SetActive(false);
         EndGameInstruction.SetActive(false);
+        EatButtonInstruction.SetActive(false);
+       
 //        defaultCursor = transform.Find("DefaultCursor").GetComponent<Image>().mainTexture;
 //        foodCursor = transform.Find("FoodCursor").GetComponent<Image>();
 //        interactableCursor = transform.Find("InteractableCursor").GetComponent<Image>();
@@ -33,9 +39,12 @@ public class CornUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if(!_mouseLookScript.lockCursor || ! _mouseLookScript.enableMouseLook) return;
+        
+        ImgSlot.gameObject.SetActive(true);
+        
         RaycastHit hitInfo = new RaycastHit();
-
-
         if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo) ||
             hitInfo.collider == null ) return;
         
@@ -55,6 +64,11 @@ public class CornUIManager : MonoBehaviour
                     ImgSlot.sprite = interactableCursor;
                     InteractInstruction.SetActive(true);
                 }
+                else if (hitInfo.collider.CompareTag("Look"))
+                {
+                    ImgSlot.sprite = lookCursor;
+                    InteractInstruction.SetActive(true);
+                }
                 else
                 {
                     ImgSlot.sprite = defaultCursor;
@@ -64,14 +78,16 @@ public class CornUIManager : MonoBehaviour
             }
             else if (GameManager.gameState == 2)
             {
-                EndGameInstruction.SetActive(true);
+                //EndGameInstruction.SetActive(true);
                 if (hitInfo.collider.CompareTag("Pickupable"))
                     ImgSlot.sprite = interactableCursor;
                 else
                 {
                     ImgSlot.sprite = defaultCursor;
+                    EatButtonInstruction.SetActive(false);
                 }
             }
+            
         }
         else
         {

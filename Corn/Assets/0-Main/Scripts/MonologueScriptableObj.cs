@@ -17,6 +17,11 @@ public class MonologueScriptableObj : ScriptableObject
 public class Monologue
 {
     public string Name;
+    public bool displayText = false;
     [TextArea(3,100)]public string MonologueText;
+    public bool WithVoiceOver = true;
+    public AudioClip VoiceOverClip;
    
+    
+
 }
