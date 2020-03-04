@@ -40,7 +40,7 @@ MonoBehaviour:
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: e079ac3642b22f24a8c4f64da390e236, type: 3}
   - Name: what to eat
-    displayText: 1
+    displayText: 0
     MonologueText: "..I guess I am eating alone tonight. \r\nWhat should I get? \r\nOh
       wait, I still got that pack of hotpot soup base. Yah why not.. \r\nNow let me
       just order some ingredients..\r\n"
@@ -59,7 +59,7 @@ MonoBehaviour:
     MonologueText: 'Why is this taking so long to boil..! I should probably do something
       else to distract myself from staring at this thing. '
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
   - Name: boiling
     displayText: 0
     MonologueText: "Wow. This spicy soup base looks really hot. I hope I can survive
@@ -69,21 +69,21 @@ MonoBehaviour:
   - Name: cook first food
     displayText: 0
     MonologueText: "WHY do I still have to wait! Let me cook some more. \r\n"
-    WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 0}
   - Name: eat first food
     displayText: 0
     MonologueText: "**Coughing** Ouch this pepper is strong.. Why am I torturing myself
       like this..\r\n\u2026\r\nLet me just have one more. \r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: fb57d702dea587e419b0b987de68bc61, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: 468d08be9a5bb0e46b8a50261a27ad2d, type: 3}
   - Name: eat second food
     displayText: 0
     MonologueText: "**Salivating** \r\nThis tastes super fresh! This soup really brings
       out the flavor of the ingredients. \r\nThey are totally gonna regret not coming!
       Now I can have all of this to myself!\r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: fb57d702dea587e419b0b987de68bc61, type: 3}
   - Name: eat fifth food
     displayText: 0
     MonologueText: "Surprisingly, I am actually enjoying the spiciness now. I could
@@ -107,7 +107,7 @@ MonoBehaviour:
     MonologueText: "**Burp** This is surprisingly filling\u2026I am almost full. \r\nNope,
       I am not done yet! \r"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
   - Name: full
     displayText: 0
     MonologueText: "Just one more.. \n...I can\u2019t!  I think my tummy\u2019s gonna
@@ -117,26 +117,24 @@ MonoBehaviour:
       for both of us this way. \n...\rTo be where we belong.\n...\nI should turn off
       the stove now. \r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 0}
+    VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
   - Name: clean up
-    displayText: 0
-    MonologueText: "**noise of fly buzzing ** \r\nWhy is this damn fly still here?!
-      Let me clean this mess up.. \r\nOk.. what do I want to keep? \r\nHope I can
-      stuff everything into that fridge! \r\n"
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "\nOk.. what do I want to keep? \r\nHope I can stuff everything
+      into that fridge! \r\n"
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: end1
-    displayText: 0
+    displayText: 1
     MonologueText: "Pretty sure that is everything I want to keep for tomorrow. Gotta
       dump away the rest.. \r\n"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: end2
-    displayText: 0
-    MonologueText: "**noise of fly buzzing ** \r\n\u2026\r\n\n** new message from
-      B ** \r\nGood Morning Baby! Merry Christmas! Did you use up the spicy soup base
-      I left for you? :) \r\n\n"
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
+      Did you use up the spicy soup base I left for you? :) \r\n\n"
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: phone1
     displayText: 1
@@ -196,12 +194,14 @@ MonoBehaviour:
     displayText: 1
     MonologueText: "Did I rinse all the ingredients before I cook 'em? \r\nNo. Of
       course not. \r\n"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
-  - Name: 
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+  - Name: eating alone
+    displayText: 1
+    MonologueText: 'Yay! It is dinner! Time for some delicious Hot Pot!I can''t wait!
+
+      Who do I want to have dinner with? '
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: 
     displayText: 0

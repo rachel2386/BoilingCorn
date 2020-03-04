@@ -62,7 +62,7 @@ public class CornMonologueManager : MonoBehaviour
 
         if (monologueToPlay.displayText == false || monologueToPlay.MonologueText.Length == 0)
         {
-            print("no text to show for" + monologueToPlay.Name);
+            print("no text to show for " + monologueToPlay.Name);
             return;
         }
 

@@ -93,7 +93,7 @@ public class NewCornFoodInteractions : MonoBehaviour
             }
             else
             {
-                if (GameManager.gameState == 1)
+                if (GameManager.gameState ==1)
                 {
                     if (Input.GetMouseButtonUp(0))
                     {
@@ -148,7 +148,7 @@ public class NewCornFoodInteractions : MonoBehaviour
             case 8:
                 _monologueManager.StartMonologue("noise from neighbors");
                 break;
-            case 15:
+            case 11:
                 _monologueManager.StartMonologue("full");
                 playerIsFull = true;
                 break;

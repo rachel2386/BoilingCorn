@@ -13,6 +13,7 @@ TagManager:
   - Fridge
   - Container
   - Walls
+  - Look
   layers:
   - Default
   - TransparentFX

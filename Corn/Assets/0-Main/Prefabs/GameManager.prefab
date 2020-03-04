@@ -115,7 +115,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Image
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -190,7 +190,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: UnityEngine.UI.Image
-          PropertyName: color.a
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -322,7 +322,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Single
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -6627,19 +6627,11 @@ MonoBehaviour:
         x: 99.88281
         y: 837.3828
         width: 138.8
-        height: 32
+        height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: end
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
+      transitions: []
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CallMethod
@@ -6905,6 +6897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMonologueList: {fileID: 11400000, guid: f8d280a6cdc53ec40bdbd32adff69230, type: 2}
+  MonologueAudio: {fileID: 0}
   _monologueTextbox: {fileID: 0}
   _TextPanel: {fileID: 2749928809833160806, guid: cfad6a348d881164fa44ce64b071c6f8,
     type: 3}

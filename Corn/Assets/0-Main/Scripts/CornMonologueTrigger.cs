@@ -17,8 +17,9 @@ public class CornMonologueTrigger : MonoBehaviour
     // Update is called once per frame
     private void OnMouseDown()
     {
-       if( _monologueManager.MonologueIsComplete &&
-            !_monologueManager.TextIsPlaying && GameManager.gameState >0 && GameManager.gameState < 3)
+       if( _monologueManager.MonologueIsComplete 
+           && GameManager.gameState >= 1
+           && !_monologueManager.TextIsPlaying && GameManager.gameState < 3)
         {
             numberOfTimesClicked++;
             if(numberOfTimesClicked <= MonologuesToPlay.Length)

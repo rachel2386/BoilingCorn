@@ -15,7 +15,7 @@ using UnityStandardAssets.CrossPlatformInput;
         public bool smooth;
         public float smoothTime = 5f;
         public bool lockCursor = true;
-
+        public bool enableMouseLook = true;
 
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
@@ -34,6 +34,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
         private void Update()
         {
+            if(enableMouseLook)
             LookRotation(m_player,m_camera);
         }
 
