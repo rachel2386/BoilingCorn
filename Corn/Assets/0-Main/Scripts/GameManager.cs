@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         private IEnumerator playMonologue()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
             Context._monologueManager.StartMonologue("eating alone");
             while (!Context._monologueManager.MonologueIsComplete)
             {
