@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ce91bbae76e7469a470690b1be9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIsFull: 0
   objectHolder: {fileID: 8491511238067631844}
   eatSound: {fileID: 8300000, guid: 520e173e22db75a4bace659f81d005f0, type: 3}
   textAnimFSM: {fileID: 0}
@@ -520,6 +521,7 @@ MonoBehaviour:
   smooth: 0
   smoothTime: 5
   lockCursor: 1
+  enableMouseLook: 1
 --- !u!1 &8491511239044595179
 GameObject:
   m_ObjectHideFlags: 0
