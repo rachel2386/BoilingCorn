@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         else
         {
             SceneToLoad.SetActive(false);
-            gameFSM.TransitionTo<BeforeOrderState>(); //default state
+            gameFSM.TransitionTo<AfterOrderState>(); //default state
         }
     }
 
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private class BeforeOrderState : GameState
+    private class AfterOrderState : GameState
     {
         private PlayMakerFSM PhoneFsm;
         private bool doneCalling = false;
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
-            gameState = -1;
+            gameState = 0;
 
             PhoneFsm = GameObject.Find("Phone").GetComponent<PlayMakerFSM>();
 
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
 
 
-            gameState = 0;
+            gameState = 1;
 
 
             Context.OrderMenu.SetActive(true);
@@ -310,12 +310,31 @@ public class GameManager : MonoBehaviour
     private class CleanUpState : GameState
     {
         private Transform holder;
+        private FinalBowlAnimation bowlAnimPlayer;
 
         public override void OnEnter()
         {
             base.OnEnter();
             gameState = 2;
             InitCleanUpState();
+        }
+        
+        void InitCleanUpState()
+        {
+            Context.textAnimFSM.FsmVariables.BoolVariables[0].Value = true;
+
+
+            holder = FindObjectOfType<FridgeHolderBehavior>().transform;
+            bowlAnimPlayer = FindObjectOfType<FinalBowlAnimation>();
+
+
+            foreach (var c in CornItemManager.Containers)
+            {
+                if (c.transform.childCount == 0) continue;
+
+                var cParent = c.transform.parent;
+                cParent.tag = "Pickupable";
+            }
         }
 
         public override void Update()
@@ -324,8 +343,14 @@ public class GameManager : MonoBehaviour
 
             if (GameObject.FindGameObjectsWithTag("Respawn").Length == 0) // transition to next stage after putting plate in fridge
             {
-               
-                Context.gameFSM.TransitionTo<EndState>();
+                if (!bowlAnimPlayer.IsPlaying)
+                {
+                    bowlAnimPlayer.StartAnimation();
+                }
+                
+                if(bowlAnimPlayer.AnimationComplete)
+                    Context.gameFSM.TransitionTo<EndState>();
+                
             }
 
             if (Input.GetKeyDown(KeyCode.Return))
@@ -335,6 +360,7 @@ public class GameManager : MonoBehaviour
                 holder.GetComponent<FridgeHolderBehavior>().hasChild = true;
             }
         }
+        
 
         public override void OnExit()
         {
@@ -346,23 +372,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        void InitCleanUpState()
-        {
-            Context.textAnimFSM.FsmVariables.BoolVariables[0].Value = true;
-
-
-            holder = FindObjectOfType<FridgeHolderBehavior>().transform;
-            
-
-
-            foreach (var c in CornItemManager.Containers)
-            {
-                if (c.transform.childCount == 0) continue;
-
-                var cParent = c.transform.parent;
-                cParent.tag = "Pickupable";
-            }
-        }
+        
     }
 
 
