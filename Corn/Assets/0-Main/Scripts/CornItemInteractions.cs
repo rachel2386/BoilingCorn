@@ -5,6 +5,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using HutongGames.PlayMaker;
 using UnityEngine;
+using UnityEngine.UI;
 
 //update 2/22/20: 
 //when food state is 0, can only left click 
@@ -26,7 +27,7 @@ public class CornItemInteractions : MonoBehaviour
     public static bool IsholdingObject = false;
 
     private GameObject objectHolding;
-    private Transform foodParent;
+
 
     private Rigidbody objectRB;
     public Transform objectHolder;
@@ -37,19 +38,22 @@ public class CornItemInteractions : MonoBehaviour
     private AudioSource playerAS;
     [Header("Eating Sounds")] public AudioClip eatSound;
 
+    [HideInInspector] public Image FoodImage;
+
+    [HideInInspector] public bool FoodMemoryPlaying = false;
+
     //temp
     public PlayMakerFSM textAnimFSM;
 
-    public void Initiate()
+    private void Start()
     {
+        playerAS = GetComponent<AudioSource>();
+
+        FoodImage = GameObject.Find("FoodImage").GetComponent<Image>();
+        FoodImage.sprite = null;
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
-
-        //bowl = GameObject.Find("BowlPivot").transform;
-        foodParent = GameObject.Find("Food").transform;
-        // bowlFSM = bowl.parent.GetComponent<PlayMakerFSM>();
-        playerAS = GetComponent<AudioSource>();
     }
 
 
@@ -63,9 +67,9 @@ public class CornItemInteractions : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(GameManager.gameState == 3 || GameManager.gameState == 0) return;
+        if (GameManager.gameState == 3 || GameManager.gameState == 0) return;
         RaycastHit hitInfo = new RaycastHit();
-                
+
         if (Input.GetMouseButtonDown(1)
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
             && hitInfo.collider.CompareTag("FoodItem")
@@ -73,56 +77,49 @@ public class CornItemInteractions : MonoBehaviour
         {
             MoveFoodToMouth(hitInfo.collider.gameObject);
         }
-        
+
         if (!IsholdingObject)
+        {
+            if (Input.GetMouseButtonDown(0)
+                && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo,
+                    LayerMask.NameToLayer("Pickupable"))
+                && hitInfo.collider.GetComponent<ItemProperties>())
             {
-                
-                
-                    if (Input.GetMouseButtonDown(0)
-                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, LayerMask.NameToLayer("Pickupable"))
-                        && hitInfo.collider.GetComponent<ItemProperties>())
-                    {
-
-                       InitPickup(hitInfo);
-                        
-                    }
-
+                InitPickup(hitInfo);
             }
-            else
+        }
+        else
+        {
+            RaycastHit hit = new RaycastHit(); //
+
+            if (Input.GetMouseButtonUp(0))
+
             {
-
-                RaycastHit hit = new RaycastHit(); //
-
-                    if (Input.GetMouseButtonUp(0))
-                    
-                    {
-                      
-                        PlaceObject();
-                    }
-
+                PlaceObject();
             }
+        }
     }
 
     void MoveFoodToMouth(GameObject FoodToEat)
     {
         FoodToEat.GetComponent<NewFoodItemProperties>().foodState = 2;
         var mouth = Camera.main.transform;
-       Tween moveToMouth = FoodToEat.transform.DOMove(mouth.position + Vector3.up * -0.12f, 3);
+        Tween moveToMouth = FoodToEat.transform.DOMove(mouth.position + Vector3.up * -0.12f, 3);
         moveToMouth.SetEase(Ease.InOutSine);
         moveToMouth.OnComplete(() => FoodEaten(FoodToEat));
     }
 
     void FoodEaten(GameObject FoodToEat)
     {
-        FoodToEat.SetActive(false);
+        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
         if (!CornItemManager.FoodEaten.Contains(FoodToEat))
             CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
 
         playerAS.PlayOneShot(eatSound);
 
-        
+
         var numOfFoodEaten = CornItemManager.FoodEaten.Count;
-        
+
         switch (numOfFoodEaten)
         {
             case 1:
@@ -134,7 +131,7 @@ public class CornItemInteractions : MonoBehaviour
             case 5:
                 _monologueManager.StartMonologue("eat fifth food");
                 break;
-           case 10:
+            case 10:
                 _monologueManager.StartMonologue("eat tenth food");
                 break;
             case 8:
@@ -153,22 +150,19 @@ public class CornItemInteractions : MonoBehaviour
     {
         IsholdingObject = false;
         objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
-           objectHolding = null;
-            objectRB = null;
-            objectHolder.GetComponent<SpringJoint>().connectedBody = null;
+        objectHolding = null;
+        objectRB = null;
+        objectHolder.GetComponent<SpringJoint>().connectedBody = null;
     }
 
     void InitPickup(RaycastHit objectClicked)
     {
-        IsholdingObject = true; 
+        IsholdingObject = true;
         objectHolding = objectClicked.collider.gameObject;
         objectRB = objectClicked.rigidbody;
         objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<SpringJoint>());
-
     }
 
-
- 
 
     private bool clicked = false;
 

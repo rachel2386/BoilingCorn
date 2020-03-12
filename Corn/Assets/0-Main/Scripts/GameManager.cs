@@ -268,8 +268,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(3);
-
+           
             Context._monologueManager.StartMonologue("what to eat");
             while (!Context._monologueManager.MonologueIsComplete)
             {
@@ -360,7 +359,7 @@ public class GameManager : MonoBehaviour
 
         void InitManagers()
         {
-            Context._FoodInteractionScript.Initiate();
+           
             Context._cornItemManager.InitLists();
             knobFSM = GameObject.Find("knob").GetComponent<PlayMakerFSM>();
         }

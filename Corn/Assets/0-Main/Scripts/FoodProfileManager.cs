@@ -21,7 +21,9 @@ public class FoodProperty
     //public GameObject CookedPrefab;
     public float SecondsToCook;
     public AudioClip EatSound; 
-    public List<Image>FoodMemory = new List<Image>();
+    public List<Sprite>foodMemories = new List<Sprite>();
+    public Queue<Sprite>foodMemoryQueue = new Queue<Sprite>();
+   
 
 
 }
