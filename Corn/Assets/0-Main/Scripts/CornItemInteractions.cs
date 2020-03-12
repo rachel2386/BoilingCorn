@@ -52,11 +52,10 @@ public class CornItemInteractions : MonoBehaviour
         playerAS = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
 
     private void Update()
     {
-        if (GameManager.gameState == 1 && Input.GetKeyDown(KeyCode.Return) && !playerIsFull )
+        if (GameManager.gameState == 1 && Input.GetKeyDown(KeyCode.Alpha2) && !playerIsFull)
         {
             playerIsFull = true;
         }
@@ -64,7 +63,7 @@ public class CornItemInteractions : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if(GameManager.gameState == 3 || GameManager.gameState == 0) return;
         RaycastHit hitInfo = new RaycastHit();
                 
         if (Input.GetMouseButtonDown(1)
@@ -79,9 +78,6 @@ public class CornItemInteractions : MonoBehaviour
             {
                 
                 
-                if (GameManager.gameState < 3) // in cooking state 
-                {
-                   
                     if (Input.GetMouseButtonDown(0)
                         && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, LayerMask.NameToLayer("Pickupable"))
                         && hitInfo.collider.GetComponent<ItemProperties>())
@@ -91,41 +87,19 @@ public class CornItemInteractions : MonoBehaviour
                         
                     }
 
-                    
-                }
-//                else if (GameManager.gameState == 2) // in cleanup state, food not pickupable
-//                {
-//                    if (Input.GetMouseButtonDown(0)
-//                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-//                        && hitInfo.collider.CompareTag("Pickupable"))
-//                    {
-//                        IsholdingObject = true;
-//                        ContainerPickUp(hitInfo);
-//                    }
-//                }
             }
             else
             {
-//                if (GameManager.gameState ==1)
-//                {
+
                 RaycastHit hit = new RaycastHit(); //
-//                    && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hit)
-//                    && hit.collider != null)
+
                     if (Input.GetMouseButtonUp(0))
                     
                     {
                       
                         PlaceObject();
                     }
-//                }
-//                else if (GameManager.gameState == 2)
-                {
-//                    if (Input.GetMouseButtonUp(0)
-//                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
-//                        && hitInfo.collider != null
-//                        && hitInfo.collider.CompareTag("Respawn"))
-//                        ContainerDropOff(hitInfo.collider.transform);
-                }
+
             }
     }
 
@@ -133,8 +107,7 @@ public class CornItemInteractions : MonoBehaviour
     {
         FoodToEat.GetComponent<NewFoodItemProperties>().foodState = 2;
         var mouth = Camera.main.transform;
-        FoodToEat.transform.parent = mouth;
-        Tween moveToMouth = FoodToEat.transform.DOLocalMove(Vector3.up * -0.12f, 3);
+       Tween moveToMouth = FoodToEat.transform.DOMove(mouth.position + Vector3.up * -0.12f, 3);
         moveToMouth.SetEase(Ease.InOutSine);
         moveToMouth.OnComplete(() => FoodEaten(FoodToEat));
     }
@@ -180,19 +153,7 @@ public class CornItemInteractions : MonoBehaviour
     {
         IsholdingObject = false;
         objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
-        
-//            if (objectHolding.CompareTag("FoodItem"))
-//            {
-//                objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff(mousePosition);
-//                
-//            }
-//            else if (objectHolding.CompareTag("Pickupable"))
-//            {
-//                objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
-//                objectHolding.transform.parent = null;
-//            }
-
-            objectHolding = null;
+           objectHolding = null;
             objectRB = null;
             objectHolder.GetComponent<SpringJoint>().connectedBody = null;
     }
@@ -203,50 +164,11 @@ public class CornItemInteractions : MonoBehaviour
         objectHolding = objectClicked.collider.gameObject;
         objectRB = objectClicked.rigidbody;
         objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<SpringJoint>());
-//        objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
-//        //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
+
     }
 
 
-    void RotatePlatePivot(Transform pivot)
-    {
-        objectHolding.transform.parent = pivot.parent;
-
-
-        objectHolding = null;
-        objectRB = null;
-    }
-
-    void ContainerPickUp(RaycastHit hitInfo)
-    {
-        objectHolding = hitInfo.collider.gameObject;
-
-        var ContainerTransform = hitInfo.collider.transform;
-
-        ContainerTransform.SetParent(objectHolder);
-
-        Tween MoveToHolder =
-            ContainerTransform.DOLocalMove(Vector3.zero + Vector3.right * 0.3f - Vector3.up * 0.2f, 0.3f);
-        MoveToHolder.SetEase(Ease.OutQuad);
-    }
-
-    void ContainerDropOff(Transform fridgeHolder)
-    {
-        //update text
-        var firstPlatePickup = textAnimFSM.FsmVariables.FindFsmBool("firstPlateIn");
-        if (!firstPlatePickup.Value)
-            firstPlatePickup.Value = true;
-
-        IsholdingObject = false;
-        objectHolding.transform.parent = fridgeHolder;
-        Tween moveToFridge = objectHolding.transform.DOLocalMove(Vector3.zero, 1f);
-        moveToFridge.SetEase(Ease.OutSine);
-        Tween ResetRotation = objectHolding.transform.DOLocalRotate(Vector3.zero, 1f);
-        ResetRotation.SetEase(Ease.OutSine);
-
-        fridgeHolder.GetComponent<FridgeHolderBehavior>().hasChild = true;
-        objectHolding = null;
-    }
+ 
 
     private bool clicked = false;
 

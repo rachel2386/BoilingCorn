@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class CornUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private Image ImgSlot;
+    public Image fadeImage;
     public Sprite foodCursor;
     public Sprite defaultCursor;
     public Sprite interactableCursor;
@@ -28,6 +30,10 @@ public class CornUIManager : MonoBehaviour
         _mouseLookScript = FindObjectOfType<CornMouseLook>();
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
         //ImgSlot.gameObject.SetActive(false);
+        fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
+        fadeImage.color = new Color(0,0,0,0);
+        fadeImage.gameObject.SetActive(false);
+        
         EndGameInstruction.SetActive(false);
         EatButtonInstruction.SetActive(false);
     }
@@ -104,4 +110,50 @@ public class CornUIManager : MonoBehaviour
             EatButtonInstruction.SetActive(false);
         }
     }
+
+    public void FadeIn(float duration, Color ScreenColor)
+    {
+        StartCoroutine(FadingIn(duration, ScreenColor));
+    }
+   
+    public void FadeOut(float duration, Color ScreenColor)
+    {
+        StartCoroutine(FadingOut(duration, ScreenColor));
+    }
+
+
+    private IEnumerator FadingIn(float duration, Color ScreenColor)
+    {
+        
+        fadeImage.color = ScreenColor;
+        var color = fadeImage.color;
+        color.a = 1;
+        fadeImage.color = color;
+        fadeImage.gameObject.SetActive(true);
+        
+        
+        Tween fadeImg = fadeImage.DOFade(0, duration);
+        yield return fadeImg.WaitForCompletion();
+        fadeImage.gameObject.SetActive(false);
+        yield return true;
+        
+
+    }
+
+  private IEnumerator FadingOut(float duration, Color ScreenColor)
+   {
+      
+       
+       fadeImage.color = ScreenColor;
+       var color = fadeImage.color;
+       color.a = 0;
+       fadeImage.color = color;
+       fadeImage.gameObject.SetActive(true);
+             
+       Tween showImg = fadeImage.DOFade(1, duration);
+       yield return showImg.WaitForCompletion();
+       
+      
+       
+   }
 }

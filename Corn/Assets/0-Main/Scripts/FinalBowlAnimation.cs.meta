@@ -3,7 +3,9 @@ guid: 3040b16dcbd46424faea5899a73657ff
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PositionAboveTrashCan: {instanceID: 0}
+  - clipToPlay: {fileID: 8300000, guid: 3b47d8950f4727b49bacc2354486adb2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
