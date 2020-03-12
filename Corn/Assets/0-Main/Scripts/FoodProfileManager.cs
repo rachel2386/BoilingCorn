@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(order = 1, fileName = "FoodProperty")]
 public class FoodProfileManager :ScriptableObject
@@ -19,6 +20,8 @@ public class FoodProperty
     public GameObject FoodPrefab;
     //public GameObject CookedPrefab;
     public float SecondsToCook;
-   
-    
+    public AudioClip EatSound; 
+    public List<Image>FoodMemory = new List<Image>();
+
+
 }

@@ -48,6 +48,7 @@ public class CornItemManager : MonoBehaviour
         var FridgeTrigger = GameObject.FindGameObjectsWithTag("Fridge");
         foreach (var holder in FridgeTrigger)
         {
+            if(!holder.GetComponent<FridgeOnTriggerEnter>())
             holder.AddComponent<FridgeOnTriggerEnter>();
         }
     }

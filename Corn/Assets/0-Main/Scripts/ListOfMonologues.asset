@@ -196,17 +196,17 @@ MonoBehaviour:
       course not. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
-  - Name: eating alone
+  - Name: ready for hotpot
     displayText: 1
-    MonologueText: 'Yay! It is dinner! Time for some delicious Hot Pot!I can''t wait!
-
-      Who do I want to have dinner with? '
+    MonologueText: Yay! It is dinner! Time for some delicious Hot Pot! What should
+      I order for the three of us?
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
-  - Name: 
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+  - Name: where are they
+    displayText: 1
+    MonologueText: All Set! I wonder where they are? They better be here before the
+      food arrives.
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: 
     displayText: 0

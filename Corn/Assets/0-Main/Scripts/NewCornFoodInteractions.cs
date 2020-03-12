@@ -181,12 +181,12 @@ public class NewCornFoodInteractions : MonoBehaviour
         {
             if (objectHolding.CompareTag("FoodItem"))
             {
-                objectHolding.gameObject.GetComponent<NewFoodItemProperties>().OnDropOff();
+                objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
                 objectHolding.transform.parent = foodParent;
             }
             else if (objectHolding.CompareTag("Pickupable"))
             {
-                objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
+                objectHolding.gameObject.GetComponent<ItemProperties>().HeldByPlayer = false;
                 objectHolding.transform.parent = null;
             }
 
@@ -202,7 +202,7 @@ public class NewCornFoodInteractions : MonoBehaviour
     void InitPickup(RaycastHit objectClicked)
     {
         objectHolding = objectClicked.collider.gameObject;
-        objectRB = objectHolding.gameObject.GetComponent<NewFoodItemProperties>().OnPickUp();
+        objectRB = objectClicked.rigidbody;
         objectHolder.GetComponent<SpringJoint>().connectedBody = objectRB;
         //objectHolder.GetComponent<ConfigurableJoint>().connectedBody = objectRB;
     }

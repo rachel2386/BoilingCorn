@@ -13,7 +13,7 @@ public class ContainerTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(GameManager.gameState != 1) return;
+       // if(GameManager.gameState != 1) return;
         if(other.CompareTag("FoodItem"))
         other.transform.parent = transform;
         
@@ -21,7 +21,7 @@ public class ContainerTriggerEnter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(GameManager.gameState != 1) return;
+       // if(GameManager.gameState != 1) return;
         if(other.CompareTag("FoodItem"))
         other.transform.parent = foodParent;
     }

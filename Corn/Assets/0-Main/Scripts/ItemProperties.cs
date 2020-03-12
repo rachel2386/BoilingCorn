@@ -6,25 +6,31 @@ using UnityEngine;
 public class ItemProperties : MonoBehaviour
 {
     [HideInInspector] public bool HeldByPlayer = false;
+    
 
 //  public abstract bool OnPickup();
     public virtual void Start()
     {
+        
         print("running base start");
+        gameObject.layer = LayerMask.NameToLayer("Pickupable");
         //InitOutline();
     }
 
-    public virtual Rigidbody OnPickUp()
+    public virtual void OnPickUp(SpringJoint objectHolder)
     {
         HeldByPlayer = true;
-        Rigidbody myRb = GetComponent<Rigidbody>();
-        return myRb;
+       objectHolder.connectedBody = GetComponent<Rigidbody>();
+      
     }
 
-    public virtual void OnDropOff()
+    public virtual void OnDropOff()//Vector3 DropOffPosition)
     {
         HeldByPlayer = false;
-       
+        //GetComponent<Rigidbody>().position = DropOffPosition;
+        
+
+
     }
 
     protected QuickOutline InitOutline()

@@ -6,6 +6,7 @@ using UnityEngine;
 public class NewFoodItemProperties : ItemProperties
 {
     private FoodProfileManager _itemManager;
+    private CornItemInteractions _itemInteractions;
     private FoodProperty myFoodProfile;
     public string FoodName;
     private bool hasFoodProfile = false;
@@ -14,9 +15,9 @@ public class NewFoodItemProperties : ItemProperties
     private int cooked = 1;
     private GameObject foodToRender;
     private float SecondsToCook;
-   [SerializeField] private float timeCooked = 0;
-   
-   private float TimeCooked
+    [SerializeField] private float timeCooked = 0;
+
+    private float TimeCooked
     {
         get => timeCooked;
         set => timeCooked = value;
@@ -42,6 +43,7 @@ public class NewFoodItemProperties : ItemProperties
     {
         _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
         _buoyancyScript = FindObjectOfType<NewBuoyancy>();
+        _itemInteractions = GameObject.FindObjectOfType<CornItemInteractions>();
 
         myFoodProfile = _itemManager.GetPropertyFromName(FoodName);
 
@@ -55,7 +57,7 @@ public class NewFoodItemProperties : ItemProperties
             hasFoodProfile = false;
             InitFoodGeneric();
         }
-        
+
         if (SecondsToCook <= 0)
         {
             SecondsToCook = 5;
@@ -65,23 +67,19 @@ public class NewFoodItemProperties : ItemProperties
 
     void InitFoodGeneric()
     {
-       // InitOutline();
+        // InitOutline();
     }
 
     void InitFoodWithProfile()
     {
-
-
-        
         SecondsToCook = myFoodProfile.SecondsToCook;
 
 
-       // InitOutlineWithProfile();
+        // InitOutlineWithProfile();
     }
 
     private void Update()
     {
-       
         if (TimeCooked >= SecondsToCook)
         {
             PercentageCooked = 1;
@@ -90,11 +88,9 @@ public class NewFoodItemProperties : ItemProperties
         }
         else
         {
-            
             if (foodState == raw && InWater && _buoyancyScript.PotIsBoiling && TimeCooked < SecondsToCook)
                 TimeCooked += Time.deltaTime;
             PercentageCooked = TimeCooked / SecondsToCook;
-           
         }
     }
 
@@ -110,19 +106,17 @@ public class NewFoodItemProperties : ItemProperties
             {
                 foodRB.isKinematic = true;
             }
+
+            if (InWater)
+            {
+                if (foodState == raw)
+                    ChangePhysicsProperties(3, 3, false);
+                else if (foodState == cooked)
+                    ChangePhysicsProperties(5, 5, false);
+            }
             else
             {
-                if (InWater)
-                {
-                    if (foodState == raw)
-                        ChangePhysicsProperties(3, 3, false);
-                    else if (foodState == cooked)
-                        ChangePhysicsProperties(5, 5, false);
-                }
-                else
-                {
-                    ChangePhysicsProperties(1, 1, true);
-                }
+                ChangePhysicsProperties(1, 1, true);
             }
         }
     }
@@ -142,42 +136,20 @@ public class NewFoodItemProperties : ItemProperties
 
         if (!NewBuoyancy.cookedFoodInWater.Contains(foodRB))
             NewBuoyancy.cookedFoodInWater.Add(foodRB);
-
-        return;
-        
-        var foodRot = foodToRender.transform.localRotation;
-        var foodPos = foodToRender.transform.localPosition;
-        var foodScale = foodToRender.transform.localScale;
-
-       // foodToRender = myFoodProfile.CookedPrefab;
-
-        if (foodToRender == null)
-        {
-            print("cooked prefab not found for" + myFoodProfile.Name);
-            return;
-        }
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var child = transform.GetChild(i);
-            child.gameObject.SetActive(false);
-        }
-
-        var cookedFood = Instantiate(foodToRender, transform, false);
-        cookedFood.transform.localPosition = foodPos;
-        cookedFood.transform.localRotation = foodRot;
-        //cookedFood.transform.localScale = foodScale;
-
-
-//        CornItemManager.ListOfFood.Add(cookedFood);
-//
-//        var foodInchildren = cookedFood.GetComponentsInChildren<NewFoodItemProperties>();
-//        if (foodInchildren.Length <= 0) return;
-//        foreach (var f in foodInchildren)
-//        {
-//            CornItemManager.ListOfFood.Add(f.gameObject);
-//        }
     }
+
+    public override void OnPickUp(SpringJoint objectHolder)
+    {
+        
+
+
+        if (foodState != 2) //if food not eaten, pickupable
+        {
+            base.OnPickUp(objectHolder);
+            //StartCoroutine(InsertFrame());
+        }
+    }
+
 
 //    private void OnMouseEnter()
 //    {
