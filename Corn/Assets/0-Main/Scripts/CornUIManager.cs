@@ -106,6 +106,7 @@ public class CornUIManager : MonoBehaviour
         {
             InteractInstruction.SetActive(false);
             EatButtonInstruction.SetActive(false);
+            EndGameInstruction.SetActive(false);
         }
     }
 

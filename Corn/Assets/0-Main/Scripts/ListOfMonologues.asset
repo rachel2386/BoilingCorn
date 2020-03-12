@@ -206,8 +206,8 @@ MonoBehaviour:
     displayText: 1
     MonologueText: All Set! I wonder where they are? They better be here before the
       food arrives.
-    WithVoiceOver: 0
-    VoiceOverClip: {fileID: 0}
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 416ad2cb9c644c3459e37f04f6b244f0, type: 3}
   - Name: I am so angry
     displayText: 0
     MonologueText: 
@@ -218,11 +218,11 @@ MonoBehaviour:
     MonologueText: 
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: de3519c60fb89754db5323836c250f46, type: 3}
-  - Name: I am so angry
+  - Name: great day
     displayText: 0
     MonologueText: 
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
   - Name: I am so angry
     displayText: 0
     MonologueText: 

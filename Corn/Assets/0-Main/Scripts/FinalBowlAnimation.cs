@@ -17,6 +17,7 @@ public class FinalBowlAnimation : MonoBehaviour
     private AudioSource myAs;
     public AudioClip clipToPlay;
     private Camera myCam;
+    private Vector3 camPos;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class FinalBowlAnimation : MonoBehaviour
         if (!IsPlaying)
         {
             GameManager.gameState = 3;
+            camPos = myCam.transform.position;
             StartCoroutine(PlayAnimation(bowlsToAnimate[currentBowlIndex]));
         }
     }
@@ -83,6 +85,7 @@ public class FinalBowlAnimation : MonoBehaviour
     {
         IsPlaying = true;
         var InitPos = bowl.position;
+        
 
         if (firstTimePlaying)
         {
@@ -94,8 +97,8 @@ public class FinalBowlAnimation : MonoBehaviour
             
         }
         
-            Tween liftBowl = bowl.DOMove(Vector3.up * 0.5f + Vector3.back * 0.3f, BowlMoveSpeed);
-            liftBowl.SetRelative(true);
+            Tween liftBowl = bowl.DOMove(camPos + Vector3.forward * 0.5f + Vector3.up * -0.5f, BowlMoveSpeed);
+            //liftBowl.SetRelative(true);
             liftBowl.SetSpeedBased(true);
             liftBowl.SetEase(Ease.OutSine);
             yield return liftBowl.WaitForCompletion();

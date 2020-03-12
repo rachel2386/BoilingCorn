@@ -306,8 +306,9 @@ public class GameManager : MonoBehaviour
             TransitionTo<CookingState>();
             
             Context.OrderMenu.SetActive(false);
-
+            yield return new WaitForSeconds(3);
             Context._monologueManager.StartMonologue("I am so angry");
+            
             yield return new WaitForSeconds(5);
             Context._uiManager.FadeIn(1, Color.black);
 
@@ -522,6 +523,14 @@ public class GameManager : MonoBehaviour
             }
             
             Context._uiManager.FadeIn(0.5f, Color.black);
+            
+            while (Context.textAnimFSM.ActiveStateName !="end")
+            {
+                
+                yield return null;
+            }
+            yield return new WaitForSeconds(1);
+            Context._monologueManager.StartMonologue("great day");
         }
 
         private void InitEndGameState()
@@ -540,6 +549,8 @@ public class GameManager : MonoBehaviour
                 "You ate " + CornItemManager.FoodEaten.Count + " pieces of food today.\n" +
                 "You saved " + CornItemManager.FoodToSave.Count + " for tomorrow.\n" +
                 "You dumped away " + CornItemManager.WastedFood.Count + ".\n";
+            
+            
 
 
 //        print("Wasted Food" + CornItemManager.WastedFood.Count);
@@ -561,6 +572,7 @@ public class GameManager : MonoBehaviour
                     "It's been a great day! ";
 
                 Context.textAnimFSM.SetState("end");
+                
             }
         }
     }
