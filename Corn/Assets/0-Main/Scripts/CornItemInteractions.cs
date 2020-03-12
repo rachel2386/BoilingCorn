@@ -112,31 +112,32 @@ public class CornItemInteractions : MonoBehaviour
     void FoodEaten(GameObject FoodToEat)
     {
         FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
+        playerAS.PlayOneShot(eatSound);
         if (!CornItemManager.FoodEaten.Contains(FoodToEat))
             CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
 
-        playerAS.PlayOneShot(eatSound);
+        
 
 
         var numOfFoodEaten = CornItemManager.FoodEaten.Count;
 
         switch (numOfFoodEaten)
         {
-            case 1:
-                _monologueManager.StartMonologue("eat first food");
-                break;
-            case 2:
-                _monologueManager.StartMonologue("eat second food");
-                break;
+//            case 1:
+//                _monologueManager.StartMonologue("eat first food");
+//                break;
+//            case 2:
+//                _monologueManager.StartMonologue("eat second food");
+//                break;
             case 5:
                 _monologueManager.StartMonologue("eat fifth food");
                 break;
             case 10:
                 _monologueManager.StartMonologue("eat tenth food");
                 break;
-            case 8:
-                _monologueManager.StartMonologue("noise from neighbors");
-                break;
+//            case 8:
+//                _monologueManager.StartMonologue("noise from neighbors");
+//                break;
             case 11:
                 _monologueManager.StartMonologue("full");
                 playerIsFull = true;

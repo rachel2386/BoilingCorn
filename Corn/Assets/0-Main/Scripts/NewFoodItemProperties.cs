@@ -34,7 +34,7 @@ public class NewFoodItemProperties : ItemProperties
 
     private Image _foodMemoryHolder;
     private bool hasFoodMemory = true;
-    
+
 
     private void Awake()
     {
@@ -49,11 +49,11 @@ public class NewFoodItemProperties : ItemProperties
         _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
         _buoyancyScript = FindObjectOfType<NewBuoyancy>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
-        _foodMemoryHolder = GameObject.Find("FoodImage").GetComponent<Image>();;
-       
+        _foodMemoryHolder = GameObject.Find("FoodImage").GetComponent<Image>();
+        ;
+
         myFoodProfile = _itemManager.GetPropertyFromName(FoodName);
-        
-        
+
 
         if (myFoodProfile != null)
         {
@@ -172,22 +172,26 @@ public class NewFoodItemProperties : ItemProperties
     public IEnumerator DisplayFoodMemory()
     {
         if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0 || _itemInteractions.FoodMemoryPlaying)
-            yield break;
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            _itemInteractions.FoodMemoryPlaying = true;
+            _foodMemoryHolder.enabled = true;
+            _foodMemoryHolder.sprite = myFoodProfile.foodMemoryQueue.Dequeue();
+            Tween memoryFadein = _foodMemoryHolder.DOFade(1, 3);
+            yield return memoryFadein.WaitForCompletion();
 
-        _itemInteractions.FoodMemoryPlaying = true;
-        _foodMemoryHolder.enabled = true;
-        _foodMemoryHolder.sprite = myFoodProfile.foodMemoryQueue.Dequeue();
-        Tween memoryFadein = _foodMemoryHolder.DOFade(1, 3);
-        yield return memoryFadein.WaitForCompletion();
+            yield return new WaitForSeconds(3);
 
-        yield return new WaitForSeconds(3);
+            Tween memoryFadeOut = _foodMemoryHolder.DOFade(0, 2);
+            yield return memoryFadeOut.WaitForCompletion();
 
-        Tween memoryFadeOut = _foodMemoryHolder.DOFade(0, 2);
-        yield return memoryFadeOut.WaitForCompletion();
-
-        _foodMemoryHolder.sprite = null;
-        _itemInteractions.FoodMemoryPlaying = false;
-        gameObject.SetActive(false);
+            _foodMemoryHolder.sprite = null;
+            _itemInteractions.FoodMemoryPlaying = false;
+            gameObject.SetActive(false);
+        }
     }
 
 

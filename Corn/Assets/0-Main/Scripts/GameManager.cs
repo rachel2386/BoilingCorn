@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject cleanupBowl;
 
+    private AudioSource backgroundMusic;
 
     //public bool WithOrderSystem = true;
     public int Debug_StartWithState = -1;
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
         textAnimFSM = GetComponent<PlayMakerFSM>();
 
         cleanupBowl = GameObject.Find("BowlForTmr");
+
+        backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
 
 
         if (Debug_StartWithState == 1 || Debug_StartWithState == 2)
@@ -285,12 +288,12 @@ public class GameManager : MonoBehaviour
             Context._uiManager.FadeOut(1, Color.black);
 
 //            
-            while (Context._uiManager.fadeImage.color.a < 0.98f)
+            while (Context._uiManager.fadeImage.color.a < 0.99f)
             {
                 yield return null;
             }
 
-
+         yield return  new WaitForSeconds(1);
             Context.OrderMenu.SetActive(true);
             Context.SceneToLoad.SetActive(true);
 
@@ -304,6 +307,7 @@ public class GameManager : MonoBehaviour
             
             Context.OrderMenu.SetActive(false);
 
+            Context._monologueManager.StartMonologue("I am so angry");
             yield return new WaitForSeconds(5);
             Context._uiManager.FadeIn(1, Color.black);
 
@@ -313,7 +317,13 @@ public class GameManager : MonoBehaviour
             }
 //           
            
-            Context._monologueManager.StartMonologue("table setup");
+            Context._monologueManager.StartMonologue("music on");
+            while (!Context._monologueManager.MonologueIsComplete)
+            {
+                yield return null;
+            }
+            Context.backgroundMusic.Play();
+            
         }
 
         public override void OnExit()
@@ -410,7 +420,8 @@ public class GameManager : MonoBehaviour
 
             holder = FindObjectOfType<FridgeHolderBehavior>().transform;
             bowlAnimPlayer = FindObjectOfType<FinalBowlAnimation>();
-
+    
+            Context.backgroundMusic.DOFade(0,1);
 
 //            foreach (var c in CornItemManager.Containers)
 //            {
