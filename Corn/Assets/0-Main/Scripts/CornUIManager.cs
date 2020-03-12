@@ -53,6 +53,14 @@ public class CornUIManager : MonoBehaviour
         {
             if (GameManager.gameState > 0 && GameManager.gameState < 3)
             {
+                if (GameManager.gameState == 2)
+                {
+                    EndGameInstruction.SetActive(true);
+//                if (hitInfo.collider.CompareTag("Pickupable"))
+//                    ImgSlot.sprite = interactableCursor;
+                
+                }
+                
                 if (hitInfo.collider.CompareTag("FoodItem"))
                 {
                     ImgSlot.sprite = foodCursor;
@@ -77,17 +85,7 @@ public class CornUIManager : MonoBehaviour
                     EatButtonInstruction.SetActive(false);
                 }
             }
-//            else if (GameManager.gameState == 2)
-//            {
-//                //EndGameInstruction.SetActive(true);
-//                if (hitInfo.collider.CompareTag("Pickupable"))
-//                    ImgSlot.sprite = interactableCursor;
-//                else
-//                {
-//                    ImgSlot.sprite = defaultCursor;
-//                    EatButtonInstruction.SetActive(false);
-//                }
-//            }
+             
             else
             {
                 if (hitInfo.collider.CompareTag("Interactable"))

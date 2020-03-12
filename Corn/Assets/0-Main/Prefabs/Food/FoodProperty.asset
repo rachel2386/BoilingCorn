@@ -17,47 +17,79 @@ MonoBehaviour:
     FoodPrefab: {fileID: 3875526750303876154, guid: dbb2995ce4ee3f44ba60e402fc5e2bdf,
       type: 3}
     SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Bacon
     FoodPrefab: {fileID: 2253894009422587700, guid: 8213c0bab14147240a4143c5993909bc,
       type: 3}
     SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Cabbage
     FoodPrefab: {fileID: 7426065286091113701, guid: d1492a6f3c6d3d943bf7411e2748ee6f,
       type: 3}
     SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 809da5d638b71a744a9372285fe896c7, type: 3}
+    - {fileID: 21300000, guid: 396b6cd6b367c9a4e899fefb15f5ac70, type: 3}
   - Name: Potato
     FoodPrefab: {fileID: 6020403601250107298, guid: a77cf0aec98968442bb3462fd30c6459,
       type: 3}
     SecondsToCook: 45
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Meat Ball
     FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
     SecondsToCook: 30
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 79e6bb9fc089f904d980b3409c093b6f, type: 3}
+    - {fileID: 21300000, guid: 1d29d8256f2278148b75455a1fb7b344, type: 3}
+    - {fileID: 21300000, guid: f960625328a84ab449fd4a9fbb3204fd, type: 3}
   - Name: Cucumber
     FoodPrefab: {fileID: 4849718136821012570, guid: 2c6d1022247d86f40b274c500efc5d1d,
       type: 3}
     SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Enoki
     FoodPrefab: {fileID: 1202585198662213377, guid: 479063211455f6045aa56ea7d0b5a580,
       type: 3}
     SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Chicken Leg
     FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
       type: 3}
     SecondsToCook: 40
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: bd9daa950830e4940a8962116bedff25, type: 3}
+    - {fileID: 21300000, guid: aa07afbd648379042bfed84c8c941649, type: 3}
+    - {fileID: 21300000, guid: 0f6d6547c5c4fcc46ad37887dd841364, type: 3}
   - Name: Sausage
     FoodPrefab: {fileID: 3075815392439823262, guid: 2a31b59a1187a39438828cfaa2ce5fcb,
       type: 3}
     SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Ham
     FoodPrefab: {fileID: 768190436287223866, guid: 3072691fad7528b448f752b5a4d15016,
       type: 3}
     SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Carrot
     FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
       type: 3}
     SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories: []
   - Name: Pepper
     FoodPrefab: {fileID: 2031690171402633858, guid: e0f6b8bca9542004b8080d07bd2b1b59,
       type: 3}
     SecondsToCook: 200
+    EatSound: {fileID: 0}
+    foodMemories: []

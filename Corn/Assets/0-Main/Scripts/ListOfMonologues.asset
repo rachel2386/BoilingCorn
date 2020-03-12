@@ -23,7 +23,7 @@ MonoBehaviour:
       wouldn't stop yelling!! Ah sorry I gotta go! I will talk to you later ok?\"\r\n**
       Christine is offline **\r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 9b2ea779405b58a489f01d10e760e9bb, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: ac42b864def46f54a993a6d7bb06d9dd, type: 3}
   - Name: turn on fire
     displayText: 0
     MonologueText: "**Stomach Growling** \r\nAlright, I am ready! \r"
@@ -38,14 +38,14 @@ MonoBehaviour:
       fun!\"\r\nJohn: \"You bet! Alright I gotta go. Merry Christmas man!\"\r\n**Call
       Ended**\r\nMe: ...\r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: e079ac3642b22f24a8c4f64da390e236, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: a64d9b9a947a9f44f9667b45a8bc9f68, type: 3}
   - Name: what to eat
     displayText: 0
     MonologueText: "..I guess I am eating alone tonight. \r\nWhat should I get? \r\nOh
       wait, I still got that pack of hotpot soup base. Yah why not.. \r\nNow let me
       just order some ingredients..\r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: ad877a544dab6724cb34d5513d1b893a, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: e2ea73f386d09a4468cf90402df26fb3, type: 3}
   - Name: table setup
     displayText: 0
     MonologueText: "Phew! Preparing all these food is more tiring than I thought.
@@ -120,8 +120,8 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
   - Name: clean up
     displayText: 1
-    MonologueText: "\nOk.. what do I want to keep? \r\nHope I can stuff everything
-      into that fridge! \r\n"
+    MonologueText: "Ok.. what do I want to keep? \r\nThere is only space for this
+      one black plate. \nLet me put everything I need in here. \n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: end1
@@ -197,19 +197,44 @@ MonoBehaviour:
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: ready for hotpot
-    displayText: 1
+    displayText: 0
     MonologueText: Yay! It is dinner! Time for some delicious Hot Pot! What should
       I order for the three of us?
-    WithVoiceOver: 0
-    VoiceOverClip: {fileID: 0}
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 6afcf6adc6e9a844abf72a0671b68592, type: 3}
   - Name: where are they
     displayText: 1
     MonologueText: All Set! I wonder where they are? They better be here before the
       food arrives.
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
-  - Name: 
+  - Name: I am so angry
     displayText: 0
     MonologueText: 
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 0}
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+  - Name: music on
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: de3519c60fb89754db5323836c250f46, type: 3}
+  - Name: I am so angry
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+  - Name: I am so angry
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+  - Name: I am so angry
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+  - Name: I am so angry
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
