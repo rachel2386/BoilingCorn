@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
 
         private IEnumerator playMonologue()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
             Context._monologueManager.StartMonologue("ready for hotpot");
             while (!Context._monologueManager.MonologueIsComplete)
             {
@@ -530,7 +530,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(1);
-            Context._monologueManager.StartMonologue("great day");
+            //Context._monologueManager.StartMonologue("great day");
         }
 
         private void InitEndGameState()
