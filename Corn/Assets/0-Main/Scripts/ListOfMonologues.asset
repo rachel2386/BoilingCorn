@@ -134,8 +134,8 @@ MonoBehaviour:
     displayText: 1
     MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
       Did you use up the spicy soup base I left for you? :) \r\n\n"
-    WithVoiceOver: 0
-    VoiceOverClip: {fileID: 0}
+    WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: cbc9d9f3ac37cf8478846c0701ea7705, type: 3}
   - Name: phone1
     displayText: 1
     MonologueText: "6:00 p.m. No new notifications.\r"

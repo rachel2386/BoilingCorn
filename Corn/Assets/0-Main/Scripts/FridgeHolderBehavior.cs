@@ -20,7 +20,7 @@ public class FridgeHolderBehavior : MonoBehaviour
        if(GameManager.gameState != 2) return;
         if (hasChild)
         {
-            mr.enabled = false;
+            //mr.enabled = false;
             
             if (gameObject.CompareTag("Respawn"))
             {
@@ -31,7 +31,7 @@ public class FridgeHolderBehavior : MonoBehaviour
         }
         else
         {
-            mr.enabled = true;
+           // mr.enabled = true;
         }
 
        
