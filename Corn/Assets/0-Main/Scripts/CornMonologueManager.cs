@@ -37,6 +37,7 @@ public class CornMonologueManager : MonoBehaviour
         {
             print("Force End Dialogue");
             debug_ForceStop = true;
+            EndMonologue();
             if(MonologueAudio.isPlaying)
                 MonologueAudio.Stop();
         }

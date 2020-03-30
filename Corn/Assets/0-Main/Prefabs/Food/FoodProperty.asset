@@ -18,13 +18,16 @@ MonoBehaviour:
       type: 3}
     SecondsToCook: 15
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: 59c8d3fb40ee53a46b64bc8faf301027, type: 3}
+    - {fileID: 21300000, guid: c620e3533205f8a43b782344bdaf857d, type: 3}
   - Name: Bacon
     FoodPrefab: {fileID: 2253894009422587700, guid: 8213c0bab14147240a4143c5993909bc,
       type: 3}
     SecondsToCook: 20
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: 5c1b3cb02bfc7b34f890d590e3b9b71f, type: 3}
   - Name: Cabbage
     FoodPrefab: {fileID: 7426065286091113701, guid: d1492a6f3c6d3d943bf7411e2748ee6f,
       type: 3}
@@ -59,7 +62,9 @@ MonoBehaviour:
       type: 3}
     SecondsToCook: 15
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: cb9816d2e13274e41875f974eb45f4ee, type: 3}
+    - {fileID: 21300000, guid: 65da6176c7f43594a89c826c55cf9814, type: 3}
   - Name: Chicken Leg
     FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
       type: 3}
@@ -74,13 +79,19 @@ MonoBehaviour:
       type: 3}
     SecondsToCook: 20
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: 96ca84003e20c214fafc23dc007be2e7, type: 3}
+    - {fileID: 21300000, guid: 4a129aca14b87934f842daa01a311110, type: 3}
+    - {fileID: 21300000, guid: 1deb8bdb91aba0b4fae387b6870fbb8e, type: 3}
   - Name: Ham
     FoodPrefab: {fileID: 768190436287223866, guid: 3072691fad7528b448f752b5a4d15016,
       type: 3}
     SecondsToCook: 20
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: e58e75e89b5760f44900027c8d250b90, type: 3}
+    - {fileID: 21300000, guid: c6f691b5c5b2fa2489efb60491ebc64d, type: 3}
+    - {fileID: 21300000, guid: e37d0b939e6ca3b458f0378ec7ca69f1, type: 3}
   - Name: Carrot
     FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
       type: 3}

@@ -271,7 +271,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-           
+            yield return new WaitForSeconds(1);
             Context._monologueManager.StartMonologue("what to eat");
             while (!Context._monologueManager.MonologueIsComplete)
             {
@@ -396,7 +396,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-//           
+            Context._monologueManager.StartMonologue("fly"); 
             Context._monologueManager.StartMonologue("clean up");
             yield return null;
         }

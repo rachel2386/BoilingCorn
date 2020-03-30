@@ -20,6 +20,7 @@ public class CornItemInteractions : MonoBehaviour
 {
     private CornMonologueManager _monologueManager;
 
+    [SerializeField] private int fullAmount = 11;
     public bool playerIsFull = false;
 
     // Start is called before the first frame update
@@ -73,6 +74,7 @@ public class CornItemInteractions : MonoBehaviour
         if (Input.GetMouseButtonDown(1)
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
             && hitInfo.collider.CompareTag("FoodItem")
+            && CornItemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
         {
             MoveFoodToMouth(hitInfo.collider.gameObject);

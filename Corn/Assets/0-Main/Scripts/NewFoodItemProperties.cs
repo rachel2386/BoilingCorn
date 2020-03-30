@@ -85,17 +85,10 @@ public class NewFoodItemProperties : ItemProperties
 
         if (myFoodProfile.foodMemories.Count == 0)
         {
-            print(myFoodProfile.Name + " does not have food memory");
+            //print(myFoodProfile.Name + " does not have food memory");
             hasFoodMemory = false;
         }
-        else
-        {
-            //add list items into queue (because queues cannot be public)
-            foreach (var sprite in myFoodProfile.foodMemories)
-            {
-                myFoodProfile.foodMemoryQueue.Enqueue(sprite);
-            }
-        }
+
 
         // InitOutlineWithProfile();
     }
@@ -180,6 +173,7 @@ public class NewFoodItemProperties : ItemProperties
             _itemInteractions.FoodMemoryPlaying = true;
             _foodMemoryHolder.enabled = true;
             _foodMemoryHolder.sprite = myFoodProfile.foodMemoryQueue.Dequeue();
+            
             Tween memoryFadein = _foodMemoryHolder.DOFade(1, 3);
             yield return memoryFadein.WaitForCompletion();
 
