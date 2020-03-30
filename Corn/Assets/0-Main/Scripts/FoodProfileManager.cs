@@ -23,6 +23,7 @@ public class FoodProperty
     public AudioClip EatSound; 
     public List<Sprite>foodMemories = new List<Sprite>();
     public Queue<Sprite>foodMemoryQueue = new Queue<Sprite>();
+    
    
 
 

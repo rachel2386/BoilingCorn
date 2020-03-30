@@ -51,5 +51,23 @@ public class CornItemManager : MonoBehaviour
             if(!holder.GetComponent<FridgeOnTriggerEnter>())
             holder.AddComponent<FridgeOnTriggerEnter>();
         }
+
+        
+        //load food memories into queue
+        foreach (var foodProfile in foodManager.FoodProperties)
+        {
+            if (foodProfile.foodMemories.Count > 0)
+            {
+                //add list items into queue (because queues cannot be public)
+                foreach (var sprite in foodProfile.foodMemories)
+                {
+                    foodProfile.foodMemoryQueue.Enqueue(sprite);
+                }
+            }
+            else
+            {
+                print(foodProfile.Name + " does not have food memory");
+            }
+        }
     }
 }

@@ -40,11 +40,10 @@ MonoBehaviour:
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: a64d9b9a947a9f44f9667b45a8bc9f68, type: 3}
   - Name: what to eat
-    displayText: 0
-    MonologueText: "..I guess I am eating alone tonight. \r\nWhat should I get? \r\nOh
-      wait, I still got that pack of hotpot soup base. Yah why not.. \r\nNow let me
-      just order some ingredients..\r\n"
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "Okay... I guess I am eating alone tonight\u2026\nI feel very happy
+      that I am having some really\u2026 good friends\u2026"
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: e2ea73f386d09a4468cf90402df26fb3, type: 3}
   - Name: table setup
     displayText: 0
@@ -64,7 +63,7 @@ MonoBehaviour:
     displayText: 0
     MonologueText: "Wow. This spicy soup base looks really hot. I hope I can survive
       after all this.. \r\nLet's get some food cookin\u2019!\r"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 58f0560a69ca13546b005933768e7501, type: 3}
   - Name: cook first food
     displayText: 0
@@ -91,7 +90,7 @@ MonoBehaviour:
       who introduced me to spicy food, and she just couldn\u2019t live without it.
       \r\nI guess living with someone this long could really change you. \r\nI wonder
       what she's doing now..Probably still in bed. \r\n"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 8b496f16948a6c14d842ac9d04576aae, type: 3}
   - Name: noise from neighbors
     displayText: 0
@@ -101,22 +100,16 @@ MonoBehaviour:
       happen. \r\n\r\n**noise of fly buzzing ** \r\nNow there is a fly in here? Come
       on. \r\nBetter finish up before it lays eggs in my food. \r\n"
     WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: 30b9df99812f2484cb832012c16a6048, type: 3}
+    VoiceOverClip: {fileID: 8300000, guid: ecf49c565fa90924485fc50082f99a08, type: 3}
   - Name: eat tenth food
-    displayText: 0
-    MonologueText: "**Burp** This is surprisingly filling\u2026I am almost full. \r\nNope,
-      I am not done yet! \r"
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "**Burp** \nLet me just have one more."
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
   - Name: full
     displayText: 0
-    MonologueText: "Just one more.. \n...I can\u2019t!  I think my tummy\u2019s gonna
-      explode..\r\nHow do they expect me to finish all this food by myself? \r\nHate
-      to waste all this food.\nIf she were here, we would never stop eating!\r\n...I
-      really miss her. Why is she so far away now? \r\n...Stop whining.. It is better
-      for both of us this way. \n...\rTo be where we belong.\n...\nI should turn off
-      the stove now. \r\n"
-    WithVoiceOver: 1
+    MonologueText: "I am done for now.\nLet me turn off the stove. \r\n"
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
   - Name: clean up
     displayText: 1
@@ -197,44 +190,47 @@ MonoBehaviour:
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
   - Name: ready for hotpot
-    displayText: 0
-    MonologueText: Yay! It is dinner! Time for some delicious Hot Pot! What should
-      I order for the three of us?
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "Look at the outside, what a beautiful night! \nJohn and Christine
+      will be here very soon,\n let me order some food for our hotpot night. \nI can\u2019t
+      wait!"
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 6afcf6adc6e9a844abf72a0671b68592, type: 3}
   - Name: where are they
     displayText: 1
     MonologueText: All Set! I wonder where they are? They better be here before the
       food arrives.
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 416ad2cb9c644c3459e37f04f6b244f0, type: 3}
   - Name: I am so angry
     displayText: 0
     MonologueText: 
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
   - Name: music on
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: "Oh man, look at this poor food...\nIt\u2019s Okay.\n Being alone
+      is ok, being alone is not bad. \n...Let me celebrate this big one-person dinner
+      night. \nAlright, Music ON! "
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: de3519c60fb89754db5323836c250f46, type: 3}
   - Name: great day
     displayText: 0
     MonologueText: 
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
-  - Name: I am so angry
+  - Name: fly
     displayText: 0
     MonologueText: 
     WithVoiceOver: 1
+    VoiceOverClip: {fileID: 8300000, guid: 70387c752f10bf14181d5dcba21ad6bb, type: 3}
+  - Name: I am so angry
+    displayText: 0
+    MonologueText: 
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
   - Name: I am so angry
     displayText: 0
     MonologueText: 
-    WithVoiceOver: 1
-    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
-  - Name: I am so angry
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
