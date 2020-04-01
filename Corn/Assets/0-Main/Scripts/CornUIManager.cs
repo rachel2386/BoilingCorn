@@ -46,7 +46,7 @@ public class CornUIManager : MonoBehaviour
         // ImgSlot.gameObject.SetActive(true);
 
         RaycastHit hitInfo = new RaycastHit();
-        if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo) ||
+        if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo ,1000, ~(1 << 13 | 1 << 2)) ||
             hitInfo.collider == null) return;
 
         if (!Input.GetMouseButton(0))
