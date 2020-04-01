@@ -72,7 +72,7 @@ public class CornItemInteractions : MonoBehaviour
         RaycastHit hitInfo = new RaycastHit();
 
         if (Input.GetMouseButtonDown(1)
-            && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+            && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, LayerMask.GetMask("Pickupable"))
             && hitInfo.collider.CompareTag("FoodItem")
             && CornItemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
@@ -83,8 +83,7 @@ public class CornItemInteractions : MonoBehaviour
         if (!IsholdingObject)
         {
             if (Input.GetMouseButtonDown(0)
-                && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo,
-                    LayerMask.NameToLayer("Pickupable"))
+                && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo,1000, LayerMask.GetMask("Pickupable"))
                 && hitInfo.collider.GetComponent<ItemProperties>())
             {
                 InitPickup(hitInfo);
@@ -94,6 +93,13 @@ public class CornItemInteractions : MonoBehaviour
         {
             RaycastHit hit = new RaycastHit(); //
 
+            // object follow mesh 
+            if(Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition),  out hit, 1000, LayerMask.GetMask("PUMesh")))
+            {
+                objectHolder.position = hit.point;
+            }
+        
+               
             if (Input.GetMouseButtonUp(0))
 
             {
