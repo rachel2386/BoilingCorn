@@ -424,6 +424,8 @@ public class GameManager : MonoBehaviour
     
             Context.backgroundMusic.DOFade(0,1);
 
+            Context._FoodInteractionScript.objectHolder.GetComponent<SpringJoint>().connectedBody = null;
+
 //            foreach (var c in CornItemManager.Containers)
 //            {
 //                if (c.transform.childCount == 0) continue;
