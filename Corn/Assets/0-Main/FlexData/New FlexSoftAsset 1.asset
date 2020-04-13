@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4f6c478d4a1e845b3319d5e737f6c8, type: 3}
+  m_Name: New FlexSoftAsset 1
+  m_EditorClassIdentifier: 
+  m_particles:
+  - {x: 0.3128807, y: 0.06824854, z: -0.01601053, w: 1}
+  - {x: 0.19829735, y: 0.06824854, z: 0.114197806, w: 1}
+  - {x: 0.19829735, y: 0.005748542, z: -0.026427194, w: 1}
+  - {x: 0.07329735, y: -0.025501458, z: 0.0048228055, w: 1}
+  - {x: 0.042047355, y: 0.03699854, z: 0.036072806, w: 1}
+  - {x: -0.020452645, y: -0.08800146, z: -0.057677194, w: 1}
+  - {x: -0.051702645, y: 0.005748542, z: 0.036072806, w: 1}
+  - {x: -0.08295265, y: 0.06824854, z: 0.2391978, w: 1}
+  - {x: -0.08295265, y: 0.06824854, z: 0.1298228, w: 1}
+  - {x: -0.08295265, y: -0.08800146, z: -0.057677194, w: 1}
+  m_maxParticles: 10
+  m_springIndices: 
+  m_springCoefficients: []
+  m_springRestLengths: []
+  m_shapeIndices: 07000000080000000900000006000000050000000400000003000000010000000200000000000000
+  m_shapeOffsets: 0a000000
+  m_shapeCoefficients:
+  - 0
+  m_shapeCenters:
+  - {x: 0.05038069, y: 0.011998542, z: 0.04023947}
+  m_triangleIndices: 
+  m_inflatable: 0
+  m_inflatableVolume: 0
+  m_inflatablePressure: 0
+  m_inflatableStiffness: 0
+  m_fixedParticles: 
+  m_rebuildAsset: 0
+  m_boundaryMesh: {fileID: 3255180125075267044, guid: 86093cf39c149e64c825e41f3ac0ff18,
+    type: 3}
+  m_meshLocalScale: {x: 1, y: 1, z: 1}
+  m_particleSpacing: 0.05
+  m_volumeSampling: 1.6
+  m_surfaceSampling: 0
+  m_clusterSpacing: 17.48
+  m_clusterRadius: 0
+  m_clusterStiffness: 0
+  m_linkRadius: 0
+  m_linkStiffness: 0
+  m_referenceShape: 0
