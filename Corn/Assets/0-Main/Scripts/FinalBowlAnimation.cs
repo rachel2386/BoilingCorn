@@ -144,6 +144,7 @@ public class FinalBowlAnimation : MonoBehaviour
             resetPosition.SetEase(Ease.OutSine);
        
             // yield return resetPosition.WaitForCompletion();
+            yield return new WaitForSeconds(1);
             MoveToNextBowl();
         
 

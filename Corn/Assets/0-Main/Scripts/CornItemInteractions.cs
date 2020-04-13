@@ -20,7 +20,7 @@ public class CornItemInteractions : MonoBehaviour
 {
     private CornMonologueManager _monologueManager;
 
-    [SerializeField] private int fullAmount = 11;
+    [SerializeField] public int fullAmount = 11;
     public bool playerIsFull = false;
 
     // Start is called before the first frame update
@@ -37,10 +37,11 @@ public class CornItemInteractions : MonoBehaviour
     private PlayMakerFSM bowlFSM;
 
     private AudioSource playerAS;
+    public Transform mouth;
     [Header("Eating Sounds")] public AudioClip eatSound;
 
     [HideInInspector] public Image FoodImage;
-
+    [HideInInspector]public bool EatingFood = false;
     [HideInInspector] public bool FoodMemoryPlaying = false;
 
     //temp
@@ -64,6 +65,12 @@ public class CornItemInteractions : MonoBehaviour
         {
             playerIsFull = true;
         }
+
+        if (CornItemManager.FoodEaten.Count >= fullAmount && !EatingFood && _monologueManager.MonologueIsComplete)
+        {
+            playerIsFull = true;
+        }
+
     }
 
     void FixedUpdate()
@@ -77,6 +84,7 @@ public class CornItemInteractions : MonoBehaviour
             && CornItemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
         {
+            if(!EatingFood)
             MoveFoodToMouth(hitInfo.collider.gameObject);
         }
 
@@ -94,7 +102,7 @@ public class CornItemInteractions : MonoBehaviour
             RaycastHit hit = new RaycastHit(); //
 
             // object follow mesh 
-            if(Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition),  out hit, 1000, LayerMask.GetMask("PUMesh")))
+            if(Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition),  out hit, 1000, LayerMask.GetMask("Ignore Raycast")))
             {
                 objectHolder.position = hit.point;
             }
@@ -110,25 +118,27 @@ public class CornItemInteractions : MonoBehaviour
 
     void MoveFoodToMouth(GameObject FoodToEat)
     {
+        EatingFood = true;
         FoodToEat.GetComponent<NewFoodItemProperties>().foodState = 2;
-        var mouth = Camera.main.transform;
-        Tween moveToMouth = FoodToEat.transform.DOMove(mouth.position + Vector3.up * -0.12f, 3);
+        //var mouth = Camera.main.transform;
+        Tween moveToMouth = FoodToEat.transform.DOMove(mouth.position, 2);
         moveToMouth.SetEase(Ease.InOutSine);
         moveToMouth.OnComplete(() => FoodEaten(FoodToEat));
     }
 
     void FoodEaten(GameObject FoodToEat)
     {
-        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
-        playerAS.PlayOneShot(eatSound);
+        FoodToEat.transform.SetParent(mouth);
+        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.BiteFood));
+       
         if (!CornItemManager.FoodEaten.Contains(FoodToEat))
             CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
-
         
-
-
         var numOfFoodEaten = CornItemManager.FoodEaten.Count;
-
+        
+//        if(numOfFoodEaten < fullAmount)
+//        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
+        
         switch (numOfFoodEaten)
         {
 //            case 1:
@@ -138,7 +148,7 @@ public class CornItemInteractions : MonoBehaviour
 //                _monologueManager.StartMonologue("eat second food");
 //                break;
             case 5:
-                _monologueManager.StartMonologue("eat fifth food");
+                _monologueManager.StartMonologue("police");
                 break;
             case 10:
                 _monologueManager.StartMonologue("eat tenth food");
@@ -146,10 +156,7 @@ public class CornItemInteractions : MonoBehaviour
 //            case 8:
 //                _monologueManager.StartMonologue("noise from neighbors");
 //                break;
-            case 11:
-                _monologueManager.StartMonologue("full");
-                playerIsFull = true;
-                break;
+            
             default:
                 break;
         }
