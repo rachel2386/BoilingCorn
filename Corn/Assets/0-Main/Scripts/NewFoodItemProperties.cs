@@ -29,15 +29,15 @@ public class NewFoodItemProperties : ItemProperties
 
     public float PercentageCooked = 0;
     public bool InWater = false;
-    private NewBuoyancy _buoyancyScript;
+    private CornBuoyancy _buoyancyScript;
     private Rigidbody foodRB;
 
     [HideInInspector] public bool foodCooked = false;
 
-    private Image _foodMemoryHolder;
+
     private bool hasFoodMemory = true;
-    
-    public List<Renderer>foodMeshes = new List<Renderer>(); 
+
+    public List<Renderer> foodMeshes = new List<Renderer>();
 
 
     private void Awake()
@@ -46,14 +46,14 @@ public class NewFoodItemProperties : ItemProperties
             gameObject.AddComponent<Rigidbody>();
 
         foodRB = GetComponent<Rigidbody>();
-        
-        
+
+
         foreach (var child in GetComponentsInChildren<Renderer>())
         {
-            if(child.transform.parent == transform)
+            if (child.transform.parent == transform)
                 foodMeshes.Add(child);
         }
-        
+
         for (int i = 1; i < foodMeshes.Count; i++)
         {
             foodMeshes[i].gameObject.SetActive(false);
@@ -63,9 +63,10 @@ public class NewFoodItemProperties : ItemProperties
     public override void Start()
     {
         _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
-        _buoyancyScript = FindObjectOfType<NewBuoyancy>();
+        _buoyancyScript = FindObjectOfType<CornBuoyancy>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
-        _foodMemoryHolder = GameObject.Find("FoodImage").GetComponent<Image>();
+        //_foodMemoryHolder = GameObject.Find("FoodImage").GetComponent<Image>();
+
         PlayerAS = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         ;
 
@@ -134,7 +135,7 @@ public class NewFoodItemProperties : ItemProperties
         }
         else
         {
-            if (foodState == 2|| foodState == 3)
+            if (foodState == 2 || foodState == 3)
             {
                 foodRB.isKinematic = true;
             }
@@ -166,8 +167,8 @@ public class NewFoodItemProperties : ItemProperties
         foodCooked = true;
         foodState = 1;
 
-        if (!NewBuoyancy.cookedFoodInWater.Contains(foodRB))
-            NewBuoyancy.cookedFoodInWater.Add(foodRB);
+        if (!CornBuoyancy.cookedFoodInWater.Contains(foodRB))
+            CornBuoyancy.cookedFoodInWater.Add(foodRB);
     }
 
     public override void OnPickUp(SpringJoint objectHolder)
@@ -179,72 +180,49 @@ public class NewFoodItemProperties : ItemProperties
         }
     }
 
-    public IEnumerator DisplayFoodMemory()
+    private void DisplayFoodMemory()
     {
-        var randomNumber = Random.Range(0, 3); //chances to play food memory is 1/3
-        print("random number is " + randomNumber);
-        if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0 || _itemInteractions.FoodMemoryPlaying || randomNumber != 0)
+        if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0)
         {
             gameObject.SetActive(false);
-           
         }
         else
         {
-           
-            _itemInteractions.FoodMemoryPlaying = true;
-            _foodMemoryHolder.enabled = true;
-            _foodMemoryHolder.sprite = myFoodProfile.foodMemoryQueue.Dequeue();
-            
-            Tween memoryFadein = _foodMemoryHolder.DOFade(1, 3);
-            yield return memoryFadein.WaitForCompletion();
-
-            yield return new WaitForSeconds(2);
-
-            Tween memoryFadeOut = _foodMemoryHolder.DOFade(0, 2);
-            yield return memoryFadeOut.WaitForCompletion();
-
-            _foodMemoryHolder.sprite = null;
-            _itemInteractions.FoodMemoryPlaying = false;
-            gameObject.SetActive(false);
-            
+            _itemInteractions.FoodMemoryTrigger(gameObject, myFoodProfile.foodMemoryQueue.Dequeue());
         }
     }
 
-   
+
     public IEnumerator BiteFood()
     {
-      
         var foodSteps = foodMeshes.Count;
         int currentStep = 0;
-       
-        print(foodMeshes.Count);
-        
+
+
         while (currentStep < foodSteps)
         {
             {
                 if (currentStep + 1 < foodSteps)
                 {
-                    foodMeshes[currentStep + 1].gameObject.SetActive(true); 
+                    foodMeshes[currentStep + 1].gameObject.SetActive(true);
                 }
+
                 PlayerAS.PlayOneShot(_itemInteractions.eatSound);
                 foodMeshes[currentStep].gameObject.SetActive(false);
                 Tween rotateFood = transform.DORotate(Vector3.one * Random.Range(10, 50), 1);
                 yield return rotateFood.WaitForCompletion();
-               
+
                 currentStep++;
-            } 
+            }
         }
-       
+
         _itemInteractions.EatingFood = false;
-        if(CornItemManager.FoodEaten.Count <= _itemInteractions.fullAmount)
-        StartCoroutine(DisplayFoodMemory());
+        if (CornItemManager.FoodEaten.Count <= _itemInteractions.fullAmount)
+           DisplayFoodMemory();
 //        while (_itemInteractions.FoodMemoryPlaying)
 //        {
 //            yield return null;
 //        }
-
-
-
     }
 
 //    private void OnMouseEnter()

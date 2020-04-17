@@ -6,6 +6,7 @@ using DG.Tweening.Core;
 using HutongGames.PlayMaker;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 //update 2/22/20: 
 //when food state is 0, can only left click 
@@ -41,9 +42,12 @@ public class CornItemInteractions : MonoBehaviour
     [Header("Eating Sounds")] public AudioClip eatSound;
 
     [HideInInspector] public Image FoodImage;
+    [HideInInspector]public GameObject _foodMemoryBG;
+    [HideInInspector]public List<Image> _foodMemoryHolders = new List<Image>();
+
     [HideInInspector]public bool EatingFood = false;
     [HideInInspector] public bool FoodMemoryPlaying = false;
-
+    
     //temp
     public PlayMakerFSM textAnimFSM;
 
@@ -53,6 +57,20 @@ public class CornItemInteractions : MonoBehaviour
 
         FoodImage = GameObject.Find("FoodImage").GetComponent<Image>();
         FoodImage.sprite = null;
+        _foodMemoryBG = GameObject.Find("FoodImageBG");
+        
+        foreach (var child in _foodMemoryBG.GetComponentsInChildren<Image>())
+        {
+            if (!child.GetComponent<Mask>())
+            {
+                _foodMemoryHolders.Add(child);
+                print("Img added");
+            }
+
+            
+        }
+        _foodMemoryBG.SetActive(false);
+        
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
@@ -162,6 +180,54 @@ public class CornItemInteractions : MonoBehaviour
         }
     }
 
+    public void FoodMemoryTrigger(GameObject FoodEaten, Sprite spriteToDisplay)
+    {
+        StartCoroutine(DisplayFoodMemory(FoodEaten, spriteToDisplay));
+    }
+
+    private IEnumerator DisplayFoodMemory(GameObject FoodEaten, Sprite spriteToDisplay)
+    {
+        var randomNumber = Random.Range(0, 2);
+        if (FoodMemoryPlaying || randomNumber == 1) //chances to play food memory is 1/2
+        {
+            yield return null;
+
+        }
+        else
+        {
+           
+            
+            FoodMemoryPlaying = true;
+            _foodMemoryBG.SetActive(true);
+            
+            Tween memoryFadein = null; 
+            for (int i = 0; i < _foodMemoryHolders.Count; i++)
+            {
+                memoryFadein = _foodMemoryHolders[i].DOFade(0.8f, 3);
+            }
+            FoodImage.sprite = spriteToDisplay;
+            
+            //Tween memoryFadein = _foodMemoryHolder.DOFade(0.8f, 3);
+            yield return memoryFadein.WaitForCompletion();
+
+            yield return new WaitForSeconds(2);
+
+            Tween memoryFadeOut = null;
+            for (int i = 0; i < _foodMemoryHolders.Count; i++)
+            {
+                memoryFadeOut =_foodMemoryHolders[i].DOFade(0, 2);
+                
+            }
+                
+            yield return memoryFadeOut.WaitForCompletion();
+
+            FoodImage.sprite = null;
+            FoodMemoryPlaying = false;
+            FoodEaten.SetActive(false);
+            _foodMemoryBG.SetActive(false);
+            
+        }
+    }
     void PlaceObject()
     {
         IsholdingObject = false;

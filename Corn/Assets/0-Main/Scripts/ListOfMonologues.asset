@@ -107,7 +107,7 @@ MonoBehaviour:
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
   - Name: full
-    displayText: 0
+    displayText: 1
     MonologueText: "I am done for now.\nLet me turn off the stove. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
@@ -227,7 +227,7 @@ MonoBehaviour:
   - Name: police
     displayText: 0
     MonologueText: 
-    WithVoiceOver: 0
+    WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: d9140bb640c9b584cbc9770068d7791e, type: 3}
   - Name: I am so angry
     displayText: 0
