@@ -146,7 +146,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101010101
-        actionIsOpen: 00000000000000
+        actionIsOpen: 00000000010000
         actionStartIndex: 0000000002000000070000000e000000140000001a0000001c000000
         actionHashCodes: 5ac8520406095f04afff11057d4f1c0231ae64035ac85204a4c8bf00
         unityObjectParams: []
@@ -167,7 +167,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 0}
+            value: {fileID: 1739973817749297529}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -446,13 +446,13 @@ MonoBehaviour:
           networkSync: 0
           value: _Color
         fsmObjectParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: 
-          value: {fileID: 2100000, guid: bfa7658094c12c741b946b7c75dc2d61, type: 2}
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -539,7 +539,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {r: 1, g: 0.882353, b: 0.7411765, a: 1}
+          value: {r: 1, g: 0.6666667, b: 0.20392157, a: 1}
         - useVariable: 1
           name: color
           tooltip: 
@@ -996,7 +996,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101
-        actionIsOpen: 0000000000
+        actionIsOpen: 0001000000
         actionStartIndex: 0000000002000000080000000f00000011000000
         actionHashCodes: 5ac8520431ae64035552ad055ac85204a4c8bf00
         unityObjectParams: []
@@ -1009,7 +1009,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 0}
+            value: {fileID: 1739973817749297529}
         - ownerOption: 0
           gameObject:
             useVariable: 0
@@ -1296,13 +1296,13 @@ MonoBehaviour:
           networkSync: 0
           value: _Color
         fsmObjectParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: 
-          value: {fileID: 2100000, guid: bfa7658094c12c741b946b7c75dc2d61, type: 2}
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -1530,7 +1530,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: {r: 1, g: 0.882353, b: 0.7411765, a: 1}
+        value: {r: 1, g: 0.6666667, b: 0.20392157, a: 1}
       - useVariable: 1
         name: color
         tooltip: 
@@ -1647,7 +1647,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d2ecd4754e74c414083cf849c5a8bc0a, type: 2}
-  - {fileID: 2100000, guid: 7d2a4d8dc6cbec640af4468efeb7f192, type: 2}
+  - {fileID: 2100000, guid: 43f4ba5f73d65cc4b97b9d03ff07d51b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2169,7 +2169,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d2ecd4754e74c414083cf849c5a8bc0a, type: 2}
-  - {fileID: 2100000, guid: bfa7658094c12c741b946b7c75dc2d61, type: 2}
+  - {fileID: 2100000, guid: 43f4ba5f73d65cc4b97b9d03ff07d51b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

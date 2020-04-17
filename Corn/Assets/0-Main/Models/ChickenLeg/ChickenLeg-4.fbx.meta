@@ -3,7 +3,22 @@ guid: bc171c27e01e26e47b5ad2c4a83d878b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bone
+    second: {fileID: 2100000, guid: 24d12780caf01654f97bc113cd7fb184, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChickenLegMat_raw
+    second: {fileID: 2100000, guid: 3d46caa8352d77e4ab71f603dd8dc7d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChickenMeat
+    second: {fileID: 2100000, guid: 95297bf8a22b2ab45acdd933cea6a45c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

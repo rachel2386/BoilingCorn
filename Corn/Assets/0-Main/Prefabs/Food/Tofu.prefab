@@ -86,7 +86,6 @@ MonoBehaviour:
   InWater: 0
   foodCooked: 0
   foodMeshes: []
-  foodFinished: 0
 --- !u!114 &1898137185619794727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +143,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101010101
-        actionIsOpen: 01000000000100
+        actionIsOpen: 01000001000100
         actionStartIndex: 0000000002000000070000000e000000140000001a0000001c000000
         actionHashCodes: 5ac8520406095f04afff110531ae64037d4f1c025ac85204a4c8bf00
         unityObjectParams: []
@@ -1196,6 +1195,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 72633439281fd934bb8de409a0ffbf2c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b924fb8c1bf586547aee62eedbc2c5b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72633439281fd934bb8de409a0ffbf2c, type: 3}
 --- !u!4 &6657816057996056462 stripped
@@ -1397,6 +1401,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: c1c35e8ca81ca194b9e4e8f0bf1dfa78,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b924fb8c1bf586547aee62eedbc2c5b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c35e8ca81ca194b9e4e8f0bf1dfa78, type: 3}
 --- !u!4 &8020557366917604387 stripped

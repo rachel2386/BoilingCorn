@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBuoyancy : MonoBehaviour
+public class CornBuoyancy : MonoBehaviour
 {
     // Start is called before the first frame update
     private Collider myCol;
