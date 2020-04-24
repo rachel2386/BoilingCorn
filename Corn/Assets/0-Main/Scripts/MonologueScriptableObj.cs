@@ -19,8 +19,11 @@ public class Monologue
     public string Name;
     public bool displayText = false;
     [TextArea(3,100)]public string MonologueText;
-    public bool WithVoiceOver = true;
+    public bool WithVoiceOver = false;
     public AudioClip VoiceOverClip;
+    public bool displaySprite = true;
+    public List<Sprite> monologueSprite = new List<Sprite>();
+    
    
     
 

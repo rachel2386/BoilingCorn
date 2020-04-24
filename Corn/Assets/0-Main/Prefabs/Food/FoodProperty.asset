@@ -45,7 +45,7 @@ MonoBehaviour:
   - Name: Meat Ball
     FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
-    SecondsToCook: 30
+    SecondsToCook: 1
     EatSound: {fileID: 0}
     foodMemories:
     - {fileID: 21300000, guid: 79e6bb9fc089f904d980b3409c093b6f, type: 3}

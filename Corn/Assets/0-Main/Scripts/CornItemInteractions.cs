@@ -41,12 +41,9 @@ public class CornItemInteractions : MonoBehaviour
     public Transform mouth;
     [Header("Eating Sounds")] public AudioClip eatSound;
 
-    [HideInInspector] public Image FoodImage;
-    [HideInInspector]public GameObject _foodMemoryBG;
-    [HideInInspector]public List<Image> _foodMemoryHolders = new List<Image>();
+    private MemoryDisplayControl memoryDisplay;
 
     [HideInInspector]public bool EatingFood = false;
-    [HideInInspector] public bool FoodMemoryPlaying = false;
     
     //temp
     public PlayMakerFSM textAnimFSM;
@@ -55,25 +52,12 @@ public class CornItemInteractions : MonoBehaviour
     {
         playerAS = GetComponent<AudioSource>();
 
-        FoodImage = GameObject.Find("FoodImage").GetComponent<Image>();
-        FoodImage.sprite = null;
-        _foodMemoryBG = GameObject.Find("FoodImageBG");
         
-        foreach (var child in _foodMemoryBG.GetComponentsInChildren<Image>())
-        {
-            if (!child.GetComponent<Mask>())
-            {
-                _foodMemoryHolders.Add(child);
-                print("Img added");
-            }
-
-            
-        }
-        _foodMemoryBG.SetActive(false);
         
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
+        memoryDisplay = FindObjectOfType<MemoryDisplayControl>();
     }
 
 
@@ -187,44 +171,23 @@ public class CornItemInteractions : MonoBehaviour
 
     private IEnumerator DisplayFoodMemory(GameObject FoodEaten, Sprite spriteToDisplay)
     {
-        var randomNumber = Random.Range(0, 2);
-        if (FoodMemoryPlaying || randomNumber == 1) //chances to play food memory is 1/2
+        var randomNumber = Random.Range(1, 2);
+        if (memoryDisplay.MemoryPlaying|| randomNumber == 2) //chances to play food memory is 1/2
         {
+            FoodEaten.SetActive(false);
             yield return null;
 
         }
         else
         {
+            memoryDisplay.MemoryTrigger(spriteToDisplay);
+            while (memoryDisplay.MemoryPlaying)
+            {
+                yield return null;
+            }
            
-            
-            FoodMemoryPlaying = true;
-            _foodMemoryBG.SetActive(true);
-            
-            Tween memoryFadein = null; 
-            for (int i = 0; i < _foodMemoryHolders.Count; i++)
-            {
-                memoryFadein = _foodMemoryHolders[i].DOFade(0.8f, 3);
-            }
-            FoodImage.sprite = spriteToDisplay;
-            
-            //Tween memoryFadein = _foodMemoryHolder.DOFade(0.8f, 3);
-            yield return memoryFadein.WaitForCompletion();
-
-            yield return new WaitForSeconds(2);
-
-            Tween memoryFadeOut = null;
-            for (int i = 0; i < _foodMemoryHolders.Count; i++)
-            {
-                memoryFadeOut =_foodMemoryHolders[i].DOFade(0, 2);
-                
-            }
-                
-            yield return memoryFadeOut.WaitForCompletion();
-
-            FoodImage.sprite = null;
-            FoodMemoryPlaying = false;
             FoodEaten.SetActive(false);
-            _foodMemoryBG.SetActive(false);
+      
             
         }
     }
