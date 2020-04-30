@@ -16,7 +16,7 @@ MonoBehaviour:
   - Name: Tofu
     FoodPrefab: {fileID: 3875526750303876154, guid: dbb2995ce4ee3f44ba60e402fc5e2bdf,
       type: 3}
-    SecondsToCook: 15
+    SecondsToCook: 20
     EatSound: {fileID: 0}
     foodMemories:
     - {fileID: 21300000, guid: 59c8d3fb40ee53a46b64bc8faf301027, type: 3}
@@ -45,7 +45,7 @@ MonoBehaviour:
   - Name: Meat Ball
     FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
-    SecondsToCook: 30
+    SecondsToCook: 1
     EatSound: {fileID: 0}
     foodMemories:
     - {fileID: 21300000, guid: 79e6bb9fc089f904d980b3409c093b6f, type: 3}
@@ -68,7 +68,7 @@ MonoBehaviour:
   - Name: Chicken Leg
     FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
       type: 3}
-    SecondsToCook: 40
+    SecondsToCook: 30
     EatSound: {fileID: 0}
     foodMemories:
     - {fileID: 21300000, guid: bd9daa950830e4940a8962116bedff25, type: 3}
@@ -95,7 +95,7 @@ MonoBehaviour:
   - Name: Carrot
     FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
       type: 3}
-    SecondsToCook: 15
+    SecondsToCook: 20
     EatSound: {fileID: 0}
     foodMemories: []
   - Name: Pepper
@@ -104,3 +104,23 @@ MonoBehaviour:
     SecondsToCook: 200
     EatSound: {fileID: 0}
     foodMemories: []
+  - Name: Brocolli
+    FoodPrefab: {fileID: 6487133699216000581, guid: 309c515444ae6ee40a968263ea0c89b0,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories: []
+  - Name: Shrimp
+    FoodPrefab: {fileID: 2246401921342013732, guid: 553aca3000bc6904ea46c76a12210977,
+      type: 3}
+    SecondsToCook: 25
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 3f4a4aa531f8a04439d3c4a11c943d51, type: 3}
+  - Name: Beef
+    FoodPrefab: {fileID: 1896850926249542070, guid: 47a088cd6cd07874cb27ffca75514c32,
+      type: 3}
+    SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 5c1b3cb02bfc7b34f890d590e3b9b71f, type: 3}

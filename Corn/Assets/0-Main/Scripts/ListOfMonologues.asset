@@ -24,11 +24,15 @@ MonoBehaviour:
       Christine is offline **\r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: ac42b864def46f54a993a6d7bb06d9dd, type: 3}
+    displaySprite: 0
+    monologueSprite: []
   - Name: turn on fire
     displayText: 0
     MonologueText: "**Stomach Growling** \r\nAlright, I am ready! \r"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: phone call john
     displayText: 0
     MonologueText: "**Dialing**\r\nMe: \"Hey John what are you up to tonight?\"\r\nJohn:
@@ -39,12 +43,17 @@ MonoBehaviour:
       Ended**\r\nMe: ...\r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: a64d9b9a947a9f44f9667b45a8bc9f68, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: what to eat
-    displayText: 1
+    displayText: 0
     MonologueText: "Okay... I guess I am eating alone tonight\u2026\nI feel very happy
       that I am having some really\u2026 good friends\u2026"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: e2ea73f386d09a4468cf90402df26fb3, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: f8874b5af8229854587180b7d3bad46f, type: 3}
   - Name: table setup
     displayText: 0
     MonologueText: "Phew! Preparing all these food is more tiring than I thought.
@@ -53,29 +62,39 @@ MonoBehaviour:
       messy this table is right now. \r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: 45413307031b9ef45aec589a50b1ecf5, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: wait for boil
     displayText: 0
     MonologueText: 'Why is this taking so long to boil..! I should probably do something
       else to distract myself from staring at this thing. '
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: boiling
     displayText: 0
     MonologueText: "Wow. This spicy soup base looks really hot. I hope I can survive
       after all this.. \r\nLet's get some food cookin\u2019!\r"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 58f0560a69ca13546b005933768e7501, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: cook first food
     displayText: 0
     MonologueText: "WHY do I still have to wait! Let me cook some more. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: eat first food
     displayText: 0
     MonologueText: "**Coughing** Ouch this pepper is strong.. Why am I torturing myself
       like this..\r\n\u2026\r\nLet me just have one more. \r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: 468d08be9a5bb0e46b8a50261a27ad2d, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: eat second food
     displayText: 0
     MonologueText: "**Salivating** \r\nThis tastes super fresh! This soup really brings
@@ -83,6 +102,8 @@ MonoBehaviour:
       Now I can have all of this to myself!\r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: fb57d702dea587e419b0b987de68bc61, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: eat fifth food
     displayText: 0
     MonologueText: "Surprisingly, I am actually enjoying the spiciness now. I could
@@ -92,89 +113,122 @@ MonoBehaviour:
       what she's doing now..Probably still in bed. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 8b496f16948a6c14d842ac9d04576aae, type: 3}
-  - Name: noise from neighbors
+    displaySprite: 1
+    monologueSprite: []
+  - Name: peter
     displayText: 0
     MonologueText: "**loud music and chatter from next door**\nUgh. Is Peter throwing
       a party again? Where did he find all these people? \r\nHow come some people
       are always so loud? \r\nHope they can end early tonight... Probably not gonna
       happen. \r\n\r\n**noise of fly buzzing ** \r\nNow there is a fly in here? Come
       on. \r\nBetter finish up before it lays eggs in my food. \r\n"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: ecf49c565fa90924485fc50082f99a08, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: 6e2b96a96ae1e7749af47bd68c5aec63, type: 3}
   - Name: eat tenth food
     displayText: 1
     MonologueText: "**Burp** \nLet me just have one more."
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
+    displaySprite: 0
+    monologueSprite: []
   - Name: full
-    displayText: 0
+    displayText: 1
     MonologueText: "I am done for now.\nLet me turn off the stove. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
+    displaySprite: 0
+    monologueSprite: []
   - Name: clean up
-    displayText: 1
+    displayText: 0
     MonologueText: "Ok.. what do I want to keep? \r\nThere is only space for this
       one black plate. \nLet me put everything I need in here. \n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: e9caee1e109edc947bc6370105bd55c6, type: 3}
   - Name: end1
-    displayText: 1
+    displayText: 0
     MonologueText: "Pretty sure that is everything I want to keep for tomorrow. Gotta
       dump away the rest.. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: 19c451d46e84219428135c52f2d4d861, type: 3}
   - Name: end2
     displayText: 1
     MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
-      Did you use up the spicy soup base I left for you? :) \r\n\n"
+      Did you use up the spicy soup base I left for you? :) \r"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: cbc9d9f3ac37cf8478846c0701ea7705, type: 3}
+    displaySprite: 1
+    monologueSprite: []
   - Name: phone1
     displayText: 1
     MonologueText: "6:00 p.m. No new notifications.\r"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: phone2
     displayText: 1
     MonologueText: "Mail: \u201C**ACTION REQUIRED!** \r\nIt\u2019s not too late to
       unlock savings!...\u201D\r\n..."
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: phone3
     displayText: 1
     MonologueText: "I shouldn\u2019t call her. It is way too early in the morning
       over there."
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: calendar1
     displayText: 1
     MonologueText: "Today is December 24th. Christmas Eve. \r\n\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: calendar2
     displayText: 1
     MonologueText: "She insisted that I should eat an apple today for good luck. \r\nSuperstitious
       as usual. \nI did it anyways, so she would stop nagging about it. \r\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: calendar3
     displayText: 1
     MonologueText: "She had fried hot pot with her friends last night to celebrate.
       \nGlad she is making friends back there already.  \r"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: window1
     displayText: 1
     MonologueText: "I love it when it snows...Except that I have to deal with the
       disgusting slush puddles the next day. \r\n\n"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: window2
     displayText: 1
     MonologueText: "The streets are kind of quiet today. It is weird. \nAre all the
       tourists at the giant Christmas tree at Rockefeller again? Lame. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: window3
     displayText: 1
     MonologueText: "She insisted on going to Rockefeller last Christmas. \nGod it
@@ -183,54 +237,99 @@ MonoBehaviour:
       thing now. \r"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: tap1
     displayText: 1
     MonologueText: "Did I rinse all the ingredients before I cook 'em? \r\nNo. Of
       course not. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 0}
+    displaySprite: 1
+    monologueSprite: []
   - Name: ready for hotpot
-    displayText: 1
+    displayText: 0
     MonologueText: "Look at the outside, what a beautiful night! \nJohn and Christine
       will be here very soon,\n let me order some food for our hotpot night. \nI can\u2019t
       wait!"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 6afcf6adc6e9a844abf72a0671b68592, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: d0b7b68095c750c44af1d030d746ffdf, type: 3}
+    - {fileID: 21300000, guid: 2bfdc0b9cf512084185966e371d6a6dc, type: 3}
+    - {fileID: 21300000, guid: 9852dd7829dded441ad93530a9fd3314, type: 3}
+    - {fileID: 21300000, guid: e1750b492fe5baf4c96319823070e2ed, type: 3}
   - Name: where are they
-    displayText: 1
+    displayText: 0
     MonologueText: All Set! I wonder where they are? They better be here before the
       food arrives.
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 416ad2cb9c644c3459e37f04f6b244f0, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: 89d4dbb1c4dbd69448aadb7e94cfaa5c, type: 3}
   - Name: I am so angry
     displayText: 0
     MonologueText: 
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: ff02aefe0cc5e7043b16a38d2239f180, type: 3}
+    - {fileID: 21300000, guid: ab10a0cab77fc6c45918fd85ede43cf4, type: 3}
   - Name: music on
-    displayText: 1
+    displayText: 0
     MonologueText: "Oh man, look at this poor food...\nIt\u2019s Okay.\n Being alone
       is ok, being alone is not bad. \n...Let me celebrate this big one-person dinner
       night. \nAlright, Music ON! "
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: de3519c60fb89754db5323836c250f46, type: 3}
+    displaySprite: 1
+    monologueSprite:
+    - {fileID: 21300000, guid: dad9f5944adf919408ac842d1bd67bba, type: 3}
+    - {fileID: 21300000, guid: 4795cba772d62ef4eaf0e4dc2392ca99, type: 3}
+    - {fileID: 21300000, guid: 14d4d598abff5d64f9b8fff55c9cd747, type: 3}
   - Name: great day
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: a great day!
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
-  - Name: fly
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+    displaySprite: 0
+    monologueSprite: []
+  - Name: text her
+    displayText: 1
+    MonologueText: 'It''s still very early in the morning over there. She is defnitely
+      still asleep. '
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 70387c752f10bf14181d5dcba21ad6bb, type: 3}
-  - Name: I am so angry
-    displayText: 0
-    MonologueText: 
+    displaySprite: 0
+    monologueSprite: []
+  - Name: its been
+    displayText: 1
+    MonologueText: It's been...
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 8300000, guid: d9140bb640c9b584cbc9770068d7791e, type: 3}
+    displaySprite: 0
+    monologueSprite: []
+  - Name: hintToStartStove1
+    displayText: 1
+    MonologueText: I need to heat up the soup base first...
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
-  - Name: I am so angry
-    displayText: 0
-    MonologueText: 
+    displaySprite: 0
+    monologueSprite: []
+  - Name: hintToStartStove2
+    displayText: 1
+    MonologueText: How do I turn on this stove again..?
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+    displaySprite: 0
+    monologueSprite: []
+  - Name: hintToStartStove3
+    displayText: 1
+    MonologueText: Click on the knob to turn on stove.
+    WithVoiceOver: 0
+    VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
+    displaySprite: 0
+    monologueSprite: []

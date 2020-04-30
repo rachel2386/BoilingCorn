@@ -28,7 +28,7 @@ TagManager:
   - Postprocessing
   - Objects
   - Pickupable
-  - PUMesh
+  - IgnoreCollision
   - 
   - 
   - 

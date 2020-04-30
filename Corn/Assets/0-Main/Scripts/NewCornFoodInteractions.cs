@@ -59,7 +59,7 @@ public class NewCornFoodInteractions : MonoBehaviour
                 if (GameManager.gameState == 1) // in cooking state 
                 {
                     if (Input.GetMouseButtonDown(0)
-                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo)
+                        && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, 1<<12)
                         && hitInfo.collider.CompareTag("FoodItem"))
                     {
                         var foodState = hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState;
