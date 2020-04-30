@@ -35,6 +35,7 @@ public class CornMemoryTrigger : MonoBehaviour
         }
 
         gameObject.tag = "Look";
+        gameObject.layer = 13; // ignore collision
         foreach (var sprite in itemMemoryProfile.GetMemoryWithName(NameOfMemory).MemoriesToDisplay)
         {
             MemoriesToPlay.Enqueue(sprite);

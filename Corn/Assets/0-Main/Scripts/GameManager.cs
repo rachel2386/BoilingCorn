@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     private GameObject cleanupBowl;
 
     private AudioSource backgroundMusic;
+   
 
     //public bool WithOrderSystem = true;
     public int Debug_StartWithState = -1;
@@ -309,7 +310,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(3);
             Context._monologueManager.StartMonologue("I am so angry");
             
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
             Context._uiManager.FadeIn(1, Color.black);
 
             while (Context._uiManager.fadeImage.color.a > 0.1f)
@@ -396,7 +397,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            Context._monologueManager.StartMonologue("fly"); 
+            Context._FoodInteractionScript.audioEventTrigger.SendEvent("fly");
             Context._monologueManager.StartMonologue("clean up");
             yield return null;
         }

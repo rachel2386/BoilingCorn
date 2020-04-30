@@ -47,6 +47,8 @@ public class CornItemInteractions : MonoBehaviour
     
     //temp
     public PlayMakerFSM textAnimFSM;
+    public PlayMakerFSM audioEventTrigger;
+    
 
     private void Start()
     {
@@ -150,7 +152,7 @@ public class CornItemInteractions : MonoBehaviour
 //                _monologueManager.StartMonologue("eat second food");
 //                break;
             case 5:
-                _monologueManager.StartMonologue("police");
+                audioEventTrigger.SendEvent("police");
                 break;
             case 10:
                 _monologueManager.StartMonologue("eat tenth food");
@@ -158,7 +160,9 @@ public class CornItemInteractions : MonoBehaviour
 //            case 8:
 //                _monologueManager.StartMonologue("noise from neighbors");
 //                break;
-            
+            case 11:
+                _monologueManager.StartMonologue("full");
+                break;
             default:
                 break;
         }
@@ -171,8 +175,8 @@ public class CornItemInteractions : MonoBehaviour
 
     private IEnumerator DisplayFoodMemory(GameObject FoodEaten, Sprite spriteToDisplay)
     {
-        var randomNumber = Random.Range(1, 2);
-        if (memoryDisplay.MemoryPlaying|| randomNumber == 2) //chances to play food memory is 1/2
+        var randomNumber = Random.Range(0, 2);
+        if (memoryDisplay.MemoryPlaying|| randomNumber == 1) //chances to play food memory is 1/2
         {
             FoodEaten.SetActive(false);
             yield return null;

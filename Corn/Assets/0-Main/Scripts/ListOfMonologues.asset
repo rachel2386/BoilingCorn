@@ -115,30 +115,31 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 8b496f16948a6c14d842ac9d04576aae, type: 3}
     displaySprite: 1
     monologueSprite: []
-  - Name: noise from neighbors
+  - Name: peter
     displayText: 0
     MonologueText: "**loud music and chatter from next door**\nUgh. Is Peter throwing
       a party again? Where did he find all these people? \r\nHow come some people
       are always so loud? \r\nHope they can end early tonight... Probably not gonna
       happen. \r\n\r\n**noise of fly buzzing ** \r\nNow there is a fly in here? Come
       on. \r\nBetter finish up before it lays eggs in my food. \r\n"
-    WithVoiceOver: 1
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: ecf49c565fa90924485fc50082f99a08, type: 3}
     displaySprite: 1
-    monologueSprite: []
+    monologueSprite:
+    - {fileID: 21300000, guid: 6e2b96a96ae1e7749af47bd68c5aec63, type: 3}
   - Name: eat tenth food
     displayText: 1
     MonologueText: "**Burp** \nLet me just have one more."
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
-    displaySprite: 1
+    displaySprite: 0
     monologueSprite: []
   - Name: full
     displayText: 1
     MonologueText: "I am done for now.\nLet me turn off the stove. \r\n"
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
-    displaySprite: 1
+    displaySprite: 0
     monologueSprite: []
   - Name: clean up
     displayText: 0
@@ -161,7 +162,7 @@ MonoBehaviour:
   - Name: end2
     displayText: 1
     MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
-      Did you use up the spicy soup base I left for you? :) \r\n\n"
+      Did you use up the spicy soup base I left for you? :) \r"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: cbc9d9f3ac37cf8478846c0701ea7705, type: 3}
     displaySprite: 1
@@ -290,23 +291,24 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 4795cba772d62ef4eaf0e4dc2392ca99, type: 3}
     - {fileID: 21300000, guid: 14d4d598abff5d64f9b8fff55c9cd747, type: 3}
   - Name: great day
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+    displayText: 1
+    MonologueText: a great day!
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
-    displaySprite: 1
+    displaySprite: 0
     monologueSprite: []
-  - Name: fly
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+  - Name: text her
+    displayText: 1
+    MonologueText: 'It''s still very early in the morning over there. She is defnitely
+      still asleep. '
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 70387c752f10bf14181d5dcba21ad6bb, type: 3}
     displaySprite: 0
     monologueSprite: []
-  - Name: police
-    displayText: 0
-    MonologueText: 
-    WithVoiceOver: 1
+  - Name: its been
+    displayText: 1
+    MonologueText: It's been...
+    WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: d9140bb640c9b584cbc9770068d7791e, type: 3}
     displaySprite: 0
     monologueSprite: []

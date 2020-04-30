@@ -113,11 +113,25 @@ public class CornMonologueManager : MonoBehaviour
 
         foreach (var sprite in monologueToPlay.monologueSprite)
         {
+            
             spritesToPlay.Enqueue(sprite);
         }
-        SpriteHolder.gameObject.SetActive(true);
+       
         Sprite currentSprite = spritesToPlay.Dequeue();
         SpriteHolder.sprite = currentSprite;
+        
+        if(currentSprite == null)
+            Debug.LogError("no sprite to display for " + monologueToPlay);
+        else
+        {
+            SpriteHolder.gameObject.SetActive(true);
+        
+//            Tween playSprite = SpriteHolder.DOColor(SpriteHolder.color, 1);
+//            MonologuePlaying();
+//            playSprite.OnComplete(NoMonologuePlaying);
+        }
+
+       
     }
 
 
@@ -146,17 +160,18 @@ public class CornMonologueManager : MonoBehaviour
 
 
         _TextPanel.SetActive(true);
-        Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, true);
-
-
+        _monologueTextbox.text = currentSentence;
+        
+        Tween playMonologue = _monologueTextbox.DOText(currentSentence, 2, true);
         MonologuePlaying();
 
         playMonologue.OnComplete(NoMonologuePlaying);
-        playMonologue.SetSpeedBased(true);
+        
     }
 
     public void DisplayNextSprite()
     {
+        if (TextIsPlaying) return; 
         if (spritesToPlay.Count == 0)
         {
             EndMonologue();
@@ -165,6 +180,9 @@ public class CornMonologueManager : MonoBehaviour
 
         Sprite currentSprite = spritesToPlay.Dequeue();
         SpriteHolder.sprite = currentSprite;
+//        Tween playSprite = SpriteHolder.DOColor(SpriteHolder.color, 1);
+//        MonologuePlaying();
+//        playSprite.OnComplete(NoMonologuePlaying);
     }
 
     public void DisplayNextSentence()
@@ -179,8 +197,9 @@ public class CornMonologueManager : MonoBehaviour
 
         _monologueTextbox.text = ""; //clear text;
         string currentSentence = sentences.Dequeue();
-        Tween playMonologue = _monologueTextbox.DOText(currentSentence, textAnimSpeed, true);
-        playMonologue.SetSpeedBased(true);
+        _monologueTextbox.text = currentSentence;
+        Tween playMonologue = _monologueTextbox.DOText(currentSentence, 2, true);
+        
 
         MonologuePlaying();
         playMonologue.OnComplete(NoMonologuePlaying);
