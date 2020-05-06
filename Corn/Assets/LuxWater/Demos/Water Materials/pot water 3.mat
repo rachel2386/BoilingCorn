@@ -139,7 +139,7 @@ Material:
     - _WaterFalloff: -1
     - _WaterIOR: 1.307
     - _WaterSmoothness: 0.9
-    - _WaterSpecular: 0.5
+    - _WaterSpecular: 0.12
     - _WaterSurfaceYPos: 0
     - _WorldSpaceMappingEnabled: 1
     - _ZTest: 4
