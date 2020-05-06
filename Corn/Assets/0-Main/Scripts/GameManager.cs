@@ -74,11 +74,15 @@ public class GameManager : MonoBehaviour
     {
         gameFSM.Update();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        
 
         if (Input.GetKeyDown("i"))
             print("gamestate = " + gameState + "  current state = " + gameFSM.CurrentState);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 
