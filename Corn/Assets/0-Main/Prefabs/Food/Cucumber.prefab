@@ -163,6 +163,7 @@ MonoBehaviour:
   PercentageCooked: 0
   InWater: 0
   foodCooked: 0
+  foodMeshes: []
 --- !u!114 &4058988348033113823
 MonoBehaviour:
   m_ObjectHideFlags: 0

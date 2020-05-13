@@ -105,7 +105,7 @@ SketchUpImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 0.0254
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
@@ -114,7 +114,7 @@ SketchUpImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -168,5 +168,5 @@ SketchUpImporter:
   selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
   assetHash:
     serializedVersion: 2
-    Hash: de0ac1883e342ba0d9d583676c8f266d
+    Hash: 4893972f03d9f050cc84926c0b87a5ab
   fileUnit: 0

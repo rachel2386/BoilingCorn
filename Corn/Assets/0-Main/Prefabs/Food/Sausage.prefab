@@ -1094,7 +1094,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: {r: 0.94509804, g: 0.4745098, b: 0.41568628, a: 1}
+        value: {r: 0.78431374, g: 0.49803922, b: 0.4627451, a: 1}
       rectVariables: []
       quaternionVariables: []
       gameObjectVariables: []

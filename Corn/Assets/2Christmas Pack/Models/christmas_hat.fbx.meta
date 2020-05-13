@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       43: 4300002
     second: hat_fur_ball
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: snowmen
+    second: {fileID: 2100000, guid: e19320dda45428145ab6f18839cae2b5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,7 +55,7 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

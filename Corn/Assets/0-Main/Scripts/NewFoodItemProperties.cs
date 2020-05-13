@@ -19,6 +19,7 @@ public class NewFoodItemProperties : ItemProperties
     private float SecondsToCook;
 
     private AudioSource PlayerAS;
+    private AudioManager _audioManager;
     [SerializeField] private float timeCooked = 0;
 
     private float TimeCooked
@@ -65,8 +66,10 @@ public class NewFoodItemProperties : ItemProperties
         _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
         _buoyancyScript = FindObjectOfType<CornBuoyancy>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
+        _audioManager = FindObjectOfType<AudioManager>();
         //_foodMemoryHolder = GameObject.Find("FoodImage").GetComponent<Image>();
 
+        foodRB.WakeUp();
         PlayerAS = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         ;
 
@@ -176,6 +179,8 @@ public class NewFoodItemProperties : ItemProperties
         if (foodState != 2) //if food not eaten, pickupable
         {
             base.OnPickUp(objectHolder);
+            if(InWater)
+                _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater"),transform.position);
             //StartCoroutine(InsertFrame());
         }
     }

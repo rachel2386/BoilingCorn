@@ -20,86 +20,95 @@ public class CornUIManager : MonoBehaviour
     public GameObject EatButtonInstruction;
     public GameObject LeanInstruction;
     public GameObject EndGameInstruction;
+    private FinalBowlAnimation finalAnimation;
 
+    public bool DontShowUI = false;
 
     private Camera MyCam;
 
     void Start()
     {
+        
         MyCam = Camera.main;
         _mouseLookScript = FindObjectOfType<CornMouseLook>();
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
         //ImgSlot.gameObject.SetActive(false);
         fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
-        fadeImage.color = new Color(0,0,0,0);
+        fadeImage.color = new Color(0, 0, 0, 0);
         fadeImage.gameObject.SetActive(false);
-        
+
+        LeanInstruction.SetActive(false);
+        InteractInstruction.SetActive(false);
         EndGameInstruction.SetActive(false);
         EatButtonInstruction.SetActive(false);
+
+        finalAnimation = FindObjectOfType<FinalBowlAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
+       if(DontShowUI) return;
         if (!_mouseLookScript.lockCursor || !_mouseLookScript.enableMouseLook) return;
 
         // ImgSlot.gameObject.SetActive(true);
 
         RaycastHit hitInfo = new RaycastHit();
-        if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo ,1000, ~(1 << 1 | 1 << 2)) ||
+        if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, ~(1 << 1 | 1 << 2)) ||
             hitInfo.collider == null) return;
 
-        if (!Input.GetMouseButton(0))
+        if (!finalAnimation.IsPlaying)
         {
-            if (GameManager.gameState > 0 && GameManager.gameState < 3)
+            if (!Input.GetMouseButton(0))
             {
-                if (GameManager.gameState == 2)
+                if (GameManager.gameState > 0 && GameManager.gameState < 3)
                 {
-                    EndGameInstruction.SetActive(true);
-//                if (hitInfo.collider.CompareTag("Pickupable"))
-//                    ImgSlot.sprite = interactableCursor;
-                
+                    EndGameInstruction.SetActive(GameManager.gameState == 2);
+
+                    if (hitInfo.collider.CompareTag("FoodItem"))
+                    {
+                        ImgSlot.sprite = foodCursor;
+                        InteractInstruction.SetActive(true);
+                        EatButtonInstruction.SetActive(GameManager.gameState != 2 && hitInfo.collider.GetComponent<NewFoodItemProperties>()
+                                                           .foodState == 1); //if food cooked, enabled eat ui
+                    }
+                    else if (hitInfo.collider.CompareTag("Interactable"))
+                    {
+                        ImgSlot.sprite = interactableCursor;
+                        InteractInstruction.SetActive(true);
+                    }
+                    else if (hitInfo.collider.CompareTag("Look"))
+                    {
+                        ImgSlot.sprite = lookCursor;
+                        InteractInstruction.SetActive(true);
+                    }
+                    else
+                    {
+                        ImgSlot.sprite = defaultCursor;
+                        InteractInstruction.SetActive(false);
+                        EatButtonInstruction.SetActive(false);
+                    }
                 }
-                
-                if (hitInfo.collider.CompareTag("FoodItem"))
-                {
-                    ImgSlot.sprite = foodCursor;
-                    InteractInstruction.SetActive(true);
-                    EatButtonInstruction.SetActive(hitInfo.collider.GetComponent<NewFoodItemProperties>()
-                                                       .foodState == 1); //if food cooked, enabled eat ui
-                }
-                else if (hitInfo.collider.CompareTag("Interactable"))
-                {
-                    ImgSlot.sprite = interactableCursor;
-                    InteractInstruction.SetActive(true);
-                }
-                else if (hitInfo.collider.CompareTag("Look"))
-                {
-                    ImgSlot.sprite = lookCursor;
-                    InteractInstruction.SetActive(true);
-                }
+
                 else
                 {
-                    ImgSlot.sprite = defaultCursor;
-                    InteractInstruction.SetActive(false);
-                    EatButtonInstruction.SetActive(false);
+                    if (hitInfo.collider.CompareTag("Interactable"))
+                    {
+                        print("interactable");
+                        ImgSlot.sprite = interactableCursor;
+                        InteractInstruction.SetActive(true);
+                    }
+                    else
+                    {
+                        ImgSlot.sprite = defaultCursor;
+                        InteractInstruction.SetActive(false);
+                    }
                 }
             }
-             
             else
             {
-                if (hitInfo.collider.CompareTag("Interactable"))
-                {
-                   print("interactable");
-                    ImgSlot.sprite = interactableCursor;
-                    InteractInstruction.SetActive(true);
-                }
-                else
-                {
-                    ImgSlot.sprite = defaultCursor;
-                    InteractInstruction.SetActive(false);
-                    
-                }
+                InteractInstruction.SetActive(false);
+                EatButtonInstruction.SetActive(false);
             }
         }
         else
@@ -107,6 +116,7 @@ public class CornUIManager : MonoBehaviour
             InteractInstruction.SetActive(false);
             EatButtonInstruction.SetActive(false);
             EndGameInstruction.SetActive(false);
+            LeanInstruction.SetActive(false);
         }
     }
 
@@ -114,7 +124,7 @@ public class CornUIManager : MonoBehaviour
     {
         StartCoroutine(FadingIn(duration, ScreenColor));
     }
-   
+
     public void FadeOut(float duration, Color ScreenColor)
     {
         StartCoroutine(FadingOut(duration, ScreenColor));
@@ -123,36 +133,28 @@ public class CornUIManager : MonoBehaviour
 
     private IEnumerator FadingIn(float duration, Color ScreenColor)
     {
-        
         fadeImage.color = ScreenColor;
         var color = fadeImage.color;
         color.a = 1;
         fadeImage.color = color;
         fadeImage.gameObject.SetActive(true);
-        
-        
+
+
         Tween fadeImg = fadeImage.DOFade(0, duration);
         yield return fadeImg.WaitForCompletion();
         fadeImage.gameObject.SetActive(false);
         yield return true;
-        
-
     }
 
-  private IEnumerator FadingOut(float duration, Color ScreenColor)
-   {
-      
-       
-       fadeImage.color = ScreenColor;
-       var color = fadeImage.color;
-       color.a = 0;
-       fadeImage.color = color;
-       fadeImage.gameObject.SetActive(true);
-             
-       Tween showImg = fadeImage.DOFade(1, duration);
-       yield return showImg.WaitForCompletion();
-       
-      
-       
-   }
+    private IEnumerator FadingOut(float duration, Color ScreenColor)
+    {
+        fadeImage.color = ScreenColor;
+        var color = fadeImage.color;
+        color.a = 0;
+        fadeImage.color = color;
+        fadeImage.gameObject.SetActive(true);
+
+        Tween showImg = fadeImage.DOFade(1, duration);
+        yield return showImg.WaitForCompletion();
+    }
 }

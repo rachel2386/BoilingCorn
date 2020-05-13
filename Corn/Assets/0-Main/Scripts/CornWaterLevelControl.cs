@@ -14,7 +14,7 @@ public class CornWaterLevelControl : MonoBehaviour
     {
         myScale = waterLevelScaler.localScale;
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
-        subtractAmount = 0.5f / _itemInteractions.fullAmount; //half of 1/fullamount
+        subtractAmount = 0.2f / _itemInteractions.fullAmount; //half of 1/fullamount
        
     }
 

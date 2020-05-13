@@ -14,6 +14,7 @@ public class CornMemoryTrigger : MonoBehaviour
     private ItemMemory _myMemory;
     
     
+    
 
     private MemoryDisplayControl _memoryDisplayControl;
     // Start is called before the first frame update
@@ -63,6 +64,8 @@ public class CornMemoryTrigger : MonoBehaviour
         {
             
             _memoryDisplayControl.MemoryTrigger(MemoriesToPlay.Dequeue());
+            if(!CornItemManager.ItemMemoryCollected.Contains(_myMemory))
+            CornItemManager.ItemMemoryCollected.Add(_myMemory);
 //            numberOfTimesClicked++;
 //            if(numberOfTimesClicked <= MemoriesToPlay.Length)
 //                _monologueManager.StartMonologue(MemoriesToPlay[numberOfTimesClicked - 1]);
