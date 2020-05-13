@@ -41,11 +41,12 @@ MonoBehaviour:
       type: 3}
     SecondsToCook: 45
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: e20bcb227eac96a4384d46e990ec0405, type: 3}
   - Name: Meat Ball
     FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
       type: 3}
-    SecondsToCook: 1
+    SecondsToCook: 25
     EatSound: {fileID: 0}
     foodMemories:
     - {fileID: 21300000, guid: 79e6bb9fc089f904d980b3409c093b6f, type: 3}
@@ -109,7 +110,8 @@ MonoBehaviour:
       type: 3}
     SecondsToCook: 20
     EatSound: {fileID: 0}
-    foodMemories: []
+    foodMemories:
+    - {fileID: 21300000, guid: cf5980318205d954fa31ec0016666278, type: 3}
   - Name: Shrimp
     FoodPrefab: {fileID: 2246401921342013732, guid: 553aca3000bc6904ea46c76a12210977,
       type: 3}
