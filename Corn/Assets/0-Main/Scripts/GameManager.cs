@@ -397,6 +397,7 @@ public class GameManager : MonoBehaviour
     private class CleanUpState : GameState
     {
         private Transform holder;
+        private Rigidbody Lid;
         private FinalBowlAnimation bowlAnimPlayer;
 
         public override void OnEnter()
@@ -413,6 +414,8 @@ public class GameManager : MonoBehaviour
 
             holder = FindObjectOfType<FridgeHolderBehavior>().transform;
             bowlAnimPlayer = FindObjectOfType<FinalBowlAnimation>();
+            Lid = Context.cleanupBowl.transform.Find("BoxLid").GetComponent<Rigidbody>();
+            Lid.gameObject.SetActive(false);
     
             Context.backgroundMusic.DOFade(0,1);
 
@@ -454,6 +457,8 @@ public class GameManager : MonoBehaviour
         IEnumerator MoveBowlToFridge()
         {
             movedBowl = true;
+            Lid.gameObject.SetActive(true);
+            Lid.isKinematic = false;
             Sequence moveBowlSequence = DOTween.Sequence();
 
             var liftedPos = Context.cleanupBowl.transform.position + Vector3.up * 0.4f + Vector3.forward * -0.3f;
