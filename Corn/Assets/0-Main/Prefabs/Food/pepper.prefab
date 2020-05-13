@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 2031690171402633859}
   - component: {fileID: 2031690171402633856}
   - component: {fileID: 2031690171402633857}
-  - component: {fileID: 2031690171402633862}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: pepper
-  m_TagString: FoodItem
+  m_TagString: PotBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2031690171402633858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.20497227, y: -0.24333668, z: 0.49665403}
-  m_LocalScale: {x: 0.6000013, y: 0.6, z: 0.6000013}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6433594088795749682}
   m_Father: {fileID: 0}
@@ -61,27 +60,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.08737562, y: 0.022952437, z: 0.05150198}
-  m_Center: {x: 0.0011613367, y: -0.007390678, z: 0.020843143}
---- !u!114 &2031690171402633862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031690171402633858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce62627286f6ad242904943ee3bd0546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeldByPlayer: 0
-  FoodName: Pepper
-  foodState: 0
-  timeCooked: 0
-  PercentageCooked: 0
-  InWater: 0
-  foodCooked: 0
+  m_Size: {x: 0.05868783, y: 0.010810693, z: 0.047594357}
+  m_Center: {x: -0.003988871, y: 0.0017855564, z: 0.015621078}
 --- !u!1001 &2031690170899666472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,17 +77,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.036
+      value: 0.0131
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.129
+      value: -0.0716
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.082
+      value: 0.0483
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
@@ -152,17 +132,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.59683263
+      value: 0.34975585
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.59683263
+      value: 0.34975585
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.59683263
+      value: 0.34975585
       objectReference: {fileID: 0}
     - target: {fileID: 1738457796980016657, guid: 412dabff9a268474c9b76b057d9a4f45,
         type: 3}

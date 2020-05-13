@@ -13,6 +13,7 @@ public class CornItemManager : MonoBehaviour
     public static List<GameObject> FoodToSave = new List<GameObject>();
     public static List<GameObject> WastedFood = new List<GameObject>();
     public static List<GameObject> FoodEaten = new List<GameObject>();
+    public static List<ItemMemory>ItemMemoryCollected = new List<ItemMemory>();
     [HideInInspector] public List<GameObject> FridgeHolders = new List<GameObject>(); 
 
     public void InitLists()
