@@ -40,10 +40,11 @@ public class CornItemInteractions : MonoBehaviour
     private AudioSource playerAS;
     public Transform mouth;
     [Header("Eating Sounds")] public AudioClip eatSound;
-
+    private AudioManager _audioManager;
     private MemoryDisplayControl memoryDisplay;
 
     [HideInInspector]public bool EatingFood = false;
+    private List<AudioClip> foodPickUpSounds = new List<AudioClip>();
     
     //temp
     public PlayMakerFSM textAnimFSM;
@@ -53,13 +54,15 @@ public class CornItemInteractions : MonoBehaviour
     private void Start()
     {
         playerAS = GetComponent<AudioSource>();
-
+        _audioManager = FindObjectOfType<AudioManager>();
         
         
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
         objectHolder = myCam.transform.Find("ObjectHolder");
         memoryDisplay = FindObjectOfType<MemoryDisplayControl>();
+        
+        foodPickUpSounds.AddRange(_audioManager.SearchLibraryWithClipsOfSameType("pickUpFood"));
     }
 
 
@@ -210,15 +213,9 @@ public class CornItemInteractions : MonoBehaviour
         objectHolding = objectClicked.collider.gameObject;
         objectRB = objectClicked.rigidbody;
         objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<SpringJoint>());
+        if(objectHolding.GetComponent<NewFoodItemProperties>().InWater)
+            _audioManager.PlayRandomSoundsAtPosition(foodPickUpSounds, objectRB.position);
+        
     }
 
-
-    private bool clicked = false;
-
-    IEnumerator InsertFrame()
-    {
-        clicked = false;
-        yield return null;
-        clicked = true;
-    }
 }
