@@ -178,7 +178,7 @@ public class CornItemInteractions : MonoBehaviour
 
     private IEnumerator DisplayFoodMemory(GameObject FoodEaten, Sprite spriteToDisplay)
     {
-        var randomNumber = Random.Range(0, 2);
+        var randomNumber = Random.Range(0, 1);
         if (memoryDisplay.MemoryPlaying|| randomNumber == 1) //chances to play food memory is 1/2
         {
             FoodEaten.SetActive(false);

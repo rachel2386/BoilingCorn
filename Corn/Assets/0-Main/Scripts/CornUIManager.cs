@@ -18,7 +18,7 @@ public class CornUIManager : MonoBehaviour
 
     public GameObject InteractInstruction;
     public GameObject EatButtonInstruction;
-    public GameObject LeanInstruction;
+    public GameObject ZoomInstruction;
     public GameObject EndGameInstruction;
     private FinalBowlAnimation finalAnimation;
 
@@ -28,7 +28,6 @@ public class CornUIManager : MonoBehaviour
 
     void Start()
     {
-        
         MyCam = Camera.main;
         _mouseLookScript = FindObjectOfType<CornMouseLook>();
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
@@ -37,7 +36,7 @@ public class CornUIManager : MonoBehaviour
         fadeImage.color = new Color(0, 0, 0, 0);
         fadeImage.gameObject.SetActive(false);
 
-        LeanInstruction.SetActive(false);
+        ZoomInstruction.SetActive(false);
         InteractInstruction.SetActive(false);
         EndGameInstruction.SetActive(false);
         EatButtonInstruction.SetActive(false);
@@ -48,7 +47,7 @@ public class CornUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(DontShowUI) return;
+        if (DontShowUI) return;
         if (!_mouseLookScript.lockCursor || !_mouseLookScript.enableMouseLook) return;
 
         // ImgSlot.gameObject.SetActive(true);
@@ -59,56 +58,52 @@ public class CornUIManager : MonoBehaviour
 
         if (!finalAnimation.IsPlaying)
         {
-            if (!Input.GetMouseButton(0))
+            if (GameManager.gameState > 0 && GameManager.gameState < 3)
             {
-                if (GameManager.gameState > 0 && GameManager.gameState < 3)
+                ZoomInstruction.SetActive(true);
+                InteractInstruction.SetActive(true);
+                EndGameInstruction.SetActive(GameManager.gameState == 2);
+                if (!Input.GetMouseButton(0))
                 {
-                    EndGameInstruction.SetActive(GameManager.gameState == 2);
-
                     if (hitInfo.collider.CompareTag("FoodItem"))
                     {
                         ImgSlot.sprite = foodCursor;
-                        InteractInstruction.SetActive(true);
-                        EatButtonInstruction.SetActive(GameManager.gameState != 2 && hitInfo.collider.GetComponent<NewFoodItemProperties>()
+                        EatButtonInstruction.SetActive(GameManager.gameState != 2 && hitInfo.collider
+                                                           .GetComponent<NewFoodItemProperties>()
                                                            .foodState == 1); //if food cooked, enabled eat ui
                     }
                     else if (hitInfo.collider.CompareTag("Interactable"))
                     {
                         ImgSlot.sprite = interactableCursor;
-                        InteractInstruction.SetActive(true);
                     }
                     else if (hitInfo.collider.CompareTag("Look"))
                     {
                         ImgSlot.sprite = lookCursor;
-                        InteractInstruction.SetActive(true);
                     }
                     else
                     {
                         ImgSlot.sprite = defaultCursor;
-                        InteractInstruction.SetActive(false);
                         EatButtonInstruction.SetActive(false);
                     }
                 }
-
                 else
                 {
-                    if (hitInfo.collider.CompareTag("Interactable"))
-                    {
-                        print("interactable");
-                        ImgSlot.sprite = interactableCursor;
-                        InteractInstruction.SetActive(true);
-                    }
-                    else
-                    {
-                        ImgSlot.sprite = defaultCursor;
-                        InteractInstruction.SetActive(false);
-                    }
+                    EatButtonInstruction.SetActive(false);
                 }
             }
             else
             {
-                InteractInstruction.SetActive(false);
-                EatButtonInstruction.SetActive(false);
+                if (hitInfo.collider.CompareTag("Interactable"))
+                {
+                    print("interactable");
+                    ImgSlot.sprite = interactableCursor;
+                    InteractInstruction.SetActive(true);
+                }
+                else
+                {
+                    ImgSlot.sprite = defaultCursor;
+                    InteractInstruction.SetActive(false);
+                }
             }
         }
         else
@@ -116,7 +111,7 @@ public class CornUIManager : MonoBehaviour
             InteractInstruction.SetActive(false);
             EatButtonInstruction.SetActive(false);
             EndGameInstruction.SetActive(false);
-            LeanInstruction.SetActive(false);
+            ZoomInstruction.SetActive(false);
         }
     }
 
