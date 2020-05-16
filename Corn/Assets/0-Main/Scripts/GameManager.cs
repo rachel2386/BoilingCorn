@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private GameObject cleanupBowl;
 
     private AudioSource backgroundMusic;
+    
+    public GameObject lightToTurnOff;
 
 
     private bool startGame = false;
@@ -153,6 +155,7 @@ public class GameManager : MonoBehaviour
 
         private bool doneCalling = false;
         private bool doneOrdering = false;
+        private bool doneWithOpening = false;
 
         private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
@@ -206,6 +209,8 @@ public class GameManager : MonoBehaviour
             {
                 doneCalling = true;
             }
+
+           
         }
 
         void ConfirmOrder()
@@ -238,7 +243,15 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
+            doneWithOpening = true;
+
+            while ( !PhoneFsm.FsmVariables.GetFsmBool("menuOpened").Value || !doneWithOpening)
+            {
+                yield return null;
+            }
+            
             InitMenu();
+            
 
             while (!doneOrdering)
             {
@@ -416,6 +429,7 @@ public class GameManager : MonoBehaviour
             bowlAnimPlayer = FindObjectOfType<FinalBowlAnimation>();
             Lid = Context.cleanupBowl.transform.Find("BoxLid").GetComponent<Rigidbody>();
             Lid.gameObject.SetActive(false);
+            Context.lightToTurnOff.SetActive(false);
     
             Context.backgroundMusic.DOFade(0,1);
 

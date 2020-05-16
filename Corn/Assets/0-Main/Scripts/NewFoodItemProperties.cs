@@ -179,8 +179,8 @@ public class NewFoodItemProperties : ItemProperties
         if (foodState != 2) //if food not eaten, pickupable
         {
             base.OnPickUp(objectHolder);
-            if(InWater)
-                _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater"),transform.position);
+//            if(InWater)
+//                _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater"),transform.position);
             //StartCoroutine(InsertFrame());
         }
     }

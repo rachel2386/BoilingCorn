@@ -292,7 +292,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 14d4d598abff5d64f9b8fff55c9cd747, type: 3}
   - Name: great day
     displayText: 1
-    MonologueText: a great day!
+    MonologueText: 'a great day!
+
+      (Press "Escape" to restart.)'
     WithVoiceOver: 0
     VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
     displaySprite: 0

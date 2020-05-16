@@ -19,6 +19,8 @@ public class FinalBowlAnimation : MonoBehaviour
     private Camera myCam;
     private Vector3 camPos;
 
+  
+
     private void Start()
     {
         myCam = Camera.main;
@@ -58,7 +60,8 @@ public class FinalBowlAnimation : MonoBehaviour
         {
             StartCoroutine(PlayAnimation(bowlsToAnimate[currentBowlIndex]));
         }
-        else
+        
+        if(currentBowlIndex >= bowlsToAnimate.Count/2)
         {
             print("bowl animation sequence complete!");
             AnimationComplete = true;
