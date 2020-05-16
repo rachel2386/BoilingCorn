@@ -213,8 +213,8 @@ public class CornItemInteractions : MonoBehaviour
         objectHolding = objectClicked.collider.gameObject;
         objectRB = objectClicked.rigidbody;
         objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<SpringJoint>());
-        if(objectHolding.GetComponent<NewFoodItemProperties>().InWater)
-            _audioManager.PlayRandomSoundsAtPosition(foodPickUpSounds, objectRB.position);
+//        if(objectHolding.GetComponent<NewFoodItemProperties>().InWater)
+//            _audioManager.PlayRandomSoundsAtPosition(foodPickUpSounds, objectRB.position);
         
     }
 

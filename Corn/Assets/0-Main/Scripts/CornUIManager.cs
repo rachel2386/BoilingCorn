@@ -36,6 +36,7 @@ public class CornUIManager : MonoBehaviour
         fadeImage.color = new Color(0, 0, 0, 0);
         fadeImage.gameObject.SetActive(false);
 
+        
         ZoomInstruction.SetActive(false);
         InteractInstruction.SetActive(false);
         EndGameInstruction.SetActive(false);
@@ -58,10 +59,13 @@ public class CornUIManager : MonoBehaviour
 
         if (!finalAnimation.IsPlaying)
         {
-            if (GameManager.gameState > 0 && GameManager.gameState < 3)
+            
+            if (GameManager.gameState >= 0 && GameManager.gameState < 3)
             {
+                
                 ZoomInstruction.SetActive(true);
                 InteractInstruction.SetActive(true);
+                
                 EndGameInstruction.SetActive(GameManager.gameState == 2);
                 if (!Input.GetMouseButton(0))
                 {
@@ -76,7 +80,7 @@ public class CornUIManager : MonoBehaviour
                     {
                         ImgSlot.sprite = interactableCursor;
                     }
-                    else if (hitInfo.collider.CompareTag("Look"))
+                    else if (hitInfo.collider.CompareTag("Look")  && GameManager.gameState > 0)
                     {
                         ImgSlot.sprite = lookCursor;
                     }
