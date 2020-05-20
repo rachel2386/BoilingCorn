@@ -34,9 +34,8 @@ public class FinalBowlAnimation : MonoBehaviour
 
     public void StartAnimation()
     {
-        if(!myAs.isPlaying)
-            myAs.Play();
-        
+       
+        if(!myAs.isPlaying) myAs.Play();
         if (!IsPlaying)
         {
             GameManager.gameState = 3;
@@ -55,11 +54,16 @@ public class FinalBowlAnimation : MonoBehaviour
         
         if(currentBowlIndex >= bowlsToAnimate.Count/2)
         {
-            print("bowl animation sequence complete!");
-            AnimationComplete = true;
-            myAs.DOFade(0, 3);
-            myAs.loop = false;
+           EndOfAnimation();
         }
+    }
+
+   public void EndOfAnimation()
+    {
+        print("bowl animation sequence complete!");
+        AnimationComplete = true;
+        myAs.DOFade(0, 3);
+        myAs.loop = false;
     }
 
     IEnumerator moveCam()

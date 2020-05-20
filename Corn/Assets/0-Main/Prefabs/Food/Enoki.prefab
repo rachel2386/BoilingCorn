@@ -84,6 +84,7 @@ MonoBehaviour:
   HeldByPlayer: 0
   FoodName: Enoki
   foodState: 0
+  inWaterLastFrame: 0
   timeCooked: 0
   PercentageCooked: 0
   InWater: 0

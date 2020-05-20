@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class NewFoodItemProperties : ItemProperties
 {
-    private FoodProfileManager _itemManager;
+    private FoodProfileManager _foodProfileManager;
     private CornItemInteractions _itemInteractions;
+    private CornItemManager _itemManager;
     private FoodProperty myFoodProfile;
     public string FoodName;
     private bool hasFoodProfile = false;
@@ -17,6 +18,7 @@ public class NewFoodItemProperties : ItemProperties
     private int cooked = 1;
 
     private float SecondsToCook;
+    [HideInInspector]public bool inWaterLastFrame = false;
 
     private AudioSource PlayerAS;
     private AudioManager _audioManager;
@@ -63,7 +65,9 @@ public class NewFoodItemProperties : ItemProperties
 
     public override void Start()
     {
-        _itemManager = GameObject.Find("GameManager").GetComponent<CornItemManager>().foodManager;
+       
+        _itemManager = FindObjectOfType<CornItemManager>();
+        _foodProfileManager = _itemManager.foodManager;
         _buoyancyScript = FindObjectOfType<CornBuoyancy>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
         _audioManager = FindObjectOfType<AudioManager>();
@@ -73,7 +77,7 @@ public class NewFoodItemProperties : ItemProperties
         PlayerAS = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         ;
 
-        myFoodProfile = _itemManager.GetPropertyFromName(FoodName);
+        myFoodProfile = _foodProfileManager.GetPropertyFromName(FoodName);
 
 
         if (myFoodProfile != null)
@@ -116,6 +120,7 @@ public class NewFoodItemProperties : ItemProperties
 
     private void Update()
     {
+        
         if (TimeCooked >= SecondsToCook)
         {
             PercentageCooked = 1;
@@ -128,7 +133,15 @@ public class NewFoodItemProperties : ItemProperties
                 TimeCooked += Time.deltaTime;
             PercentageCooked = TimeCooked / SecondsToCook;
         }
+
+        
     }
+
+    private void LateUpdate()
+    {
+        inWaterLastFrame = InWater;
+    }
+
 
     private void FixedUpdate()
     {
@@ -176,13 +189,28 @@ public class NewFoodItemProperties : ItemProperties
 
     public override void OnPickUp(SpringJoint objectHolder)
     {
+        
         if (foodState != 2) //if food not eaten, pickupable
         {
+            var randomNumber = Random.Range(0, 2);
+            
             base.OnPickUp(objectHolder);
-//            if(InWater)
-//                _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater"),transform.position);
+            if(InWater)
+               if (randomNumber == 0)
+                _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater"),null,transform.position, 0.5f);
+               else
+                   _audioManager.PlaySoundAtPostion(_audioManager.FindClipWithName("pickUpFoodWater2"),null,transform.position, 0.5f);   
+            
             //StartCoroutine(InsertFrame());
         }
+    }
+
+    public override void OnDropOff()
+    {
+        base.OnDropOff();
+        
+
+        
     }
 
     private void DisplayFoodMemory()
@@ -194,6 +222,7 @@ public class NewFoodItemProperties : ItemProperties
         else
         {
             _itemInteractions.FoodMemoryTrigger(gameObject, myFoodProfile.foodMemoryQueue.Dequeue());
+            
         }
     }
 
@@ -212,7 +241,7 @@ public class NewFoodItemProperties : ItemProperties
                     foodMeshes[currentStep + 1].gameObject.SetActive(true);
                 }
 
-                PlayerAS.PlayOneShot(_itemInteractions.eatSound);
+                //PlayerAS.PlayOneShot(_itemInteractions.eatSound);
                 foodMeshes[currentStep].gameObject.SetActive(false);
                 Tween rotateFood = transform.DORotate(Vector3.one * Random.Range(10, 50), 1);
                 yield return rotateFood.WaitForCompletion();
@@ -222,7 +251,7 @@ public class NewFoodItemProperties : ItemProperties
         }
 
         _itemInteractions.EatingFood = false;
-        if (CornItemManager.FoodEaten.Count <= _itemInteractions.fullAmount)
+        if (_itemManager.FoodEaten.Count < _itemInteractions.fullAmount)
            DisplayFoodMemory();
 //        while (_itemInteractions.FoodMemoryPlaying)
 //        {

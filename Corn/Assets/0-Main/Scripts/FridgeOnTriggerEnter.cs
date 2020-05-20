@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class FridgeOnTriggerEnter : MonoBehaviour
 {
+    private CornItemManager _itemManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _itemManager = FindObjectOfType<CornItemManager>();
     }
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("FoodItem")&&  !CornItemManager.FoodToSave.Contains(other.gameObject))
-           CornItemManager.FoodToSave.Add(other.gameObject);
+       if(other.CompareTag("FoodItem")&&  !_itemManager.FoodToSave.Contains(other.gameObject))
+           _itemManager.FoodToSave.Add(other.gameObject);
        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("FoodItem") &&  CornItemManager.FoodToSave.Contains(other.gameObject))
-            CornItemManager.FoodToSave.Remove(other.gameObject);
+        if (other.CompareTag("FoodItem") &&  _itemManager.FoodToSave.Contains(other.gameObject))
+            _itemManager.FoodToSave.Remove(other.gameObject);
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UI;
+
 
 public class CornMonologueManager : MonoBehaviour
 {

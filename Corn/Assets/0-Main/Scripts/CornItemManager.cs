@@ -9,12 +9,28 @@ public class CornItemManager : MonoBehaviour
     public FoodProfileManager foodManager;
     List<GameObject> ListOfItems = new List<GameObject>();
 
-    public static List<GameObject> Containers = new List<GameObject>();
-    public static List<GameObject> FoodToSave = new List<GameObject>();
-    public static List<GameObject> WastedFood = new List<GameObject>();
-    public static List<GameObject> FoodEaten = new List<GameObject>();
-    public static List<ItemMemory>ItemMemoryCollected = new List<ItemMemory>();
-    [HideInInspector] public List<GameObject> FridgeHolders = new List<GameObject>(); 
+    [HideInInspector]public  List<GameObject> Containers;
+    [HideInInspector] public  List<GameObject> FoodToSave ;
+    [HideInInspector]public  List<GameObject> WastedFood;
+    [HideInInspector]public  List<GameObject> FoodEaten ;
+   
+
+    [HideInInspector]
+    public int memoriesCollected; 
+    [HideInInspector] public List<GameObject> FridgeHolders;
+
+    [HideInInspector]
+    public int TotalMemoriesToCollect;
+
+    private void Awake()
+    {
+        Containers = new List<GameObject>();
+        FoodToSave = new List<GameObject>();
+        WastedFood = new List<GameObject>();
+        FoodEaten = new List<GameObject>();
+         FridgeHolders = new List<GameObject>();
+        TotalMemoriesToCollect = FindObjectsOfType<CornMemoryTrigger>().Length + FindObjectOfType<CornItemInteractions>().fullAmount - 1; //total = item memory + max food memory collectable
+    }
 
     public void InitLists()
     {
@@ -27,33 +43,32 @@ public class CornItemManager : MonoBehaviour
 //                    child.gameObject.AddComponent<ItemProperties>();
 //            }
 //        }
-        
-     
+
+
         Containers.AddRange(GameObject.FindGameObjectsWithTag("Container"));
 
         foreach (var c in Containers)
         {
             var containerParent = c.transform.parent;
             containerParent.tag = "Untagged";
-            if(!c.GetComponent<ContainerTriggerEnter>())
-            c.AddComponent<ContainerTriggerEnter>();
-            
+            if (!c.GetComponent<ContainerTriggerEnter>())
+                c.AddComponent<ContainerTriggerEnter>();
         }
 
-       FridgeHolders.AddRange(GameObject.FindGameObjectsWithTag("Respawn"));
+        FridgeHolders.AddRange(GameObject.FindGameObjectsWithTag("Respawn"));
         foreach (var holder in FridgeHolders)
         {
             holder.AddComponent<FridgeHolderBehavior>();
         }
-        
+
         var FridgeTrigger = GameObject.FindGameObjectsWithTag("Fridge");
         foreach (var holder in FridgeTrigger)
         {
-            if(!holder.GetComponent<FridgeOnTriggerEnter>())
-            holder.AddComponent<FridgeOnTriggerEnter>();
+            if (!holder.GetComponent<FridgeOnTriggerEnter>())
+                holder.AddComponent<FridgeOnTriggerEnter>();
         }
 
-        
+
         //load food memories into queue
         foreach (var foodProfile in foodManager.FoodProperties)
         {

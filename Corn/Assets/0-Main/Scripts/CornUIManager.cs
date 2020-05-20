@@ -14,7 +14,10 @@ public class CornUIManager : MonoBehaviour
     public Sprite defaultCursor;
     public Sprite interactableCursor;
     public Sprite lookCursor;
+   
     private CornMouseLook _mouseLookScript;
+    private CornItemManager _itemManager;
+    private CornItemInteractions _itemInteractions;
 
     public GameObject InteractInstruction;
     public GameObject EatButtonInstruction;
@@ -29,7 +32,10 @@ public class CornUIManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
+        _itemManager = FindObjectOfType<CornItemManager>();
+        _itemInteractions = FindObjectOfType<CornItemInteractions>();
         _mouseLookScript = FindObjectOfType<CornMouseLook>();
+        
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
         //ImgSlot.gameObject.SetActive(false);
         fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
@@ -77,7 +83,7 @@ public class CornUIManager : MonoBehaviour
                     {
                         ImgSlot.sprite = foodCursor;
                         EatButtonInstruction.SetActive(GameManager.gameState < 2
-                                                       && CornItemManager.FoodEaten.Count < 11 //player not full
+                                                       &&_itemManager.FoodEaten.Count < _itemInteractions.fullAmount //player not full
                                                        && hitInfo.collider.GetComponent<NewFoodItemProperties>()
                                                            .foodState == 1); //if food cooked, enabled eat ui
                     }
