@@ -175,6 +175,7 @@ public class GameManager : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Alpha1))
             {
                 transitionToCooking();
+                Context.backgroundMusic.Play();
                 
             }
             else if (Input.GetKeyUp(KeyCode.Alpha2))

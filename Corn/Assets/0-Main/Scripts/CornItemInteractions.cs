@@ -88,9 +88,10 @@ public class CornItemInteractions : MonoBehaviour
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, LayerMask.GetMask("Pickupable"))
             && hitInfo.collider.CompareTag("FoodItem")
             && _itemManager.FoodEaten.Count < fullAmount 
-            && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
+            && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1
+            && !EatingFood)
         {
-            if(!EatingFood)
+            
             MoveFoodToMouth(hitInfo.collider.gameObject);
         }
 
