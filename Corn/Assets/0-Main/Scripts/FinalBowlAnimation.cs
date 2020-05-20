@@ -31,14 +31,6 @@ public class FinalBowlAnimation : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            AnimationComplete = true;
-
-        }
-    }
 
     public void StartAnimation()
     {

@@ -36,7 +36,7 @@ public class CornUIManager : MonoBehaviour
         fadeImage.color = new Color(0, 0, 0, 0);
         fadeImage.gameObject.SetActive(false);
 
-        
+
         ZoomInstruction.SetActive(false);
         InteractInstruction.SetActive(false);
         EndGameInstruction.SetActive(false);
@@ -48,39 +48,44 @@ public class CornUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DontShowUI) return;
-        if (!_mouseLookScript.lockCursor || !_mouseLookScript.enableMouseLook) return;
+
+        if (DontShowUI  || !_mouseLookScript.enableMouseLook)
+        {
+           return;
+        }
+
+       
 
         // ImgSlot.gameObject.SetActive(true);
 
         RaycastHit hitInfo = new RaycastHit();
-        if (!Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, ~(1 << 1 | 1 << 2)) ||
-            hitInfo.collider == null) return;
+
 
         if (!finalAnimation.IsPlaying)
         {
-            
-            if (GameManager.gameState >= 0 && GameManager.gameState < 3)
+            if (GameManager.gameState > 0 && GameManager.gameState < 3)
             {
-                
                 ZoomInstruction.SetActive(true);
                 InteractInstruction.SetActive(true);
-                
+
                 EndGameInstruction.SetActive(GameManager.gameState == 2);
-                if (!Input.GetMouseButton(0))
+                if (!Input.GetMouseButton(0) &&
+                    Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000,
+                        ~(1 << 1 | 1 << 2)) && hitInfo.collider != null)
                 {
                     if (hitInfo.collider.CompareTag("FoodItem"))
                     {
                         ImgSlot.sprite = foodCursor;
-                        EatButtonInstruction.SetActive(GameManager.gameState != 2 && hitInfo.collider
-                                                           .GetComponent<NewFoodItemProperties>()
+                        EatButtonInstruction.SetActive(GameManager.gameState < 2
+                                                       && CornItemManager.FoodEaten.Count < 11 //player not full
+                                                       && hitInfo.collider.GetComponent<NewFoodItemProperties>()
                                                            .foodState == 1); //if food cooked, enabled eat ui
                     }
                     else if (hitInfo.collider.CompareTag("Interactable"))
                     {
                         ImgSlot.sprite = interactableCursor;
                     }
-                    else if (hitInfo.collider.CompareTag("Look")  && GameManager.gameState > 0)
+                    else if (hitInfo.collider.CompareTag("Look"))
                     {
                         ImgSlot.sprite = lookCursor;
                     }
@@ -95,19 +100,23 @@ public class CornUIManager : MonoBehaviour
                     EatButtonInstruction.SetActive(false);
                 }
             }
-            else
+            else if(GameManager.gameState == 0)
             {
-                if (hitInfo.collider.CompareTag("Interactable"))
-                {
-                    print("interactable");
-                    ImgSlot.sprite = interactableCursor;
+              
+                    ZoomInstruction.SetActive(true);
                     InteractInstruction.SetActive(true);
-                }
-                else
-                {
-                    ImgSlot.sprite = defaultCursor;
-                    InteractInstruction.SetActive(false);
-                }
+
+                    if (!Input.GetMouseButton(0) && Physics.Raycast(MyCam.ScreenPointToRay(Input.mousePosition),
+                                                     out hitInfo, 1000, ~(1 << 1 | 1 << 2))
+                                                 && hitInfo.collider.CompareTag("Interactable"))
+                    {
+                        ImgSlot.sprite = interactableCursor;
+                    }
+                    else
+                    {
+                        ImgSlot.sprite = defaultCursor;
+                    }
+                
             }
         }
         else
@@ -116,6 +125,7 @@ public class CornUIManager : MonoBehaviour
             EatButtonInstruction.SetActive(false);
             EndGameInstruction.SetActive(false);
             ZoomInstruction.SetActive(false);
+            ImgSlot.enabled = false;
         }
     }
 

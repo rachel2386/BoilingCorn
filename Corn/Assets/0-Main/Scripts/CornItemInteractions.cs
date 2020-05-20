@@ -68,10 +68,7 @@ public class CornItemInteractions : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.gameState == 1 && Input.GetKeyDown(KeyCode.Alpha2) && !playerIsFull)
-        {
-            playerIsFull = true;
-        }
+       
 
         if (CornItemManager.FoodEaten.Count >= fullAmount && !EatingFood && _monologueManager.MonologueIsComplete)
         {
@@ -198,7 +195,7 @@ public class CornItemInteractions : MonoBehaviour
             
         }
     }
-    void PlaceObject()
+    public void PlaceObject()
     {
         IsholdingObject = false;
         objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
