@@ -20,6 +20,7 @@ using Random = UnityEngine.Random;
 public class CornItemInteractions : MonoBehaviour
 {
     private CornMonologueManager _monologueManager;
+    private CornItemManager _itemManager;
 
     [SerializeField] public int fullAmount = 11;
     public bool playerIsFull = false;
@@ -39,7 +40,7 @@ public class CornItemInteractions : MonoBehaviour
 
     private AudioSource playerAS;
     public Transform mouth;
-    [Header("Eating Sounds")] public AudioClip eatSound;
+    [Header("Eating Sounds")] public List<AudioClip> eatSounds = new List<AudioClip>();
     private AudioManager _audioManager;
     private MemoryDisplayControl memoryDisplay;
 
@@ -55,6 +56,7 @@ public class CornItemInteractions : MonoBehaviour
     {
         playerAS = GetComponent<AudioSource>();
         _audioManager = FindObjectOfType<AudioManager>();
+        _itemManager = FindObjectOfType<CornItemManager>();
         
         
         _monologueManager = FindObjectOfType<CornMonologueManager>();
@@ -68,12 +70,9 @@ public class CornItemInteractions : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.gameState == 1 && Input.GetKeyDown(KeyCode.Alpha2) && !playerIsFull)
-        {
-            playerIsFull = true;
-        }
+       
 
-        if (CornItemManager.FoodEaten.Count >= fullAmount && !EatingFood && _monologueManager.MonologueIsComplete)
+        if (_itemManager.FoodEaten.Count >= fullAmount && !EatingFood && _monologueManager.MonologueIsComplete)
         {
             playerIsFull = true;
         }
@@ -88,7 +87,7 @@ public class CornItemInteractions : MonoBehaviour
         if (Input.GetMouseButtonDown(1)
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, LayerMask.GetMask("Pickupable"))
             && hitInfo.collider.CompareTag("FoodItem")
-            && CornItemManager.FoodEaten.Count < fullAmount 
+            && _itemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1)
         {
             if(!EatingFood)
@@ -135,13 +134,14 @@ public class CornItemInteractions : MonoBehaviour
 
     void FoodEaten(GameObject FoodToEat)
     {
+        _audioManager.PlayRandomSoundsAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
         FoodToEat.transform.SetParent(mouth);
         FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.BiteFood));
        
-        if (!CornItemManager.FoodEaten.Contains(FoodToEat))
-            CornItemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
+        if (!_itemManager.FoodEaten.Contains(FoodToEat))
+            _itemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
         
-        var numOfFoodEaten = CornItemManager.FoodEaten.Count;
+        var numOfFoodEaten =_itemManager.FoodEaten.Count;
         
 //        if(numOfFoodEaten < fullAmount)
 //        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
@@ -174,6 +174,7 @@ public class CornItemInteractions : MonoBehaviour
     public void FoodMemoryTrigger(GameObject FoodEaten, Sprite spriteToDisplay)
     {
         StartCoroutine(DisplayFoodMemory(FoodEaten, spriteToDisplay));
+         _itemManager.memoriesCollected++;
     }
 
     private IEnumerator DisplayFoodMemory(GameObject FoodEaten, Sprite spriteToDisplay)
@@ -198,7 +199,7 @@ public class CornItemInteractions : MonoBehaviour
             
         }
     }
-    void PlaceObject()
+    public void PlaceObject()
     {
         IsholdingObject = false;
         objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();

@@ -12,7 +12,7 @@ public class CornBuoyancy : MonoBehaviour
     public static List<Rigidbody> cookedFoodInWater = new List<Rigidbody>();
     List<Rigidbody>PotBaseStuff = new List<Rigidbody>();
 
-    private AudioManager audioManager;
+    private AudioManager _audioManager;
     //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
 
     private void Awake()
@@ -31,7 +31,7 @@ public class CornBuoyancy : MonoBehaviour
     void Start()
     {
         myCol = GetComponent<Collider>();
-        audioManager = FindObjectOfType<AudioManager>();
+        _audioManager = FindObjectOfType<AudioManager>();
         surfaceLevel = myCol.bounds.max.y-transform.localScale.y/4; //(transform.position.y);
 
        
@@ -91,15 +91,29 @@ public class CornBuoyancy : MonoBehaviour
         Rigidbody rb;
         if (other.CompareTag("FoodItem"))
         {
-          // audioManager.PlayAudioClipWithSource(audioManager.FindClipWithName("dropFoodWater"), GetComponent<AudioSource>());
-            rb =  other.GetComponent<Rigidbody>();
+           rb =  other.GetComponent<Rigidbody>();
             var foodProp = other.GetComponent<NewFoodItemProperties>();
             foodProp.InWater = true;
+            
+            if(foodProp.foodState == 0)
+                {
+                    var randomNumber = Random.Range(0, 2);
+                    if(randomNumber == 0)
+                        _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater"), GetComponent<AudioSource>(),0.3f);
+                    else
+                        _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater2"), GetComponent<AudioSource>(),0.3f);    
+                }
         
-            if (foodProp.foodState == 1)
+            else if (foodProp.foodState == 1)
             {
                 if(!cookedFoodInWater.Contains(rb))
                     cookedFoodInWater.Add(rb);
+                
+                var randomNumber = Random.Range(0, 4);
+                if(randomNumber == 0)
+                    _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater"), GetComponent<AudioSource>(),0.3f);
+                else if(randomNumber == 1)
+                    _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater2"), GetComponent<AudioSource>(),0.3f);    
 
             }
         }

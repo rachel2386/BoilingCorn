@@ -9,11 +9,14 @@ public class CornWaterLevelControl : MonoBehaviour
     private float subtractAmount;
 
     private CornItemInteractions _itemInteractions;
+
+    private CornItemManager _itemManager;
     // Start is called before the first frame update
     void Start()
     {
         myScale = waterLevelScaler.localScale;
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
+        _itemManager = FindObjectOfType<CornItemManager>();
         subtractAmount = 0.2f / _itemInteractions.fullAmount; //half of 1/fullamount
        
     }
@@ -21,9 +24,9 @@ public class CornWaterLevelControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CornItemManager.FoodEaten.Count < _itemInteractions.fullAmount)
+        if (_itemManager.FoodEaten.Count < _itemInteractions.fullAmount)
         {
-            myScale.y = Mathf.Lerp(myScale.y,1 - (CornItemManager.FoodEaten.Count * subtractAmount), Time.deltaTime);
+            myScale.y = Mathf.Lerp(myScale.y,1 - (_itemManager.FoodEaten.Count * subtractAmount), Time.deltaTime);
             waterLevelScaler.localScale = myScale;
         }
         else

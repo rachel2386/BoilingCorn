@@ -44,6 +44,11 @@ using UnityStandardAssets.CrossPlatformInput;
             m_CameraTargetRot = camera.localRotation;
         }
 
+        public void SetRotation(Vector3 playerAngle, Vector3 cameraAngle)
+        {
+            m_CharacterTargetRot = Quaternion.Euler(playerAngle);
+            m_CameraTargetRot = Quaternion.Euler(cameraAngle);
+        }
 
         public void LookRotation(Transform character, Transform camera)
         {

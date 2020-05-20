@@ -12,9 +12,18 @@ public class AudioManager : MonoBehaviour
         public string name;
         public AudioClip clip;
     }
+    
+    public struct NamedAudioCollection
+    {
+        public string name;
+        public AudioClip[] clips;
+    }
+
+   
 
     public NamedAudioClips[] audioClips;
-    public AudioSource generatedSource;
+    public List<NamedAudioCollection> AudioCollections = new List<NamedAudioCollection>();
+    private AudioSource generatedSource;
 
 
     private void Awake()
@@ -25,19 +34,24 @@ public class AudioManager : MonoBehaviour
 
     public void  PlayAudioClipWithSource(AudioClip clipToPlay, AudioSource source, float volume = 1)
     {
-        
+
+        if (source == null) source = generatedSource;
         source.PlayOneShot(clipToPlay);
         source.volume = volume;
 
 
     }
 
-    public void PlaySoundAtPostion(AudioClip clipToPlay, Vector3 position , float volume = 1)
+    public void PlaySoundAtPostion(AudioClip clipToPlay, AudioSource audioSource, Vector3 position, float volume = 1)
     {
 
-        generatedSource.volume = volume;
-        generatedSource.transform.position = position;
-        generatedSource.PlayOneShot(clipToPlay);
+        if (audioSource == null)
+        {
+            audioSource = generatedSource;
+            audioSource.transform.position = position;
+        }
+        audioSource.volume = volume;
+        audioSource.PlayOneShot(clipToPlay);
     }
 
     public List<AudioClip> SearchLibraryWithClipsOfSameType(string keyword)
@@ -55,10 +69,29 @@ public class AudioManager : MonoBehaviour
         return clipsToReturn;
     }
 
-    public void PlayRandomSoundsAtPosition(List<AudioClip>clipsToPlay, Vector3 position)
+    public List<AudioClip> SearchCollectionsWithName(string keyword)
+    {
+        List<AudioClip>clipsToReturn = new List<AudioClip>();
+        
+        foreach (var c in AudioCollections)
+        {
+            if (c.name.Contains(keyword))
+            {
+                foreach (var clip in c.clips)
+                {
+                    clipsToReturn.Add(clip);
+                }
+                
+            }
+        }
+
+        return clipsToReturn;
+    }
+
+    public void PlayRandomSoundsAtPosition(List<AudioClip>clipsToPlay, AudioSource source, Vector3 position, float volume = 1)
     {
 
-        PlaySoundAtPostion(clipsToPlay[Random.Range(0,clipsToPlay.Count)], position);
+        PlaySoundAtPostion(clipsToPlay[Random.Range(0,clipsToPlay.Count)],null, position);
     }
 
     public AudioClip FindClipWithName(string name)

@@ -51,7 +51,7 @@ namespace SceneViewHighlighter
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUI;
             EditorApplication.update += EditorUpdate;
             EditorApplication.modifierKeysChanged += ModifierKeysChanged;
-            SceneView.onSceneGUIDelegate += OnSceneGUIDelegate;
+            SceneView.duringSceneGui += OnSceneGUIDelegate;
             Selection.selectionChanged += SelectionChanged;
             s_Enabled = Prefs.SceneViewHighlighter;
 
