@@ -215,7 +215,7 @@ public class NewFoodItemProperties : ItemProperties
 
     private void DisplayFoodMemory()
     {
-        if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0)
+        if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0 || _itemManager.FoodEaten.Count >= _itemInteractions.fullAmount)
         {
             gameObject.SetActive(false);
         }
@@ -251,8 +251,7 @@ public class NewFoodItemProperties : ItemProperties
         }
 
         _itemInteractions.EatingFood = false;
-        if (_itemManager.FoodEaten.Count < _itemInteractions.fullAmount)
-           DisplayFoodMemory();
+       DisplayFoodMemory();
 //        while (_itemInteractions.FoodMemoryPlaying)
 //        {
 //            yield return null;

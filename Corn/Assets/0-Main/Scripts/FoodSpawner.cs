@@ -8,6 +8,7 @@ public class FoodSpawner : MonoBehaviour
     public string FoodName;
     public int FoodMultiplier;
     public FoodProfileManager _foodProfileManager;
+    public CornItemManager _itemManager;
 
     public bool SpawnOnAwake = false;
    
@@ -15,6 +16,7 @@ public class FoodSpawner : MonoBehaviour
     {
         if (SpawnOnAwake)
             StartCoroutine(Initiate()); //Initiate();
+        _itemManager = FindObjectOfType<CornItemManager>();
     }
     public IEnumerator Initiate()
     {
@@ -33,7 +35,7 @@ public class FoodSpawner : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
        
-
+            
        
     }
 
@@ -42,7 +44,7 @@ public class FoodSpawner : MonoBehaviour
     void InstantiateFood(GameObject foodToInstatiate)
     {
         GameObject newFood = Instantiate(foodToInstatiate, transform.position, Quaternion.identity);
-        CornItemManager.ListOfFood.Add(newFood);
+      _itemManager.ListOfFood.Add(newFood);
     }
 
     private void OnDrawGizmos()

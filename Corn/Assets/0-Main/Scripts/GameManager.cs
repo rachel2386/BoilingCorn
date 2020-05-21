@@ -175,6 +175,7 @@ public class GameManager : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Alpha1))
             {
                 transitionToCooking();
+                Context.backgroundMusic.Play();
                 
             }
             else if (Input.GetKeyUp(KeyCode.Alpha2))
@@ -648,7 +649,7 @@ public class GameManager : MonoBehaviour
         {
            
 
-            foreach (var f in CornItemManager.ListOfFood)
+            foreach (var f in Context._cornItemManager.ListOfFood)
             {
                 if (Context._cornItemManager.FoodToSave.Contains(f.gameObject) ||
                     Context._cornItemManager.FoodEaten.Contains(f.gameObject)) continue;
