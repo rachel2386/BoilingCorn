@@ -65,10 +65,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 312ffd480875133438a73c750ecdd90b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.030765219
-  m_Height: 0.120275795
+  m_Radius: 0.028753422
+  m_Height: 0.12801775
   m_Direction: 1
-  m_Center: {x: 0.008225264, y: 0.0030171722, z: -0.0006346721}
+  m_Center: {x: 0.004003495, y: 0.006888151, z: -0.0046025664}
 --- !u!114 &1202585198662213381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,7 +1679,7 @@ SkinnedMeshRenderer:
   - {fileID: 4851075832180530042}
   - {fileID: 7386149464877447285}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 5787015435056814483}
+  m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.005349733, y: 0.039024115, z: -0.018654313}
     m_Extent: {x: 0.046470884, y: 0.063988574, z: 0.051544186}
@@ -2201,7 +2201,7 @@ SkinnedMeshRenderer:
   - {fileID: 4851075832180530042}
   - {fileID: 7386149464877447285}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 5787015435056814483}
+  m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.0040301876, y: 0.008322701, z: -0.0023914296}
     m_Extent: {x: 0.027402107, y: 0.026439346, z: 0.027496053}

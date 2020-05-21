@@ -649,7 +649,7 @@ public class GameManager : MonoBehaviour
         {
            
 
-            foreach (var f in CornItemManager.ListOfFood)
+            foreach (var f in Context._cornItemManager.ListOfFood)
             {
                 if (Context._cornItemManager.FoodToSave.Contains(f.gameObject) ||
                     Context._cornItemManager.FoodEaten.Contains(f.gameObject)) continue;

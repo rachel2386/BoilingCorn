@@ -160,12 +160,13 @@ public class CornItemInteractions : MonoBehaviour
                 break;
             case 10:
                 _monologueManager.StartMonologue("eat tenth food");
+                
                 break;
-//            case 8:
-//                _monologueManager.StartMonologue("noise from neighbors");
-//                break;
+
             case 11:
                 _monologueManager.StartMonologue("full");
+                _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("feelFull"),playerAS,1f);
+                
                 break;
             default:
                 break;

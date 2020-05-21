@@ -5,9 +5,9 @@ using UnityEngine;
 public class CornItemManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static List<GameObject> ListOfFood = new List<GameObject>();
+    public List<GameObject> ListOfFood;
     public FoodProfileManager foodManager;
-    List<GameObject> ListOfItems = new List<GameObject>();
+    
 
     [HideInInspector]public  List<GameObject> Containers;
     [HideInInspector] public  List<GameObject> FoodToSave ;
@@ -24,12 +24,15 @@ public class CornItemManager : MonoBehaviour
 
     private void Awake()
     {
+        ListOfFood= new List<GameObject>();
         Containers = new List<GameObject>();
         FoodToSave = new List<GameObject>();
         WastedFood = new List<GameObject>();
         FoodEaten = new List<GameObject>();
          FridgeHolders = new List<GameObject>();
         TotalMemoriesToCollect = FindObjectsOfType<CornMemoryTrigger>().Length + FindObjectOfType<CornItemInteractions>().fullAmount - 1; //total = item memory + max food memory collectable
+        
+            
     }
 
     public void InitLists()
