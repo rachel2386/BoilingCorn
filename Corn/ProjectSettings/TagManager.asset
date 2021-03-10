@@ -12,7 +12,6 @@ TagManager:
   - Interactable
   - Fridge
   - Container
-  - Walls
   - Look
   - PotBase
   layers:

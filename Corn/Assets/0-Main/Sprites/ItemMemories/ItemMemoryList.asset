@@ -37,7 +37,18 @@ MonoBehaviour:
   - Name: beer
     MemoriesToDisplay:
     - {fileID: 21300000, guid: 386665acfecbe4c40bfd9a24bc810f9b, type: 3}
-  - Name: 
-    MemoriesToDisplay: []
-  - Name: 
-    MemoriesToDisplay: []
+  - Name: mug
+    MemoriesToDisplay:
+    - {fileID: 21300000, guid: e4e8ca7d0caafc145b45432d707d9505, type: 3}
+  - Name: resume
+    MemoriesToDisplay:
+    - {fileID: 21300000, guid: 2f8b29514dbbed744a1e7d02e444bfd6, type: 3}
+  - Name: graduation
+    MemoriesToDisplay:
+    - {fileID: 21300000, guid: 014724010a68d974ea5864b2a0f15ab8, type: 3}
+  - Name: mom
+    MemoriesToDisplay:
+    - {fileID: 21300000, guid: 0a50d324393c3964f8f9d5539490fe5b, type: 3}
+  - Name: shoes
+    MemoriesToDisplay:
+    - {fileID: 21300000, guid: 41e5cb1073e0afe42a57467029517f95, type: 3}

@@ -13,10 +13,6 @@ public class CornMemoryTrigger : MonoBehaviour
     public ItemMemoryScriptableObj itemMemoryProfile;
     private ItemMemory _myMemory;
     private CornItemManager _itemManager;
-    
-    
-    
-
     private MemoryDisplayControl _memoryDisplayControl;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +34,7 @@ public class CornMemoryTrigger : MonoBehaviour
         }
 
         gameObject.tag = "Look";
-        gameObject.layer = 13; // ignore collision
+        //gameObject.layer = 13; // ignore collision
         foreach (var sprite in itemMemoryProfile.GetMemoryWithName(NameOfMemory).MemoriesToDisplay)
         {
             MemoriesToPlay.Enqueue(sprite);
@@ -47,13 +43,7 @@ public class CornMemoryTrigger : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (MemoriesToPlay.Count == 0)
-        {
-            gameObject.tag = "Untagged";
-        }
-    }
+   
 
     // Update is called once per frame
     private void OnMouseDown()
@@ -68,9 +58,12 @@ public class CornMemoryTrigger : MonoBehaviour
             _memoryDisplayControl.MemoryTrigger(MemoriesToPlay.Dequeue());
 
             _itemManager.memoriesCollected++;
-//            numberOfTimesClicked++;
-//            if(numberOfTimesClicked <= MemoriesToPlay.Length)
-//                _monologueManager.StartMonologue(MemoriesToPlay[numberOfTimesClicked - 1]);
+            
+            if (MemoriesToPlay.Count == 0)
+            {
+                gameObject.tag = "Untagged";
+            }
+
         }
 
        
