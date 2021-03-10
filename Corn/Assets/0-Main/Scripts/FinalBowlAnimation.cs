@@ -7,6 +7,7 @@ using UnityEngine;
 public class FinalBowlAnimation : MonoBehaviour
 {
     public List<Transform> bowlsToAnimate = new List<Transform>();
+    [SerializeField] private int numberOfBowlsBeforeEnd = 6;
     private int currentBowlIndex = 0;
     public Transform PositionAboveTrashCan;
     private bool firstTimePlaying = true;
@@ -52,7 +53,7 @@ public class FinalBowlAnimation : MonoBehaviour
             StartCoroutine(PlayAnimation(bowlsToAnimate[currentBowlIndex]));
         }
         
-        if(currentBowlIndex >= bowlsToAnimate.Count/2)
+        if(currentBowlIndex >= numberOfBowlsBeforeEnd)
         {
            EndOfAnimation();
         }
@@ -143,7 +144,7 @@ public class FinalBowlAnimation : MonoBehaviour
             resetPosition.SetEase(Ease.OutSine);
        
             // yield return resetPosition.WaitForCompletion();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             MoveToNextBowl();
         
 

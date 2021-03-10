@@ -21,8 +21,10 @@ public class OpenDoors : MonoBehaviour
     public float AngleTolerence = 4f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        this.gameObject.tag = "Interactable";
+        
         myHJ = GetComponent<HingeJoint>();
         myAS = GetComponent<AudioSource>();
         myHJ.useSpring = true;
