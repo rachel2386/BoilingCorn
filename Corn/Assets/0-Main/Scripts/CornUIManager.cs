@@ -32,6 +32,9 @@ public class CornUIManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
+        CornGameEvents.instance.OnGameStateSwitchEnter += ScreenFadeOut;
+        CornGameEvents.instance.OnGameStateSwitchExit += ScreenFadeIn;
+        
         _itemManager = FindObjectOfType<CornItemManager>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
         _mouseLookScript = FindObjectOfType<CornMouseLook>();
@@ -39,8 +42,8 @@ public class CornUIManager : MonoBehaviour
         ImgSlot = GameObject.Find("Reticle").GetComponent<Image>();
         //ImgSlot.gameObject.SetActive(false);
         fadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
-        fadeImage.color = new Color(0, 0, 0, 0);
-        fadeImage.gameObject.SetActive(false);
+        fadeImage.color = new Color(0, 0, 0, 1);
+        fadeImage.gameObject.SetActive(true);
 
 
         ZoomInstruction.SetActive(false);
@@ -51,7 +54,7 @@ public class CornUIManager : MonoBehaviour
         finalAnimation = FindObjectOfType<FinalBowlAnimation>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -135,41 +138,24 @@ public class CornUIManager : MonoBehaviour
         }
     }
 
-    public void FadeIn(float duration, Color ScreenColor)
+    private void ScreenFadeIn(int sceneIndex)
     {
-        StartCoroutine(FadingIn(duration, ScreenColor));
+        var duration = 1;
+
+        if (sceneIndex == 2)
+            duration = 2;
+        
+        fadeImage.DOFade(0f,duration);
+        
+    }
+    private void ScreenFadeOut(int sceneIndex)
+    {
+        var duration = 1;
+
+        if (sceneIndex == 2)
+            duration = 1;
+            
+        fadeImage.DOFade(1f,duration);
     }
 
-    public void FadeOut(float duration, Color ScreenColor)
-    {
-        StartCoroutine(FadingOut(duration, ScreenColor));
-    }
-
-
-    private IEnumerator FadingIn(float duration, Color ScreenColor)
-    {
-        fadeImage.color = ScreenColor;
-        var color = fadeImage.color;
-        color.a = 1;
-        fadeImage.color = color;
-        fadeImage.gameObject.SetActive(true);
-
-
-        Tween fadeImg = fadeImage.DOFade(0, duration);
-        yield return fadeImg.WaitForCompletion();
-        fadeImage.gameObject.SetActive(false);
-        yield return true;
-    }
-
-    private IEnumerator FadingOut(float duration, Color ScreenColor)
-    {
-        fadeImage.color = ScreenColor;
-        var color = fadeImage.color;
-        color.a = 0;
-        fadeImage.color = color;
-        fadeImage.gameObject.SetActive(true);
-
-        Tween showImg = fadeImage.DOFade(1, duration);
-        yield return showImg.WaitForCompletion();
-    }
 }

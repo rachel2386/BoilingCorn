@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
     public static int gameState = -1;
    private CornItemManager _cornItemManager;
     private CornItemInteractions _FoodInteractionScript;
-    private CornUIManager _uiManager;
-    private CornMonologueManager _monologueManager;
+   private CornMonologueManager _monologueManager;
     private AudioManager _audioManager;
     private CornMouseLook _mouseLook; 
 
@@ -52,22 +51,15 @@ public class GameManager : MonoBehaviour
         _cornItemManager = GetComponent<CornItemManager>();
         _FoodInteractionScript = FindObjectOfType<CornItemInteractions>();
         _monologueManager = GetComponent<CornMonologueManager>();
-        _uiManager = FindObjectOfType<CornUIManager>();
-        _audioManager = FindObjectOfType<AudioManager>();
+       _audioManager = FindObjectOfType<AudioManager>();
         _mouseLook = FindObjectOfType<CornMouseLook>();
        TitleMenu.SetActive(false);
         OrderMenu = GameObject.Find("OrderMenu");
         OrderMenu.SetActive(false);
 
         FindObjectOfType<CornBuoyancy>().waterBoilTimeInseconds = waterBoilSeconds;
-        
-       
-
-
         textAnimFSM = GetComponent<PlayMakerFSM>();
-
         cleanupBowl = GameObject.Find("BowlForTmr");
-
         backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
         
         
@@ -100,11 +92,7 @@ public class GameManager : MonoBehaviour
     {
         gameFSM.Update();
 
-       
-
     }
-
-   
 
     public void QuitGame()
     {
@@ -133,9 +121,6 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
-          
-            
-            
         }
     }
 
@@ -148,7 +133,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             Context.StartCoroutine(EnterDebug());
             Context._mouseLook.enableMouseLook = false;
-            Context._uiManager.FadeOut(0.1f, Color.black);
+            CornGameEvents.instance.EnterGameStateSwitch(-1);
            
         }
         IEnumerator EnterDebug()
@@ -199,6 +184,7 @@ public class GameManager : MonoBehaviour
             {
                 child.StartCoroutine(child.Initiate());
                 Context.gameFSM.TransitionTo<CookingState>();
+                
             }
             
         }
@@ -206,7 +192,8 @@ public class GameManager : MonoBehaviour
         public override void OnExit()
         {
             base.OnExit();
-            Context._uiManager.FadeIn(3, Color.black);
+            if(debugMode)
+                CornGameEvents.instance.ExitGameStateSwitch(-1);
            
         }
     }
@@ -217,22 +204,16 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
+            CornGameEvents.instance.ExitGameStateSwitch(-1);
             gameState = -1;
             Context.SceneToLoad.SetActive(false);
             Context.TitleMenu.SetActive(true);
             //timelineControl = FindObjectOfType<PlayableDirector>();
-            Context._uiManager.DontShowUI = true;
             Context._mouseLook.enableMouseLook = false;
             Context._mouseLook.SetCursorLock(false);
         }
 
-        public override void OnExit()
-        {
-            base.OnExit();
-            Context._uiManager.DontShowUI = false;
-            
-            
-        }
+       
     }
 
     private class OrderState : GameState
@@ -254,6 +235,8 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 0;
+            
+            
             Context.SceneToLoad.SetActive(false);
             Context._mouseLook.SetCursorLock(true);
 
@@ -372,15 +355,10 @@ public class GameManager : MonoBehaviour
 
         IEnumerator LoadNextState()
         {
-            Context._uiManager.FadeOut(1, Color.black);
+           CornGameEvents.instance.EnterGameStateSwitch(1);
 
-//            
-            while (Context._uiManager.fadeImage.color.a < 0.99f)
-            {
-                yield return null;
-            }
 
-         yield return  new WaitForSeconds(1);
+         yield return  new WaitForSeconds(3);
             
             Context._mouseLook.enableMouseLook = false;
             Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
@@ -404,18 +382,15 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             
+            
             TransitionTo<CookingState>();
             
            
             yield return new WaitForSeconds(3);
             
-            Context._uiManager.FadeIn(1, Color.black);
-
-            while (Context._uiManager.fadeImage.color.a > 0.1f)
-            {
-                yield return null;
-            }
+            CornGameEvents.instance.ExitGameStateSwitch(1);
 //           
+            yield return new WaitForSeconds(2);
            
             Context._monologueManager.StartMonologue("music on");
             while (!Context._monologueManager.MonologueIsComplete)
@@ -441,11 +416,9 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 1;
 
-
-            var mouseLook = FindObjectOfType<CornMouseLook>();
-            Context._mouseLook.SetCursorLock(true);
+           Context._mouseLook.SetCursorLock(true);
            Context._mouseLook.enableMouseLook = true;
-            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
+           Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
             
 
             InitManagers();
@@ -479,26 +452,21 @@ public class GameManager : MonoBehaviour
         IEnumerator LoadCleanUpState()
         {
             knobFSM.SetState("OffActions"); //turn off knob
+            
+            CornGameEvents.instance.EnterGameStateSwitch(2);
+            
             TransitionTo<CleanUpState>();
-            Context._uiManager.FadeOut(1, Color.black);
-
-//            
-            while (Context._uiManager.fadeImage.color.a < 0.98f)
-            {
-                yield return null;
-            }
-
+            
             yield return new WaitForSeconds(3);
-            Context._uiManager.FadeIn(1, Color.black);
-
-            while (Context._uiManager.fadeImage.color.a > 0.1f)
-            {
-                yield return null;
-            }
-
+            
+            CornGameEvents.instance.ExitGameStateSwitch(2);
+            
+            yield return new WaitForSeconds(1.5f);
+            
             Context._FoodInteractionScript.audioEventTrigger.SendEvent("fly");
             Context._monologueManager.StartMonologue("clean up");
-            yield return null;
+
+           
         }
     }
 
@@ -511,17 +479,16 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
+            
             gameState = 2;
             InitCleanUpState();
-            
-            
+           
+          
         }
 
         void InitCleanUpState()
         {
             Context.textAnimFSM.FsmVariables.BoolVariables[0].Value = true;
-
-
             holder = FindObjectOfType<FridgeHolderBehavior>().transform;
             bowlAnimPlayer = FindObjectOfType<FinalBowlAnimation>();
             Lid = Context.cleanupBowl.transform.Find("BoxLid").GetComponent<Rigidbody>();
@@ -597,6 +564,7 @@ public class GameManager : MonoBehaviour
         public override void OnExit()
         {
             base.OnExit();
+            
             var allFood = FindObjectsOfType<NewFoodItemProperties>();
             foreach (var f in allFood)
             {
@@ -613,13 +581,13 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 3;
+            CornGameEvents.instance.EnterGameStateSwitch(3);
             Context.StartCoroutine(MonologueControl());
         }
 
 
         IEnumerator MonologueControl()
         {
-            Context._uiManager.FadeOut(0, Color.black);
             
            yield return new WaitForSeconds(2);
             
@@ -634,7 +602,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             
-            Context._uiManager.FadeIn(0.5f, Color.black);
+            CornGameEvents.instance.ExitGameStateSwitch(3);
             
             while (Context.textAnimFSM.ActiveStateName !="end")
             {
