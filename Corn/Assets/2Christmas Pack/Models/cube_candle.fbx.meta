@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       43: 4300000
     second: candle_cube
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: candles
+    second: {fileID: 2100000, guid: c68defba421b9f44d9f598f3b9d4c49d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,7 +52,7 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
