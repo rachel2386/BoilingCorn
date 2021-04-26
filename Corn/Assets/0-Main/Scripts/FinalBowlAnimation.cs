@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class FinalBowlAnimation : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class FinalBowlAnimation : MonoBehaviour
     public AudioClip clipToPlay;
     private Camera myCam;
     private Vector3 camPos;
-
+    [SerializeField] private PlayableDirector endCredits;
+    [SerializeField] private GameObject endCreditsUI;
   
 
     private void Start()
     {
         myCam = Camera.main;
+        //endCreditsUI.SetActive(false);
         myAs = GetComponent<AudioSource>();
         myAs.clip = clipToPlay;
         myAs.loop = true;
@@ -36,7 +39,7 @@ public class FinalBowlAnimation : MonoBehaviour
     public void StartAnimation()
     {
        
-        if(!myAs.isPlaying) myAs.Play();
+       // if(!myAs.isPlaying) myAs.Play();
         if (!IsPlaying)
         {
             GameManager.gameState = 3;
@@ -53,10 +56,10 @@ public class FinalBowlAnimation : MonoBehaviour
             StartCoroutine(PlayAnimation(bowlsToAnimate[currentBowlIndex]));
         }
         
-        if(currentBowlIndex >= numberOfBowlsBeforeEnd)
-        {
-           EndOfAnimation();
-        }
+//        if(currentBowlIndex >= numberOfBowlsBeforeEnd)
+//        {
+//           EndOfAnimation();
+//        }
     }
 
    public void EndOfAnimation()
@@ -77,6 +80,7 @@ public class FinalBowlAnimation : MonoBehaviour
        camSequence.Append(mouseLook.transform.DOLocalRotate(Vector3.zero, 30));
        camSequence.Join(myCam.transform.DOLocalRotate(new Vector3(62f,0f,0f), 30));
        camSequence.Join(myCam.transform.DOLocalMove(new Vector3(0.3f,2f,-0.6f), 60));
+       endCredits.Play();
       yield return null;
     }
 
