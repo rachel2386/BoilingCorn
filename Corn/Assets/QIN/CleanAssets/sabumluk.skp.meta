@@ -64,7 +64,7 @@ SketchUpImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -118,5 +118,5 @@ SketchUpImporter:
   selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 34b89076dd966c64f0e5ee30987221b9
+    Hash: fdca6c4b35a53275d7df427ec6757aaf
   fileUnit: 0

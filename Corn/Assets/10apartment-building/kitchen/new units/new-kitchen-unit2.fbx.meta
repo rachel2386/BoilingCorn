@@ -1,58 +1,152 @@
 fileFormatVersion: 2
 guid: 4df89b4a30091594a850aeacf8ace8d3
-timeCreated: 1520972953
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: kitchen-unit2
-    100002: kitchen-unit2-door1
-    100004: kitchen-unit2-door2
-    100006: kitchen-unit2-drawer1
-    100008: kitchen-unit2-drawer2
-    100010: kitchen-unit2-drawer3
-    100012: kitchen-unit2-drawer4
-    100014: kitchen-unit2-tiles
-    100016: kitchen-unit2-top
-    100018: //RootNode
-    400000: kitchen-unit2
-    400002: kitchen-unit2-door1
-    400004: kitchen-unit2-door2
-    400006: kitchen-unit2-drawer1
-    400008: kitchen-unit2-drawer2
-    400010: kitchen-unit2-drawer3
-    400012: kitchen-unit2-drawer4
-    400014: kitchen-unit2-tiles
-    400016: kitchen-unit2-top
-    400018: //RootNode
-    2100000: kitchen-unit2
-    2300000: kitchen-unit2
-    2300002: kitchen-unit2-door1
-    2300004: kitchen-unit2-door2
-    2300006: kitchen-unit2-drawer1
-    2300008: kitchen-unit2-drawer2
-    2300010: kitchen-unit2-drawer3
-    2300012: kitchen-unit2-drawer4
-    2300014: kitchen-unit2-tiles
-    2300016: kitchen-unit2-top
-    3300000: kitchen-unit2
-    3300002: kitchen-unit2-door1
-    3300004: kitchen-unit2-door2
-    3300006: kitchen-unit2-drawer1
-    3300008: kitchen-unit2-drawer2
-    3300010: kitchen-unit2-drawer3
-    3300012: kitchen-unit2-drawer4
-    3300014: kitchen-unit2-tiles
-    3300016: kitchen-unit2-top
-    4300000: kitchen-unit2-drawer4
-    4300002: kitchen-unit2-drawer3
-    4300004: kitchen-unit2-drawer2
-    4300006: kitchen-unit2-drawer1
-    4300008: kitchen-unit2-top
-    4300010: kitchen-unit2-tiles
-    4300012: kitchen-unit2-door2
-    4300014: kitchen-unit2-door1
-    4300016: kitchen-unit2
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: kitchen-unit2
+  - first:
+      1: 100002
+    second: kitchen-unit2-door1
+  - first:
+      1: 100004
+    second: kitchen-unit2-door2
+  - first:
+      1: 100006
+    second: kitchen-unit2-drawer1
+  - first:
+      1: 100008
+    second: kitchen-unit2-drawer2
+  - first:
+      1: 100010
+    second: kitchen-unit2-drawer3
+  - first:
+      1: 100012
+    second: kitchen-unit2-drawer4
+  - first:
+      1: 100014
+    second: kitchen-unit2-tiles
+  - first:
+      1: 100016
+    second: kitchen-unit2-top
+  - first:
+      1: 100018
+    second: //RootNode
+  - first:
+      4: 400000
+    second: kitchen-unit2
+  - first:
+      4: 400002
+    second: kitchen-unit2-door1
+  - first:
+      4: 400004
+    second: kitchen-unit2-door2
+  - first:
+      4: 400006
+    second: kitchen-unit2-drawer1
+  - first:
+      4: 400008
+    second: kitchen-unit2-drawer2
+  - first:
+      4: 400010
+    second: kitchen-unit2-drawer3
+  - first:
+      4: 400012
+    second: kitchen-unit2-drawer4
+  - first:
+      4: 400014
+    second: kitchen-unit2-tiles
+  - first:
+      4: 400016
+    second: kitchen-unit2-top
+  - first:
+      4: 400018
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: kitchen-unit2
+  - first:
+      23: 2300000
+    second: kitchen-unit2
+  - first:
+      23: 2300002
+    second: kitchen-unit2-door1
+  - first:
+      23: 2300004
+    second: kitchen-unit2-door2
+  - first:
+      23: 2300006
+    second: kitchen-unit2-drawer1
+  - first:
+      23: 2300008
+    second: kitchen-unit2-drawer2
+  - first:
+      23: 2300010
+    second: kitchen-unit2-drawer3
+  - first:
+      23: 2300012
+    second: kitchen-unit2-drawer4
+  - first:
+      23: 2300014
+    second: kitchen-unit2-tiles
+  - first:
+      23: 2300016
+    second: kitchen-unit2-top
+  - first:
+      33: 3300000
+    second: kitchen-unit2
+  - first:
+      33: 3300002
+    second: kitchen-unit2-door1
+  - first:
+      33: 3300004
+    second: kitchen-unit2-door2
+  - first:
+      33: 3300006
+    second: kitchen-unit2-drawer1
+  - first:
+      33: 3300008
+    second: kitchen-unit2-drawer2
+  - first:
+      33: 3300010
+    second: kitchen-unit2-drawer3
+  - first:
+      33: 3300012
+    second: kitchen-unit2-drawer4
+  - first:
+      33: 3300014
+    second: kitchen-unit2-tiles
+  - first:
+      33: 3300016
+    second: kitchen-unit2-top
+  - first:
+      43: 4300000
+    second: kitchen-unit2-drawer4
+  - first:
+      43: 4300002
+    second: kitchen-unit2-drawer3
+  - first:
+      43: 4300004
+    second: kitchen-unit2-drawer2
+  - first:
+      43: 4300006
+    second: kitchen-unit2-drawer1
+  - first:
+      43: 4300008
+    second: kitchen-unit2-top
+  - first:
+      43: 4300010
+    second: kitchen-unit2-tiles
+  - first:
+      43: 4300012
+    second: kitchen-unit2-door2
+  - first:
+      43: 4300014
+    second: kitchen-unit2-door1
+  - first:
+      43: 4300016
+    second: kitchen-unit2
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -77,6 +171,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -91,17 +186,22 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -113,10 +213,14 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -126,8 +230,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

@@ -63,6 +63,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: fridge-freezer
     second: {fileID: 2100000, guid: c1d495fdb54487d47a307b97a881ec56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparent-shelf
+    second: {fileID: 2100000, guid: d3985bfed54ac4a4095280e54952d78d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

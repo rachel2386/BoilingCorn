@@ -1,39 +1,95 @@
 fileFormatVersion: 2
 guid: 36260b0da819d75488f9059a0c81989d
-timeCreated: 1521033285
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: kitchen-unit1-sink
-    100004: sink
-    100006: kitchen-unit1-sink-door
-    100008: kitchen-unit1-sink-door2
-    100010: kitchen-unit1-sink-door3
-    400000: //RootNode
-    400002: kitchen-unit1-sink
-    400004: sink
-    400006: kitchen-unit1-sink-door
-    400008: kitchen-unit1-sink-door2
-    400010: kitchen-unit1-sink-door3
-    2100000: sink
-    2100002: kitchen-unit-sink
-    2300000: kitchen-unit1-sink
-    2300002: sink
-    2300004: kitchen-unit1-sink-door
-    2300006: kitchen-unit1-sink-door2
-    2300008: kitchen-unit1-sink-door3
-    3300000: kitchen-unit1-sink
-    3300002: sink
-    3300004: kitchen-unit1-sink-door
-    3300006: kitchen-unit1-sink-door2
-    3300008: kitchen-unit1-sink-door3
-    4300000: sink
-    4300002: kitchen-unit1-sink
-    4300004: kitchen-unit1-sink-door3
-    4300006: kitchen-unit1-sink-door2
-    4300008: kitchen-unit1-sink-door
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: kitchen-unit1-sink
+  - first:
+      1: 100004
+    second: sink
+  - first:
+      1: 100006
+    second: kitchen-unit1-sink-door
+  - first:
+      1: 100008
+    second: kitchen-unit1-sink-door2
+  - first:
+      1: 100010
+    second: kitchen-unit1-sink-door3
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: kitchen-unit1-sink
+  - first:
+      4: 400004
+    second: sink
+  - first:
+      4: 400006
+    second: kitchen-unit1-sink-door
+  - first:
+      4: 400008
+    second: kitchen-unit1-sink-door2
+  - first:
+      4: 400010
+    second: kitchen-unit1-sink-door3
+  - first:
+      21: 2100000
+    second: sink
+  - first:
+      21: 2100002
+    second: kitchen-unit-sink
+  - first:
+      23: 2300000
+    second: kitchen-unit1-sink
+  - first:
+      23: 2300002
+    second: sink
+  - first:
+      23: 2300004
+    second: kitchen-unit1-sink-door
+  - first:
+      23: 2300006
+    second: kitchen-unit1-sink-door2
+  - first:
+      23: 2300008
+    second: kitchen-unit1-sink-door3
+  - first:
+      33: 3300000
+    second: kitchen-unit1-sink
+  - first:
+      33: 3300002
+    second: sink
+  - first:
+      33: 3300004
+    second: kitchen-unit1-sink-door
+  - first:
+      33: 3300006
+    second: kitchen-unit1-sink-door2
+  - first:
+      33: 3300008
+    second: kitchen-unit1-sink-door3
+  - first:
+      43: 4300000
+    second: sink
+  - first:
+      43: 4300002
+    second: kitchen-unit1-sink
+  - first:
+      43: 4300004
+    second: kitchen-unit1-sink-door3
+  - first:
+      43: 4300006
+    second: kitchen-unit1-sink-door2
+  - first:
+      43: 4300008
+    second: kitchen-unit1-sink-door
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -63,6 +119,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -77,17 +134,22 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -99,10 +161,14 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -112,8 +178,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
