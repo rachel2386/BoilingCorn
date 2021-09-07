@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: -8015490829229498137}
   m_Parent: {fileID: 11400000}
@@ -448,17 +448,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 109.73333
-        value: 1753
-        inSlope: 0.5835638
-        outSlope: 0.5835638
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 109.75
-        value: 1768
+        time: 109.01667
+        value: 1983
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -521,7 +512,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 109.75
+    m_StopTime: 109.01667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -662,17 +653,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 109.73333
-        value: 1753
-        inSlope: 0.5835638
-        outSlope: 0.5835638
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 109.75
-        value: 1768
+        time: 109.01667
+        value: 1983
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -771,7 +753,7 @@ MonoBehaviour:
     m_Start: 6.3
     m_ClipIn: 0
     m_Asset: {fileID: -6066723994898147340}
-    m_Duration: 109
+    m_Duration: 109.01666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6146272432979068079}
     m_EaseInDuration: 0

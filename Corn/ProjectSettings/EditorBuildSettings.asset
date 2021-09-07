@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0-Main/Scenes/PrototypeWNewKitchen.unity
     guid: 2cb34eb86e4c4b247afdfc31da1234e8
+  - enabled: 0
+    path: Assets/Letterboxer-master/Assets/LetterboxerDemo/Scenes/Demo.unity
+    guid: 710665dc9ccc25b4d85bfbd844d6a951
   m_configObjects: {}

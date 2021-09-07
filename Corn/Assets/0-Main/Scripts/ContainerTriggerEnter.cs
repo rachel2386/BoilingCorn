@@ -9,12 +9,15 @@ public class ContainerTriggerEnter : MonoBehaviour
     private void Start()
     {
         foodParent = GameObject.Find("Food").transform;
+       
+       
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
        // if(GameManager.gameState != 1) return;
-        if(other.CompareTag("FoodItem"))
+        if(other.CompareTag("FoodItem") && !other.GetComponent<ItemProperties>().HeldByPlayer)
         other.transform.parent = transform;
         
     }
@@ -22,7 +25,15 @@ public class ContainerTriggerEnter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
        // if(GameManager.gameState != 1) return;
-        if(other.CompareTag("FoodItem"))
-        other.transform.parent = foodParent;
+       if (other.CompareTag("FoodItem") && !other.GetComponent<ItemProperties>().HeldByPlayer)
+       {
+           other.transform.parent = foodParent;
+           other.GetComponent<Rigidbody>().isKinematic = false;
+       }
+       
+
+     
     }
+
+   
 }

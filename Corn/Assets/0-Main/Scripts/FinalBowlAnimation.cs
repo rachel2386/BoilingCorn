@@ -22,12 +22,14 @@ public class FinalBowlAnimation : MonoBehaviour
     private Vector3 camPos;
     [SerializeField] private PlayableDirector endCredits;
     [SerializeField] private GameObject endCreditsUI;
+    [SerializeField] private AudioSource ambientSound;
+    
   
 
     private void Start()
     {
         myCam = Camera.main;
-        //endCreditsUI.SetActive(false);
+        endCreditsUI.SetActive(false);
         myAs = GetComponent<AudioSource>();
         myAs.clip = clipToPlay;
         myAs.loop = true;
@@ -39,7 +41,11 @@ public class FinalBowlAnimation : MonoBehaviour
     public void StartAnimation()
     {
        
-       // if(!myAs.isPlaying) myAs.Play();
+       if(!myAs.isPlaying) myAs.Play();
+       myAs.volume = 0.3f;
+       myAs.DOFade(1, 1);
+       ambientSound.DOFade(0, 3);
+       endCreditsUI.SetActive(true);
         if (!IsPlaying)
         {
             GameManager.gameState = 3;
@@ -64,10 +70,10 @@ public class FinalBowlAnimation : MonoBehaviour
 
    public void EndOfAnimation()
     {
-        print("bowl animation sequence complete!");
-        AnimationComplete = true;
+       AnimationComplete = true;
         myAs.DOFade(0, 3);
         myAs.loop = false;
+        ambientSound.DOFade(0.2f, 2);
     }
 
     IEnumerator moveCam()
@@ -89,7 +95,20 @@ public class FinalBowlAnimation : MonoBehaviour
     {
         IsPlaying = true;
         var InitPos = bowl.position;
-        
+        var InitRot = bowl.eulerAngles;
+
+        var foodInBowl = bowl.GetComponentsInChildren<NewFoodItemProperties>();
+
+        if (foodInBowl.Length <= 0) // if no food in bowl, move to next bowl.
+        {
+            MoveToNextBowl();
+            yield break;
+        }
+
+        foreach (var food in foodInBowl)
+        {
+            food.GetComponent<Rigidbody>().isKinematic = true;
+        }
 
         if (firstTimePlaying)
         {
@@ -101,7 +120,13 @@ public class FinalBowlAnimation : MonoBehaviour
             
         }
         
-            Tween liftBowl = bowl.DOMove(camPos + Vector3.forward * 0.5f + Vector3.up * -0.5f, BowlMoveSpeed);
+        Tween liftup = bowl.DOMove(Vector3.up * 0.2f, BowlMoveSpeed * 1.25f);
+        liftup.SetRelative(true);
+        liftup.SetSpeedBased(true);
+        liftup.SetEase(Ease.OutSine);
+        yield return liftup.WaitForCompletion();
+        
+        Tween liftBowl = bowl.DOMove(camPos + Vector3.forward * 0.5f + Vector3.up * -0.5f, BowlMoveSpeed* 1.2f);
             //liftBowl.SetRelative(true);
             liftBowl.SetSpeedBased(true);
             liftBowl.SetEase(Ease.OutSine);
@@ -126,11 +151,17 @@ public class FinalBowlAnimation : MonoBehaviour
             Tween pourFood = bowl.DORotate(Vector3.forward * 180, BowlRotateSpeed);
             pourFood.SetRelative(true);
             pourFood.SetSpeedBased(true);
+            
+            foreach (var food in foodInBowl)
+            {
+                food.GetComponent<Rigidbody>().isKinematic = false;
+            }
+            
             yield return pourFood.WaitForCompletion();
-       
+            
        
         
-            Tween resetRotation = bowl.DORotate(Vector3.zero, 200);
+            Tween resetRotation = bowl.DORotate(InitRot, 200);
             resetRotation.SetSpeedBased(true);
        
        
@@ -141,14 +172,12 @@ public class FinalBowlAnimation : MonoBehaviour
             yield return liftBowl2.WaitForCompletion();
        
       
-       
-            var resetPos = InitPos;
-            Tween resetPosition = bowl.DOMove(resetPos, BowlMoveSpeed);
+            Tween resetPosition = bowl.DOMove(InitPos, BowlMoveSpeed*2);
             resetPosition.SetSpeedBased(true);
             resetPosition.SetEase(Ease.OutSine);
        
             // yield return resetPosition.WaitForCompletion();
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(2f);
             MoveToNextBowl();
         
 

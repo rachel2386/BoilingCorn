@@ -207,8 +207,7 @@ public class CornMonologueManager : MonoBehaviour
 
     private void EndMonologue()
     {
-        Debug.Log("end of monologue");
-        monologueIsComplete = true;
+       monologueIsComplete = true;
         _TextPanel.GetComponent<PlayMakerFSM>().SetState("EndOfDialogue");
         SpriteHolder.GetComponent<PlayMakerFSM>().SetState("EndOfDialogue");
         debug_ForceStop = false;

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
    private CornItemManager _cornItemManager;
     private CornItemInteractions _FoodInteractionScript;
    private CornMonologueManager _monologueManager;
-    private AudioManager _audioManager;
+    
     private CornMouseLook _mouseLook; 
 
     public PlayMakerFSM textAnimFSM;
@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
     private GameObject OrderMenu;
     public GameObject SceneToLoad;
 
-    private GameObject cleanupBowl;
+    [SerializeField]private GameObject cleanupBowl;
 
-    private AudioSource backgroundMusic;
+    private MusicPlayer musicPlayer;
     
     public GameObject lightToTurnOff;
 
@@ -51,34 +51,17 @@ public class GameManager : MonoBehaviour
         _cornItemManager = GetComponent<CornItemManager>();
         _FoodInteractionScript = FindObjectOfType<CornItemInteractions>();
         _monologueManager = GetComponent<CornMonologueManager>();
-       _audioManager = FindObjectOfType<AudioManager>();
-        _mouseLook = FindObjectOfType<CornMouseLook>();
+      _mouseLook = FindObjectOfType<CornMouseLook>();
        TitleMenu.SetActive(false);
         OrderMenu = GameObject.Find("OrderMenu");
         OrderMenu.SetActive(false);
-
+        musicPlayer = FindObjectOfType<MusicPlayer>();
         FindObjectOfType<CornBuoyancy>().waterBoilTimeInseconds = waterBoilSeconds;
         textAnimFSM = GetComponent<PlayMakerFSM>();
-        cleanupBowl = GameObject.Find("BowlForTmr");
-        backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
+       
+       
         
-        
-
-
-//        if (Debug_StartWithState == 1 || Debug_StartWithState == 2)
-//        {
-//            foreach (var child in FindObjectsOfType<FoodSpawner>())
-//            {
-//                child.StartCoroutine(child.Initiate());
-//            }
-//
-//            gameFSM.TransitionTo<CookingState>();
-//        }
-//        else if(Debug_StartWithState == 0)
-//        {
-//            gameFSM.TransitionTo<OrderState>(); //default state
-//        }
-      
+       
     }
 
     private void Start()
@@ -132,7 +115,9 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             Context.StartCoroutine(EnterDebug());
-            Context._mouseLook.enableMouseLook = false;
+
+            
+            CornUIManager.instance.CursorSelectionMode();
             CornGameEvents.instance.EnterGameStateSwitch(-1);
            
         }
@@ -160,8 +145,8 @@ public class GameManager : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Alpha1))
             {
                 transitionToCooking();
-                Context.backgroundMusic.Play();
-                
+                Context.musicPlayer.playMusic = true;
+
             }
             else if (Input.GetKeyUp(KeyCode.Alpha2))
             {
@@ -208,9 +193,7 @@ public class GameManager : MonoBehaviour
             gameState = -1;
             Context.SceneToLoad.SetActive(false);
             Context.TitleMenu.SetActive(true);
-            //timelineControl = FindObjectOfType<PlayableDirector>();
-            Context._mouseLook.enableMouseLook = false;
-            Context._mouseLook.SetCursorLock(false);
+            CornUIManager.instance.CursorSelectionMode();
         }
 
        
@@ -238,10 +221,10 @@ public class GameManager : MonoBehaviour
             
             
             Context.SceneToLoad.SetActive(false);
-            Context._mouseLook.SetCursorLock(true);
-
+            
             Context._mouseLook.SetRotation(Vector3.zero, Vector3.zero);
-            Context._mouseLook.enableMouseLook = true;
+            CornUIManager.instance.CursorLookMode();
+            
             InitPhone();
         }
 
@@ -254,11 +237,10 @@ public class GameManager : MonoBehaviour
         void InitMenu()
         {
             Context.OrderMenu.SetActive(true);
-            AudioSource.PlayClipAtPoint(Context._audioManager.FindClipWithName("openMenu"), Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(AudioManager.instance.FindClipWithName("openMenu"), Camera.main.transform.position);
             Context.SceneToLoad.SetActive(true);
 
-            Context._mouseLook.SetCursorLock(false);
-            Context._mouseLook.enableMouseLook = false;
+            CornUIManager.instance.CursorSelectionMode();
             
 
             _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
@@ -284,11 +266,13 @@ public class GameManager : MonoBehaviour
         {
             Toggles.Clear();
 
-            foreach (var toggle in FindObjectsOfType<Toggle.Toggle>())
+            foreach (var toggle in Context.OrderMenu.GetComponentsInChildren<Toggle.Toggle>())
             {
                 if (toggle.isOn)
                     Toggles.Add(toggle);
             }
+            
+            print("toggle number" + Context.OrderMenu.GetComponentsInChildren<Toggle.Toggle>());
 
             if (Toggles.Count != 6)
                 warningText.SetActive(true);
@@ -296,8 +280,7 @@ public class GameManager : MonoBehaviour
             {
                 Context.SceneToLoad.SetActive(false);
                 Context.OrderMenu.SetActive(false);
-                Context._mouseLook.SetCursorLock(true);
-                Context._mouseLook.enableMouseLook = true;
+                CornUIManager.instance.CursorLookMode();
                 doneOrdering = true;
             }
         }
@@ -374,7 +357,7 @@ public class GameManager : MonoBehaviour
     
             Context.OrderMenu.SetActive(false);
             yield return new WaitForSeconds(1);
-            Context._audioManager.PlayAudioClipWithSource(Context._audioManager.FindClipWithName("cry"), null, 1);
+            AudioManager.instance.PlayAudioClipWithSource( AudioManager.instance.FindClipWithName("cry"), null, 1);
             yield return new WaitForSeconds(4);
             Context._monologueManager.StartMonologue("I am so angry");
             while (!Context._monologueManager.MonologueIsComplete)
@@ -397,7 +380,7 @@ public class GameManager : MonoBehaviour
             {
                 yield return null;
             }
-            Context.backgroundMusic.Play();
+            Context.musicPlayer.playMusic = true;
             
         }
 
@@ -416,8 +399,7 @@ public class GameManager : MonoBehaviour
             base.OnEnter();
             gameState = 1;
 
-           Context._mouseLook.SetCursorLock(true);
-           Context._mouseLook.enableMouseLook = true;
+            CornUIManager.instance.CursorLookMode();
            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
             
 
@@ -462,7 +444,8 @@ public class GameManager : MonoBehaviour
             CornGameEvents.instance.ExitGameStateSwitch(2);
             
             yield return new WaitForSeconds(1.5f);
-            
+
+            Context.musicPlayer.playMusic = false;
             Context._FoodInteractionScript.audioEventTrigger.SendEvent("fly");
             Context._monologueManager.StartMonologue("clean up");
 
@@ -495,7 +478,8 @@ public class GameManager : MonoBehaviour
             Lid.gameObject.SetActive(false);
             Context.lightToTurnOff.SetActive(false);
     
-            Context.backgroundMusic.DOFade(0,1);
+            Context.musicPlayer._audioSource.DOFade(0,1);
+            
 
 
             if (Context.Debug_StartWithState == 3)
@@ -521,10 +505,18 @@ public class GameManager : MonoBehaviour
                     Context.gameFSM.TransitionTo<EndState>();
             }
 
-            if (Input.GetKeyDown(KeyCode.Return) && !movedBowl)
+            if (Input.GetMouseButtonUp(1) && !movedBowl)
             {
+                
+                foreach (Transform child in Context.cleanupBowl.GetComponentsInChildren<Transform>())
+                {
+                    child.tag = "Untagged";
+                }
+                
                 Context.StartCoroutine(MoveBowlToFridge());
-                print("moving bowl");
+                
+                
+                
                
             }
         }
@@ -559,6 +551,9 @@ public class GameManager : MonoBehaviour
 
            
            holder.GetComponent<FridgeHolderBehavior>().hasChild = true;
+
+          
+           
         }
 
         public override void OnExit()
@@ -570,6 +565,7 @@ public class GameManager : MonoBehaviour
             {
                 f.foodState = 3;
             }
+            
         }
     }
 
@@ -610,7 +606,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(1);
-            //Context._monologueManager.StartMonologue("great day");
+       
         }
 
         private void InitEndGameState()
@@ -633,10 +629,6 @@ public class GameManager : MonoBehaviour
             
             
 
-
-//        print("Wasted Food" + CornItemManager.WastedFood.Count);
-//        print("Eaten Food" + CornItemManager.FoodEaten.Count);
-//        print("Saved Food" + CornItemManager.FoodToSave.Count);
         }
 
         public override void Update()
