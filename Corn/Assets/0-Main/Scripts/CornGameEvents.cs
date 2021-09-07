@@ -25,4 +25,15 @@ public class CornGameEvents : MonoBehaviour
     {
         OnGameStateSwitchExit?.Invoke(stateIndex);
     }
+
+    public event Action OnStartDumpingFood;
+
+    public void StartDumpingFood()
+    {
+        if(OnStartDumpingFood != null)
+        OnStartDumpingFood.Invoke();
+    }
+
+
+
 }

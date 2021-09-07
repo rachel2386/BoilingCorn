@@ -8,7 +8,7 @@ public class CornMemoryTrigger : MonoBehaviour
     //public string[] MemoriesToPlay; //the monologue to trigger
     public string NameOfMemory;
     private Queue<Sprite> MemoriesToPlay = new Queue<Sprite>();
-    private int numberOfTimesClicked = 0;
+    
     private CornMonologueManager _monologueManager;
     public ItemMemoryScriptableObj itemMemoryProfile;
     private ItemMemory _myMemory;

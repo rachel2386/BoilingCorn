@@ -8,8 +8,22 @@ namespace Letterboxer
         [SerializeField]
         private int targetWidth = 1280;
 
+        public int TargetWidth
+        {
+
+            get => targetWidth;
+            set => targetWidth = value;
+        }
+
         [SerializeField]
         private int targetHeight = 720;
+        
+        public int TargetHeight
+        {
+
+            get => targetWidth;
+            set => targetHeight = value;
+        }
 
         [SerializeField]
         private CameraType type = CameraType.MaintainAspectRatio;

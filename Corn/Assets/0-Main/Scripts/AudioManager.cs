@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+   
+    
     [Serializable]
     public struct NamedAudioClips
     {
@@ -28,10 +32,12 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         generatedSource = GetComponent<AudioSource>();
         generatedSource.spatialBlend = 1;
     }
 
+   
     public void  PlayAudioClipWithSource(AudioClip clipToPlay, AudioSource source, float volume = 1)
     {
 

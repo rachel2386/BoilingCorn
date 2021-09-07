@@ -187,7 +187,7 @@ public class NewFoodItemProperties : ItemProperties
             CornBuoyancy.cookedFoodInWater.Add(foodRB);
     }
 
-    public override void OnPickUp(SpringJoint objectHolder)
+    public override void OnPickUp(Joint objectHolder)
     {
         
         if (foodState != 2) //if food not eaten, pickupable
@@ -208,7 +208,7 @@ public class NewFoodItemProperties : ItemProperties
     public override void OnDropOff()
     {
         base.OnDropOff();
-        
+        var foodParent = GameObject.Find("Food").transform;
 
         
     }

@@ -52,8 +52,7 @@ public class CornItemManager : MonoBehaviour
 
         foreach (var c in Containers)
         {
-            var containerParent = c.transform.parent;
-            containerParent.tag = "Untagged";
+           
             if (!c.GetComponent<ContainerTriggerEnter>())
                 c.AddComponent<ContainerTriggerEnter>();
         }

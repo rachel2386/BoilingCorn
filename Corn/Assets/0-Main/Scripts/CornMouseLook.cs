@@ -2,13 +2,13 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-//namespace UnityStandardAssets.Characters.FirstPerson
-//{
-    [Serializable]
+
+    
     public class CornMouseLook: MonoBehaviour
     {
         public float XSensitivity = 2f;
         public float YSensitivity = 2f;
+        
         public bool clampVerticalRotation = true;
         public float MinimumX = -90F;
         public float MaximumX = 90F;
@@ -36,6 +36,10 @@ using UnityStandardAssets.CrossPlatformInput;
         {
             if(enableMouseLook)
             LookRotation(m_player,m_camera);
+            
+            
+            
+            
         }
 
         public void Init(Transform character, Transform camera)
@@ -85,6 +89,7 @@ using UnityStandardAssets.CrossPlatformInput;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
+            
         }
 
         public void UpdateCursorLock()

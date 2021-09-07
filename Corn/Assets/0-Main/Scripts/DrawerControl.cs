@@ -41,7 +41,6 @@ public class DrawerControl : MonoBehaviour
         drawerOpen = !drawerOpen;
         AS.PlayOneShot(drawerOpen ? clipsToPlay[0] : clipsToPlay[1]);
         
-        print("mouse clicked");
     }
 
 }

@@ -161,11 +161,11 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 19c451d46e84219428135c52f2d4d861, type: 3}
   - Name: end2
     displayText: 1
-    MonologueText: "** new message from B ** \r\nGood Morning Baby! Merry Christmas!
+    MonologueText: "** new message from her ** \r\nGood Morning Baby! Merry Christmas!
       Did you use up the spicy soup base I left for you? :) \r"
     WithVoiceOver: 1
     VoiceOverClip: {fileID: 8300000, guid: cbc9d9f3ac37cf8478846c0701ea7705, type: 3}
-    displaySprite: 1
+    displaySprite: 0
     monologueSprite: []
   - Name: phone1
     displayText: 1
@@ -293,6 +293,8 @@ MonoBehaviour:
   - Name: great day
     displayText: 1
     MonologueText: 'a great day!
+
+      a great day!
 
       (Press "Escape" to restart.)'
     WithVoiceOver: 0

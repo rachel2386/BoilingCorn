@@ -15,24 +15,26 @@ public class CornBuoyancy : MonoBehaviour
     private AudioManager _audioManager;
     //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
 
-    private void Awake()
-    {
-        foreach (var potbase in GameObject.FindGameObjectsWithTag("PotBase"))
-        {
-            var rb = potbase.GetComponent<Rigidbody>();
-            rb.useGravity = false;
-            rb.drag = 1;
-            rb.angularDrag = 2;
-            PotBaseStuff.Add(rb);
-        }
-       
-    }
+    
 
     void Start()
     {
         myCol = GetComponent<Collider>();
         _audioManager = FindObjectOfType<AudioManager>();
         surfaceLevel = myCol.bounds.max.y-transform.localScale.y/4; //(transform.position.y);
+        
+        foreach (var potbase in GameObject.FindGameObjectsWithTag("PotBase"))
+        {
+            if (!potbase.GetComponent<Rigidbody>()) potbase.AddComponent<Rigidbody>();
+            
+            var rb = potbase.GetComponent<Rigidbody>();
+            rb.useGravity = false; //to prevent huajiao from dropping huajiao has no collider
+            rb.drag = 1;
+            rb.angularDrag = 2;
+            PotBaseStuff.Add(rb);
+            rb.AddForce(Physics.gravity);
+            
+        }
 
        
     }
@@ -61,19 +63,21 @@ public class CornBuoyancy : MonoBehaviour
         foreach (var rb in PotBaseStuff)
         {
             var col = rb.GetComponent<Collider>();
-            if (col.bounds.max.y < surfaceLevel)
+            if ( PotIsBoiling)
             {
+                if (col.bounds.max.y < surfaceLevel)
+                {
+                    rb.drag = 5;
+                    rb.AddForce(-Physics.gravity * 0.5f + rb.transform.forward * Random.Range(-0.1f,0.1f));
+                }
+                else
+                {
+                    rb.drag = 1;
+                    rb.AddForce(Physics.gravity * 0.1f);
                 
-                rb.drag = 5;
-                if(PotIsBoiling)
-                rb.AddForce(-Physics.gravity * 0.5f + rb.transform.forward * Random.Range(-0.1f,0.1f));
+                }
             }
-            else
-            {
-                rb.drag = 1;
-                rb.AddForce(Physics.gravity * 0.1f);
-                
-            }
+           
 
             
             
@@ -121,7 +125,7 @@ public class CornBuoyancy : MonoBehaviour
         {
             rb =  other.GetComponent<Rigidbody>();
             if(!PotIsBoiling)
-            rb.AddForce(-Physics.gravity);
+            rb.AddForce(Physics.gravity);
         }
 
         
@@ -142,6 +146,8 @@ public class CornBuoyancy : MonoBehaviour
 
             rb.GetComponent<NewFoodItemProperties>().InWater = false;
         }
+        
+        
 //        else if(other.CompareTag("PotBase"))
 //        {
 //            var rb = other.GetComponent<Rigidbody>();

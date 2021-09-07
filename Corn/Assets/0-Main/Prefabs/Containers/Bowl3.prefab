@@ -70,7 +70,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3560269460756622437}
-  - component: {fileID: 2449806849226953363}
   m_Layer: 2
   m_Name: ContainerTrigger
   m_TagString: Container
@@ -92,19 +91,6 @@ Transform:
   m_Father: {fileID: 5158164016196356516}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2449806849226953363
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5506073781458988014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2491765, y: 0.24319535, z: 0.32121617}
-  m_Center: {x: -0.0014793873, y: 0.003076833, z: 0.18031736}
 --- !u!1001 &4640322859958142761
 PrefabInstance:
   m_ObjectHideFlags: 0

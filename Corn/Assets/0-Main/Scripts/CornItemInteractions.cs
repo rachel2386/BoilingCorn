@@ -22,7 +22,7 @@ public class CornItemInteractions : MonoBehaviour
     private CornMonologueManager _monologueManager;
     private CornItemManager _itemManager;
 
-    [SerializeField] public int fullAmount = 11;
+   public int fullAmount = 15;
     public bool playerIsFull = false;
 
     // Start is called before the first frame update
@@ -61,7 +61,6 @@ public class CornItemInteractions : MonoBehaviour
         
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
-        objectHolder = myCam.transform.Find("ObjectHolder");
         memoryDisplay = FindObjectOfType<MemoryDisplayControl>();
         
         foodPickUpSounds.AddRange(_audioManager.SearchLibraryWithClipsOfSameType("pickUpFood"));
@@ -146,31 +145,22 @@ public class CornItemInteractions : MonoBehaviour
         
 //        if(numOfFoodEaten < fullAmount)
 //        FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.DisplayFoodMemory));
-        
-        switch (numOfFoodEaten)
-        {
-//            case 1:
-//                _monologueManager.StartMonologue("eat first food");
-//                break;
-//            case 2:
-//                _monologueManager.StartMonologue("eat second food");
-//                break;
-            case 5:
-                audioEventTrigger.SendEvent("police");
-                break;
-            case 10:
-                _monologueManager.StartMonologue("eat tenth food");
-                
-                break;
 
-            case 11:
-                _monologueManager.StartMonologue("full");
-                _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("feelFull"),playerAS,1f);
-                
-                break;
-            default:
-                break;
+        if (numOfFoodEaten == Mathf.RoundToInt(fullAmount / 2))
+        {
+            audioEventTrigger.SendEvent("police");
         }
+        else if (numOfFoodEaten == fullAmount - 1)
+        {
+            _monologueManager.StartMonologue("eat tenth food");
+        }
+        else if (numOfFoodEaten == fullAmount)
+        {
+            _monologueManager.StartMonologue("full");
+            _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("feelFull"),playerAS,1f);
+        }
+        
+       
     }
 
     public void FoodMemoryTrigger(GameObject FoodEaten, Sprite spriteToDisplay)
@@ -207,7 +197,8 @@ public class CornItemInteractions : MonoBehaviour
         objectHolding.gameObject.GetComponent<ItemProperties>().OnDropOff();
         objectHolding = null;
         objectRB = null;
-        objectHolder.GetComponent<SpringJoint>().connectedBody = null;
+        //objectHolder.GetComponent<SpringJoint>().connectedBody = null;
+        objectHolder.GetComponent<Joint>().connectedBody = null;
     }
 
     void InitPickup(RaycastHit objectClicked)
@@ -215,7 +206,7 @@ public class CornItemInteractions : MonoBehaviour
         IsholdingObject = true;
         objectHolding = objectClicked.collider.gameObject;
         objectRB = objectClicked.rigidbody;
-        objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<SpringJoint>());
+        objectClicked.collider.GetComponent<ItemProperties>().OnPickUp(objectHolder.GetComponent<Joint>());
 //        if(objectHolding.GetComponent<NewFoodItemProperties>().InWater)
 //            _audioManager.PlayRandomSoundsAtPosition(foodPickUpSounds, objectRB.position);
         
