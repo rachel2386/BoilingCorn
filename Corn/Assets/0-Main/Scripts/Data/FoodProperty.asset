@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f9ed62edbc2446ae0487e9809b561, type: 3}
+  m_Name: FoodProperty
+  m_EditorClassIdentifier: 
+  FoodProperties:
+  - Name: Tofu
+    FoodPrefab: {fileID: 3875526750303876154, guid: dbb2995ce4ee3f44ba60e402fc5e2bdf,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 838e7822f19896440bb4d07344d6f8b5, type: 3}
+    - {fileID: 21300000, guid: 0f264abb4a0605f40a8c58f4ee52c7f2, type: 3}
+    - {fileID: 21300000, guid: c9e5d1b94216f6f4089a9eb72592e8d0, type: 3}
+  - Name: Bacon
+    FoodPrefab: {fileID: 2253894009422587700, guid: 8213c0bab14147240a4143c5993909bc,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 0bf6f04652e6c724482c169fb6866f49, type: 3}
+    - {fileID: 21300000, guid: 41bd1967b9634814aa8b2ef56151d767, type: 3}
+    - {fileID: 21300000, guid: f60573923bcbdc44699e75309648e262, type: 3}
+  - Name: Cabbage
+    FoodPrefab: {fileID: 7426065286091113701, guid: d1492a6f3c6d3d943bf7411e2748ee6f,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 7e221a14b4963b8479d742a38445cc2a, type: 3}
+    - {fileID: 21300000, guid: fda782bc20f9bd04693b37db27b4e6d4, type: 3}
+    - {fileID: 21300000, guid: 5b0a16066900ae848bac5be66dd5d97a, type: 3}
+  - Name: Potato
+    FoodPrefab: {fileID: 6020403601250107298, guid: a77cf0aec98968442bb3462fd30c6459,
+      type: 3}
+    SecondsToCook: 45
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 5da5d28f1f211da4bac7b4eed3c41dd5, type: 3}
+    - {fileID: 21300000, guid: 8b5eeb988e76f594c89aecb8e068fa1f, type: 3}
+    - {fileID: 21300000, guid: ba41da2c489f5be46b6d3c40e1619632, type: 3}
+  - Name: Meat Ball
+    FoodPrefab: {fileID: 3080038403610650713, guid: 818a658f2ee7a5e40816181eeca7e1c4,
+      type: 3}
+    SecondsToCook: 25
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 5cb70a94e9a4273419c391048af9c2cc, type: 3}
+    - {fileID: 21300000, guid: c8f9a21f268acb54fa1dd9dba30e401a, type: 3}
+    - {fileID: 21300000, guid: de1298c2df0bf80409db1a1755be9d51, type: 3}
+  - Name: Cucumber
+    FoodPrefab: {fileID: 4849718136821012570, guid: 2c6d1022247d86f40b274c500efc5d1d,
+      type: 3}
+    SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories: []
+  - Name: Enoki
+    FoodPrefab: {fileID: 1202585198662213377, guid: 479063211455f6045aa56ea7d0b5a580,
+      type: 3}
+    SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 7c8ee5c457cd9664da3bdb3cff576495, type: 3}
+    - {fileID: 21300000, guid: e8fb64a13a1cf00498dbff1ef90e92e4, type: 3}
+    - {fileID: 21300000, guid: 538f9ea3c7d304141a71dd875e50d8cc, type: 3}
+  - Name: Chicken Leg
+    FoodPrefab: {fileID: 5236369240581045884, guid: 6cf6160ddd8f30b489a0615bb5eedd92,
+      type: 3}
+    SecondsToCook: 30
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: a12692fa818537240b631328d8fb8b98, type: 3}
+    - {fileID: 21300000, guid: f542fefcabe42b34ca2d6bf1481d5fe8, type: 3}
+    - {fileID: 21300000, guid: 042df47805cb7614db5941a33df88aaa, type: 3}
+  - Name: Sausage
+    FoodPrefab: {fileID: 3075815392439823262, guid: 2a31b59a1187a39438828cfaa2ce5fcb,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 556264fcd5ba60647a6ad2d0da58dee2, type: 3}
+    - {fileID: 21300000, guid: fcb53b7627c1ca846982f36b481785ca, type: 3}
+    - {fileID: 21300000, guid: 70ad830fc798aa94091fbf9d858f2c4f, type: 3}
+  - Name: Ham
+    FoodPrefab: {fileID: 768190436287223866, guid: 3072691fad7528b448f752b5a4d15016,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 42822c68d1e76924384aca83c6ef8c0b, type: 3}
+    - {fileID: 21300000, guid: 2157389fbbb139445b0d143aa80dbbce, type: 3}
+    - {fileID: 21300000, guid: 24843642e970ccd40ad31e5362af39dc, type: 3}
+  - Name: Carrot
+    FoodPrefab: {fileID: 7826796128125898906, guid: a4b502cb77048b44eb074ee217c2c88a,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories: []
+  - Name: Pepper
+    FoodPrefab: {fileID: 2031690171402633858, guid: e0f6b8bca9542004b8080d07bd2b1b59,
+      type: 3}
+    SecondsToCook: 200
+    EatSound: {fileID: 0}
+    foodMemories: []
+  - Name: Brocolli
+    FoodPrefab: {fileID: 6487133699216000581, guid: 309c515444ae6ee40a968263ea0c89b0,
+      type: 3}
+    SecondsToCook: 20
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: e9d24ab5a7969e74cade4fe58bdb19ea, type: 3}
+    - {fileID: 21300000, guid: 45173176477f9a64a9333fde2b8e50cf, type: 3}
+  - Name: Shrimp
+    FoodPrefab: {fileID: 2246401921342013732, guid: 553aca3000bc6904ea46c76a12210977,
+      type: 3}
+    SecondsToCook: 25
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: b7d674e79e80ba045afe3527d4de6aec, type: 3}
+    - {fileID: 21300000, guid: 35ade79d6f96a69408f40f045a7daa42, type: 3}
+    - {fileID: 21300000, guid: 183876ef1a721854ca97fba20ff4502c, type: 3}
+  - Name: Beef
+    FoodPrefab: {fileID: 1896850926249542070, guid: 47a088cd6cd07874cb27ffca75514c32,
+      type: 3}
+    SecondsToCook: 15
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 0bf6f04652e6c724482c169fb6866f49, type: 3}
+    - {fileID: 21300000, guid: 41bd1967b9634814aa8b2ef56151d767, type: 3}
+    - {fileID: 21300000, guid: f60573923bcbdc44699e75309648e262, type: 3}
+  - Name: 2
+    FoodPrefab: {fileID: 6699946945888572547, guid: 2dc01adcc97da71468ae737020e01724,
+      type: 3}
+    SecondsToCook: 10
+    EatSound: {fileID: 0}
+    foodMemories:
+    - {fileID: 21300000, guid: 5c1b3cb02bfc7b34f890d590e3b9b71f, type: 3}
