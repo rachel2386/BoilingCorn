@@ -21885,14 +21885,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7971278191421353957}
     m_Modifications:
-    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
-      propertyPath: m_Name
-      value: SliderHorizontal_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 22430896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21988,6 +21980,14 @@ PrefabInstance:
     - target: {fileID: 22430896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.4119372
+      objectReference: {fileID: 0}
+    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
+      propertyPath: m_Name
+      value: SliderHorizontal_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22430902, guid: 5023178fe26159a49b729d8c39530097, type: 3}
       propertyPath: m_AnchoredPosition.x
