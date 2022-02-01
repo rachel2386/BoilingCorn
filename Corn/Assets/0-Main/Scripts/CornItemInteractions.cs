@@ -42,7 +42,7 @@ public class CornItemInteractions : MonoBehaviour
     public Transform mouth;
     [Header("Eating Sounds")] public List<AudioClip> eatSounds = new List<AudioClip>();
     private AudioManager _audioManager;
-    private MemoryDisplayControl memoryDisplay;
+    private NewMemoryDisplayControl memoryDisplay;
 
     [HideInInspector]public bool EatingFood = false;
     private List<AudioClip> foodPickUpSounds = new List<AudioClip>();
@@ -61,7 +61,7 @@ public class CornItemInteractions : MonoBehaviour
         
         _monologueManager = FindObjectOfType<CornMonologueManager>();
         myCam = Camera.main;
-        memoryDisplay = FindObjectOfType<MemoryDisplayControl>();
+        memoryDisplay = FindObjectOfType<NewMemoryDisplayControl>();
         
         foodPickUpSounds.AddRange(_audioManager.SearchLibraryWithClipsOfSameType("pickUpFood"));
     }

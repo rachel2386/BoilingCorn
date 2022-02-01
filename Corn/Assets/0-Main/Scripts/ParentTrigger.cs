@@ -13,7 +13,13 @@ public class ParentTrigger : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ItemProperties>())
+        if (other.GetComponent<ItemProperties>() && !other.GetComponent<ItemProperties>().HeldByPlayer)
             other.transform.parent = transform;
+    }
+    
+    private void OnTriggerStay(Collider other)
+    {
+    if (other.transform.parent != transform && other.GetComponent<ItemProperties>() && !other.GetComponent<ItemProperties>().HeldByPlayer)
+        other.transform.parent = transform;
     }
 }

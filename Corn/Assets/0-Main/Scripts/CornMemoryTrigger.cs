@@ -13,13 +13,13 @@ public class CornMemoryTrigger : MonoBehaviour
     public ItemMemoryScriptableObj itemMemoryProfile;
     private ItemMemory _myMemory;
     private CornItemManager _itemManager;
-    private MemoryDisplayControl _memoryDisplayControl;
+    private NewMemoryDisplayControl _memoryDisplayControl;
     // Start is called before the first frame update
     void Start()
     {
         _itemManager = FindObjectOfType<CornItemManager>();
         _monologueManager = FindObjectOfType<CornMonologueManager>();
-        _memoryDisplayControl = FindObjectOfType<MemoryDisplayControl>();
+        _memoryDisplayControl = FindObjectOfType<NewMemoryDisplayControl>();
 
         _myMemory = itemMemoryProfile.GetMemoryWithName(NameOfMemory);
         
