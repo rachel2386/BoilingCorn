@@ -74,7 +74,7 @@ public class CornUIManager : MonoBehaviour
 
         if (!finalAnimation.IsPlaying)
         {
-            if (GameManager.gameState > 0 && GameManager.gameState < 3)
+            if (GameManager.gameState > 0 && GameManager.gameState != 3)
             {
                 ZoomInstruction.SetActive(false);
                 InteractInstruction.SetActive(false);
