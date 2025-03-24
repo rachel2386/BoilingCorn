@@ -39,8 +39,8 @@ public class CornUIManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
-        CornGameEvents.instance.OnGameStateSwitchEnter += ScreenFadeOut;
-        CornGameEvents.instance.OnGameStateSwitchExit += ScreenFadeIn;
+        CornGameEvents.instance.OnEnterGameStateTransition += ScreenFadeOut;
+        CornGameEvents.instance.OnExitGameStateTransition += ScreenFadeIn;
         
         _itemManager = FindObjectOfType<CornItemManager>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
@@ -151,6 +151,7 @@ public class CornUIManager : MonoBehaviour
             duration = 2;
         
         fadeImage.DOFade(0f,duration);
+
         
     }
     private void ScreenFadeOut(int sceneIndex)
@@ -162,6 +163,23 @@ public class CornUIManager : MonoBehaviour
             
         fadeImage.DOFade(1f,duration);
     }
+
+    public void ScreenFadeTransition(float InDuration, float waitTime, float OutDuration, TweenCallback OnFadeInComplete = null, TweenCallback OnFadeOutComplete = null)
+    {
+        Sequence fadeSequence = DOTween.Sequence();
+        fadeSequence.Append(fadeImage.DOFade(1f, InDuration).OnComplete(OnFadeInComplete));
+        fadeSequence.AppendInterval(waitTime);               
+        fadeSequence.Append(fadeImage.DOFade(0f, OutDuration).OnComplete(OnFadeOutComplete));
+    }
+
+    public void ScreenFadeCallBack(float fadeValue, float duration, TweenCallback callbackOnComplete)
+    {
+        fadeImage.DOFade(fadeValue, duration).OnComplete(callbackOnComplete);
+
+    }
+
+
+
 
     public void CursorSelectionMode()
     {

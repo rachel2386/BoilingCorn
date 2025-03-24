@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
     private GameObject OrderMenu;
-    public GameObject SceneToLoad;
+    public GameObject DinnerSetPiece;
 
     [SerializeField]private GameObject cleanupBowl;
 
@@ -93,6 +93,12 @@ public class GameManager : MonoBehaviour
          gameFSM.TransitionTo<OrderState>();
     }
 
+    public void StartEndlessMode()
+    {
+        gameFSM.TransitionTo<EndlessModeState>();
+
+    }
+
     public void OpenUrl(string url)
     {
         Application.OpenURL(url);
@@ -118,7 +124,7 @@ public class GameManager : MonoBehaviour
 
             
             CornUIManager.instance.CursorSelectionMode();
-            CornGameEvents.instance.EnterGameStateSwitch(-1);
+            CornGameEvents.instance.EnterGameStateTransition(-1);
            
         }
         IEnumerator EnterDebug()
@@ -178,9 +184,93 @@ public class GameManager : MonoBehaviour
         {
             base.OnExit();
             if(debugMode)
-                CornGameEvents.instance.ExitGameStateSwitch(-1);
+                CornGameEvents.instance.ExitGameStateTransition(-1);
            
         }
+    }
+
+    private class EndlessModeState : GameState
+    {
+
+        private List<Toggle.Toggle> Toggles = new List<Toggle.Toggle>();
+        private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
+        private Button confirmButton;
+        private GameObject warningText;
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            gameState = 4;
+            CornUIManager.instance.ScreenFadeTransition(1, 1, 1, InitMenuState); //init menu after fade
+            
+        }
+
+        void InitMenuState()
+        {
+            Context.TitleMenu.SetActive(false);
+            Context.OrderMenu.SetActive(true);
+            AudioSource.PlayClipAtPoint(AudioManager.instance.FindClipWithName("openMenu"), Camera.main.transform.position);
+            Context.DinnerSetPiece.SetActive(true);
+
+            CornUIManager.instance.CursorSelectionMode();
+
+            _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
+            warningText = GameObject.Find("WarningText");
+            warningText.SetActive(false);
+            confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
+            confirmButton.onClick.AddListener(ConfirmOrder);
+            CornGameEvents.instance.ExitGameStateTransition(4);
+        }
+
+        void ConfirmOrder()
+        {
+            Toggles.Clear();
+
+            foreach (var toggle in Context.OrderMenu.GetComponentsInChildren<Toggle.Toggle>())
+            {
+                if (toggle.isOn)
+                    Toggles.Add(toggle);
+            }
+
+            print("toggle number" + Context.OrderMenu.GetComponentsInChildren<Toggle.Toggle>());
+
+            if (Toggles.Count != 6)
+                warningText.SetActive(true);
+            else
+            {
+                            
+                Context.StartCoroutine(SetupDinnerTable());
+            }
+        }
+
+        IEnumerator SetupDinnerTable()
+        {
+            CornGameEvents.instance.EnterGameStateTransition(4);
+            Context.DinnerSetPiece.SetActive(true);
+
+            for (int i = 0; i < Toggles.Count; i++)
+            {
+                _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
+                _foodSpawners[i].StartCoroutine(_foodSpawners[i].Initiate());
+            }
+
+            yield return new WaitForSeconds(1);
+
+            CornUIManager.instance.CursorLookMode();
+            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);         
+            
+            //set up managers (knob, phone menu) 
+
+
+
+            Context.OrderMenu.SetActive(false);
+            yield return new WaitForSeconds(3);           
+            CornGameEvents.instance.ExitGameStateTransition(4);
+            yield return new WaitForSeconds(1);            
+            Context.musicPlayer.playMusic = true;
+
+        }
+
+
     }
 
     private class MenuState : GameState
@@ -189,9 +279,9 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
-            CornGameEvents.instance.ExitGameStateSwitch(-1);
+            CornGameEvents.instance.ExitGameStateTransition(-1);
             gameState = -1;
-            Context.SceneToLoad.SetActive(false);
+            Context.DinnerSetPiece.SetActive(false);
             Context.TitleMenu.SetActive(true);
             CornUIManager.instance.CursorSelectionMode();
         }
@@ -220,7 +310,7 @@ public class GameManager : MonoBehaviour
             gameState = 0;
             
             
-            Context.SceneToLoad.SetActive(false);
+            Context.DinnerSetPiece.SetActive(false);
             
             Context._mouseLook.SetRotation(Vector3.zero, Vector3.zero);
             CornUIManager.instance.CursorLookMode();
@@ -238,7 +328,7 @@ public class GameManager : MonoBehaviour
         {
             Context.OrderMenu.SetActive(true);
             AudioSource.PlayClipAtPoint(AudioManager.instance.FindClipWithName("openMenu"), Camera.main.transform.position);
-            Context.SceneToLoad.SetActive(true);
+            Context.DinnerSetPiece.SetActive(true);
 
             CornUIManager.instance.CursorSelectionMode();
             
@@ -278,7 +368,7 @@ public class GameManager : MonoBehaviour
                 warningText.SetActive(true);
             else
             {
-                Context.SceneToLoad.SetActive(false);
+                Context.DinnerSetPiece.SetActive(false);
                 Context.OrderMenu.SetActive(false);
                 CornUIManager.instance.CursorLookMode();
                 doneOrdering = true;
@@ -338,7 +428,7 @@ public class GameManager : MonoBehaviour
 
         IEnumerator LoadNextState()
         {
-           CornGameEvents.instance.EnterGameStateSwitch(1);
+           CornGameEvents.instance.EnterGameStateTransition(1);
 
 
          yield return  new WaitForSeconds(3);
@@ -347,7 +437,7 @@ public class GameManager : MonoBehaviour
             Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
             
             Context.OrderMenu.SetActive(true);
-            Context.SceneToLoad.SetActive(true);
+            Context.DinnerSetPiece.SetActive(true);
 
             for (int i = 0; i < Toggles.Count; i++)
             {
@@ -371,7 +461,7 @@ public class GameManager : MonoBehaviour
            
             yield return new WaitForSeconds(3);
             
-            CornGameEvents.instance.ExitGameStateSwitch(1);
+            CornGameEvents.instance.ExitGameStateTransition(1);
 //           
             yield return new WaitForSeconds(2);
            
@@ -435,13 +525,13 @@ public class GameManager : MonoBehaviour
         {
             knobFSM.SetState("OffActions"); //turn off knob
             
-            CornGameEvents.instance.EnterGameStateSwitch(2);
+            CornGameEvents.instance.EnterGameStateTransition(2);
             
             TransitionTo<CleanUpState>();
             
             yield return new WaitForSeconds(3);
             
-            CornGameEvents.instance.ExitGameStateSwitch(2);
+            CornGameEvents.instance.ExitGameStateTransition(2);
             
             yield return new WaitForSeconds(1.5f);
 
@@ -577,7 +667,7 @@ public class GameManager : MonoBehaviour
         {
             base.OnEnter();
             gameState = 3;
-            CornGameEvents.instance.EnterGameStateSwitch(3);
+            CornGameEvents.instance.EnterGameStateTransition(3);
             Context.StartCoroutine(MonologueControl());
         }
 
@@ -598,7 +688,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             
-            CornGameEvents.instance.ExitGameStateSwitch(3);
+            CornGameEvents.instance.ExitGameStateTransition(3);
             
             while (Context.textAnimFSM.ActiveStateName !="end")
             {

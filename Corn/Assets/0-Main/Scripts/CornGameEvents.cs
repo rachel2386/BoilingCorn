@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,18 +13,18 @@ public class CornGameEvents : MonoBehaviour
         instance = this;
     }
 
-    public event Action<int> OnGameStateSwitchEnter;
+    public event Action<int> OnEnterGameStateTransition;
 
-    public void EnterGameStateSwitch(int stateIndex)
+    public void EnterGameStateTransition(int stateIndex)
     {
-        OnGameStateSwitchEnter?.Invoke(stateIndex);
+        OnEnterGameStateTransition?.Invoke(stateIndex);
     }
     
-    public event Action<int> OnGameStateSwitchExit;
+    public event Action<int> OnExitGameStateTransition;
 
-    public void ExitGameStateSwitch(int stateIndex)
+    public void ExitGameStateTransition(int stateIndex)
     {
-        OnGameStateSwitchExit?.Invoke(stateIndex);
+        OnExitGameStateTransition?.Invoke(stateIndex);
     }
 
     public event Action OnStartDumpingFood;
