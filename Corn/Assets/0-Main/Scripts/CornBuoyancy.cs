@@ -36,6 +36,7 @@ public class CornBuoyancy : MonoBehaviour
             
         }
 
+        
        
     }
 
@@ -159,6 +160,16 @@ public class CornBuoyancy : MonoBehaviour
 
        
     
+    }
+
+    public void ResetPotBase()
+    {
+        foreach (var rb in PotBaseStuff)
+        {
+            rb.AddForce(Physics.gravity * 0.3f);
+
+        }
+
     }
 
 }
