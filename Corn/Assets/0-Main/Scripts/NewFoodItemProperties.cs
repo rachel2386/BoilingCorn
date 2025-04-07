@@ -215,9 +215,9 @@ public class NewFoodItemProperties : ItemProperties
 
     private void DisplayFoodMemory()
     {
-        if (!hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0 || _itemManager.FoodEaten.Count >= _itemInteractions.fullAmount)
+        if (!_itemInteractions.CanCollectMemories || !hasFoodMemory || myFoodProfile.foodMemoryQueue.Count <= 0 || _itemManager.FoodEaten.Count >= _itemInteractions.fullAmount)
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); //do not play memories. Simply hide food.
         }
         else
         {

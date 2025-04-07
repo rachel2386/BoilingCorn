@@ -25680,7 +25680,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 000000
+        actionIsOpen: 000100
         actionStartIndex: 00000000020000001c000000
         actionHashCodes: 5ac85204a7411b03a7411b03
         unityObjectParams: []
@@ -26686,7 +26686,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0000
+        actionIsOpen: 0001
         actionStartIndex: 0000000004000000
         actionHashCodes: 33a38f0109faa102
         unityObjectParams: []
@@ -26762,7 +26762,7 @@ MonoBehaviour:
         stringParams:
         - waitToTrigger
         - triggered
-        - 
+        - triggered
         byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -29555,7 +29555,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0001
-        actionIsOpen: 0100
+        actionIsOpen: 0101
         actionStartIndex: 0000000005000000
         actionHashCodes: 81294e04ca51e900
         unityObjectParams: []
@@ -77319,7 +77319,7 @@ MonoBehaviour:
         serializedVersion: 2
         x: 73.61719
         y: 114.734375
-        width: 100
+        width: 111.6
         height: 48
       isBreakpoint: 0
       isSequence: 0
@@ -77334,10 +77334,10 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: turnOff
+          name: SkipOpening
           isSystemEvent: 0
           isGlobal: 0
-        toState: debug mode
+        toState: SkipOpening
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -77346,9 +77346,9 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.DOTweenTransformMove
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.GetStaticProperty
         - HutongGames.PlayMaker.Actions.IntCompare
-        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
@@ -77357,9 +77357,9 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 000100000000
-        actionStartIndex: 000000001d0000001f00000024000000280000002e000000
-        actionHashCodes: c24011015ac85204b2cf100033a38f0109faa1025ac85204
+        actionIsOpen: 000000000000
+        actionStartIndex: 000000001d0000001f00000024000000260000002a000000
+        actionHashCodes: c24011015ac85204b2cf10005ac8520433a38f0109faa102
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -77838,13 +77838,13 @@ MonoBehaviour:
         - Setting loops to -1 will make the tween loop infinitely.
         - turnOn
         - 
-        - turnOff
-        byteData: 010000000000000000000000010000000000000000000000000000010100
+        - SkipOpening
+        byteData: 010000000000000000000000010000000000000000000000000000000101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000070000001c0000001300000011000000110000000f000000110000000f000000110000001100000017000000170000001100000003000000070000001200000012000000070000000700000016000000030000001000000007000000110000001100000007000000110000001100000024000000010000001400000011000000110000000100000001000000120000001200000027000000010000001000000010000000170000001700000017000000010000002400000001000000
+        paramDataType: 14000000070000001c0000001300000011000000110000000f000000110000000f000000110000001100000017000000170000001100000003000000070000001200000012000000070000000700000016000000030000001000000007000000110000001100000007000000110000001100000024000000010000001400000011000000110000000100000001000000240000000100000012000000120000002700000001000000100000001000000017000000170000001700000001000000
         paramName:
         - gameObject
         - target
@@ -77882,6 +77882,8 @@ MonoBehaviour:
         - recursive
         - resetOnExit
         - everyFrame
+        - targetProperty
+        - everyFrame
         - className
         - propertyName
         - propertyValue
@@ -77892,10 +77894,8 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000200000001000000030000000400000000000000010000000500000002000000040000000000000001000000080000000c0000000000000003000000000000001000000006000000070000001400000008000000090000000000000018000000010000000a0000000b000000190000001a0000000200000003000000000000001b00000001000000020000000400000005000000060000001c000000010000001d000000
-        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000040000000400000000000000000000000000000004000000000000000000000004000000000000000000000000000000010000000000000000000000000000000100000001000000000000000000000000000000010000000000000000000000000000000000000000000000010000000000000001000000
+        paramDataPos: 000000000000000000000000000000000000000001000000000000000200000001000000030000000400000000000000010000000500000002000000040000000000000001000000080000000c0000000000000003000000000000001000000006000000070000001400000008000000090000000000000018000000010000000a0000000b000000190000001a000000010000001b0000000200000003000000000000001c00000001000000020000000400000005000000060000001d000000
+        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000040000000400000000000000000000000000000004000000000000000000000004000000000000000000000000000000010000000000000000000000000000000100000001000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000001000000
     - name: DoneCalling
       description: 
       colorIndex: 0
@@ -77933,7 +77933,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010001010101
-        actionIsOpen: 010000010000
+        actionIsOpen: 010001010000
         actionStartIndex: 000000000400000006000000080000000a0000000e000000
         actionHashCodes: ba7ea1015ac852045ac852045ac8520433a38f0109faa102
         unityObjectParams: []
@@ -78866,14 +78866,14 @@ MonoBehaviour:
         - debugThis
         paramDataPos: 000000000000000000000000000000000000000001000000000000000200000001000000030000000400000000000000010000000500000002000000040000000000000001000000080000000c000000000000000300000000000000100000000600000007000000140000000800000009000000
         paramByteDataSize: 0000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000400000004000000000000000000000000000000040000000000000000000000040000000000000000000000
-    - name: debug mode
+    - name: SkipOpening
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 311.3672
         y: 199.35156
-        width: 110.8
+        width: 111.6
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -78886,16 +78886,20 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SendEventByName
+        - HutongGames.PlayMaker.Actions.SendEventByName
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0000000000
-        actionStartIndex: 0000000005000000220000002700000029000000
-        actionHashCodes: b2cf1000c2401101b2cf10005ac852045ac85204
+        - 
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 01000000000000
+        actionStartIndex: 00000000050000002200000027000000290000002b0000002f000000
+        actionHashCodes: b2cf1000c2401101b2cf10005ac852045ac85204ba7ea101ba7ea101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -78938,7 +78942,71 @@ MonoBehaviour:
             m_RotationOrder: 4
         functionCallParams: []
         fsmTemplateControlParams: []
-        fsmEventTargetParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 0
+              name: 
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 6278931243707228254}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: FSM
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 0
+              name: 
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 6278931243374057758}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: FSM
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
         fsmPropertyParams:
         - TargetObject:
             useVariable: 0
@@ -79218,11 +79286,35 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: skipAnim
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: skipAnim
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -79344,12 +79436,12 @@ MonoBehaviour:
         - Set an ID for the tween, which can then be used as a filter with DOTween's
           Control Methods
         - Setting loops to -1 will make the tween loop infinitely.
-        byteData: 000001000000000000000000000001000000000000000000000000000000
+        byteData: 0000010000000000000000000000010000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001100000011000000010000000100000014000000070000001c0000001300000011000000110000000f000000110000000f0000001100000011000000170000001700000011000000030000000700000012000000120000000700000007000000160000000300000010000000070000001100000011000000070000001100000011000000140000001100000011000000010000000100000024000000010000002400000001000000
+        paramDataType: 140000001100000011000000010000000100000014000000070000001c0000001300000011000000110000000f000000110000000f00000011000000110000001700000017000000110000000300000007000000120000001200000007000000070000001600000003000000100000000700000011000000110000000700000011000000110000001400000011000000110000000100000001000000240000000100000024000000010000001f000000120000000f000000010000001f000000120000000f00000001000000
         paramName:
         - gameObject
         - activate
@@ -79394,8 +79486,16 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000010000000100000002000000000000000000000002000000030000000000000004000000010000000500000006000000000000000100000007000000020000000600000000000000010000000a0000000e000000000000000300000000000000120000000800000009000000160000000a0000000b000000020000000c0000000d0000001a0000001b000000000000001c000000010000001d000000
-        paramByteDataSize: 00000000000000000000000001000000010000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000400000004000000000000000000000000000000040000000000000000000000040000000000000000000000000000000000000000000000010000000100000000000000010000000000000001000000
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000010000000100000002000000000000000000000002000000030000000000000004000000010000000500000006000000000000000100000007000000020000000600000000000000010000000a0000000e000000000000000300000000000000120000000800000009000000160000000a0000000b000000020000000c0000000d0000001a0000001b000000000000001c000000010000001d0000000000000002000000020000001e0000000100000003000000030000001f000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000004000000040000000000000000000000000000000400000000000000000000000400000000000000000000000000000000000000000000000100000001000000000000000100000000000000010000000000000000000000000000000100000000000000000000000000000001000000
     - name: 'IfOpeningComplete '
       description: 
       colorIndex: 0
@@ -79425,7 +79525,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0000
+        actionIsOpen: 0100
         actionStartIndex: 0000000002000000
         actionHashCodes: 5ac85204a4c8bf00
         unityObjectParams: []
@@ -80476,6 +80576,9 @@ MonoBehaviour:
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: SkipOpening
+      isSystemEvent: 0
       isGlobal: 0
     - name: enableUI
       isSystemEvent: 0
@@ -114425,7 +114528,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 000100
+        actionIsOpen: 000000
         actionStartIndex: 000000001d0000003a000000
         actionHashCodes: 11a91304c240110181294e04
         unityObjectParams: []
@@ -115429,7 +115532,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0001
+        actionIsOpen: 0000
         actionStartIndex: 0000000004000000
         actionHashCodes: 33a38f0109faa102
         unityObjectParams: []
@@ -116546,10 +116649,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
+        x: 66
         y: 100
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -116559,6 +116662,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Wait
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: skipAnim
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SkipOpeningDialogue
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -116574,7 +116685,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 01010101
+        actionIsOpen: 00000000
         actionStartIndex: 00000000020000000400000006000000
         actionHashCodes: 5ac852045ac852045ac852045ac85204
         unityObjectParams: []
@@ -117150,8 +117261,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 127
-        y: 203
+        x: 79.35156
+        y: 237.07812
         width: 100
         height: 32
       isBreakpoint: 0
@@ -117176,7 +117287,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 010100
+        actionIsOpen: 010101
         actionStartIndex: 000000000500000020000000
         actionHashCodes: 81294e0462fa0405603dd905
         unityObjectParams: []
@@ -117406,8 +117517,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 125.14844
-        y: 264.3828
+        x: 77.5
+        y: 298.46094
         width: 100
         height: 48
       isBreakpoint: 0
@@ -117474,7 +117585,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 4
+          value: 5
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -117509,8 +117620,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 121.44531
-        y: 354.35156
+        x: 73.796875
+        y: 388.4297
         width: 151
         height: 16
       isBreakpoint: 0
@@ -118140,8 +118251,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 113
-        y: 148
+        x: 65.35156
+        y: 182.07812
         width: 100
         height: 32
       isBreakpoint: 0
@@ -118207,6 +118318,235 @@ MonoBehaviour:
         - realTime
         paramDataPos: 000000000000000000000000
         paramByteDataSize: 000000000000000001000000
+    - name: SkipOpeningDialogue
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 295.4453
+        y: 207.94531
+        width: 167.6
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: done
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: AnimationFinished
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntOperator
+        - HutongGames.PlayMaker.Actions.DOTweenRectTransformAnchorPosY
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0001
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 1418090362fa0405
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 2437187333079205051}
+        animationCurveParams:
+        - curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: ToEndOfPageUnitDistance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.2
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 1
+          name: totalDialogue
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 500
+        - useVariable: 1
+          name: ToEndOfPageUnitDistance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - done
+        - Set an ID for the tween, which can then be used as a filter with DOTween's
+          Control Methods
+        - Setting loops to -1 will make the tween loop infinitely.
+        byteData: 02000000000000000000000000010000000000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1000000010000000070000001000000001000000140000000f00000011000000110000000f000000110000000f0000001100000011000000170000001700000011000000030000000700000012000000120000000700000007000000160000000300000010000000070000001100000011000000070000001100000011000000
+        paramName:
+        - integer1
+        - integer2
+        - operation
+        - storeResult
+        - everyFrame
+        - gameObject
+        - to
+        - setRelative
+        - snapping
+        - duration
+        - setSpeedBased
+        - startDelay
+        - playInReverse
+        - setReverseRelative
+        - startEvent
+        - finishEvent
+        - finishImmediately
+        - tweenIdDescription
+        - tweenIdType
+        - stringAsId
+        - tagAsId
+        - selectedEase
+        - easeType
+        - animationCurve
+        - loopsDescriptionArea
+        - loops
+        - loopType
+        - autoKillOnCompletion
+        - recyclable
+        - updateType
+        - isIndependentUpdate
+        - debugThis
+        paramDataPos: 000000000100000000000000020000000400000000000000000000000000000001000000010000000200000002000000030000000400000000000000010000000500000002000000050000000000000001000000090000000d000000000000000300000003000000110000000600000007000000150000000800000009000000
+        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000400000004000000000000000000000000000000040000000000000000000000040000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -118215,6 +118555,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: playAnim
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: skipAnim
       isSystemEvent: 0
       isGlobal: 0
     - name: turnOff
@@ -118242,6 +118585,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 5
+      - useVariable: 1
+        name: ToEndOfPageUnitDistance
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -118257,7 +118606,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -121434,7 +121783,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101
-        actionIsOpen: 0001000001
+        actionIsOpen: 0000000000
         actionStartIndex: 00000000050000000a0000002500000040000000
         actionHashCodes: 5b66cf005b66cf0062fa040562fa0405ba7ea101
         unityObjectParams: []
@@ -122360,7 +122709,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 00010000
+        actionIsOpen: 00000000
         actionStartIndex: 00000000050000000a00000025000000
         actionHashCodes: 5b66cf005b66cf0062fa040562fa0405
         unityObjectParams: []
@@ -123566,8 +123915,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 200.77344
-        y: 226.19531
+        x: 174.17188
+        y: 233.96875
         width: 145
         height: 48
       isBreakpoint: 0
@@ -124634,7 +124983,7 @@ MonoBehaviour:
         x: 50
         y: 100
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -124644,6 +124993,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Wait
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: skipAnim
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SkipOpeningDialogue
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -124659,7 +125016,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 01010101
+        actionIsOpen: 01010000
         actionStartIndex: 00000000020000000400000006000000
         actionHashCodes: 5ac852045ac852045ac852045ac85204
         unityObjectParams: []
@@ -126292,14 +126649,249 @@ MonoBehaviour:
         - realTime
         paramDataPos: 000000000000000000000000
         paramByteDataSize: 000000000000000001000000
+    - name: SkipOpeningDialogue
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 303.6953
+        y: 184
+        width: 167.6
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: done
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: AnimationFinished
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntOperator
+        - HutongGames.PlayMaker.Actions.DOTweenRectTransformAnchorPosY
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0001
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 1418090362fa0405
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 2437187333079205051}
+        animationCurveParams:
+        - curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: ToEndOfPageUnitDistance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.2
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 1
+          name: totalDialogue
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 500
+        - useVariable: 1
+          name: ToEndOfPageUnitDistance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - done
+        - Set an ID for the tween, which can then be used as a filter with DOTween's
+          Control Methods
+        - Setting loops to -1 will make the tween loop infinitely.
+        byteData: 02000000000000000000000000010000000000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1000000010000000070000001000000001000000140000000f00000011000000110000000f000000110000000f0000001100000011000000170000001700000011000000030000000700000012000000120000000700000007000000160000000300000010000000070000001100000011000000070000001100000011000000
+        paramName:
+        - integer1
+        - integer2
+        - operation
+        - storeResult
+        - everyFrame
+        - gameObject
+        - to
+        - setRelative
+        - snapping
+        - duration
+        - setSpeedBased
+        - startDelay
+        - playInReverse
+        - setReverseRelative
+        - startEvent
+        - finishEvent
+        - finishImmediately
+        - tweenIdDescription
+        - tweenIdType
+        - stringAsId
+        - tagAsId
+        - selectedEase
+        - easeType
+        - animationCurve
+        - loopsDescriptionArea
+        - loops
+        - loopType
+        - autoKillOnCompletion
+        - recyclable
+        - updateType
+        - isIndependentUpdate
+        - debugThis
+        paramDataPos: 000000000100000000000000020000000400000000000000000000000000000001000000010000000200000002000000030000000400000000000000010000000500000002000000050000000000000001000000090000000d000000000000000300000003000000110000000600000007000000150000000800000009000000
+        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000400000004000000000000000000000000000000040000000000000000000000040000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: SkipOpening
+      isSystemEvent: 0
       isGlobal: 0
     - name: done
       isSystemEvent: 0
       isGlobal: 0
     - name: playAnim
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: skipAnim
       isSystemEvent: 0
       isGlobal: 0
     - name: turnOff
@@ -126327,6 +126919,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 4
+      - useVariable: 1
+        name: ToEndOfPageUnitDistance
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -126342,7 +126940,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -131449,12 +132047,12 @@ PrefabInstance:
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0011792183
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99764156
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}

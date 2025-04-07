@@ -90,7 +90,7 @@ public class CornBuoyancy : MonoBehaviour
     {
 
         
-        if (GameManager.gameState != 1) return;
+        if (GameManager.gameState != 1 && GameManager.gameState != 4) return;
        
         
         Rigidbody rb;

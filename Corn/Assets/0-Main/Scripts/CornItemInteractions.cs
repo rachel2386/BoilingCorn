@@ -43,6 +43,8 @@ public class CornItemInteractions : MonoBehaviour
     [Header("Eating Sounds")] public List<AudioClip> eatSounds = new List<AudioClip>();
     private AudioManager _audioManager;
     private NewMemoryDisplayControl memoryDisplay;
+    public bool CanCollectMemories = true;
+
 
     [HideInInspector]public bool EatingFood = false;
     private List<AudioClip> foodPickUpSounds = new List<AudioClip>();

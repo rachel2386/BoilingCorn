@@ -199,9 +199,10 @@ public class GameManager : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
-            gameState = 4;
+            gameState = 4;            
             CornUIManager.instance.ScreenFadeTransition(1, 1, 1, InitMenuState); //init menu after fade
-            
+            Context._FoodInteractionScript.CanCollectMemories = false;
+
         }
 
         void InitMenuState()
@@ -490,8 +491,8 @@ public class GameManager : MonoBehaviour
             gameState = 1;
 
             CornUIManager.instance.CursorLookMode();
-           Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
-            
+            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
+            Context._FoodInteractionScript.CanCollectMemories = true;
 
             InitManagers();
             if (Context.Debug_StartWithState >= 2)
@@ -518,6 +519,7 @@ public class GameManager : MonoBehaviour
            
             Context._cornItemManager.InitLists();
             knobFSM = GameObject.Find("knob").GetComponent<PlayMakerFSM>();
+            
         }
 
 
