@@ -202,8 +202,23 @@ public class GameManager : MonoBehaviour
             gameState = 4;            
             CornUIManager.instance.ScreenFadeTransition(1, 1, 1, InitMenuState); //init menu after fade
             Context._FoodInteractionScript.CanCollectMemories = false;
+            DisableItemMemories();
 
         }
+
+        void DisableItemMemories()
+        {
+            var itemsWithMemory = GameObject.FindGameObjectsWithTag("Look");
+
+            foreach (var item in itemsWithMemory)
+            {
+                item.tag = "Untagged";
+
+            }
+
+
+        }
+            
 
         void InitMenuState()
         {

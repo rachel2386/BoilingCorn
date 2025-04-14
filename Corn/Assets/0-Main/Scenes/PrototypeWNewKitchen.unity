@@ -25177,8 +25177,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288124823
-  m_fontColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    rgba: 4288585374
+  m_fontColor: {r: 0.622, g: 0.622, b: 0.622, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -46758,7 +46758,7 @@ Transform:
   m_GameObject: {fileID: 884194721}
   m_LocalRotation: {x: 0.00000007729977, y: -0.000000027939674, z: 0.0000005704496,
     w: -1}
-  m_LocalPosition: {x: -0.1500001, y: -0.07499993, z: 0.99700034}
+  m_LocalPosition: {x: -0.7352887, y: -0.61599994, z: 1.4040004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578683533}
@@ -50899,6 +50899,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c2389e047ffa22f45a9db93cb5863bf4, type: 3}
   - {fileID: 8300000, guid: 8fefb169a741daa47a80781f89420f2d, type: 3}
   - {fileID: 8300000, guid: 4cc787bd39a90cb44aaec1c62c30361b, type: 3}
+  CanCollectMemories: 1
   EatingFood: 0
   textAnimFSM: {fileID: 753482890}
   audioEventTrigger: {fileID: 324875626}
@@ -83513,8 +83514,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288124823
-  m_fontColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    rgba: 4288585374
+  m_fontColor: {r: 0.622, g: 0.622, b: 0.622, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -132047,22 +132048,22 @@ PrefabInstance:
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0011792183
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99764156
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
+      propertyPath: m_NormalizedViewPortRect.height
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.000115484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.99976903
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}

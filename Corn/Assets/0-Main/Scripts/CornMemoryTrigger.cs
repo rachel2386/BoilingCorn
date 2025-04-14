@@ -25,7 +25,7 @@ public class CornMemoryTrigger : MonoBehaviour
         
         
        
-        if ( _myMemory == null ||  _myMemory.MemoriesToDisplay.Count == 0)
+        if (  _myMemory == null ||  _myMemory.MemoriesToDisplay.Count == 0 )
         {
             Debug.LogError(gameObject.name + "with the memory name of " + NameOfMemory + " has script attached but has no memory to display");
             gameObject.tag = "Untagged";
