@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public PlayMakerFSM textAnimFSM;
     private FSM<GameManager> gameFSM;
     private GameObject OrderMenu;
+    private GameObject EndlessModeFoodMenu;
     public GameObject DinnerSetPiece;
 
     [SerializeField]private GameObject cleanupBowl;
@@ -58,10 +59,13 @@ public class GameManager : MonoBehaviour
         musicPlayer = FindObjectOfType<MusicPlayer>();
         FindObjectOfType<CornBuoyancy>().waterBoilTimeInseconds = waterBoilSeconds;
         textAnimFSM = GetComponent<PlayMakerFSM>();
-       
-       
-        
-       
+
+
+        EndlessModeFoodMenu = GameObject.Find("EndlessModeFoodMenu"); //the interactable food menu on the table
+        EndlessModeFoodMenu.SetActive(false);
+
+
+
     }
 
     private void Start()
@@ -196,6 +200,8 @@ public class GameManager : MonoBehaviour
         private List<FoodSpawner> _foodSpawners = new List<FoodSpawner>();
         private Button confirmButton;
         private GameObject warningText;
+        private PlayMakerFSM foodMenuFSM;
+        private bool firstTimeOrderFood;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -203,7 +209,9 @@ public class GameManager : MonoBehaviour
             CornUIManager.instance.ScreenFadeTransition(1, 1, 1, InitMenuState); //init menu after fade
             Context._FoodInteractionScript.CanCollectMemories = false;
             DisableItemMemories();
-
+            
+            firstTimeOrderFood = true;
+            
         }
 
         void DisableItemMemories()
@@ -226,7 +234,6 @@ public class GameManager : MonoBehaviour
             Context.OrderMenu.SetActive(true);
             AudioSource.PlayClipAtPoint(AudioManager.instance.FindClipWithName("openMenu"), Camera.main.transform.position);
             Context.DinnerSetPiece.SetActive(true);
-
             CornUIManager.instance.CursorSelectionMode();
 
             _foodSpawners.AddRange(FindObjectsOfType<FoodSpawner>());
@@ -234,6 +241,12 @@ public class GameManager : MonoBehaviour
             warningText.SetActive(false);
             confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
             confirmButton.onClick.AddListener(ConfirmOrder);
+
+            Context.EndlessModeFoodMenu.SetActive(true);
+            foodMenuFSM = Context.EndlessModeFoodMenu.GetComponent<PlayMakerFSM>();
+            foodMenuFSM.SendEvent("enableMenu");
+            
+
             CornGameEvents.instance.ExitGameStateTransition(4);
         }
 
@@ -256,12 +269,16 @@ public class GameManager : MonoBehaviour
                             
                 Context.StartCoroutine(SetupDinnerTable());
             }
+
+            if(!firstTimeOrderFood)
+                foodMenuFSM.SendEvent("disableMenu"); //close reorder menu on order confirm
         }
 
         IEnumerator SetupDinnerTable()
         {
             CornGameEvents.instance.EnterGameStateTransition(4);
             Context.DinnerSetPiece.SetActive(true);
+           
 
             for (int i = 0; i < Toggles.Count; i++)
             {
@@ -281,8 +298,15 @@ public class GameManager : MonoBehaviour
             Context.OrderMenu.SetActive(false);
             yield return new WaitForSeconds(3);           
             CornGameEvents.instance.ExitGameStateTransition(4);
-            yield return new WaitForSeconds(1);            
-            Context.musicPlayer.playMusic = true;
+
+            if (firstTimeOrderFood)
+            {
+                yield return new WaitForSeconds(1);
+                Context.musicPlayer.playMusic = true;
+                firstTimeOrderFood = false;
+            }
+            
+
 
         }
 

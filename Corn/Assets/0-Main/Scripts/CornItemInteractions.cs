@@ -88,12 +88,12 @@ public class CornItemInteractions : MonoBehaviour
         if (Input.GetMouseButtonDown(1)
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, LayerMask.GetMask("Pickupable"))
             && hitInfo.collider.CompareTag("FoodItem")
-            && _itemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1
             && !EatingFood)
         {
             
-            MoveFoodToMouth(hitInfo.collider.gameObject);
+            if(GameManager.gameState == 4 || _itemManager.FoodEaten.Count < fullAmount) //players can keep eating after full in endless mode 
+                MoveFoodToMouth(hitInfo.collider.gameObject);
         }
 
         if (!IsholdingObject)
@@ -142,6 +142,8 @@ public class CornItemInteractions : MonoBehaviour
        
         if (!_itemManager.FoodEaten.Contains(FoodToEat))
             _itemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
+
+        if (GameManager.gameState != 1) return; //only trigger progression events in story mode 
         
         var numOfFoodEaten =_itemManager.FoodEaten.Count;
         

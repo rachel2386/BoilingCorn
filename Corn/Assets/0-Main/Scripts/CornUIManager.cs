@@ -90,10 +90,16 @@ public class CornUIManager : MonoBehaviour
                     if (hitInfo.collider.CompareTag("FoodItem"))
                     {
                         SwapReticleSprite(foodCursor);
-                        EatButtonInstruction.SetActive(GameManager.gameState < 2
-                                                       &&_itemManager.FoodEaten.Count < _itemInteractions.fullAmount //player not full
-                                                       && hitInfo.collider.GetComponent<NewFoodItemProperties>()
-                                                           .foodState == 1); //if food cooked, enabled eat ui
+                        if (hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1) 
+                        {
+                            //if in endless mode or if in cooking mode && player is not full, show eat UI 
+                            EatButtonInstruction.SetActive(GameManager.gameState == 4 || GameManager.gameState < 2
+                                                               && _itemManager.FoodEaten.Count < _itemInteractions.fullAmount);
+                        }
+                        else
+                            EatButtonInstruction.SetActive(false);
+
+
                     }
                     else if (hitInfo.collider.CompareTag("Interactable") || hitInfo.collider.CompareTag("cleanupBowl"))
                     {
