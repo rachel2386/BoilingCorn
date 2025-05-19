@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
         private GameObject warningText;
         private PlayMakerFSM foodMenuFSM;
         private bool firstTimeOrderFood;
+        private CornItemManager foodItemManager;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -211,6 +212,7 @@ public class GameManager : MonoBehaviour
             DisableItemMemories();
             
             firstTimeOrderFood = true;
+            foodItemManager = FindObjectOfType<CornItemManager>();
             
         }
 
@@ -266,20 +268,38 @@ public class GameManager : MonoBehaviour
                 warningText.SetActive(true);
             else
             {
-                            
-                Context.StartCoroutine(SetupDinnerTable());
+
+                if (!firstTimeOrderFood)
+                {
+                    foodMenuFSM.SendEvent("disableMenu"); //close reorder menu on order confirm
+
+                }
+
+                    Context.StartCoroutine(SetupDinnerTable());
             }
 
-            if(!firstTimeOrderFood)
-                foodMenuFSM.SendEvent("disableMenu"); //close reorder menu on order confirm
+           
+               
         }
 
         IEnumerator SetupDinnerTable()
         {
+            
             CornGameEvents.instance.EnterGameStateTransition(4);
             Context.DinnerSetPiece.SetActive(true);
-           
 
+            yield return new WaitForSeconds(1);
+            
+            if (!firstTimeOrderFood)
+            {
+                if (foodItemManager != null) //clear all ordered food from level
+                {
+                    foodItemManager.ClearAllFood();
+                }
+
+            }
+
+            //spawn ordered food 
             for (int i = 0; i < Toggles.Count; i++)
             {
                 _foodSpawners[i].FoodName = Toggles[i].transform.parent.name;
@@ -289,10 +309,11 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
 
             CornUIManager.instance.CursorLookMode();
-            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);         
-            
-            //set up managers (knob, phone menu) 
+            Context._mouseLook.SetRotation(Vector3.zero, Vector3.right * 40);
 
+            //set up managers (knob, phone menu) 
+            
+            
 
 
             Context.OrderMenu.SetActive(false);

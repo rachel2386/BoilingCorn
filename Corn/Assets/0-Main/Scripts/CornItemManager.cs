@@ -88,4 +88,14 @@ public class CornItemManager : MonoBehaviour
             }
         }
     }
+
+    public void ClearAllFood()
+    {
+        foreach (var food in ListOfFood)
+        {
+            food.SetActive(false);           
+
+        }
+        ListOfFood.Clear();
+    }
 }
