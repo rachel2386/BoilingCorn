@@ -203,6 +203,7 @@ public class GameManager : MonoBehaviour
         private PlayMakerFSM foodMenuFSM;
         private bool firstTimeOrderFood;
         private CornItemManager foodItemManager;
+        private GameObject titleCam;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -213,7 +214,9 @@ public class GameManager : MonoBehaviour
             
             firstTimeOrderFood = true;
             foodItemManager = FindObjectOfType<CornItemManager>();
-            
+            titleCam = GameObject.Find("TitleCam");
+
+
         }
 
         void DisableItemMemories()
@@ -233,6 +236,7 @@ public class GameManager : MonoBehaviour
         void InitMenuState()
         {
             Context.TitleMenu.SetActive(false);
+            titleCam.SetActive(false);
             Context.OrderMenu.SetActive(true);
             AudioSource.PlayClipAtPoint(AudioManager.instance.FindClipWithName("openMenu"), Camera.main.transform.position);
             Context.DinnerSetPiece.SetActive(true);
