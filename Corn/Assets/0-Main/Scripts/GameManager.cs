@@ -9,12 +9,14 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using Toggle = UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static int gameState = -1;
    private CornItemManager _cornItemManager;
     private CornItemInteractions _FoodInteractionScript;
    private CornMonologueManager _monologueManager;
+
+
     
     private CornMouseLook _mouseLook; 
 
@@ -34,7 +36,9 @@ public class GameManager : MonoBehaviour
     private bool startGame = false;
 
     public GameObject TitleMenu;
-    
+    public GameObject EndlessModeButton;
+    private bool hasCompletedStoryMode = false;
+
     //public bool WithOrderSystem = true;
     public int Debug_StartWithState = -1;
     public int waterBoilSeconds = 30;
@@ -43,7 +47,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
 
-        
         gameFSM = new FSM<GameManager>(this);
 
         if (!GetComponent<CornItemManager>())
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
     }
     public void BackToMenu()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene(0);
         
     }
@@ -106,6 +110,16 @@ public class GameManager : MonoBehaviour
     public void OpenUrl(string url)
     {
         Application.OpenURL(url);
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.HasCompletedStoryMode = hasCompletedStoryMode;
+    }
+
+    public void LoadData(GameData data)
+    {
+        hasCompletedStoryMode = data.HasCompletedStoryMode;
     }
 
 
@@ -129,6 +143,9 @@ public class GameManager : MonoBehaviour
             
             CornUIManager.instance.CursorSelectionMode();
             CornGameEvents.instance.EnterGameStateTransition(-1);
+            DataPersistenceManager.instance.InitializeGameDataReferences();
+            DataPersistenceManager.instance.LoadGame();
+           
            
         }
         IEnumerator EnterDebug()
@@ -349,6 +366,8 @@ public class GameManager : MonoBehaviour
             Context.DinnerSetPiece.SetActive(false);
             Context.TitleMenu.SetActive(true);
             CornUIManager.instance.CursorSelectionMode();
+            Context.EndlessModeButton.SetActive(Context.hasCompletedStoryMode);
+
         }
 
        
@@ -437,6 +456,8 @@ public class GameManager : MonoBehaviour
                 Context.OrderMenu.SetActive(false);
                 CornUIManager.instance.CursorLookMode();
                 doneOrdering = true;
+                
+                
             }
         }
 
