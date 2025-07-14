@@ -106,6 +106,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
         gameFSM.TransitionTo<EndlessModeState>();
 
     }
+    public void CompleteStoryMode()
+    {
+        hasCompletedStoryMode = true;
+        DataPersistenceManager.instance.SaveGame();
+
+    }
 
     public void OpenUrl(string url)
     {
