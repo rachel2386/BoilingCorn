@@ -17296,13 +17296,13 @@ MonoBehaviour:
   m_margin: {x: -323.20215, y: 0, z: -445.1649, w: -75.61383}
   m_textInfo:
     textComponent: {fileID: 8545601886834470908}
-    characterCount: 5
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -22028,11 +22028,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8545601887377479314}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
-        type: 3}
-      propertyPath: m_Name
-      value: phoneModel
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6b292171050c48c42bb6313bf1145256,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22102,6 +22097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.7346215
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
+        type: 3}
+      propertyPath: m_Name
+      value: phoneModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b292171050c48c42bb6313bf1145256, type: 3}

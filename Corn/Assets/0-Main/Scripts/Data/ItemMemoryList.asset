@@ -15,40 +15,40 @@ MonoBehaviour:
   ItemMemories:
   - Name: poster
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: 57e2ff659601d0b449367b0af7acb920, type: 3}
+    - {fileID: 21300000, guid: 560a48ff68b87ec40b9fc8a1ad4be976, type: 3}
   - Name: snowman
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: 965cbe975dfa0b3489e77e1731487957, type: 3}
+    - {fileID: 21300000, guid: 45ec38c7f5572d34eb68836ecb31cb67, type: 3}
   - Name: laptop
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: bcc1ac437faea4741ac649126bd67d51, type: 3}
+    - {fileID: 21300000, guid: 4822d8efa7960474e9255911ecc2f320, type: 3}
   - Name: house
     MemoriesToDisplay:
     - {fileID: 21300000, guid: e58e75e89b5760f44900027c8d250b90, type: 3}
   - Name: stove
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: d6af98ea2ff88f749952d4ef7f676b31, type: 3}
+    - {fileID: 21300000, guid: 268b527f9fbabc9409a4510faf80d86d, type: 3}
   - Name: seasoning
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: e938a996ebae5624290c7edea254c644, type: 3}
+    - {fileID: 21300000, guid: 37aad6862765283439dbe203ec9eb698, type: 3}
   - Name: tree
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: a76923d02ca4f214c85998131bdad77a, type: 3}
+    - {fileID: 21300000, guid: db8779be864296f428699a9613b56c58, type: 3}
   - Name: beer
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: aedce51789990be41a62a876bf7938b2, type: 3}
+    - {fileID: 21300000, guid: 9b5500cadd438bc468dbaf274c5473cb, type: 3}
   - Name: mug
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: fe0112ab61b085a4888ffc1a38b329a5, type: 3}
+    - {fileID: 21300000, guid: 44951065a9507ca42b3d00dfbb90c348, type: 3}
   - Name: resume
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: e5af481cda091c447bd52f8c725d88fd, type: 3}
+    - {fileID: 21300000, guid: b227c7b55900a9845a77531ab3d65e9c, type: 3}
   - Name: graduation
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: e0af88857e220514987563189453001e, type: 3}
+    - {fileID: 21300000, guid: 9ce0ae7f3bd2c8e4b88ec0f42b6b7020, type: 3}
   - Name: mom
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: 2f40296c661be2347a50e0555c9fcfa0, type: 3}
+    - {fileID: 21300000, guid: 0b6ab0021297309498efe47db8497f23, type: 3}
   - Name: shoes
     MemoriesToDisplay:
-    - {fileID: 21300000, guid: 2ed44813eb06b79489a4f7eff54864a5, type: 3}
+    - {fileID: 21300000, guid: 3b4a96c0658abd84b96b6088acd73094, type: 3}
