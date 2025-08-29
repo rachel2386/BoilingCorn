@@ -6509,7 +6509,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -13059,7 +13059,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -15900,7 +15900,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -20958,6 +20958,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8545601887377479314}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
+        type: 3}
+      propertyPath: m_Name
+      value: phoneModel
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6b292171050c48c42bb6313bf1145256,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21027,11 +21032,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.7346215
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
-        type: 3}
-      propertyPath: m_Name
-      value: phoneModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b292171050c48c42bb6313bf1145256, type: 3}
