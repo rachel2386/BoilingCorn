@@ -20,19 +20,12 @@ public class MusicPlayer : MonoBehaviour
         }
 
         _audioSource.loop = false;
+        InvokeRepeating("playSong", 0.1f, 1f);
     }
 
     // Update is called once per frame
 
-    private void Update()
-    {
-//        if(Input.GetKeyUp(KeyCode.N))
-//            GoToNextSong();
-        
-        playSong();
-        
-        
-    }
+ 
 
     void playSong()
     {

@@ -48,6 +48,7 @@ public class CornBuoyancy : MonoBehaviour
 
         foreach (var rb in cookedFoodInWater)
         {
+            if(rb!=null)
             if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
            
             var col = rb.GetComponent<Collider>();
@@ -63,6 +64,7 @@ public class CornBuoyancy : MonoBehaviour
 
         foreach (var rb in PotBaseStuff)
         {
+            if (rb == null) return;
             var col = rb.GetComponent<Collider>();
             if ( PotIsBoiling)
             {

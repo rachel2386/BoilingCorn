@@ -179,6 +179,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             {
                 transitionToCooking();
                 Context.musicPlayer.playMusic = true;
+                GameObject.Find("TitleCam").SetActive(false); //turn off title cam manually (usually handled in intro timeline)
 
             }
             else if (Input.GetKeyUp(KeyCode.Alpha2))
@@ -349,8 +350,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
             if (firstTimeOrderFood)
             {
-                yield return new WaitForSeconds(1);
-                Context.musicPlayer.playMusic = true;
+                //yield return new WaitForSeconds(1);
+                //Context.musicPlayer.playMusic = true;
                 firstTimeOrderFood = false;
             }
             
