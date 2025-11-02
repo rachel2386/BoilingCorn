@@ -52,14 +52,27 @@ public class CornBuoyancy : MonoBehaviour
             if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
            
             var col = rb.GetComponent<Collider>();
-            if (col.bounds.center.y < surfaceLevel)
+            if (!PotIsBoiling)
             {
-               rb.AddForce(-Physics.gravity);
+                if(col.bounds.center.y >= surfaceLevel)
+                rb.AddForce(Physics.gravity * 0.8f);   
+
             }
             else
             {
-              rb.AddForce(Physics.gravity * 0.1f);
+                if (col.bounds.center.y < surfaceLevel)
+                {
+
+                    rb.AddForce(-Physics.gravity);
+                }
+                else
+                {
+                    rb.AddForce(Physics.gravity * 0.1f);
+                }
+
             }
+
+            
         }
 
         foreach (var rb in PotBaseStuff)

@@ -6,26 +6,8 @@ ShaderVariantCollection:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TotalShaderVariants_Mac
+  m_Name: TotalShaderVariants
   m_Shaders:
-  - first: {fileID: 4800000, guid: ab6f7521bd72644388f2fc1112e74e7b, type: 3}
-    second:
-      variants:
-      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
-          GEOM_TYPE_LEAF LIGHTPROBE_SH USINGWATERVOLUME _PIXELSNAP_NONE
-        passType: 4
-      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
-          GEOM_TYPE_LEAF LIGHTPROBE_SH USINGWATERVOLUME VERTEXLIGHT_ON _PIXELSNAP_NONE
-        passType: 4
-      - keywords: EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND GEOM_TYPE_LEAF
-          SPOT USINGWATERVOLUME _PIXELSNAP_NONE
-        passType: 5
-      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
-          GEOM_TYPE_LEAF USINGWATERVOLUME _PIXELSNAP_NONE
-        passType: 5
-      - keywords: EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND GEOM_TYPE_LEAF
-          POINT USINGWATERVOLUME _PIXELSNAP_NONE
-        passType: 5
   - first: {fileID: 19, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -841,6 +823,24 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 0
+  - first: {fileID: 4800000, guid: ab6f7521bd72644388f2fc1112e74e7b, type: 3}
+    second:
+      variants:
+      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
+          GEOM_TYPE_LEAF LIGHTPROBE_SH USINGWATERVOLUME _PIXELSNAP_NONE
+        passType: 4
+      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
+          GEOM_TYPE_LEAF LIGHTPROBE_SH USINGWATERVOLUME VERTEXLIGHT_ON _PIXELSNAP_NONE
+        passType: 4
+      - keywords: EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND GEOM_TYPE_LEAF
+          SPOT USINGWATERVOLUME _PIXELSNAP_NONE
+        passType: 5
+      - keywords: DIRECTIONAL EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND
+          GEOM_TYPE_LEAF USINGWATERVOLUME _PIXELSNAP_NONE
+        passType: 5
+      - keywords: EFFECT_BUMP GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND GEOM_TYPE_LEAF
+          POINT USINGWATERVOLUME _PIXELSNAP_NONE
+        passType: 5
   - first: {fileID: 4800000, guid: 9d7e8f87435780644abb4acdfd72a2f0, type: 3}
     second:
       variants:

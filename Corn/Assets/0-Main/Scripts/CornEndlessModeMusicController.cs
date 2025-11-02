@@ -27,9 +27,14 @@ public class CornEndlessModeMusicController : MonoBehaviour
     }
     public void FadeTrackVolume(string parameterName, float ToVolumeNormalized, float fadeDuration)
     {
-
-        
-        var ToVolume = Mathf.Log10(Mathf.Clamp(ToVolumeNormalized, 0.0001f,1f))*20f; //map 0-1 value to 20 - -80
+        var ToVolume = 0f;
+        bool tryGetExposedParameter = musicMixer.GetFloat(parameterName, out ToVolume);
+        if (!tryGetExposedParameter)
+        {
+            Debug.LogError("Audio Mixer Parameter not found! Value cannot be set");
+            return;
+        }
+        ToVolume = Mathf.Log10(Mathf.Clamp(ToVolumeNormalized, 0.0001f,1f))*20f; //map 0-1 value to 20 - -80
         print(ToVolume);
         Tween volumeTween = musicMixer.DOSetFloat(parameterName, ToVolume, fadeDuration);
 

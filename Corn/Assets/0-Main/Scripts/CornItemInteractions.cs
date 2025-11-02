@@ -24,6 +24,7 @@ public class CornItemInteractions : MonoBehaviour
 
    public int fullAmount = 15;
     public bool playerIsFull = false;
+    bool firstFoodEaten = false;
 
     // Start is called before the first frame update
     private Camera myCam;
@@ -136,6 +137,12 @@ public class CornItemInteractions : MonoBehaviour
 
     void FoodEaten(GameObject FoodToEat)
     {
+        if (!firstFoodEaten)
+        {
+            firstFoodEaten = true;
+            _audioManager.endlessModeMusicController.FadeTrackVolume("Volume_guitar1", 0.5f, 2f);
+            
+        }
         _audioManager.PlayRandomSoundsAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
         FoodToEat.transform.SetParent(mouth);
         FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.BiteFood));

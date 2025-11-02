@@ -38,6 +38,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-6483791985562352819
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 93957bc5bebb70a45a3a8a2fab36cfd6
+  m_EffectName: Attenuation
+  m_MixLevel: 1f3ffa699e9cb4b41b1eee27fab3b7f1
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5659956374351194346
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -51,6 +65,7 @@ AudioMixerGroupController:
   - {fileID: 6687416187812904346}
   - {fileID: 6824799250261880853}
   - {fileID: -6563184025997675558}
+  - {fileID: 3744041294029115513}
   m_Volume: d2bf93e9f9cdd8a40b0034b767fac040
   m_Pitch: a1fb9bedc6b533d4fb5aacac41b510f3
   m_Send: 00000000000000000000000000000000
@@ -124,11 +139,15 @@ AudioMixerController:
     name: Volume_Track2
   - guid: 3b84ac267d8041349b1a24b83603960f
     name: Volume_Track3
+  - guid: 878a2dad24955934288bb6cbbd6250f3
+    name: Volume_guitar1
   m_AudioMixerGroupViews:
   - guids:
+    - 42cd0d2d8904a2b42b9a314a7a96e11a
     - 35c0bde3ecd4e7942846d313c3e58dca
     - 179a6fb99f8bb414a8c4686589df5ba6
     - 126c2dc89df31324db3045ff6313609d
+    - ea4f6496c0eebb647aadc2e01a5614b5
     - c0a9e8390078c564ca56dc0e21aa01d9
     name: View
   m_CurrentViewIndex: 0
@@ -181,6 +200,8 @@ AudioMixerSnapshotController:
     063c31c53e2ac0044ad42a2881b2c202: 0
     3b84ac267d8041349b1a24b83603960f: -80
     f64140a71c1dbc242827187e4031bd16: -80
+    d2bf93e9f9cdd8a40b0034b767fac040: 0.025578499
+    878a2dad24955934288bb6cbbd6250f3: -80
     a7084d5fcb8e92e40ad16a6b3a201e72: -80
   m_TransitionOverrides: {}
 --- !u!244 &2538810573001501271
@@ -211,6 +232,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &3744041294029115513
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: guitar1
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: ea4f6496c0eebb647aadc2e01a5614b5
+  m_Children: []
+  m_Volume: 878a2dad24955934288bb6cbbd6250f3
+  m_Pitch: 4c1fda4328aeef942a0a622dfa06073c
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6483791985562352819}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &6687416187812904346
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

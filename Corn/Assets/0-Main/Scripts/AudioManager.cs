@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Steamworks;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,7 +8,7 @@ using Random = UnityEngine.Random;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    [SerializeField]private CornEndlessModeMusicController endlessModeMusicController;
+    public CornEndlessModeMusicController endlessModeMusicController;
    
     
     [Serializable]
