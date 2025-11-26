@@ -187,12 +187,14 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 transitionToCooking();
                 Context.Debug_StartWithState = 2;
                 //Context._FoodInteractionScript.playerIsFull = true;
+                GameObject.Find("TitleCam").SetActive(false);
             }
             else if(Input.GetKeyUp(KeyCode.Alpha3))
             {
                
                 transitionToCooking();
                 Context.Debug_StartWithState = 3;
+                GameObject.Find("TitleCam").SetActive(false);
 
             }
         }
@@ -805,11 +807,26 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 Context._cornItemManager.WastedFood.Add(f.gameObject);
             }
 
-            Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
-                "You collected " + Context._cornItemManager.memoriesCollected + "/" + Context._cornItemManager.TotalMemoriesToCollect +  " pieces of memories. \n" + 
-                "You ate " + Context._cornItemManager.FoodEaten.Count + " pieces of food.\n" +
-                "You saved " + Context._cornItemManager.FoodToSave.Count + " for tomorrow.\n" +
-                "You dumped away " + Context._cornItemManager.WastedFood.Count + ".\n";
+
+            if (Lean.Localization.LeanLocalization.CurrentLanguage == "Chinese")
+            {
+                Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
+                    "你收集了 " + Context._cornItemManager.memoriesCollected + "/" + Context._cornItemManager.TotalMemoriesToCollect + " 份回忆\n" +
+                    "你吃了 " + Context._cornItemManager.FoodEaten.Count + " 块食物\n" +
+                    "你打包了 " + Context._cornItemManager.FoodToSave.Count + "块留着明天吃\n" +
+                    "你倒掉了 " + Context._cornItemManager.WastedFood.Count + "块食物\n";
+
+            }
+            else if (Lean.Localization.LeanLocalization.CurrentLanguage == "English")
+            {
+                Context.textAnimFSM.FsmVariables.StringVariables[0].Value =
+                    "You collected " + Context._cornItemManager.memoriesCollected + "/" + Context._cornItemManager.TotalMemoriesToCollect + " pieces of memories. \n" +
+                    "You ate " + Context._cornItemManager.FoodEaten.Count + " pieces of food.\n" +
+                    "You saved " + Context._cornItemManager.FoodToSave.Count + " for tomorrow.\n" +
+                    "You dumped away " + Context._cornItemManager.WastedFood.Count + ".\n";
+
+            }
+            
             
             
 

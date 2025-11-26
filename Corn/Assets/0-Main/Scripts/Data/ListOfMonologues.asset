@@ -26,6 +26,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: ac42b864def46f54a993a6d7bb06d9dd, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: turn on fire
     displayText: 0
     MonologueText: "**Stomach Growling** \r\nAlright, I am ready! \r"
@@ -33,6 +34,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: phone call john
     displayText: 0
     MonologueText: "**Dialing**\r\nMe: \"Hey John what are you up to tonight?\"\r\nJohn:
@@ -45,6 +47,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: a64d9b9a947a9f44f9667b45a8bc9f68, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: what to eat
     displayText: 0
     MonologueText: "Okay... I guess I am eating alone tonight\u2026\nI feel very happy
@@ -54,6 +57,8 @@ MonoBehaviour:
     displaySprite: 1
     monologueSprite:
     - {fileID: 21300000, guid: f8874b5af8229854587180b7d3bad46f, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-6
   - Name: table setup
     displayText: 0
     MonologueText: "Phew! Preparing all these food is more tiring than I thought.
@@ -64,6 +69,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 45413307031b9ef45aec589a50b1ecf5, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: wait for boil
     displayText: 0
     MonologueText: 'Why is this taking so long to boil..! I should probably do something
@@ -72,6 +78,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 4298e4c8319d2544a9edbcc528d62a3f, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: boiling
     displayText: 0
     MonologueText: "Wow. This spicy soup base looks really hot. I hope I can survive
@@ -80,6 +87,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 58f0560a69ca13546b005933768e7501, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: cook first food
     displayText: 0
     MonologueText: "WHY do I still have to wait! Let me cook some more. \r\n"
@@ -87,6 +95,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: eat first food
     displayText: 0
     MonologueText: "**Coughing** Ouch this pepper is strong.. Why am I torturing myself
@@ -95,6 +104,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 468d08be9a5bb0e46b8a50261a27ad2d, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: eat second food
     displayText: 0
     MonologueText: "**Salivating** \r\nThis tastes super fresh! This soup really brings
@@ -104,6 +114,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: fb57d702dea587e419b0b987de68bc61, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: eat fifth food
     displayText: 0
     MonologueText: "Surprisingly, I am actually enjoying the spiciness now. I could
@@ -115,6 +126,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 8b496f16948a6c14d842ac9d04576aae, type: 3}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: peter
     displayText: 0
     MonologueText: "**loud music and chatter from next door**\nUgh. Is Peter throwing
@@ -127,6 +139,8 @@ MonoBehaviour:
     displaySprite: 1
     monologueSprite:
     - {fileID: 21300000, guid: 6e2b96a96ae1e7749af47bd68c5aec63, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-peter
   - Name: eat tenth food
     displayText: 1
     MonologueText: "**Burp** \nLet me just have one more."
@@ -134,6 +148,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 5b350ea283f993442a1bbb726410493e, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: full
     displayText: 1
     MonologueText: "I am done for now.\nLet me turn off the stove. \r\n"
@@ -141,6 +156,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 69fdf4306a5624a40902c48542b10650, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: clean up
     displayText: 0
     MonologueText: "Ok.. what do I want to keep? \r\nThere is only space for this
@@ -150,6 +166,8 @@ MonoBehaviour:
     displaySprite: 1
     monologueSprite:
     - {fileID: 21300000, guid: e9caee1e109edc947bc6370105bd55c6, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-12
   - Name: end1
     displayText: 0
     MonologueText: "Pretty sure that is everything I want to keep for tomorrow. Gotta
@@ -159,6 +177,8 @@ MonoBehaviour:
     displaySprite: 1
     monologueSprite:
     - {fileID: 21300000, guid: 19c451d46e84219428135c52f2d4d861, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-13
   - Name: end2
     displayText: 1
     MonologueText: "** new message from her ** \r\nGood Morning Baby! Merry Christmas!
@@ -167,6 +187,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: cbc9d9f3ac37cf8478846c0701ea7705, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: phone1
     displayText: 1
     MonologueText: "6:00 p.m. No new notifications.\r"
@@ -174,6 +195,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: phone2
     displayText: 1
     MonologueText: "Mail: \u201C**ACTION REQUIRED!** \r\nIt\u2019s not too late to
@@ -182,6 +204,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: phone3
     displayText: 1
     MonologueText: "I shouldn\u2019t call her. It is way too early in the morning
@@ -190,6 +213,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: calendar1
     displayText: 1
     MonologueText: "Today is December 24th. Christmas Eve. \r\n\n"
@@ -197,6 +221,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: calendar2
     displayText: 1
     MonologueText: "She insisted that I should eat an apple today for good luck. \r\nSuperstitious
@@ -205,6 +230,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: calendar3
     displayText: 1
     MonologueText: "She had fried hot pot with her friends last night to celebrate.
@@ -213,6 +239,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: window1
     displayText: 1
     MonologueText: "I love it when it snows...Except that I have to deal with the
@@ -221,6 +248,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: window2
     displayText: 1
     MonologueText: "The streets are kind of quiet today. It is weird. \nAre all the
@@ -229,6 +257,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: window3
     displayText: 1
     MonologueText: "She insisted on going to Rockefeller last Christmas. \nGod it
@@ -239,6 +268,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: tap1
     displayText: 1
     MonologueText: "Did I rinse all the ingredients before I cook 'em? \r\nNo. Of
@@ -247,6 +277,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 0}
     displaySprite: 1
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: ready for hotpot
     displayText: 0
     MonologueText: "Look at the outside, what a beautiful night! \nJohn and Christine
@@ -260,6 +291,11 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2bfdc0b9cf512084185966e371d6a6dc, type: 3}
     - {fileID: 21300000, guid: 9852dd7829dded441ad93530a9fd3314, type: 3}
     - {fileID: 21300000, guid: e1750b492fe5baf4c96319823070e2ed, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-1
+    - monologue-2
+    - monologue-3
+    - monologue-4
   - Name: where are they
     displayText: 0
     MonologueText: All Set! I wonder where they are? They better be here before the
@@ -269,6 +305,8 @@ MonoBehaviour:
     displaySprite: 1
     monologueSprite:
     - {fileID: 21300000, guid: 89d4dbb1c4dbd69448aadb7e94cfaa5c, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-5
   - Name: I am so angry
     displayText: 0
     MonologueText: 
@@ -278,6 +316,9 @@ MonoBehaviour:
     monologueSprite:
     - {fileID: 21300000, guid: ff02aefe0cc5e7043b16a38d2239f180, type: 3}
     - {fileID: 21300000, guid: ab10a0cab77fc6c45918fd85ede43cf4, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-7
+    - monologue-8
   - Name: music on
     displayText: 0
     MonologueText: "Oh man, look at this poor food...\nIt\u2019s Okay.\n Being alone
@@ -290,6 +331,10 @@ MonoBehaviour:
     - {fileID: 21300000, guid: dad9f5944adf919408ac842d1bd67bba, type: 3}
     - {fileID: 21300000, guid: 4795cba772d62ef4eaf0e4dc2392ca99, type: 3}
     - {fileID: 21300000, guid: 14d4d598abff5d64f9b8fff55c9cd747, type: 3}
+    SpriteLeanTranslationNames:
+    - monologue-9
+    - monologue-10
+    - monologue-11
   - Name: great day
     displayText: 1
     MonologueText: 'a great day!
@@ -301,6 +346,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 41a9fb3e4ea6c444887b986e87b072e9, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: text her
     displayText: 1
     MonologueText: 'It''s still very early in the morning over there. She is defnitely
@@ -309,6 +355,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: 70387c752f10bf14181d5dcba21ad6bb, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: its been
     displayText: 1
     MonologueText: It's been...
@@ -316,6 +363,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: d9140bb640c9b584cbc9770068d7791e, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: hintToStartStove1
     displayText: 1
     MonologueText: I need to heat up the soup base first...
@@ -323,6 +371,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: hintToStartStove2
     displayText: 1
     MonologueText: How do I turn on this stove again..?
@@ -330,6 +379,7 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
   - Name: hintToStartStove3
     displayText: 1
     MonologueText: Click on the knob to turn on stove.
@@ -337,3 +387,4 @@ MonoBehaviour:
     VoiceOverClip: {fileID: 8300000, guid: b27fa6b52a940e845b3443843199104f, type: 3}
     displaySprite: 0
     monologueSprite: []
+    SpriteLeanTranslationNames: []
