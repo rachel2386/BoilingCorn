@@ -1776,7 +1776,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f39856c150b37c64c9f53ad26f2a0ff6, type: 3}
+    m_Font: {fileID: 12800000, guid: 573c5754defa4ea468e3ebd836a9899e, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -1788,7 +1788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: EEE
 --- !u!114 &58881376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  translationName: textUIFont
+  translationName: MonologueUIFont
   FallbackFont: {fileID: 12800000, guid: 573c5754defa4ea468e3ebd836a9899e, type: 3}
 --- !u!1 &66556248 stripped
 GameObject:
@@ -34135,7 +34135,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0001
+        actionIsOpen: 0101
         actionStartIndex: 0000000006000000
         actionHashCodes: ca51e900ff77a904
         unityObjectParams: []
@@ -53194,6 +53194,7 @@ Transform:
   - {fileID: 1606891175}
   - {fileID: 1709357960}
   - {fileID: 1302618001}
+  - {fileID: 998710240}
   m_Father: {fileID: 1562816926}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54633,6 +54634,57 @@ Transform:
   m_Father: {fileID: 1365864803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &998710239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998710240}
+  - component: {fileID: 998710241}
+  m_Layer: 0
+  m_Name: MonologueUIFont
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998710240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998710239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 936309004}
+  m_RootOrder: 75
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998710241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998710239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 1
+  entries:
+  - Language: Chinese
+    Text: 
+    Object: {fileID: 12800000, guid: 18887a9f5791a2d4089bba675a1708e7, type: 3}
+  - Language: English
+    Text: 
+    Object: {fileID: 12800000, guid: 573c5754defa4ea468e3ebd836a9899e, type: 3}
 --- !u!1 &1001345307
 GameObject:
   m_ObjectHideFlags: 0
@@ -95660,6 +95712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858971243}
   - component: {fileID: 1858971244}
+  - component: {fileID: 1858971245}
   m_Layer: 0
   m_Name: SteamManager
   m_TagString: Untagged
@@ -95693,6 +95746,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1858971245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858971242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525dd98b6b58166469a6cfe8484f8b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steamAchievementData: {fileID: 11400000, guid: 6eeb697809658f044ba26e36c7158177,
+    type: 2}
 --- !u!1 &1860123257
 GameObject:
   m_ObjectHideFlags: 0

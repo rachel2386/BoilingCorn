@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public void CompleteStoryMode()
     {
         hasCompletedStoryMode = true;
+        FindObjectOfType<SteamAchievementsHandler>().UnlockAchievement("story complete"); //UNLOCK STEAM ACHIEVEMENT
         DataPersistenceManager.instance.SaveGame();
 
     }

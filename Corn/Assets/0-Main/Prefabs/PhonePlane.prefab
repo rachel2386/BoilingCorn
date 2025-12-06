@@ -2881,6 +2881,42 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_AlphaFadeSpeed: 0.15
+--- !u!1 &5345835455706147987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3691410251316039424}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3691410251296000944}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3691410251296000944
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 22430896, guid: 5023178fe26159a49b729d8c39530097,
+    type: 3}
+  m_PrefabInstance: {fileID: 3691410251316039424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345835455706147987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7357979455208983816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5487735292885551975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,7 +3482,7 @@ RectTransform:
   m_Children:
   - {fileID: 2845580753055799379}
   - {fileID: 4800664059475573146}
-  - {fileID: 3691410251296000944}
+  - {fileID: 7357979455208983816}
   m_Father: {fileID: 2564309690341784294}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3761,6 +3797,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7017990361247585965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3691410251316039424}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7357979455208983816}
+  m_Layer: 0
+  m_Name: SliderHorizontal_1 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7357979455208983816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3691410251316039424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017990361247585965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3691410251296000944}
+  m_Father: {fileID: 7971278191421353957}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7152851881957997598
 GameObject:
   m_ObjectHideFlags: 0
@@ -21885,14 +21952,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7971278191421353957}
     m_Modifications:
-    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
-      propertyPath: m_Name
-      value: SliderHorizontal_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 22430896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21989,6 +22048,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.4119372
       objectReference: {fileID: 0}
+    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
+      propertyPath: m_Name
+      value: SliderHorizontal_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 130896, guid: 5023178fe26159a49b729d8c39530097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 22430902, guid: 5023178fe26159a49b729d8c39530097, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -3.800003
@@ -22015,12 +22082,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5023178fe26159a49b729d8c39530097, type: 3}
---- !u!224 &3691410251296000944 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22430896, guid: 5023178fe26159a49b729d8c39530097,
-    type: 3}
-  m_PrefabInstance: {fileID: 3691410251316039424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8545601886176872177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22028,6 +22089,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8545601887377479314}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
+        type: 3}
+      propertyPath: m_Name
+      value: phoneModel
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6b292171050c48c42bb6313bf1145256,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22097,11 +22163,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.7346215
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 6b292171050c48c42bb6313bf1145256,
-        type: 3}
-      propertyPath: m_Name
-      value: phoneModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b292171050c48c42bb6313bf1145256, type: 3}
