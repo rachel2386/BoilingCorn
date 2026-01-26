@@ -95,14 +95,18 @@ public class AudioManager : MonoBehaviour
         return clipsToReturn;
     }
 
-    public void PlayRandomSoundsAtPosition(List<AudioClip>clipsToPlay, AudioSource source, Vector3 position, float volume = 1)
+    public AudioClip PlayRandomSoundAtPosition(List<AudioClip>clipsToPlay, AudioSource source, Vector3 position, float volume = 1)
     {
 
-        PlaySoundAtPostion(clipsToPlay[Random.Range(0,clipsToPlay.Count)],null, position);
+        var clipToPlay = clipsToPlay[Random.Range(0, clipsToPlay.Count)];
+        PlaySoundAtPostion(clipToPlay,null, position);
+        return clipToPlay;
     }
 
     public AudioClip FindClipWithName(string name)
     {
         return Array.Find(audioClips, x => x.name == name).clip;
     }
+
+    
 }

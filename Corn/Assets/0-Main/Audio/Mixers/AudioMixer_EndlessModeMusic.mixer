@@ -52,6 +52,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-5735187836518556679
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9a18a987a83538740a4fab384b6665fb
+  m_EffectName: Attenuation
+  m_MixLevel: 94fd048f5484e8744b0c433ce7370585
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5659956374351194346
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -103,6 +117,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1073604798832581013
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: musicNote
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a4dfe26fcbe320f468cfd22c751df0da
+  m_Children: []
+  m_Volume: 99b33fb457df06f42a42323b623d94b1
+  m_Pitch: f682feca54fc08345a009d213ed58339
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5735187836518556679}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-905530892097274181
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -140,7 +173,7 @@ AudioMixerController:
   - guid: 3b84ac267d8041349b1a24b83603960f
     name: Volume_Track3
   - guid: 878a2dad24955934288bb6cbbd6250f3
-    name: Volume_guitar1
+    name: Volume_Track4
   m_AudioMixerGroupViews:
   - guids:
     - 42cd0d2d8904a2b42b9a314a7a96e11a
@@ -149,6 +182,7 @@ AudioMixerController:
     - 126c2dc89df31324db3045ff6313609d
     - ea4f6496c0eebb647aadc2e01a5614b5
     - c0a9e8390078c564ca56dc0e21aa01d9
+    - a4dfe26fcbe320f468cfd22c751df0da
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -164,6 +198,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -5659956374351194346}
   - {fileID: -6851689750393292888}
+  - {fileID: -1073604798832581013}
   m_Volume: ea8c29e6ab66f614584c71464820de5a
   m_Pitch: e3deed20db9bc414aac2d4c1b9b24b62
   m_Send: 00000000000000000000000000000000
@@ -197,10 +232,10 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5c8bbf2461b623643a54b1cbab8dd6c4
   m_FloatValues:
-    063c31c53e2ac0044ad42a2881b2c202: 0
+    063c31c53e2ac0044ad42a2881b2c202: -6.133707
     3b84ac267d8041349b1a24b83603960f: -80
     f64140a71c1dbc242827187e4031bd16: -80
-    d2bf93e9f9cdd8a40b0034b767fac040: 0.025578499
+    d2bf93e9f9cdd8a40b0034b767fac040: 0.025578512
     878a2dad24955934288bb6cbbd6250f3: -80
     a7084d5fcb8e92e40ad16a6b3a201e72: -80
   m_TransitionOverrides: {}
@@ -238,7 +273,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: guitar1
+  m_Name: Track4
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ea4f6496c0eebb647aadc2e01a5614b5
   m_Children: []

@@ -140,15 +140,25 @@ public class CornItemInteractions : MonoBehaviour
         if (!firstFoodEaten)
         {
             firstFoodEaten = true;
-            _audioManager.endlessModeMusicController.FadeTrackVolume("Volume_guitar1", 0.5f, 2f);
-            
+            if (GameManager.gameState == 4)
+            {
+                //_audioManager.endlessModeMusicController.FadeTrackVolume("Volume_guitar1", 0.5f, 2f);
+
+            }
+
+
         }
-        _audioManager.PlayRandomSoundsAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
+        _audioManager.PlayRandomSoundAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
         FoodToEat.transform.SetParent(mouth);
         FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.BiteFood));
        
         if (!_itemManager.FoodEaten.Contains(FoodToEat))
             _itemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
+
+        if (GameManager.gameState == 4)
+        { 
+            //reset track 4 timer
+        }
 
         if (GameManager.gameState != 1) return; //only trigger progression events in story mode 
         

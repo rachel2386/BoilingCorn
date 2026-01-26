@@ -13,14 +13,17 @@ public class CornBuoyancy : MonoBehaviour
     List<Rigidbody>PotBaseStuff = new List<Rigidbody>();
 
     private AudioManager _audioManager;
-    //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
-
     
+    //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
+    public int NumOfFoodInPot = 0;
+
+
 
     void Start()
     {
         myCol = GetComponent<Collider>();
         _audioManager = FindObjectOfType<AudioManager>();
+        
         surfaceLevel = myCol.bounds.max.y-transform.localScale.y/4; //(transform.position.y);
         
         foreach (var potbase in GameObject.FindGameObjectsWithTag("PotBase"))
@@ -115,6 +118,7 @@ public class CornBuoyancy : MonoBehaviour
             var foodProp = other.GetComponent<NewFoodItemProperties>();
             foodProp.InWater = true;
             
+            
             if(foodProp.foodState == 0)
                 {
                     var randomNumber = Random.Range(0, 2);
@@ -136,6 +140,7 @@ public class CornBuoyancy : MonoBehaviour
                     _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater2"), GetComponent<AudioSource>(),0.3f);    
 
             }
+            
         }
         else if(other.CompareTag("PotBase"))
         {
@@ -161,21 +166,24 @@ public class CornBuoyancy : MonoBehaviour
                 cookedFoodInWater.Remove(rb);
 
             rb.GetComponent<NewFoodItemProperties>().InWater = false;
-        }
-        
-        
-//        else if(other.CompareTag("PotBase"))
-//        {
-//            var rb = other.GetComponent<Rigidbody>();
-//            if (PotBaseStuff.Contains(rb))
-//                PotBaseStuff.Remove(rb);
-//                //rb.useGravity = true;
-//                //rb.drag = 1;
-//        }
 
-       
-    
-    }
+            
+        }
+
+        
+
+            //        else if(other.CompareTag("PotBase"))
+            //        {
+            //            var rb = other.GetComponent<Rigidbody>();
+            //            if (PotBaseStuff.Contains(rb))
+            //                PotBaseStuff.Remove(rb);
+            //                //rb.useGravity = true;
+            //                //rb.drag = 1;
+            //        }
+
+
+
+        }
 
     public void ResetPotBase()
     {

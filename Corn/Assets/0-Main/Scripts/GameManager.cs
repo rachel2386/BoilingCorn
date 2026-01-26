@@ -198,6 +198,13 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 GameObject.Find("TitleCam").SetActive(false);
 
             }
+            else if (Input.GetKeyUp(KeyCode.Alpha4))
+            {
+                                
+                Context.Debug_StartWithState = 4;
+                Context.gameFSM.TransitionTo<EndlessModeState>();
+
+            }
         }
 
         void transitionToCooking()
@@ -205,10 +212,11 @@ public class GameManager : MonoBehaviour, IDataPersistence
             foreach (var child in FindObjectsOfType<FoodSpawner>())
             {
                 child.StartCoroutine(child.Initiate());
-                Context.gameFSM.TransitionTo<CookingState>();
+                
                 
             }
-            
+            Context.gameFSM.TransitionTo<CookingState>();
+
         }
 
         public override void OnExit()
@@ -377,6 +385,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
             Context.TitleMenu.SetActive(true);
             CornUIManager.instance.CursorSelectionMode();
             Context.EndlessModeButton.SetActive(Context.hasCompletedStoryMode);
+
+            
 
         }
 

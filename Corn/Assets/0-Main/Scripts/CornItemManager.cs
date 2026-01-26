@@ -13,7 +13,9 @@ public class CornItemManager : MonoBehaviour
     [HideInInspector] public  List<GameObject> FoodToSave ;
     [HideInInspector]public  List<GameObject> WastedFood;
     [HideInInspector]public  List<GameObject> FoodEaten ;
-   
+
+     public int NumOfFoodInPot = 0;
+
 
     [HideInInspector]
     public int memoriesCollected; 
@@ -34,6 +36,8 @@ public class CornItemManager : MonoBehaviour
         
             
     }
+
+
 
     public void InitLists()
     {
@@ -93,9 +97,11 @@ public class CornItemManager : MonoBehaviour
     {
         foreach (var food in ListOfFood)
         {
-            food.SetActive(false);           
+            food.SetActive(false);
 
         }
         ListOfFood.Clear();
     }
+   
+  
 }

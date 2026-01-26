@@ -185,6 +185,9 @@ public class NewFoodItemProperties : ItemProperties
 
         if (!CornBuoyancy.cookedFoodInWater.Contains(foodRB))
             CornBuoyancy.cookedFoodInWater.Add(foodRB);
+
+        if(GameManager.gameState == 4) //if in endless mode, trigger music note on food cooked 
+        CornGameEvents.instance.TriggerMusicNote(); 
     }
 
     public override void OnPickUp(Joint objectHolder)
