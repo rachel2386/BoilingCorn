@@ -251,6 +251,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
             foodItemManager = FindObjectOfType<CornItemManager>();
             titleCam = GameObject.Find("TitleCam");
 
+            CornGameEvents.instance.BeginEndlessMode();
+
 
         }
 
@@ -311,6 +313,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 if (!firstTimeOrderFood)
                 {
                     foodMenuFSM.SendEvent("disableMenu"); //close reorder menu on order confirm
+                    CornGameEvents.instance.ReorderFood();
 
                 }
 

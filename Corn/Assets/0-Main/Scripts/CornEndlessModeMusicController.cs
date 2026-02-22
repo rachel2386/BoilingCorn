@@ -11,6 +11,7 @@ public class CornEndlessModeMusicController : MonoBehaviour
     [SerializeField] private AudioMixer musicMixer;
     [SerializeField] private AudioSource musicNotePlayerAS;
     [SerializeField] private List<AudioClip> musicNoteClips;
+    [SerializeField] private AudioSource[] musicTrackAudioSources;
     private bool IsMusicNotePlaying = false;
     private event Action OnNoteFinishedPlaying;
 
@@ -18,6 +19,7 @@ public class CornEndlessModeMusicController : MonoBehaviour
     private CornItemManager _itemManager;
     //int validFoodNumberInPot = 0;
     bool foodInPotTrackIsPlaying = false;
+    bool inactivityCountdownTimeActive = false;
     private event Action OnInactivityCountDownTimerFinished;
     private float countDownTimer = 0;
     [SerializeField] private float InactivityCountDownTime = 10;
@@ -37,18 +39,24 @@ public class CornEndlessModeMusicController : MonoBehaviour
     {
         _itemManager = FindObjectOfType<CornItemManager>();
         CornGameEvents.instance.OnMusicNoteTriggered += TriggerRandomMusicNoteFromList;
-        CornGameEvents.instance.OnTotalFoodInPotCountValueChanged += UpdateFoodInPotCount;
+       // CornGameEvents.instance.OnTotalFoodInPotCountValueChanged += UpdateFoodInPotCount;
+        CornGameEvents.instance.OnEndlessModeBegin += EnableMusic;
+        DisableMusic();
+        CornGameEvents.instance.OnMusicInactivityTimerReset += ResetCountDownTimer;
+        CornGameEvents.instance.OnBeginMusicInactivityTimer += StartInactivityTimer;
+        
 
 
     }
 
     void Update()
     {
-        if (foodInPotTrackIsPlaying)
+        if (foodInPotTrackIsPlaying || inactivityCountdownTimeActive)
         {
             if (countDownTimer > 0f)
             {
                 countDownTimer -= Time.deltaTime;
+                print(countDownTimer);
             }
             else
             { 
@@ -84,8 +92,13 @@ public class CornEndlessModeMusicController : MonoBehaviour
         }
         ToVolume = Mathf.Log10(Mathf.Clamp(ToVolumeNormalized, 0.0001f, 1f)) * 20f; //map 0-1 value to 20 - -80
         print(ToVolume);
-        Tween volumeTween = musicMixer.DOSetFloat(parameterName, ToVolume, fadeDuration);
 
+        if(DOTween.TweensById(parameterName,true) != null)
+        DOTween.Kill(parameterName); //interrupt all in progress fades and go with new fade
+
+        Tween volumeTween = musicMixer.DOSetFloat(parameterName, ToVolume, fadeDuration).SetId(parameterName);
+
+        
     }
 
 
@@ -127,7 +140,9 @@ public class CornEndlessModeMusicController : MonoBehaviour
     {
         _itemManager.NumOfFoodInPot += addedValue;
         print("num of Food in pot = " + _itemManager.NumOfFoodInPot);
-        if (_itemManager.NumOfFoodInPot >= TriggerFoodInPotMusicThreshold)
+
+        
+         if (_itemManager.NumOfFoodInPot >= TriggerFoodInPotMusicThreshold)
         {
 
             ResetCountDownTimer(); // if food in track is already playing, only refresh countdown timer. if not, reset timer And trigger track
@@ -136,6 +151,15 @@ public class CornEndlessModeMusicController : MonoBehaviour
             TriggerFoodInPotTrack();
 
         }
+
+    }
+
+    private void StartInactivityTimer()
+    {
+        CornGameEvents.instance.ResetInactivityTimer();        
+        OnInactivityCountDownTimerFinished += HandleOnCountDownFinished;
+        inactivityCountdownTimeActive = true;
+        
 
     }
 
@@ -159,14 +183,38 @@ public class CornEndlessModeMusicController : MonoBehaviour
     {
         OnInactivityCountDownTimerFinished -= HandleOnCountDownFinished;
         foodInPotTrackIsPlaying = false;
-        FadeTrackVolume("Volume_Track4", 0f, 3f);
-        
 
+        //FadeTrackVolume("Volume_Track4", 0f, 3f);
+        inactivityCountdownTimeActive = false;
+        CornGameEvents.instance.InactivityTimerComplete();
+       
+    }
 
+    private void DisableMusic()
+    {
+        FadeTrackVolume("Volume_GlobalMusic", 0f, 0.2f);
+        foreach (var AS in musicTrackAudioSources)
+
+        {
+            AS.Stop();
+
+        }
+    }
+
+    private void EnableMusic()
+    {
+        FadeTrackVolume("Volume_GlobalMusic", 0.5f, 0.2f);
+
+        foreach (var AS in musicTrackAudioSources)
+
+        {
+            if(!AS.isPlaying)
+            AS.Play();
+
+        }
 
     }
 
-    
 
    
 

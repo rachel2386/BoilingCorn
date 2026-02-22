@@ -142,7 +142,7 @@ public class CornItemInteractions : MonoBehaviour
             firstFoodEaten = true;
             if (GameManager.gameState == 4)
             {
-                //_audioManager.endlessModeMusicController.FadeTrackVolume("Volume_guitar1", 0.5f, 2f);
+                CornGameEvents.instance.FirstFoodEaten();
 
             }
 
@@ -156,8 +156,8 @@ public class CornItemInteractions : MonoBehaviour
             _itemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
 
         if (GameManager.gameState == 4)
-        { 
-            //reset track 4 timer
+        {
+            CornGameEvents.instance.EatFood();
         }
 
         if (GameManager.gameState != 1) return; //only trigger progression events in story mode 
