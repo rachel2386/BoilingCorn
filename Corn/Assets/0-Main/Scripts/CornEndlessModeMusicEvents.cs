@@ -159,8 +159,8 @@ public class CornEndlessModeMusicEvents : MonoBehaviour
 
 
         //fade other tracks
-        mController.FadeTrackVolume(AudioMixerTrackParameterNames[2], 0.5f, 4f); //keep track 2
-        mController.FadeTrackVolume(AudioMixerTrackParameterNames[3], 0.5f, 4f); //keep track 3
+        mController.FadeTrackVolume(AudioMixerTrackParameterNames[2], 0f, 6f); //fade out track 2
+        mController.FadeTrackVolume(AudioMixerTrackParameterNames[3], 0f, 6f); //fade out track 3
         mController.FadeTrackVolume(AudioMixerTrackParameterNames[6], 0f, 6f); //fade out no eating track
 
     }

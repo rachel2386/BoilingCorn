@@ -53,8 +53,12 @@ public class CornBuoyancy : MonoBehaviour
         {
             if(rb!=null)
             if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
-           
+
+            if (rb.GetComponent<Collider>() == null)
+                return;
+
             var col = rb.GetComponent<Collider>();
+
             if (!PotIsBoiling)
             {
                 if(col.bounds.center.y >= surfaceLevel)
@@ -195,4 +199,10 @@ public class CornBuoyancy : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    { 
+        cookedFoodInWater.Clear(); //clear all items in static list.
+        print("food items cleared from list");
+    
+    }
 }

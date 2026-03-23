@@ -24,6 +24,8 @@ public class CornEndlessModeMusicController : MonoBehaviour
     private float countDownTimer = 0;
     [SerializeField] private float InactivityCountDownTime = 10;
 
+    [SerializeField] private bool debug_printCountdownTime = false;
+
 
 
 
@@ -56,6 +58,7 @@ public class CornEndlessModeMusicController : MonoBehaviour
             if (countDownTimer > 0f)
             {
                 countDownTimer -= Time.deltaTime;
+                if(debug_printCountdownTime)
                 print(countDownTimer);
             }
             else
@@ -91,7 +94,7 @@ public class CornEndlessModeMusicController : MonoBehaviour
             return;
         }
         ToVolume = Mathf.Log10(Mathf.Clamp(ToVolumeNormalized, 0.0001f, 1f)) * 20f; //map 0-1 value to 20 - -80
-        print(ToVolume);
+        //print(ToVolume);
 
         if(DOTween.TweensById(parameterName,true) != null)
         DOTween.Kill(parameterName); //interrupt all in progress fades and go with new fade

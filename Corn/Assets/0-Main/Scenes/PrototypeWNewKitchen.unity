@@ -422,10 +422,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u6536\u62FE\u597D\u4E86"
+  m_text: Finish Clean Up
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -492,10 +492,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 7684815}
-    characterCount: 4
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 49580994}
   - component: {fileID: 49580993}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1776,7 +1776,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 18887a9f5791a2d4089bba675a1708e7, type: 3}
+    m_Font: {fileID: 12800000, guid: 573c5754defa4ea468e3ebd836a9899e, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -4588,7 +4588,8 @@ GameObject:
   - component: {fileID: 180715802}
   - component: {fileID: 180715801}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [LemonJellyPersonalUse-dEqR SDF Material + LiberationSans
+    SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5092,10 +5093,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u786E\u8BA4\u5173\u706B\u5E76\u5F00\u59CB\u6536\u62FE\u684C\u9762?"
+  m_text: ARE YOU SURE YOU WANT TO FINISH EATING AND START CLEANING UP ?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5162,14 +5163,14 @@ MonoBehaviour:
   m_margin: {x: -53.66828, y: 0, z: -52.045, w: 0}
   m_textInfo:
     textComponent: {fileID: 211782658}
-    characterCount: 12
+    characterCount: 62
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 12
+    wordCount: 12
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -5979,7 +5980,7 @@ GameObject:
   - component: {fileID: 257923357}
   - component: {fileID: 257923356}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6297,8 +6298,11 @@ MonoBehaviour:
   - {fileID: 1965201171}
   - {fileID: 510340747}
   - {fileID: 963781213}
+  - {fileID: 963631860}
+  - {fileID: 366292466}
   TriggerFoodInPotMusicThreshold: 2
   InactivityCountDownTime: 30
+  debug_printCountdownTime: 0
 --- !u!114 &281914589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13300,7 +13304,7 @@ GameObject:
   - component: {fileID: 337546023}
   - component: {fileID: 337546024}
   m_Layer: 0
-  m_Name: Bass
+  m_Name: A1Bass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13331,7 +13335,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -608326831084507132, guid: 768a4f0efba789a4d9c894336717fbd7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 006fde6cb40065849961f646cb213e9a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 85063a88dd1b35e40a7bd1ae26909a11, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -13703,6 +13707,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &366292464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366292465}
+  - component: {fileID: 366292466}
+  m_Layer: 0
+  m_Name: BassFull
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &366292465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366292464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1031239574}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &366292466
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366292464}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 4657476313892276688, guid: 768a4f0efba789a4d9c894336717fbd7,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 006fde6cb40065849961f646cb213e9a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &366695113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5505241442276415506, guid: 15de00935ab84464787a60d8d6b308ee,
@@ -13751,7 +13883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031239574}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &372660106
 AudioSource:
@@ -21193,10 +21325,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u97F3\u6548\u8BBE\u8BA1"
+  m_text: Sound Design
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21263,10 +21395,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 456562014}
-    characterCount: 4
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -22026,10 +22158,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u7F16\u66F2\u5236\u4F5C"
+  m_text: Music Production & Composition
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -22096,10 +22228,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 493951260}
-    characterCount: 4
+    characterCount: 30
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -22645,7 +22777,7 @@ GameObject:
   - component: {fileID: 517543329}
   - component: {fileID: 517543328}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23529,10 +23661,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u7F8E\u672F\u6307\u5BFC"
+  m_text: Art Direction
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -23599,10 +23731,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 541687254}
-    characterCount: 4
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -24072,10 +24204,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u7279\u522B\u9E23\u8C22"
+  m_text: Special Thanks to the following people for their help and support!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -24142,12 +24274,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 565878654}
-    characterCount: 4
+    characterCount: 66
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 10
+    wordCount: 11
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -24299,7 +24431,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101010101010101
-        actionIsOpen: 00000000000000000000
+        actionIsOpen: 00000000000000000101
         actionStartIndex: 0000000002000000040000000c0000001400000016000000180000001a0000001c00000020000000
         actionHashCodes: 5ac852045ac85204f6e5be03f6e5be035ac852045ac852045ac852045ac8520433a38f0109faa102
         unityObjectParams: []
@@ -25304,7 +25436,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 01000101
+        actionIsOpen: 01010101
         actionStartIndex: 00000000020000000a0000000c000000
         actionHashCodes: 5ac85204f6e5be035ac852045ac85204
         unityObjectParams: []
@@ -26018,10 +26150,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u6BD5\u4E1A\u8BBE\u8BA1\u5BFC\u5E08"
+  m_text: Thesis Project Advisors
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -26088,10 +26220,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 575406288}
-    characterCount: 6
+    characterCount: 23
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -26842,10 +26974,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4E2D\u6587\u672C\u5730\u5316"
+  m_text: Chinese Localization
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -26912,10 +27044,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 598254055}
-    characterCount: 5
+    characterCount: 20
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -28511,7 +28643,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8cd3a8bf3451f484d90ee347742904b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b202cc748f3dc74384f4a34595ed347, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29144,7 +29276,7 @@ GameObject:
   - component: {fileID: 704213982}
   - component: {fileID: 704213981}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29267,10 +29399,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u6545\u4E8B"
+  m_text: Story
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: 5818b5d5ddd497e449165e681174cd1a, type: 2}
+  m_sharedMaterial: {fileID: -7895693642748602379, guid: 5818b5d5ddd497e449165e681174cd1a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -29337,7 +29469,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 706077652}
-    characterCount: 2
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -31097,7 +31229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031239574}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &720538758
 AudioSource:
@@ -31614,7 +31746,8 @@ GameObject:
   - component: {fileID: 731067659}
   - component: {fileID: 731067658}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [LemonJellyPersonalUse-dEqR SDF Material + LiberationSans
+    SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32107,6 +32240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMonologueList: {fileID: 11400000, guid: f8d280a6cdc53ec40bdbd32adff69230, type: 2}
   MonologueAudio: {fileID: 1453359039}
+  monologueIsComplete: 1
   _monologueTextbox: {fileID: 58881375}
   _TextPanel: {fileID: 718952727}
   SpriteHolder: {fileID: 4509113456345951358}
@@ -36021,7 +36155,7 @@ GameObject:
   - component: {fileID: 757111909}
   - component: {fileID: 757111910}
   m_Layer: 0
-  m_Name: BassDrum
+  m_Name: A1BassDrum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36731,10 +36865,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4E07\u5723\u8282\u6D77\u62A5\u8BBE\u8BA1"
+  m_text: Halloween Poster Illustration
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -36801,10 +36935,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 794825398}
-    characterCount: 7
+    characterCount: 29
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -51352,7 +51486,8 @@ GameObject:
   - component: {fileID: 825446233}
   - component: {fileID: 825446232}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [LemonJellyPersonalUse-dEqR SDF Material + LiberationSans
+    SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53006,10 +53141,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u5927\u80C3\u738B\u6A21\u5F0F\u97F3\u4E50\u5236\u4F5C"
+  m_text: Endless Mode Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -53076,10 +53211,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 879888047}
-    characterCount: 9
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -54523,7 +54658,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 18887a9f5791a2d4089bba675a1708e7, type: 3}
+    m_Font: {fileID: 12800000, guid: f39856c150b37c64c9f53ad26f2a0ff6, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -54535,7 +54670,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u662F"
+  m_Text: Yes
 --- !u!222 &912092766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54704,10 +54839,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4ED4\u7EC6\u770B"
+  m_text: Zoom In
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -54774,10 +54909,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 933490066}
-    characterCount: 3
+    characterCount: 7
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -55715,6 +55850,134 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.6436386, y: 11.002278, z: 2.2635794}
   m_Center: {x: 0.4874188, y: -1.4904642, z: 1.0846107}
+--- !u!1 &963631858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963631859}
+  - component: {fileID: 963631860}
+  m_Layer: 0
+  m_Name: BassDrumFull
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963631859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963631858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1031239574}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &963631860
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963631858}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5121959643700648930, guid: 768a4f0efba789a4d9c894336717fbd7,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 00f15d0581791074ab3aae251381e7db, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &963781211
 GameObject:
   m_ObjectHideFlags: 0
@@ -55726,7 +55989,7 @@ GameObject:
   - component: {fileID: 963781212}
   - component: {fileID: 963781213}
   m_Layer: 0
-  m_Name: BackgroundLoop
+  m_Name: A1BackgroundLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55757,7 +56020,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6686469191777792802, guid: 768a4f0efba789a4d9c894336717fbd7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6b41f41db486c71489094878c0580160, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af6b7b8515b24ec41972321fc96dc825, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -56990,10 +57253,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4E3B\u521B"
+  m_text: 'Created by
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -57060,10 +57325,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1011455388}
-    characterCount: 2
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -57925,6 +58190,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 963631859}
+  - {fileID: 366292465}
   - {fileID: 372660105}
   - {fileID: 720538757}
   - {fileID: 1716172769}
@@ -58338,10 +58605,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u5403\u6389"
+  m_text: Eat Food
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -58408,10 +58675,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1045712997}
-    characterCount: 2
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -66714,10 +66981,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u7CBE\u795E\u652F\u6301"
+  m_text: Mental Support
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -66784,10 +67051,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1176897154}
-    characterCount: 4
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -67914,11 +68181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 334013456, guid: 83b95c38d9822ea46885ca7f127d7fe2, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: "\u4E2D\u6587\uFF08\u7B80\u4F53\uFF09"
+      value: Chinese (Simplified)
       objectReference: {fileID: 0}
     - target: {fileID: 334013456, guid: 83b95c38d9822ea46885ca7f127d7fe2, type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: "\u82F1\u8BED"
+      value: English
       objectReference: {fileID: 0}
     - target: {fileID: 8545601887377479314, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
@@ -68050,7 +68317,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 1bf94259995884149a294a3a58515593,
+      objectReference: {fileID: 12800000, guid: 29a9182cef279d342898474a9c83e828,
         type: 3}
     - target: {fileID: 1158852025249742955, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
@@ -68061,7 +68328,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 1bf94259995884149a294a3a58515593,
+      objectReference: {fileID: 12800000, guid: 29a9182cef279d342898474a9c83e828,
         type: 3}
     - target: {fileID: 918471614234726925, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
@@ -68253,7 +68520,7 @@ PrefabInstance:
     - target: {fileID: 1703804745, guid: 83b95c38d9822ea46885ca7f127d7fe2, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 1bf94259995884149a294a3a58515593,
+      objectReference: {fileID: 12800000, guid: 29a9182cef279d342898474a9c83e828,
         type: 3}
     - target: {fileID: 1703804744, guid: 83b95c38d9822ea46885ca7f127d7fe2, type: 3}
       propertyPath: FallbackText
@@ -68317,7 +68584,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 332c9735708318e488debc309ea5a026,
+      objectReference: {fileID: 21300000, guid: dc331af82cc3fd24ab4561d200a8eef4,
         type: 3}
     - target: {fileID: 4252722846782146810, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
@@ -68339,50 +68606,50 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0ca7efdfe77e326409961d8c17752a20,
+      objectReference: {fileID: 21300000, guid: 7095ca5f2ee5e45449a3fef1ff324620,
         type: 3}
     - target: {fileID: 8545601887932087126, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4c34e58a9d7015746bc41378ae4bed3b,
+      objectReference: {fileID: 21300000, guid: b322f85e438941445b6929fc2e98e782,
         type: 3}
     - target: {fileID: 783419573067989008, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a1ff4dc5546acde4ab61399c86ea161b,
+      objectReference: {fileID: 21300000, guid: c6a20c0be4d9b3240a66e0831e9e589d,
         type: 3}
     - target: {fileID: 2692565599321527904, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 1bf94259995884149a294a3a58515593,
+      objectReference: {fileID: 12800000, guid: 29a9182cef279d342898474a9c83e828,
         type: 3}
     - target: {fileID: 2692565599321527904, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_Text
-      value: "\u5168\u5C4F"
+      value: FULL SCREEN
       objectReference: {fileID: 0}
     - target: {fileID: 6438954116389218548, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 1bf94259995884149a294a3a58515593,
+      objectReference: {fileID: 12800000, guid: 29a9182cef279d342898474a9c83e828,
         type: 3}
     - target: {fileID: 6438954116389218548, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_Text
-      value: "\u5206\u8FA8\u7387"
+      value: SCREEN RESOLUTION
       objectReference: {fileID: 0}
     - target: {fileID: 3936873736273559826, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
       propertyPath: m_Text
-      value: "\u97F3\u91CF"
+      value: VOLUME
       objectReference: {fileID: 0}
     - target: {fileID: 885341380, guid: 83b95c38d9822ea46885ca7f127d7fe2, type: 3}
       propertyPath: m_Text
-      value: "\u4E2D\u6587\uFF08\u7B80\u4F53\uFF09"
+      value: Chinese (Simplified)
       objectReference: {fileID: 0}
     - target: {fileID: 1535892936887029931, guid: 83b95c38d9822ea46885ca7f127d7fe2,
         type: 3}
@@ -69833,7 +70100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -307.54, y: -448.24}
+  m_AnchoredPosition: {x: -307.54, y: -486}
   m_SizeDelta: {x: 629.4, y: 446.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308678632
@@ -70076,10 +70343,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u7F16\u7A0B"
+  m_text: Programming
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -70146,7 +70413,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1313321488}
-    characterCount: 2
+    characterCount: 11
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -77437,7 +77704,7 @@ GameObject:
   - component: {fileID: 1450063675}
   - component: {fileID: 1450063674}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77973,10 +78240,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u62FE\u8D77 / \u4EA4\u4E92"
+  m_text: Pick Up / Interact
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -78043,14 +78310,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1467576209}
-    characterCount: 7
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 3
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -78644,10 +78911,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u539F\u521B\u97F3\u4E50"
+  m_text: Original Soundtrack
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -78714,10 +78981,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1488957651}
-    characterCount: 4
+    characterCount: 19
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -79249,10 +79516,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u518D\u6765\u4E00\u76D8"
+  m_text: Don't Stop the Feasting
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -79319,10 +79586,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1502564604}
-    characterCount: 4
+    characterCount: 23
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -79795,10 +80062,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u6280\u672F\u652F\u6301"
+  m_text: Technical Support
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -79865,10 +80132,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1532552971}
-    characterCount: 4
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -80136,10 +80403,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u5957\u9910\u5FC5\u987B\u9009\u62E96\u6837\u83DC\u54C1"
+  m_text: This combo comes with six ingredients
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: 5818b5d5ddd497e449165e681174cd1a, type: 2}
+  m_sharedMaterial: {fileID: -7895693642748602379, guid: 5818b5d5ddd497e449165e681174cd1a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -80206,14 +80473,14 @@ MonoBehaviour:
   m_margin: {x: -168.30644, y: 0, z: 235.06914, w: 0}
   m_textInfo:
     textComponent: {fileID: 1536315979}
-    characterCount: 10
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -81502,6 +81769,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 379407921167576630, guid: 30d576fc8bc4d6645a08df1cc9766267, type: 2}
     value: {fileID: 1793975445}
+  - key: {fileID: 2235532847130479336, guid: 30d576fc8bc4d6645a08df1cc9766267, type: 2}
+    value: {fileID: 72411094}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1579528211
@@ -86654,10 +86923,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4E00\u4E2A\u4EBA\u7684\u706B\u9505\u5C40"
+  m_text: Hot Pot For One
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -86683,7 +86952,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 62.25
+  m_fontSize: 54.6
   m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -86724,10 +86993,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1605549572}
-    characterCount: 7
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -91317,10 +91586,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u73A9\u6CD5\u4E0E\u53D9\u4E8B\u8BBE\u8BA1"
+  m_text: Game & Narrative Design
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -91387,10 +91656,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1638991988}
-    characterCount: 7
+    characterCount: 23
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -93664,7 +93933,7 @@ GameObject:
   - component: {fileID: 1716172769}
   - component: {fileID: 1716172770}
   m_Layer: 0
-  m_Name: SynthLoopable
+  m_Name: SynthLoopableA3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93682,7 +93951,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031239574}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1716172770
 AudioSource:
@@ -93695,7 +93964,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 856431221938046259, guid: 768a4f0efba789a4d9c894336717fbd7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 35451903ab0e37348bc2f72fd2f7c4b9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd2fc22ef0c00c54896592b03d670216, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -94373,10 +94642,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u79BB\u5F00"
+  m_text: Leave
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: 5818b5d5ddd497e449165e681174cd1a, type: 2}
+  m_sharedMaterial: {fileID: -7895693642748602379, guid: 5818b5d5ddd497e449165e681174cd1a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -94443,7 +94712,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1737505733}
-    characterCount: 2
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -95740,10 +96009,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u5927\u80C3\u738B"
+  m_text: Endless
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: 5818b5d5ddd497e449165e681174cd1a, type: 2}
+  m_sharedMaterial: {fileID: -7895693642748602379, guid: 5818b5d5ddd497e449165e681174cd1a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -95810,7 +96079,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1793975446}
-    characterCount: 3
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -95886,7 +96155,7 @@ GameObject:
   - component: {fileID: 1804311489}
   - component: {fileID: 1804311490}
   m_Layer: 0
-  m_Name: Piano
+  m_Name: A1Piano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95917,7 +96186,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4078087999910015416, guid: 768a4f0efba789a4d9c894336717fbd7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4816eb9205efac048bb19c9c4d7c0ab5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ab7179a459b9d9646b0a2af10188069b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -96783,10 +97052,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u6E38\u620F\u6D4B\u8BD5\u548C\u53CD\u9988"
+  m_text: Playtest & Feedback
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -96853,10 +97122,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1813126182}
-    characterCount: 7
+    characterCount: 19
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -98153,7 +98422,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 18887a9f5791a2d4089bba675a1708e7, type: 3}
+    m_Font: {fileID: 12800000, guid: f39856c150b37c64c9f53ad26f2a0ff6, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -98165,7 +98434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5426"
+  m_Text: No
 --- !u!222 &1857071737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -99269,10 +99538,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u53A8\u623F\u53C2\u8003"
+  m_text: Kitchen Inspirations
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -99339,10 +99608,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1906460429}
-    characterCount: 4
+    characterCount: 20
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -105873,10 +106142,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u63D2\u753B\u8BBE\u8BA1"
+  m_text: Illustrations
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -105943,7 +106212,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2027493888}
-    characterCount: 4
+    characterCount: 13
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -106014,7 +106283,7 @@ GameObject:
   - component: {fileID: 2028310446}
   - component: {fileID: 2028310445}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [MaShanZheng-Regular SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [CaveatBrush-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107776,10 +108045,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u611F\u8C22\u6240\u6709\u652F\u6301\u8FD9\u4E2A\u9879\u76EE\u7684\u73A9\u5BB6\u548C\u5C0F\u4F19\u4F34\u4EEC!"
+  m_text: Thank you to everyone who supported and playtested!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f9a8b19f69445d469b05f370758fd85, type: 2}
-  m_sharedMaterial: {fileID: -7526872741485437509, guid: 4f9a8b19f69445d469b05f370758fd85,
+  m_fontAsset: {fileID: 11400000, guid: f698c1133239bb5449cc515ae26cb95f, type: 2}
+  m_sharedMaterial: {fileID: -8842735505062829722, guid: f698c1133239bb5449cc515ae26cb95f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -107822,7 +108091,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 15
+  m_firstOverflowCharacterIndex: 40
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -107846,14 +108115,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2097373598}
-    characterCount: 19
+    characterCount: 51
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 7
+    wordCount: 8
     linkCount: 0
     lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -126142,7 +126411,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2b0fc29e00f28cb48aae7e9ad655b20c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e2b96a96ae1e7749af47bd68c5aec63, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -131498,6 +131767,12 @@ PrefabInstance:
       propertyPath: Priority
       value: 118
       objectReference: {fileID: 0}
+    - target: {fileID: 8491511238214575463, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -4829644552836108434, guid: a24c4d3a09560814487beab9b9ae4e8a,
+        type: 2}
     - target: {fileID: 8491511238222216325, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_IsActive
@@ -131581,22 +131856,22 @@ PrefabInstance:
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.050242454
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.8995151
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00005376339
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9998925
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8491511238221102759, guid: 0fba0d6e16dff7640a3a4eca17fd3930,
         type: 3}

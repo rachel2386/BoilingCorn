@@ -633,6 +633,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
         IEnumerator LoadCleanUpState()
         {
+            print("load clean up state!");
             knobFSM.SetState("OffActions"); //turn off knob
             
             CornGameEvents.instance.EnterGameStateTransition(2);

@@ -17,9 +17,9 @@ public class CornMonologueManager : MonoBehaviour
     private bool textIsPlaying = false;
     public bool TextIsPlaying => textIsPlaying;
 
-    private bool monologueIsComplete = true;
+    [SerializeField] private bool monologueIsComplete = true;
 
-    public bool MonologueIsComplete => monologueIsComplete;
+   public bool MonologueIsComplete => monologueIsComplete;
 
     private bool debug_ForceStop = false;
 
