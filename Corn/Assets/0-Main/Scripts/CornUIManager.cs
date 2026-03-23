@@ -39,8 +39,8 @@ public class CornUIManager : MonoBehaviour
     void Start()
     {
         MyCam = Camera.main;
-        CornGameEvents.instance.OnGameStateSwitchEnter += ScreenFadeOut;
-        CornGameEvents.instance.OnGameStateSwitchExit += ScreenFadeIn;
+        CornGameEvents.instance.OnEnterGameStateTransition += ScreenFadeOut;
+        CornGameEvents.instance.OnExitGameStateTransition += ScreenFadeIn;
         
         _itemManager = FindObjectOfType<CornItemManager>();
         _itemInteractions = FindObjectOfType<CornItemInteractions>();
@@ -74,7 +74,7 @@ public class CornUIManager : MonoBehaviour
 
         if (!finalAnimation.IsPlaying)
         {
-            if (GameManager.gameState > 0 && GameManager.gameState < 3)
+            if (GameManager.gameState > 0 && GameManager.gameState != 3)
             {
                 ZoomInstruction.SetActive(false);
                 InteractInstruction.SetActive(false);
@@ -90,10 +90,16 @@ public class CornUIManager : MonoBehaviour
                     if (hitInfo.collider.CompareTag("FoodItem"))
                     {
                         SwapReticleSprite(foodCursor);
-                        EatButtonInstruction.SetActive(GameManager.gameState < 2
-                                                       &&_itemManager.FoodEaten.Count < _itemInteractions.fullAmount //player not full
-                                                       && hitInfo.collider.GetComponent<NewFoodItemProperties>()
-                                                           .foodState == 1); //if food cooked, enabled eat ui
+                        if (hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1) 
+                        {
+                            //if in endless mode or if in cooking mode && player is not full, show eat UI 
+                            EatButtonInstruction.SetActive(GameManager.gameState == 4 || GameManager.gameState < 2
+                                                               && _itemManager.FoodEaten.Count < _itemInteractions.fullAmount);
+                        }
+                        else
+                            EatButtonInstruction.SetActive(false);
+
+
                     }
                     else if (hitInfo.collider.CompareTag("Interactable") || hitInfo.collider.CompareTag("cleanupBowl"))
                     {
@@ -151,6 +157,7 @@ public class CornUIManager : MonoBehaviour
             duration = 2;
         
         fadeImage.DOFade(0f,duration);
+
         
     }
     private void ScreenFadeOut(int sceneIndex)
@@ -162,6 +169,23 @@ public class CornUIManager : MonoBehaviour
             
         fadeImage.DOFade(1f,duration);
     }
+
+    public void ScreenFadeTransition(float InDuration, float waitTime, float OutDuration, TweenCallback OnFadeInComplete = null, TweenCallback OnFadeOutComplete = null)
+    {
+        Sequence fadeSequence = DOTween.Sequence();
+        fadeSequence.Append(fadeImage.DOFade(1f, InDuration).OnComplete(OnFadeInComplete));
+        fadeSequence.AppendInterval(waitTime);               
+        fadeSequence.Append(fadeImage.DOFade(0f, OutDuration).OnComplete(OnFadeOutComplete));
+    }
+
+    public void ScreenFadeCallBack(float fadeValue, float duration, TweenCallback callbackOnComplete)
+    {
+        fadeImage.DOFade(fadeValue, duration).OnComplete(callbackOnComplete);
+
+    }
+
+
+
 
     public void CursorSelectionMode()
     {

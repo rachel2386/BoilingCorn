@@ -13,14 +13,17 @@ public class CornBuoyancy : MonoBehaviour
     List<Rigidbody>PotBaseStuff = new List<Rigidbody>();
 
     private AudioManager _audioManager;
-    //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
-
     
+    //private List<Rigidbody> rawFoodInWater = new List<Rigidbody>();
+    public int NumOfFoodInPot = 0;
+
+
 
     void Start()
     {
         myCol = GetComponent<Collider>();
         _audioManager = FindObjectOfType<AudioManager>();
+        
         surfaceLevel = myCol.bounds.max.y-transform.localScale.y/4; //(transform.position.y);
         
         foreach (var potbase in GameObject.FindGameObjectsWithTag("PotBase"))
@@ -36,6 +39,7 @@ public class CornBuoyancy : MonoBehaviour
             
         }
 
+        
        
     }
 
@@ -47,21 +51,40 @@ public class CornBuoyancy : MonoBehaviour
 
         foreach (var rb in cookedFoodInWater)
         {
+            if(rb!=null)
             if(rb.GetComponent<ItemProperties>().HeldByPlayer) return;
-           
+
+            if (rb.GetComponent<Collider>() == null)
+                return;
+
             var col = rb.GetComponent<Collider>();
-            if (col.bounds.center.y < surfaceLevel)
+
+            if (!PotIsBoiling)
             {
-               rb.AddForce(-Physics.gravity);
+                if(col.bounds.center.y >= surfaceLevel)
+                rb.AddForce(Physics.gravity * 0.8f);   
+
             }
             else
             {
-              rb.AddForce(Physics.gravity * 0.1f);
+                if (col.bounds.center.y < surfaceLevel)
+                {
+
+                    rb.AddForce(-Physics.gravity);
+                }
+                else
+                {
+                    rb.AddForce(Physics.gravity * 0.1f);
+                }
+
             }
+
+            
         }
 
         foreach (var rb in PotBaseStuff)
         {
+            if (rb == null) return;
             var col = rb.GetComponent<Collider>();
             if ( PotIsBoiling)
             {
@@ -89,7 +112,7 @@ public class CornBuoyancy : MonoBehaviour
     {
 
         
-        if (GameManager.gameState != 1) return;
+        if (GameManager.gameState != 1 && GameManager.gameState != 4) return;
        
         
         Rigidbody rb;
@@ -98,6 +121,7 @@ public class CornBuoyancy : MonoBehaviour
            rb =  other.GetComponent<Rigidbody>();
             var foodProp = other.GetComponent<NewFoodItemProperties>();
             foodProp.InWater = true;
+            
             
             if(foodProp.foodState == 0)
                 {
@@ -120,6 +144,7 @@ public class CornBuoyancy : MonoBehaviour
                     _audioManager.PlayAudioClipWithSource(_audioManager.FindClipWithName("dropFoodWater2"), GetComponent<AudioSource>(),0.3f);    
 
             }
+            
         }
         else if(other.CompareTag("PotBase"))
         {
@@ -145,20 +170,39 @@ public class CornBuoyancy : MonoBehaviour
                 cookedFoodInWater.Remove(rb);
 
             rb.GetComponent<NewFoodItemProperties>().InWater = false;
-        }
-        
-        
-//        else if(other.CompareTag("PotBase"))
-//        {
-//            var rb = other.GetComponent<Rigidbody>();
-//            if (PotBaseStuff.Contains(rb))
-//                PotBaseStuff.Remove(rb);
-//                //rb.useGravity = true;
-//                //rb.drag = 1;
-//        }
 
-       
-    
+            
+        }
+
+        
+
+            //        else if(other.CompareTag("PotBase"))
+            //        {
+            //            var rb = other.GetComponent<Rigidbody>();
+            //            if (PotBaseStuff.Contains(rb))
+            //                PotBaseStuff.Remove(rb);
+            //                //rb.useGravity = true;
+            //                //rb.drag = 1;
+            //        }
+
+
+
+        }
+
+    public void ResetPotBase()
+    {
+        foreach (var rb in PotBaseStuff)
+        {
+            rb.AddForce(Physics.gravity * 0.3f);
+
+        }
+
     }
 
+    private void OnDestroy()
+    { 
+        cookedFoodInWater.Clear(); //clear all items in static list.
+        print("food items cleared from list");
+    
+    }
 }

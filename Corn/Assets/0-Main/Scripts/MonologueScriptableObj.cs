@@ -23,6 +23,7 @@ public class Monologue
     public AudioClip VoiceOverClip;
     public bool displaySprite = true;
     public List<Sprite> monologueSprite = new List<Sprite>();
+    public List<string> SpriteLeanTranslationNames = new List<string>();
     
    
     

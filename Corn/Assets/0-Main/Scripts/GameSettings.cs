@@ -13,7 +13,8 @@ public class GameSettings : MonoBehaviour
     [SerializeField] Slider globalBrightnessAdjuster;
     [SerializeField] private SimpleLUT cameraEffectScript;
     [SerializeField] private Dropdown resolutionOptions;
-    [SerializeField] private Letterboxer.Letterboxer _letterboxer;
+    [SerializeField] private Dropdown languageSettings;
+   [SerializeField] private Letterboxer.Letterboxer _letterboxer;
     [SerializeField] private Toggle invertInputToggle;
     [SerializeField] private Toggle fullscreenToggle;
 
@@ -33,8 +34,19 @@ public class GameSettings : MonoBehaviour
        resolutionOptions.onValueChanged.AddListener(ChangeScreenResolution);
        invertInputToggle.onValueChanged.AddListener(InvertMouseY);
        fullscreenToggle.onValueChanged.AddListener(ToggleFullScreen);
-       
-       var currentResInList = false;
+
+        //if current language is english, set value to 1 (english)
+        
+        
+        languageSettings.onValueChanged.AddListener(UpdateLanguage);
+        if (Lean.Localization.LeanLocalization.CurrentLanguage == "English")
+        {
+            languageSettings.value = 1;
+            print("current language is english");
+        }
+         
+
+        var currentResInList = false;
        
        for (int i = 0; i < resolutionOptions.options.Count; i++)
        {
@@ -87,6 +99,26 @@ public class GameSettings : MonoBehaviour
         _letterboxer.TargetHeight = newScreenRes.y;
         
         
+        
+    }
+
+    private void UpdateLanguage(int option)
+    {
+        switch (option)
+        {
+            case 0: //chinese
+                Lean.Localization.LeanLocalization.CurrentLanguage = "Chinese";
+                break;
+
+            case 1: //english
+                Lean.Localization.LeanLocalization.CurrentLanguage = "English";
+                break;
+
+            
+
+
+
+        }
         
     }
     

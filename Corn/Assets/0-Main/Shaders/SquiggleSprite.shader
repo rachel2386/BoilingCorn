@@ -77,7 +77,9 @@ Shader "Corn/SquiggleSprite"
         void surf (Input IN, inout SurfaceOutput o)
         {
             fixed4 c = SampleSpriteTexture (IN.uv_MainTex) * IN.color;
-            o.Albedo = c.rgb * c.a;
+    
+            
+    o.Albedo = c.rgb * c.a;
             o.Alpha = c.a;
         }
         ENDCG

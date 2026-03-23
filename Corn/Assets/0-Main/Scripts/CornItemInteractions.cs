@@ -24,6 +24,7 @@ public class CornItemInteractions : MonoBehaviour
 
    public int fullAmount = 15;
     public bool playerIsFull = false;
+    bool firstFoodEaten = false;
 
     // Start is called before the first frame update
     private Camera myCam;
@@ -43,6 +44,8 @@ public class CornItemInteractions : MonoBehaviour
     [Header("Eating Sounds")] public List<AudioClip> eatSounds = new List<AudioClip>();
     private AudioManager _audioManager;
     private NewMemoryDisplayControl memoryDisplay;
+    public bool CanCollectMemories = true;
+
 
     [HideInInspector]public bool EatingFood = false;
     private List<AudioClip> foodPickUpSounds = new List<AudioClip>();
@@ -86,12 +89,12 @@ public class CornItemInteractions : MonoBehaviour
         if (Input.GetMouseButtonDown(1)
             && Physics.Raycast(myCam.ScreenPointToRay(Input.mousePosition), out hitInfo, 1000, LayerMask.GetMask("Pickupable"))
             && hitInfo.collider.CompareTag("FoodItem")
-            && _itemManager.FoodEaten.Count < fullAmount 
             && hitInfo.collider.GetComponent<NewFoodItemProperties>().foodState == 1
             && !EatingFood)
         {
             
-            MoveFoodToMouth(hitInfo.collider.gameObject);
+            if(GameManager.gameState == 4 || _itemManager.FoodEaten.Count < fullAmount) //players can keep eating after full in endless mode 
+                MoveFoodToMouth(hitInfo.collider.gameObject);
         }
 
         if (!IsholdingObject)
@@ -134,12 +137,30 @@ public class CornItemInteractions : MonoBehaviour
 
     void FoodEaten(GameObject FoodToEat)
     {
-        _audioManager.PlayRandomSoundsAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
+        if (!firstFoodEaten)
+        {
+            firstFoodEaten = true;
+            if (GameManager.gameState == 4)
+            {
+                CornGameEvents.instance.FirstFoodEaten();
+
+            }
+
+
+        }
+        _audioManager.PlayRandomSoundAtPosition(eatSounds,playerAS,playerAS.transform.position,1);
         FoodToEat.transform.SetParent(mouth);
         FoodToEat.GetComponent<NewFoodItemProperties>().StartCoroutine(nameof(NewFoodItemProperties.BiteFood));
        
         if (!_itemManager.FoodEaten.Contains(FoodToEat))
             _itemManager.FoodEaten.Add(FoodToEat); // add to list of eaten food
+
+        if (GameManager.gameState == 4)
+        {
+            CornGameEvents.instance.EatFood();
+        }
+
+        if (GameManager.gameState != 1) return; //only trigger progression events in story mode 
         
         var numOfFoodEaten =_itemManager.FoodEaten.Count;
         

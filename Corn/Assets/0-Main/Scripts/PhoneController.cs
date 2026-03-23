@@ -20,7 +20,7 @@ public class PhoneController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.gameState == 1 || GameManager.gameState == 2)
+        if (GameManager.gameState == 1 || GameManager.gameState == 2 || GameManager.gameState == 4)
         {
 
             RaycastHit hitInfo = new RaycastHit();
